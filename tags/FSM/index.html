@@ -2,7 +2,7 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Archives: 2019/2 - octopusheep</title>
+<title>Tag: FSM - octopusheep</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -10,7 +10,7 @@
     <meta name="keywords" content="octopusheep">
 <meta property="og:type" content="website">
 <meta property="og:title" content="octopusheep">
-<meta property="og:url" content="http://octopusheep.com/archives/2019/02/index.html">
+<meta property="og:url" content="http://octopusheep.com/tags/FSM/index.html">
 <meta property="og:site_name" content="octopusheep">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
@@ -130,37 +130,107 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-
-<div class="card widget">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     <div class="card-content">
-        <h3 class="tag is-link">
-        February 2019
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-02-13T10:05:55.000Z">2019-02-13</time>
-                        <a href="/2019/02/13/Ubuntu系统下adb检测不到设备的处理方案/" class="has-link-black-ter is-size-6">Ubuntu系统下adb检测不到设备的处理方案</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-        </div>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">FSM</a></li>
+        </ul>
+        </nav>
     </div>
 </div>
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-11T14:47:03.000Z">2019-06-11</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 448 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/11/状态机学习笔记/">等价类划分学习笔记</a>
+            
+        </h1>
+        <div class="content">
+            <p>该文章总结自wikipedia的[有限状态机]{<a href="https://en.wikipedia.org/wiki/Finite-state_machine}" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Finite-state_machine}</a></p>
+<blockquote>
+<p>A finite-state machine (FSM) or finite-state automaton (FSA, plural: automata), finite automaton, or simply a state machine, is a mathematical model of computation. It is an abstract machine that can be in exactly one of a finite number of states at any given time.</p>
+</blockquote>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>有限状态机FSM是一种数学计算模型，它是一种抽象机器，其状态在任意时间内都可以被精确描述为有限数量的状态集中的一种。对于测试来说，很重要的一环就是状态机的状态转化表，它描述了每一种可能的状态和他们之间的转化，以及由每一种输入导致的输出</p>
+<h2 id="举个栗子：turnstile旋转门"><a href="#举个栗子：turnstile旋转门" class="headerlink" title="举个栗子：turnstile旋转门"></a>举个栗子：turnstile旋转门</h2><p><img src="/images/43.jpg" alt="what is turnstile"><br>旋转门在<strong>锁定状态</strong>下无法被推动旋转，只有在被投币后进入<strong>解锁状态</strong>后才能被推动，随后又进入<strong>锁定状态</strong></p>
+<table>
+<thead>
+<tr>
+<th>current state</th>
+<th>input</th>
+<th>next state</th>
+<th>output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>locked</td>
+<td>coin</td>
+<td>unlocked</td>
+<td>unlocks the turnstile so that customer can put through</td>
+</tr>
+<tr>
+<td>locked</td>
+<td>push</td>
+<td>locked</td>
+<td>none</td>
+</tr>
+<tr>
+<td>unlocked</td>
+<td>coin</td>
+<td>unlocked</td>
+<td>none</td>
+</tr>
+<tr>
+<td>unlocked</td>
+<td>push</td>
+<td>locked</td>
+<td>when the customer has pushed through, locks the turnstile</td>
+</tr>
+<tr>
+<td></td></tr></tbody></table>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/06/11/状态机学习笔记/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
 
 
 </div>

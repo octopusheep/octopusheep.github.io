@@ -2,20 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Archives: 2019/2 - octopusheep</title>
+<title>等价类划分学习笔记 - octopusheep</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="keywords" content="octopusheep">
-<meta property="og:type" content="website">
-<meta property="og:title" content="octopusheep">
-<meta property="og:url" content="http://octopusheep.com/archives/2019/02/index.html">
+    <meta name="description" content="该文章总结自wikipedia的[有限状态机]{https://en.wikipedia.org/wiki/Finite-state_machine}  A finite-state machine (FSM) or finite-state automaton (FSA, plural: automata), finite automaton, or simply a state machine">
+<meta name="keywords" content="FSM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="等价类划分学习笔记">
+<meta property="og:url" content="http://octopusheep.com/2019/06/11/状态机学习笔记/index.html">
 <meta property="og:site_name" content="octopusheep">
+<meta property="og:description" content="该文章总结自wikipedia的[有限状态机]{https://en.wikipedia.org/wiki/Finite-state_machine}  A finite-state machine (FSM) or finite-state automaton (FSA, plural: automata), finite automaton, or simply a state machine">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-06-11T07:19:02.159Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="octopusheep">
+<meta name="twitter:title" content="等价类划分学习笔记">
+<meta name="twitter:description" content="该文章总结自wikipedia的[有限状态机]{https://en.wikipedia.org/wiki/Finite-state_machine}  A finite-state machine (FSM) or finite-state automaton (FSA, plural: automata), finite automaton, or simply a state machine">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
 
@@ -85,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/octopus.jpg" alt="octopusheep" height="28">
+                <img src="/images/octopus.jpg" alt="等价类划分学习笔记" height="28">
             
             </a>
         </div>
@@ -117,6 +121,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -130,35 +138,198 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        February 2019
-        </h3>
-        <div class="timeline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
         
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-11T14:47:03.000Z">2019-06-11</time>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-02-13T10:05:55.000Z">2019-02-13</time>
-                        <a href="/2019/02/13/Ubuntu系统下adb检测不到设备的处理方案/" class="has-link-black-ter is-size-6">Ubuntu系统下adb检测不到设备的处理方案</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
                 </div>
-            </article>
-        
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 448 words)
+                </span>
+                
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                等价类划分学习笔记
+            
+        </h1>
+        <div class="content">
+            <p>该文章总结自wikipedia的[有限状态机]{<a href="https://en.wikipedia.org/wiki/Finite-state_machine}" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Finite-state_machine}</a></p>
+<blockquote>
+<p>A finite-state machine (FSM) or finite-state automaton (FSA, plural: automata), finite automaton, or simply a state machine, is a mathematical model of computation. It is an abstract machine that can be in exactly one of a finite number of states at any given time.</p>
+</blockquote>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>有限状态机FSM是一种数学计算模型，它是一种抽象机器，其状态在任意时间内都可以被精确描述为有限数量的状态集中的一种。对于测试来说，很重要的一环就是状态机的状态转化表，它描述了每一种可能的状态和他们之间的转化，以及由每一种输入导致的输出</p>
+<h2 id="举个栗子：turnstile旋转门"><a href="#举个栗子：turnstile旋转门" class="headerlink" title="举个栗子：turnstile旋转门"></a>举个栗子：turnstile旋转门</h2><p><img src="/images/43.jpg" alt="what is turnstile"><br>旋转门在<strong>锁定状态</strong>下无法被推动旋转，只有在被投币后进入<strong>解锁状态</strong>后才能被推动，随后又进入<strong>锁定状态</strong></p>
+<table>
+<thead>
+<tr>
+<th>current state</th>
+<th>input</th>
+<th>next state</th>
+<th>output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>locked</td>
+<td>coin</td>
+<td>unlocked</td>
+<td>unlocks the turnstile so that customer can put through</td>
+</tr>
+<tr>
+<td>locked</td>
+<td>push</td>
+<td>locked</td>
+<td>none</td>
+</tr>
+<tr>
+<td>unlocked</td>
+<td>coin</td>
+<td>unlocked</td>
+<td>none</td>
+</tr>
+<tr>
+<td>unlocked</td>
+<td>push</td>
+<td>locked</td>
+<td>when the customer has pushed through, locks the turnstile</td>
+</tr>
+<tr>
+<td><a id="more"></a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="常用的表示方法"><a href="#常用的表示方法" class="headerlink" title="常用的表示方法"></a>常用的表示方法</h2><ul>
+<li>状态/事件表：将状态和输入作为横纵坐标，将当前状态和输入结合以展示下一个阶段的状态<table>
+<thead>
+<tr>
+<th>current state &amp; input</th>
+<th>State A</th>
+<th>State B</th>
+<th>State C</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Input X</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>Input Y</td>
+<td>…</td>
+<td>State C</td>
+<td>…</td>
+</tr>
+<tr>
+<td>Input Z</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody></table>
+</li>
+<li>状态图：每个状态用节点表示，节点间的箭头表示在执行输入后状态之间的转变，如果一个输入无法造成状态转变，就用一个重新指向原状态的环形箭头表示，从黑点指向Locked节点的箭头表示它是初始状态<br><img src="/images/44.jpg" alt="state diagram"></li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/FSM/">FSM</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="Alipay"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wechat.jpg" alt="Wechat"></div>
+</a>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<a class="button is-warning donate" onclick="document.getElementById(&#39;paypal-donate-form&#39;).submit()">
+    <span class="icon is-small">
+        <i class="fab fa-paypal"></i>
+    </span>
+    <span>Paypal</span>
+</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal-donate-form">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="octopusheep@gmail.com">
+    <input type="hidden" name="currency_code" value="USD">
+</form>
+
+                
+                
+<a class="button is-danger donate" href="https://www.octopusheep.com" target="_blank">
+    <span class="icon is-small">
+        <i class="fab fa-patreon"></i>
+    </span>
+    <span>Patreon</span>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/11/等价类划分学习笔记/">
+                <span class="level-item">等价类划分学习笔记</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
     </div>
 </div>
 
@@ -277,6 +448,29 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#概念">
+        <span class="has-mr-6">1</span>
+        <span>概念</span>
+        </a></li><li>
+        <a class="is-flex" href="#举个栗子：turnstile旋转门">
+        <span class="has-mr-6">2</span>
+        <span>举个栗子：turnstile旋转门</span>
+        </a></li><li>
+        <a class="is-flex" href="#常用的表示方法">
+        <span class="has-mr-6">3</span>
+        <span>常用的表示方法</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -947,7 +1141,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/octopus.jpg" alt="octopusheep" height="28">
+                    <img src="/images/octopus.jpg" alt="等价类划分学习笔记" height="28">
                 
                 </a>
                 <p class="is-size-7">

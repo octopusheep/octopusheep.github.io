@@ -166,7 +166,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/06/11/状态机学习笔记/">等价类划分学习笔记</a>
+                <a class="has-link-black-ter" href="/2019/06/11/状态机学习笔记/">FSM有限状态机学习笔记</a>
             
         </h1>
         <div class="content">
@@ -175,42 +175,7 @@
 <p>A finite-state machine (FSM) or finite-state automaton (FSA, plural: automata), finite automaton, or simply a state machine, is a mathematical model of computation. It is an abstract machine that can be in exactly one of a finite number of states at any given time.</p>
 </blockquote>
 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>有限状态机FSM是一种数学计算模型，它是一种抽象机器，其状态在任意时间内都可以被精确描述为有限数量的状态集中的一种。对于测试来说，很重要的一环就是状态机的状态转化表，它描述了每一种可能的状态和他们之间的转化，以及由每一种输入导致的输出</p>
-<h2 id="举个栗子：turnstile旋转门"><a href="#举个栗子：turnstile旋转门" class="headerlink" title="举个栗子：turnstile旋转门"></a>举个栗子：turnstile旋转门</h2><p><img src="/images/43.jpg" alt="what is turnstile"><br>旋转门在<strong>锁定状态</strong>下无法被推动旋转，只有在被投币后进入<strong>解锁状态</strong>后才能被推动，随后又进入<strong>锁定状态</strong></p>
-<table>
-<thead>
-<tr>
-<th>current state</th>
-<th>input</th>
-<th>next state</th>
-<th>output</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>locked</td>
-<td>coin</td>
-<td>unlocked</td>
-<td>unlocks the turnstile so that customer can put through</td>
-</tr>
-<tr>
-<td>locked</td>
-<td>push</td>
-<td>locked</td>
-<td>none</td>
-</tr>
-<tr>
-<td>unlocked</td>
-<td>coin</td>
-<td>unlocked</td>
-<td>none</td>
-</tr>
-<tr>
-<td>unlocked</td>
-<td>push</td>
-<td>locked</td>
-<td>when the customer has pushed through, locks the turnstile</td>
-</tr>
-<tr>
-<td></td></tr></tbody></table>
+<h2 id="举个栗子：turnstile旋转门"><a href="#举个栗子：turnstile旋转门" class="headerlink" title="举个栗子：turnstile旋转门"></a>举个栗子：turnstile旋转门</h2>
         </div>
         
         
@@ -456,7 +421,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T14:47:03.000Z">2019-06-11</time></div>
-                    <a href="/2019/06/11/状态机学习笔记/" class="has-link-black-ter is-size-6">等价类划分学习笔记</a>
+                    <a href="/2019/06/11/状态机学习笔记/" class="has-link-black-ter is-size-6">FSM有限状态机学习笔记</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
                     </p>
@@ -742,7 +707,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T14:47:03.000Z">2019-06-11</time></div>
-                    <a href="/2019/06/11/状态机学习笔记/" class="has-link-black-ter is-size-6">等价类划分学习笔记</a>
+                    <a href="/2019/06/11/状态机学习笔记/" class="has-link-black-ter is-size-6">FSM有限状态机学习笔记</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
                     </p>

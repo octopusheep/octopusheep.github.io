@@ -2,7 +2,7 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>等价类划分学习笔记 - octopusheep</title>
+<title>FSM有限状态机学习笔记 - octopusheep</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -10,15 +10,15 @@
     <meta name="description" content="该文章总结自wikipedia的[有限状态机]{https://en.wikipedia.org/wiki/Finite-state_machine}  A finite-state machine (FSM) or finite-state automaton (FSA, plural: automata), finite automaton, or simply a state machine">
 <meta name="keywords" content="FSM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="等价类划分学习笔记">
+<meta property="og:title" content="FSM有限状态机学习笔记">
 <meta property="og:url" content="http://octopusheep.com/2019/06/11/状态机学习笔记/index.html">
 <meta property="og:site_name" content="octopusheep">
 <meta property="og:description" content="该文章总结自wikipedia的[有限状态机]{https://en.wikipedia.org/wiki/Finite-state_machine}  A finite-state machine (FSM) or finite-state automaton (FSA, plural: automata), finite automaton, or simply a state machine">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-06-11T07:19:02.159Z">
+<meta property="og:updated_time" content="2019-06-11T07:30:52.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="等价类划分学习笔记">
+<meta name="twitter:title" content="FSM有限状态机学习笔记">
 <meta name="twitter:description" content="该文章总结自wikipedia的[有限状态机]{https://en.wikipedia.org/wiki/Finite-state_machine}  A finite-state machine (FSM) or finite-state automaton (FSA, plural: automata), finite automaton, or simply a state machine">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
@@ -89,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/octopus.jpg" alt="等价类划分学习笔记" height="28">
+                <img src="/images/octopus.jpg" alt="FSM有限状态机学习笔记" height="28">
             
             </a>
         </div>
@@ -163,7 +163,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                等价类划分学习笔记
+                FSM有限状态机学习笔记
             
         </h1>
         <div class="content">
@@ -172,7 +172,8 @@
 <p>A finite-state machine (FSM) or finite-state automaton (FSA, plural: automata), finite automaton, or simply a state machine, is a mathematical model of computation. It is an abstract machine that can be in exactly one of a finite number of states at any given time.</p>
 </blockquote>
 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>有限状态机FSM是一种数学计算模型，它是一种抽象机器，其状态在任意时间内都可以被精确描述为有限数量的状态集中的一种。对于测试来说，很重要的一环就是状态机的状态转化表，它描述了每一种可能的状态和他们之间的转化，以及由每一种输入导致的输出</p>
-<h2 id="举个栗子：turnstile旋转门"><a href="#举个栗子：turnstile旋转门" class="headerlink" title="举个栗子：turnstile旋转门"></a>举个栗子：turnstile旋转门</h2><p><img src="/images/43.jpg" alt="what is turnstile"><br>旋转门在<strong>锁定状态</strong>下无法被推动旋转，只有在被投币后进入<strong>解锁状态</strong>后才能被推动，随后又进入<strong>锁定状态</strong></p>
+<h2 id="举个栗子：turnstile旋转门"><a href="#举个栗子：turnstile旋转门" class="headerlink" title="举个栗子：turnstile旋转门"></a>举个栗子：turnstile旋转门</h2><a id="more"></a>
+<p><img src="/images/43.jpg" alt="what is turnstile"><br>旋转门在<strong>锁定状态</strong>下无法被推动旋转，只有在被投币后进入<strong>解锁状态</strong>后才能被推动，随后又进入<strong>锁定状态</strong></p>
 <table>
 <thead>
 <tr>
@@ -206,12 +207,6 @@
 <td>locked</td>
 <td>when the customer has pushed through, locks the turnstile</td>
 </tr>
-<tr>
-<td><a id="more"></a></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
 <h2 id="常用的表示方法"><a href="#常用的表示方法" class="headerlink" title="常用的表示方法"></a>常用的表示方法</h2><ul>
 <li>状态/事件表：将状态和输入作为横纵坐标，将当前状态和输入结合以展示下一个阶段的状态<table>
@@ -243,7 +238,7 @@
 </tr>
 </tbody></table>
 </li>
-<li>状态图：每个状态用节点表示，节点间的箭头表示在执行输入后状态之间的转变，如果一个输入无法造成状态转变，就用一个重新指向原状态的环形箭头表示，从黑点指向Locked节点的箭头表示它是初始状态<br><img src="/images/44.jpg" alt="state diagram"></li>
+<li>状态图：每个状态用节点表示，节点间的箭头表示在执行输入后状态之间的转变，如果一个输入无法造成状态转变，就用一个重新指向原状态的环形箭头表示，从黑点指向Locked节点的箭头表示它是初始状态<br><img src="/images/44.png" alt="state diagram"></li>
 </ul>
 
         </div>
@@ -580,7 +575,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T14:47:03.000Z">2019-06-11</time></div>
-                    <a href="/2019/06/11/状态机学习笔记/" class="has-link-black-ter is-size-6">等价类划分学习笔记</a>
+                    <a href="/2019/06/11/状态机学习笔记/" class="has-link-black-ter is-size-6">FSM有限状态机学习笔记</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
                     </p>
@@ -866,7 +861,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T14:47:03.000Z">2019-06-11</time></div>
-                    <a href="/2019/06/11/状态机学习笔记/" class="has-link-black-ter is-size-6">等价类划分学习笔记</a>
+                    <a href="/2019/06/11/状态机学习笔记/" class="has-link-black-ter is-size-6">FSM有限状态机学习笔记</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
                     </p>
@@ -1141,7 +1136,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/octopus.jpg" alt="等价类划分学习笔记" height="28">
+                    <img src="/images/octopus.jpg" alt="FSM有限状态机学习笔记" height="28">
                 
                 </a>
                 <p class="is-size-7">

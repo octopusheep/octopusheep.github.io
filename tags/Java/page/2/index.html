@@ -147,7 +147,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-17T20:51:31.000Z">2019-04-17</time>
+                <time class="level-item has-text-grey" datetime="2019-04-09T14:39:56.000Z">2019-04-09</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
@@ -157,7 +157,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    8 minutes read (About 1256 words)
+                    4 minutes read (About 559 words)
                 </span>
                 
                 
@@ -166,574 +166,450 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/04/18/《Java编程思想》读书笔记(第十二章)/">《Java编程思想》读书笔记(第十二章)</a>
+                <a class="has-link-black-ter" href="/2019/04/09/《Java编程思想》读书笔记(第七章)/">《Java编程思想》读书笔记(第七章)</a>
             
         </h1>
         <div class="content">
-            <blockquote>
-<p>Java的基本理念是结构不佳的代码不能运行</p>
+            <p>三种代码重用机制：组合，继承，代理</p>
+<p>每一个非基本类型的对象都有一个toString()方法，而且当编译器需要一个String而你却只有一个对象时，该方法就会调用</p>
+<p>java使用super关键词来表示超类，表达式super.method()将调用基类版本的scrub()</p>
+<p>java会自动在导出类的构造器中插入对基类构造器的调用</p>
+<p>使用代理时可以拥有更多的控制力，我们可以选择提供成员对象中的方法中的子集</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpaceShipControl</span></span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">backward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpaceShipDetegent</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">private</span> String name;</span><br><span class="line">  <span class="hljs-keyword">private</span> SpaceShipControl ssp=<span class="hljs-keyword">new</span> SpaceShipControl();</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SpaceShipDetegent</span><span class="hljs-params">(String name)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name=name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">backward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> velocity)</span></span>&#123;</span><br><span class="line">    ssp.backward(velocity);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> velocity)</span></span>&#123;</span><br><span class="line">    ssp.backward(velocity);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">    SpaceShipDetegent ssd=<span class="hljs-keyword">new</span> SpaceShipDetegent(<span class="hljs-string">"NASA Protector"</span>);</span><br><span class="line">    ssd.backward(<span class="hljs-number">100</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/09/《Java编程思想》读书笔记(第七章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-09T10:13:01.000Z">2019-04-09</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 539 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/09/《Java编程思想》读书笔记(第六章)/">《Java编程思想》读书笔记(第六章)</a>
+            
+        </h1>
+        <div class="content">
+            <p>重构即重写代码，使它更可读，更易理解，并因此更具可维护性</p>
+<p>编写软件的程序员在重构代码时需要考虑<strong>如何把变动的事物与保持不变的事物区分开来</strong></p>
+<p>类库即library</p>
+<p>java访问权限控制等级从最大到最小依次为public,protected,包访问权限（没有关键词），private</p>
+<p>使用类库的一种方式是用全名来指定，如<code>java.util.ArrayList list = new java.util.ArrayList();</code></p>
+<p>还可以使用import关键字</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line">ArrayList list = <span class="hljs-keyword">new</span> ArrayList();</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/09/《Java编程思想》读书笔记(第六章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-08T17:37:33.000Z">2019-04-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1054 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/09/《Java编程思想》读书笔记(第五章)/">《Java编程思想》读书笔记(第五章)</a>
+            
+        </h1>
+        <div class="content">
+            <p>java提供构造器，确保每个对象都会得到初始化</p>
+<p>构造器采用与类相同的名称</p>
+<p>创建对象时，先为对象分配足够的存储空间，再调用相应的构造器</p>
+<p>由于构造器的名称必须与类完全相同，所以每个方法首字母小写的编码风格并不适用于构造器</p>
+<p>不接受任何参数的构造器叫做默认构造器，javaDoc中经常使用术语“无参构造器”</p>
+<p>如果一个类中只有一个构造器，那么编译器将不会允许你以其他方式创建这个类</p>
+<p>构造器是一种特殊类型的方法，不仅没有返回值，也不会返回任何东西</p>
+<p>每一个重载的方法都必须有一个独一无二的参数类型列表，参数顺序不同也足以区分两个方法</p>
+<p>基本类型能从一个较小的类型自动提升至一个较大的类型</p>
+<p>如果传入的实际参数大于重载方法声明的形式参数，就需要通过类型转换来执行窄化转换</p>
+<p>不能通过返回值来区分重载方法</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/09/《Java编程思想》读书笔记(第五章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-10-22T11:40:16.000Z">2018-10-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 280 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/10/22/Java多线程基础/">Java多线程基础</a>
+            
+        </h1>
+        <div class="content">
+            <p>当我们执行一些耗时操作时，如果不将这类操作放置在子线程中运行，可能导致主线程被堵塞。</p>
+<h2 id="多线程的用法1：-继承Thread类"><a href="#多线程的用法1：-继承Thread类" class="headerlink" title="多线程的用法1： 继承Thread类"></a>多线程的用法1： 继承Thread类</h2><p>新建一个类继承Thread，然后重写父类的run()方法，在里面编写耗时逻辑。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SubThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-meta">@Override</span></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">		<span class="hljs-comment">//处理具体的逻辑		</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>启动线程只需要new出SubThread的实例，然后调用它的start()方法。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">new</span> SubThread().start();</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/22/Java多线程基础/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-09-06T19:44:56.000Z">2018-09-06</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 670 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/09/07/《Java编程思想》读书笔记(第四章)/">《Java编程思想》读书笔记(第四章)</a>
+            
+        </h1>
+        <div class="content">
+            <p>所有方法首字母小写的编码规则并不适用于构建器。这是由于构建器的名字必须与类名完全相同！</p>
+<p>不能根据返回值类型来区分过载的方法。</p>
+<p>this 关键字（注意只能在方法内部使用）可为已调用了其方法的那个对象生成相应的句柄。可象对待其他任何对象句柄一样对待这个句柄。但要注意，假若准备从自己某个类的另一个方法内部调用一个类方法，就不必使用this。只需简单地调用那个方法<br>即可。</p>
+<p>有可能发出这类调用的一种情况是我们将一个对象句柄传到static 方法内部。随后，通过句柄（此时实<br>际是this），我们可调用非 static 方法，并访问非static 字段。</p>
+<p>垃圾收集器只知道释放那些由new 分配的内存，所以不知道如何释放对象的“特殊”内存。为<br>解决这个问题，Java 提供了一个名为finalize()的方法，可为我们的类定义它。</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/09/07/《Java编程思想》读书笔记(第四章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-09-05T19:44:56.000Z">2018-09-05</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes read (About 788 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/09/06/《Java编程思想》读书笔记(第三章)/">《Java编程思想》读书笔记(第三章)</a>
+            
+        </h1>
+        <div class="content">
+            <p>如果想通过“加号”连接字串（使用 Java 的早期版本），请务必保证第一个元素是字串（或加上引号的一系列字符，编译能将其识别成一个字串）。</p>
+<p>十六进制（Base 16）——它适用于所有整数数据类型——用一个前置的 0x 或 0X 指示。并在后面跟随采用大写或小写形式的0-9 以及a-f。</p>
+<p>八进制（Base 8）是用数字中的一个前置0 以及0-7 的数位指示的。</p>
+<p>在 C，C++或者Java 中，对二进制数字没有相应的“字面”表示方法。</p>
+<p>指数总是采用一种我们认为很不直观的记号方法：1.39e-47f。它真正的含义是“1.39×10 的-47 次方”。</p>
+<p>注意如果编译器能够正确地识别类型，就不必使用尾随字符（long n3 = 200）。</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/09/06/《Java编程思想》读书笔记(第三章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-09-04T19:44:56.000Z">2018-09-04</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 361 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/09/05/《Java编程思想》读书笔记(第一章)/">《Java编程思想》读书笔记(第一章)</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="对象导论"><a href="#对象导论" class="headerlink" title="对象导论"></a>对象导论</h1><ul>
+<li><p>编程语言始于对机器的模仿，但并非机器那么简单，它是一种不同类型的表达媒体</p>
+</li>
+<li><p>What is Object-oriented Programming?</p>
+</li>
+<li><p>人们所能够解决的问题的复杂性直接取决于抽象的类型和质量</p>
+</li>
+<li><p>解空间：你对问题建模的地方，如机器</p>
+</li>
+<li><p>问题空间：问题存在的地方</p>
+</li>
+</ul>
+<h2 id="The-definition-of-Object"><a href="#The-definition-of-Object" class="headerlink" title="The definition of Object"></a>The definition of Object</h2><ol>
+<li><p>问题空间的元素及其在解空间的表示</p>
+</li>
+<li><p>对象具有状态，行为，标识</p></li></ol>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/09/05/《Java编程思想》读书笔记(第一章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-09-03T19:44:56.000Z">2018-09-03</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 252 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/09/04/《Java编程思想》读书笔记(序章)/">《Java编程思想》读书笔记(序章)</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><ul>
+<li>程序设计是对复杂性的管理</li>
+</ul>
+<ol>
+<li>待解决问题的复杂性</li>
+<li>用来解决该问题的工具的复杂性</li>
+</ol>
+<ul>
+<li>在足够多的人的相互联系之上，下一次变革将是一种全球意识的形成</li>
+</ul>
+<h2 id="Arts-amp-Crafts运动"><a href="#Arts-amp-Crafts运动" class="headerlink" title="Arts&amp;Crafts运动"></a>Arts&amp;Crafts运动</h2><p>始于世纪之交，在1900至1920年间达到巅峰，强调简洁设计，回归自然是整个运动的核心，注重手工制造集推崇个性化设计。</p>
+<blockquote>
+<p>上帝赋予人类说话的能力，而语言又创造了思想，思想是人类对宇宙的量度 </p>
 </blockquote>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>Java的异常处理机制建立在C++的基础之上</p>
-<p>异常处理方式将“描述在正常执行过程中做什么事”的代码和“出了问题怎么办”的代码相分离</p>
-<h2 id="基本异常"><a href="#基本异常" class="headerlink" title="基本异常"></a>基本异常</h2><p>exception conidtion异常情形是指阻止当前方法或作用域继续执行的问题</p>
-<table>
-<thead>
-<tr>
-<th>普通问题</th>
-<th>异常情形</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>在当前环境下能得到足够的信息，总能处理这个错误</td>
-<td>在当前环境下无法获得必要的信息来解决问题</td>
-</tr>
-</tbody></table>
-<p>抛出异常后发生的事情：</p>
-<ol>
-<li>使用new在堆上创建异常对象</li>
-<li>当前执行路径被终止，并且从当前环境中弹出对异常对象的引用</li>
-<li>异常处理机制接管程序，开始寻找恰当的地方来继续执行程序</li>
-</ol>
-<p>异常使得我们可以将每件事都当作是一个事物来考虑</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/18/《Java编程思想》读书笔记(第十二章)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-17T20:51:31.000Z">2019-04-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8 minutes read (About 1256 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/18/《Java编程思想》读书笔记(第十二章)的副本/">《Java编程思想》读书笔记(第十二章)</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p>Java的基本理念是结构不佳的代码不能运行</p>
+<blockquote>
+<p>真实世界在很大程度上是不知不觉的基于群体的语言习惯形成的</p>
 </blockquote>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>Java的异常处理机制建立在C++的基础之上</p>
-<p>异常处理方式将“描述在正常执行过程中做什么事”的代码和“出了问题怎么办”的代码相分离</p>
-<h2 id="基本异常"><a href="#基本异常" class="headerlink" title="基本异常"></a>基本异常</h2><p>exception conidtion异常情形是指阻止当前方法或作用域继续执行的问题</p>
-<table>
-<thead>
-<tr>
-<th>普通问题</th>
-<th>异常情形</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>在当前环境下能得到足够的信息，总能处理这个错误</td>
-<td>在当前环境下无法获得必要的信息来解决问题</td>
-</tr>
-</tbody></table>
-<p>抛出异常后发生的事情：</p>
-<ol>
-<li>使用new在堆上创建异常对象</li>
-<li>当前执行路径被终止，并且从当前环境中弹出对异常对象的引用</li>
-<li>异常处理机制接管程序，开始寻找恰当的地方来继续执行程序</li>
-</ol>
-<p>异常使得我们可以将每件事都当作是一个事物来考虑</p>
+<ul>
+<li>你需要在头脑里创建一个模型，以加强你对这种语言的深入理解</li></ul>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/18/《Java编程思想》读书笔记(第十二章)的副本/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-16T15:29:39.000Z">2019-04-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 minutes read (About 1859 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/16/《Java编程思想》读书笔记(第十一章)/">《Java编程思想》读书笔记(第十一章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>数组是保存一组对象的最有效的方式，但是具有固定的尺寸</p>
-<p>Java实用类库提供了容器来解决这个问题，其中基本的类型是</p>
-<ol>
-<li>List</li>
-<li>Set</li>
-<li>Queue</li>
-<li>Map</li>
-</ol>
-<p>这些对象类型也被叫做集合类。Java类库使用了Collection来指代该类库的一个特殊子集，Java编程思想称之为容器。</p>
-<p>容器提供了完善的方法来保存对象</p>
-<p>不同的容器有不同的特性：Set对于每一个值只保存一个对象，Map是允许你将某一些对象与其他一些对象关联起来的关联数组。</p>
-<p>Java容器类可以自动调整自己的尺寸。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/16/《Java编程思想》读书笔记(第十一章)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-16T15:29:39.000Z">2019-04-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 minutes read (About 1859 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/16/《Java编程思想》读书笔记(第十一章)的副本/">《Java编程思想》读书笔记(第十一章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>数组是保存一组对象的最有效的方式，但是具有固定的尺寸</p>
-<p>Java实用类库提供了容器来解决这个问题，其中基本的类型是</p>
-<ol>
-<li>List</li>
-<li>Set</li>
-<li>Queue</li>
-<li>Map</li>
-</ol>
-<p>这些对象类型也被叫做集合类。Java类库使用了Collection来指代该类库的一个特殊子集，Java编程思想称之为容器。</p>
-<p>容器提供了完善的方法来保存对象</p>
-<p>不同的容器有不同的特性：Set对于每一个值只保存一个对象，Map是允许你将某一些对象与其他一些对象关联起来的关联数组。</p>
-<p>Java容器类可以自动调整自己的尺寸。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/16/《Java编程思想》读书笔记(第十一章)的副本/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-15T19:28:32.000Z">2019-04-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 644 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/16/《Java编程思想》读书笔记(第十章)的副本/">《Java编程思想》读书笔记(第十章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>可以将一个类的定义方在另一个类的定义内部，这就是内部类</p>
-<p>内部类和组合是完全不同的概念</p>
-<p>如果想从外部类的非静态方法之外的任意位置创建某个内部类的对象，那么必须具体的指明这个对象的类型：<br>OuterClassName.InnerClassName</p>
-<p>内部类可以实现迭代器设计模式</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Selector</span></span>&#123;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">end</span><span class="hljs-params">()</span></span>;</span><br><span class="line">	<span class="hljs-function">Object <span class="hljs-title">current</span><span class="hljs-params">()</span></span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">next</span><span class="hljs-params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sequence</span></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">private</span> Object[] items;</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> next=<span class="hljs-number">0</span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Sequence</span><span class="hljs-params">(<span class="hljs-keyword">int</span> size)</span></span>&#123;</span><br><span class="line">		items=<span class="hljs-keyword">new</span> Object[size];	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(Object x)</span></span>&#123;</span><br><span class="line">		<span class="hljs-keyword">if</span>(next &lt; items.length)&#123;</span><br><span class="line">			items[next ++]=x;		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SequenceSelector</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Selector</span></span>&#123;</span><br><span class="line">		<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;</span><br><span class="line">		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">end</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">			<span class="hljs-keyword">return</span> i==items.length;		</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">current</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">			<span class="hljs-keyword">return</span> items[i];			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">next</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">			<span class="hljs-keyword">if</span>(i&lt;items.length) i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> Selector <span class="hljs-title">selector</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> SequenceSelector();	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">		Sequence sequence = <span class="hljs-keyword">new</span> Sequence(<span class="hljs-number">10</span>);</span><br><span class="line">		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)&#123;</span><br><span class="line">			sequence.add(Integer.toSting(i));		</span><br><span class="line">		&#125;</span><br><span class="line">		Selector selector= sequence.selector();</span><br><span class="line">		<span class="hljs-keyword">while</span>(!selector.end())&#123;</span><br><span class="line">			System.out.print(selector.current()+<span class="hljs-string">" "</span>);</span><br><span class="line">			selector.next();		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/16/《Java编程思想》读书笔记(第十章)的副本/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-15T19:28:32.000Z">2019-04-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 644 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/16/《Java编程思想》读书笔记(第十章)/">《Java编程思想》读书笔记(第十章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>可以将一个类的定义方在另一个类的定义内部，这就是内部类</p>
-<p>内部类和组合是完全不同的概念</p>
-<p>如果想从外部类的非静态方法之外的任意位置创建某个内部类的对象，那么必须具体的指明这个对象的类型：<br>OuterClassName.InnerClassName</p>
-<p>内部类可以实现迭代器设计模式</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Selector</span></span>&#123;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">end</span><span class="hljs-params">()</span></span>;</span><br><span class="line">	<span class="hljs-function">Object <span class="hljs-title">current</span><span class="hljs-params">()</span></span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">next</span><span class="hljs-params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sequence</span></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">private</span> Object[] items;</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> next=<span class="hljs-number">0</span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Sequence</span><span class="hljs-params">(<span class="hljs-keyword">int</span> size)</span></span>&#123;</span><br><span class="line">		items=<span class="hljs-keyword">new</span> Object[size];	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(Object x)</span></span>&#123;</span><br><span class="line">		<span class="hljs-keyword">if</span>(next &lt; items.length)&#123;</span><br><span class="line">			items[next ++]=x;		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SequenceSelector</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Selector</span></span>&#123;</span><br><span class="line">		<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;</span><br><span class="line">		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">end</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">			<span class="hljs-keyword">return</span> i==items.length;		</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">current</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">			<span class="hljs-keyword">return</span> items[i];			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">next</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">			<span class="hljs-keyword">if</span>(i&lt;items.length) i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> Selector <span class="hljs-title">selector</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> SequenceSelector();	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">		Sequence sequence = <span class="hljs-keyword">new</span> Sequence(<span class="hljs-number">10</span>);</span><br><span class="line">		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)&#123;</span><br><span class="line">			sequence.add(Integer.toSting(i));		</span><br><span class="line">		&#125;</span><br><span class="line">		Selector selector= sequence.selector();</span><br><span class="line">		<span class="hljs-keyword">while</span>(!selector.end())&#123;</span><br><span class="line">			System.out.print(selector.current()+<span class="hljs-string">" "</span>);</span><br><span class="line">			selector.next();		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/16/《Java编程思想》读书笔记(第十章)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-15T16:52:16.000Z">2019-04-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 141 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/16/《Java编程思想》读书笔记(第九章)/">《Java编程思想》读书笔记(第九章)</a>
-            
-        </h1>
-        <div class="content">
-            <a id="more"></a>
-<p>接口和内部类为我们提供了一种将接口与实现分离的更加结构化的方法</p>
-<p>包含抽象方法的类叫做抽象类，抽象方法只有声明而没有方法体</p>
-<p>如果从一个抽象类继承，并且想创建该新类的对象，那么就必须为基类中所有的抽象方法提供方法定义。如果不这么做，那么导出类也是抽象类，且编译器会强制我们用abstract来限定这个类</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-15T16:52:16.000Z">2019-04-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 141 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/16/《Java编程思想》读书笔记(第九章)的副本/">《Java编程思想》读书笔记(第九章)</a>
-            
-        </h1>
-        <div class="content">
-            <a id="more"></a>
-<p>接口和内部类为我们提供了一种将接口与实现分离的更加结构化的方法</p>
-<p>包含抽象方法的类叫做抽象类，抽象方法只有声明而没有方法体</p>
-<p>如果从一个抽象类继承，并且想创建该新类的对象，那么就必须为基类中所有的抽象方法提供方法定义。如果不这么做，那么导出类也是抽象类，且编译器会强制我们用abstract来限定这个类</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-15T14:06:15.000Z">2019-04-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 279 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/15/《Java编程思想》读书笔记(第八章)/">《Java编程思想》读书笔记(第八章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>把某个对象的引用视为对其基类类型的引用的做法被称作upcasting向上转型</p>
-<p>将一个方法调用同一个方法主体关联起来被称作绑定，若在程序执行前进行绑定叫做前期绑定</p>
-<p>java中除了static和final方法之外，其他所有的方法都是后期绑定</p>
-<p>非private方法才能被覆盖</p>
-<p>静态对象是与类，而非与单个对象相关联的</p>
-<p>构造器的调用顺序：</p>
-<ol>
-<li>调用基类构造器，这个步骤会不断的递归下去，首先是构造这种层次结构的根，然后是下一层导出类，等等，直到最底层的导出类</li>
-<li>按声明顺序调用成员的初始化方法</li>
-<li>调用导出类构造器的主体</li></ol>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/15/《Java编程思想》读书笔记(第八章)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-15T14:06:15.000Z">2019-04-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 279 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/15/《Java编程思想》读书笔记(第八章)的副本/">《Java编程思想》读书笔记(第八章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>把某个对象的引用视为对其基类类型的引用的做法被称作upcasting向上转型</p>
-<p>将一个方法调用同一个方法主体关联起来被称作绑定，若在程序执行前进行绑定叫做前期绑定</p>
-<p>java中除了static和final方法之外，其他所有的方法都是后期绑定</p>
-<p>非private方法才能被覆盖</p>
-<p>静态对象是与类，而非与单个对象相关联的</p>
-<p>构造器的调用顺序：</p>
-<ol>
-<li>调用基类构造器，这个步骤会不断的递归下去，首先是构造这种层次结构的根，然后是下一层导出类，等等，直到最底层的导出类</li>
-<li>按声明顺序调用成员的初始化方法</li>
-<li>调用导出类构造器的主体</li></ol>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/15/《Java编程思想》读书笔记(第八章)的副本/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2018/09/04/《Java编程思想》读书笔记(序章)/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -756,7 +632,7 @@
         <div class="pagination-previous">
             <a class="is-flex-grow has-text-black-ter" href="/tags/Java/">Previous</a>
         </div>
-        <div class="pagination-next">
+        <div class="pagination-next is-invisible is-hidden-mobile">
             <a class="is-flex-grow has-text-black-ter" href="/tags/Java/page/3/">Next</a>
         </div>
         <ul class="pagination-list is-hidden-mobile">
@@ -764,10 +640,6 @@
             <li><a class="pagination-link has-text-black-ter" href="/tags/Java/">1</a></li>
             
             <li><a class="pagination-link is-current" href="/tags/Java/page/2/">2</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/tags/Java/page/3/">3</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/tags/Java/page/4/">4</a></li>
             
         </ul>
     </nav>
@@ -817,7 +689,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        72
+                        37
                     </p>
                 </div>
             </div>
@@ -827,7 +699,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -929,7 +801,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">72</span>
+                <span class="level-item tag">36</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Flutter/">
@@ -937,7 +809,7 @@
                 <span class="level-item">Flutter</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Programming/Go/">
@@ -945,7 +817,7 @@
                 <span class="level-item">Go</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Programming/Java/">
@@ -953,9 +825,17 @@
                 <span class="level-item">Java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">52</span>
+                <span class="level-item tag">26</span>
             </span>
-        </a></li></ul></li>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Testing/">
+            <span class="level-start">
+                <span class="level-item">Testing</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
             </ul>
         </div>
     </div>
@@ -986,34 +866,21 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T11:39:45.000Z">2019-06-11</time></div>
+                    <a href="/2019/06/11/等价类划分学习笔记/" class="has-link-black-ter is-size-6">等价类划分学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
                     <a href="/2019/05/29/Golang教程学习笔记/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
-                    <a href="/2019/05/29/Golang教程学习笔记的副本/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T14:08:10.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/Golang安装指南(Ubuntu环境)的副本/" class="has-link-black-ter is-size-6">Golang安装指南(Ubuntu环境)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
                     </p>
@@ -1039,7 +906,20 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T13:35:26.000Z">2019-05-07</time></div>
-                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)的副本/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T09:54:06.000Z">2019-05-07</time></div>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十六章)/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十六章)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
                     </p>
@@ -1060,12 +940,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/05/">
                 <span class="level-start">
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1076,7 +967,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">26</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -1087,7 +978,7 @@
                     <span class="level-item">March 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1098,7 +989,7 @@
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1109,7 +1000,7 @@
                     <span class="level-item">December 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1120,7 +1011,7 @@
                     <span class="level-item">November 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1131,7 +1022,7 @@
                     <span class="level-item">October 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1142,7 +1033,7 @@
                     <span class="level-item">September 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1153,7 +1044,7 @@
                     <span class="level-item">August 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1174,56 +1065,56 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Android/">
                         <span class="tag">Android</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Flutter/">
                         <span class="tag">Flutter</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Go/">
                         <span class="tag">Go</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Hexo/">
                         <span class="tag">Hexo</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">36</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Linux/">
                         <span class="tag">Linux</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/RxJava/">
                         <span class="tag">RxJava</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1254,34 +1145,21 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T11:39:45.000Z">2019-06-11</time></div>
+                    <a href="/2019/06/11/等价类划分学习笔记/" class="has-link-black-ter is-size-6">等价类划分学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
                     <a href="/2019/05/29/Golang教程学习笔记/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
-                    <a href="/2019/05/29/Golang教程学习笔记的副本/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T14:08:10.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/Golang安装指南(Ubuntu环境)的副本/" class="has-link-black-ter is-size-6">Golang安装指南(Ubuntu环境)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
                     </p>
@@ -1307,7 +1185,20 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T13:35:26.000Z">2019-05-07</time></div>
-                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)的副本/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T09:54:06.000Z">2019-05-07</time></div>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十六章)/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十六章)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
                     </p>
@@ -1328,12 +1219,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/05/">
                 <span class="level-start">
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1344,7 +1246,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">26</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -1355,7 +1257,7 @@
                     <span class="level-item">March 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1366,7 +1268,7 @@
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1377,7 +1279,7 @@
                     <span class="level-item">December 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1388,7 +1290,7 @@
                     <span class="level-item">November 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1399,7 +1301,7 @@
                     <span class="level-item">October 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1410,7 +1312,7 @@
                     <span class="level-item">September 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1421,7 +1323,7 @@
                     <span class="level-item">August 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1442,56 +1344,56 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Android/">
                         <span class="tag">Android</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Flutter/">
                         <span class="tag">Flutter</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Go/">
                         <span class="tag">Go</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Hexo/">
                         <span class="tag">Hexo</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">36</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Linux/">
                         <span class="tag">Linux</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/RxJava/">
                         <span class="tag">RxJava</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 

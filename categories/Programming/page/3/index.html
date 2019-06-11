@@ -148,7 +148,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-15T16:52:16.000Z">2019-04-15</time>
+                <time class="level-item has-text-grey" datetime="2018-11-20T19:39:52.000Z">2018-11-20</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 141 words)
+                    5 minutes read (About 805 words)
                 </span>
                 
                 
@@ -167,17 +167,23 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/04/16/《Java编程思想》读书笔记(第九章)/">《Java编程思想》读书笔记(第九章)</a>
+                <a class="has-link-black-ter" href="/2018/11/21/RxJava2学习笔记/">RxJava2学习笔记</a>
             
         </h1>
         <div class="content">
-            <a id="more"></a>
-<p>接口和内部类为我们提供了一种将接口与实现分离的更加结构化的方法</p>
-<p>包含抽象方法的类叫做抽象类，抽象方法只有声明而没有方法体</p>
-<p>如果从一个抽象类继承，并且想创建该新类的对象，那么就必须为基类中所有的抽象方法提供方法定义。如果不这么做，那么导出类也是抽象类，且编译器会强制我们用abstract来限定这个类</p>
-
+            <p>草率地看了些许RxJava的文章，自己的理解是，RxJava结合<strong>观察者模式</strong>实现异步操作，在<strong>观察者</strong>(Observable)流中处理一些事务，当流中一个事物完成后，会通知<strong>被观察者</strong>(Observer)，使其对结果再进行处理。</p>
+<h2 id="工程引用"><a href="#工程引用" class="headerlink" title="工程引用"></a>工程引用</h2><p>在app的build.gradle中添加依赖:</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//添加RxJava2依赖</span></span><br><span class="line">implementation <span class="hljs-string">'io.reactivex.rxjava2:rxjava:2.2.3'</span></span><br><span class="line"><span class="hljs-comment">//添加RxAndroid依赖</span></span><br><span class="line">implementation <span class="hljs-string">'io.reactivex.rxjava2:rxandroid:2.1.0'</span></span><br></pre></td></tr></table></figure>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/11/21/RxJava2学习笔记/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -196,7 +202,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-15T16:52:16.000Z">2019-04-15</time>
+                <time class="level-item has-text-grey" datetime="2018-10-22T11:40:16.000Z">2018-10-22</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
@@ -206,7 +212,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 141 words)
+                    2 minutes read (About 280 words)
                 </span>
                 
                 
@@ -215,17 +221,26 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/04/16/《Java编程思想》读书笔记(第九章)的副本/">《Java编程思想》读书笔记(第九章)</a>
+                <a class="has-link-black-ter" href="/2018/10/22/Java多线程基础/">Java多线程基础</a>
             
         </h1>
         <div class="content">
-            <a id="more"></a>
-<p>接口和内部类为我们提供了一种将接口与实现分离的更加结构化的方法</p>
-<p>包含抽象方法的类叫做抽象类，抽象方法只有声明而没有方法体</p>
-<p>如果从一个抽象类继承，并且想创建该新类的对象，那么就必须为基类中所有的抽象方法提供方法定义。如果不这么做，那么导出类也是抽象类，且编译器会强制我们用abstract来限定这个类</p>
+            <p>当我们执行一些耗时操作时，如果不将这类操作放置在子线程中运行，可能导致主线程被堵塞。</p>
+<h2 id="多线程的用法1：-继承Thread类"><a href="#多线程的用法1：-继承Thread类" class="headerlink" title="多线程的用法1： 继承Thread类"></a>多线程的用法1： 继承Thread类</h2><p>新建一个类继承Thread，然后重写父类的run()方法，在里面编写耗时逻辑。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SubThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-meta">@Override</span></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">		<span class="hljs-comment">//处理具体的逻辑		</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>启动线程只需要new出SubThread的实例，然后调用它的start()方法。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">new</span> SubThread().start();</span><br></pre></td></tr></table></figure>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/22/Java多线程基础/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -244,7 +259,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-15T14:06:15.000Z">2019-04-15</time>
+                <time class="level-item has-text-grey" datetime="2018-10-08T14:38:44.000Z">2018-10-08</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
@@ -254,7 +269,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 279 words)
+                    3 minutes read (About 516 words)
                 </span>
                 
                 
@@ -263,27 +278,197 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/04/15/《Java编程思想》读书笔记(第八章)的副本/">《Java编程思想》读书笔记(第八章)</a>
+                <a class="has-link-black-ter" href="/2018/10/08/Android MVP框架学习笔记1/">Android MVP框架学习笔记</a>
             
         </h1>
         <div class="content">
-            <p>把某个对象的引用视为对其基类类型的引用的做法被称作upcasting向上转型</p>
-<p>将一个方法调用同一个方法主体关联起来被称作绑定，若在程序执行前进行绑定叫做前期绑定</p>
-<p>java中除了static和final方法之外，其他所有的方法都是后期绑定</p>
-<p>非private方法才能被覆盖</p>
-<p>静态对象是与类，而非与单个对象相关联的</p>
-<p>构造器的调用顺序：</p>
+            <p>本学习笔记总结自文章<a href="http://kaedea.com/2015/10/11/android-mvp-pattern/" target="_blank" rel="noopener">MVP模式简单易懂的介绍方式</a></p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/08/Android MVP框架学习笔记1/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-10-06T14:09:03.000Z">2018-10-06</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    21 minutes read (About 3123 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/10/06/RxJava学习笔记/">RxJava学习笔记</a>
+            
+        </h1>
+        <div class="content">
+            <p>本文内容学习总结来自<a href="https://github.com/rengwuxian" target="_blank" rel="noopener">扔物线</a>所写的<a href="https://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="noopener">给 Android 开发者的 RxJava 详解</a></p>
+<h2 id="什么是RxJava"><a href="#什么是RxJava" class="headerlink" title="什么是RxJava"></a>什么是RxJava</h2><blockquote>
+<p>a library for composing asynchronous and event-based programs using observable sequences for the Java VM</p>
+</blockquote>
+<p>即一个在<strong>Java虚拟机</strong>上使用了<strong>可观测序列</strong>的组合了<strong>异步</strong>和<strong>事件驱动</strong>的<strong>程序</strong>的<strong>库</strong>，RxJava的本质是一个实现异步操作的库, 优点是把复杂的业务逻辑变得简介，可读性强。</p>
+<h2 id="API介绍和原理简析"><a href="#API介绍和原理简析" class="headerlink" title="API介绍和原理简析"></a>API介绍和原理简析</h2><p>RxJava 的异步实现，是通过一种扩展的观察者模式来实现的。</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/06/RxJava学习笔记/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-10-01T19:33:34.000Z">2018-10-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Flutter/">Flutter</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 371 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/10/02/Flutter学习笔记(Tour the framework)/">Flutter学习笔记(Tour the framework)</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><blockquote>
+<p>Flutter widget are built by a modern react-style framework and the widget have their own configuration and state which can support the rebuilt process when those two varieties changes</p>
+</blockquote>
+<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><p>the simpiest flutter application likes this:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">   runApp(</span><br><span class="line">      Center(</span><br><span class="line">         child: Text(</span><br><span class="line">            &apos;Hello,world!&apos;,</span><br><span class="line">            textDirection: TextDirection.lrt,</span><br><span class="line">         ),</span><br><span class="line">      ),	</span><br><span class="line">   );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/02/Flutter学习笔记(Tour the framework)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-09-29T11:20:46.000Z">2018-09-29</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Flutter/">Flutter</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 615 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/09/29/Flutter安装指南(Ubuntu环境)/">Flutter安装指南(Ubuntu环境)</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>根据<a href="https://flutter.io/" target="_blank" rel="noopener">flutter</a>官网的说法</p>
+<blockquote>
+<p>Flutter是谷歌的移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面。</p>
+</blockquote>
+<p>其优点总结起来包括：</p>
 <ol>
-<li>调用基类构造器，这个步骤会不断的递归下去，首先是构造这种层次结构的根，然后是下一层导出类，等等，直到最底层的导出类</li>
-<li>按声明顺序调用成员的初始化方法</li>
-<li>调用导出类构造器的主体</li></ol>
+<li><p>亚秒级别的热重载</p>
+</li>
+<li><p>媲美原生应用的性能</p>
+</li>
+<li><p>丰富的UI</p>
+</li>
+</ol>
+<p>个人认为flutter作为一个跨平台的UI框架，热重载是其最吸引人的功能，笔者目前负责的新闻项目涉及到切换主题后，应用内部的部分组件颜色也要随主题颜色变化，使用flutter框架进行开发，可以直接热重载应用界面而不用重走应用的生命周期，考虑到种种因素，故对flutter做预研。</p>
+<p>主要步骤已由<a href="https://flutterchina.club/setup-linux/" target="_blank" rel="noopener">Flutter中文网</a>给出，我重新整理了一下。</p>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/15/《Java编程思想》读书笔记(第八章)的副本/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2018/09/29/Flutter安装指南(Ubuntu环境)/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -305,17 +490,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-15T14:06:15.000Z">2019-04-15</time>
+                <time class="level-item has-text-grey" datetime="2018-09-21T10:01:48.000Z">2018-09-21</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 279 words)
+                    a minute read (About 167 words)
                 </span>
                 
                 
@@ -324,27 +509,25 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/04/15/《Java编程思想》读书笔记(第八章)/">《Java编程思想》读书笔记(第八章)</a>
+                <a class="has-link-black-ter" href="/2018/09/21/Linux缺少libpng12-0依赖的解决方法/">Linux缺少libpng12-0依赖的解决方法</a>
             
         </h1>
         <div class="content">
-            <p>把某个对象的引用视为对其基类类型的引用的做法被称作upcasting向上转型</p>
-<p>将一个方法调用同一个方法主体关联起来被称作绑定，若在程序执行前进行绑定叫做前期绑定</p>
-<p>java中除了static和final方法之外，其他所有的方法都是后期绑定</p>
-<p>非private方法才能被覆盖</p>
-<p>静态对象是与类，而非与单个对象相关联的</p>
-<p>构造器的调用顺序：</p>
-<ol>
-<li>调用基类构造器，这个步骤会不断的递归下去，首先是构造这种层次结构的根，然后是下一层导出类，等等，直到最底层的导出类</li>
-<li>按声明顺序调用成员的初始化方法</li>
-<li>调用导出类构造器的主体</li></ol>
+            <p>在安装SP_Flash_Tool时命令行出现如下提示，导致程序无法正常使用</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/SP_Flash_Tool/flash_tool: error while loading shared libraries: libpng12.so.0: </span><br><span class="line">cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure>
+
+<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><p>经查<a href="https://stackoverflow.com/questions/39645306/fixing-error-while-loading-shared-libraries-libpng12-so-0-when-installing-teens" target="_blank" rel="noopener">stackoverflow</a>,原因是因为</p>
+<blockquote>
+<p>It says there is not libpng on your system. I’m not familiar with Kali, but if this thread is correct, you’ll have to compile from source</p>
+</blockquote>
+<p>即系统里没有<strong>libpng</strong>这个依赖</p>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/15/《Java编程思想》读书笔记(第八章)/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2018/09/21/Linux缺少libpng12-0依赖的解决方法/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -366,7 +549,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-11T19:44:43.000Z">2019-04-11</time>
+                <time class="level-item has-text-grey" datetime="2018-09-06T19:44:56.000Z">2018-09-06</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
@@ -376,7 +559,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    10 minutes read (About 1493 words)
+                    4 minutes read (About 670 words)
                 </span>
                 
                 
@@ -385,20 +568,22 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/04/12/Android原生TTS逻辑分析/">Android原生TTS逻辑分析</a>
+                <a class="has-link-black-ter" href="/2018/09/07/《Java编程思想》读书笔记(第四章)/">《Java编程思想》读书笔记(第四章)</a>
             
         </h1>
         <div class="content">
-            <p>本文依据API 28的安卓源码文件<code>UtteranceProgressListener.java</code>分析整理得出</p>
-<h2 id="What-is-UtteranceProgressListener"><a href="#What-is-UtteranceProgressListener" class="headerlink" title="What is UtteranceProgressListener"></a>What is UtteranceProgressListener</h2><p>UtteranceProgressListener实际上是一个抽象类，它是一个监听器，监听与发声的过程相关的事件，这个事件是通过很多步骤来处理的。每一个TTS发声事件都与函数调用相关联，分别是<code>TextToSpeech#speak</code>和<code>TextToSpeech#synthesizeToFile</code>.并且有唯一的发声ID(utterance identifier)来标识自己。这个ID就是<code>TextToSpeech.Engine#KEY_PARAM_UTTERANCE_ID</code></p>
-<p><img src="/images/42.png" alt="UtterranceProgressListener的结构"></p>
+            <p>所有方法首字母小写的编码规则并不适用于构建器。这是由于构建器的名字必须与类名完全相同！</p>
+<p>不能根据返回值类型来区分过载的方法。</p>
+<p>this 关键字（注意只能在方法内部使用）可为已调用了其方法的那个对象生成相应的句柄。可象对待其他任何对象句柄一样对待这个句柄。但要注意，假若准备从自己某个类的另一个方法内部调用一个类方法，就不必使用this。只需简单地调用那个方法<br>即可。</p>
+<p>有可能发出这类调用的一种情况是我们将一个对象句柄传到static 方法内部。随后，通过句柄（此时实<br>际是this），我们可调用非 static 方法，并访问非static 字段。</p>
+<p>垃圾收集器只知道释放那些由new 分配的内存，所以不知道如何释放对象的“特殊”内存。为<br>解决这个问题，Java 提供了一个名为finalize()的方法，可为我们的类定义它。</p>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/12/Android原生TTS逻辑分析/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2018/09/07/《Java编程思想》读书笔记(第四章)/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -420,7 +605,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-11T19:44:43.000Z">2019-04-11</time>
+                <time class="level-item has-text-grey" datetime="2018-09-05T19:44:56.000Z">2018-09-05</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
@@ -430,7 +615,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    10 minutes read (About 1493 words)
+                    5 minutes read (About 788 words)
                 </span>
                 
                 
@@ -439,20 +624,23 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/04/12/Android原生TTS逻辑分析的副本/">Android原生TTS逻辑分析</a>
+                <a class="has-link-black-ter" href="/2018/09/06/《Java编程思想》读书笔记(第三章)/">《Java编程思想》读书笔记(第三章)</a>
             
         </h1>
         <div class="content">
-            <p>本文依据API 28的安卓源码文件<code>UtteranceProgressListener.java</code>分析整理得出</p>
-<h2 id="What-is-UtteranceProgressListener"><a href="#What-is-UtteranceProgressListener" class="headerlink" title="What is UtteranceProgressListener"></a>What is UtteranceProgressListener</h2><p>UtteranceProgressListener实际上是一个抽象类，它是一个监听器，监听与发声的过程相关的事件，这个事件是通过很多步骤来处理的。每一个TTS发声事件都与函数调用相关联，分别是<code>TextToSpeech#speak</code>和<code>TextToSpeech#synthesizeToFile</code>.并且有唯一的发声ID(utterance identifier)来标识自己。这个ID就是<code>TextToSpeech.Engine#KEY_PARAM_UTTERANCE_ID</code></p>
-<p><img src="/images/42.png" alt="UtterranceProgressListener的结构"></p>
+            <p>如果想通过“加号”连接字串（使用 Java 的早期版本），请务必保证第一个元素是字串（或加上引号的一系列字符，编译能将其识别成一个字串）。</p>
+<p>十六进制（Base 16）——它适用于所有整数数据类型——用一个前置的 0x 或 0X 指示。并在后面跟随采用大写或小写形式的0-9 以及a-f。</p>
+<p>八进制（Base 8）是用数字中的一个前置0 以及0-7 的数位指示的。</p>
+<p>在 C，C++或者Java 中，对二进制数字没有相应的“字面”表示方法。</p>
+<p>指数总是采用一种我们认为很不直观的记号方法：1.39e-47f。它真正的含义是“1.39×10 的-47 次方”。</p>
+<p>注意如果编译器能够正确地识别类型，就不必使用尾随字符（long n3 = 200）。</p>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/12/Android原生TTS逻辑分析的副本/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2018/09/06/《Java编程思想》读书笔记(第三章)/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -474,7 +662,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-09T14:39:56.000Z">2019-04-09</time>
+                <time class="level-item has-text-grey" datetime="2018-09-04T19:44:56.000Z">2018-09-04</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
@@ -484,7 +672,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 559 words)
+                    2 minutes read (About 361 words)
                 </span>
                 
                 
@@ -493,196 +681,33 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/04/09/《Java编程思想》读书笔记(第七章)/">《Java编程思想》读书笔记(第七章)</a>
+                <a class="has-link-black-ter" href="/2018/09/05/《Java编程思想》读书笔记(第一章)/">《Java编程思想》读书笔记(第一章)</a>
             
         </h1>
         <div class="content">
-            <p>三种代码重用机制：组合，继承，代理</p>
-<p>每一个非基本类型的对象都有一个toString()方法，而且当编译器需要一个String而你却只有一个对象时，该方法就会调用</p>
-<p>java使用super关键词来表示超类，表达式super.method()将调用基类版本的scrub()</p>
-<p>java会自动在导出类的构造器中插入对基类构造器的调用</p>
-<p>使用代理时可以拥有更多的控制力，我们可以选择提供成员对象中的方法中的子集</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpaceShipControl</span></span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">backward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpaceShipDetegent</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">private</span> String name;</span><br><span class="line">  <span class="hljs-keyword">private</span> SpaceShipControl ssp=<span class="hljs-keyword">new</span> SpaceShipControl();</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SpaceShipDetegent</span><span class="hljs-params">(String name)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name=name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">backward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> velocity)</span></span>&#123;</span><br><span class="line">    ssp.backward(velocity);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> velocity)</span></span>&#123;</span><br><span class="line">    ssp.backward(velocity);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">    SpaceShipDetegent ssd=<span class="hljs-keyword">new</span> SpaceShipDetegent(<span class="hljs-string">"NASA Protector"</span>);</span><br><span class="line">    ssd.backward(<span class="hljs-number">100</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="对象导论"><a href="#对象导论" class="headerlink" title="对象导论"></a>对象导论</h1><ul>
+<li><p>编程语言始于对机器的模仿，但并非机器那么简单，它是一种不同类型的表达媒体</p>
+</li>
+<li><p>What is Object-oriented Programming?</p>
+</li>
+<li><p>人们所能够解决的问题的复杂性直接取决于抽象的类型和质量</p>
+</li>
+<li><p>解空间：你对问题建模的地方，如机器</p>
+</li>
+<li><p>问题空间：问题存在的地方</p>
+</li>
+</ul>
+<h2 id="The-definition-of-Object"><a href="#The-definition-of-Object" class="headerlink" title="The definition of Object"></a>The definition of Object</h2><ol>
+<li><p>问题空间的元素及其在解空间的表示</p>
+</li>
+<li><p>对象具有状态，行为，标识</p></li></ol>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/09/《Java编程思想》读书笔记(第七章)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-09T14:39:56.000Z">2019-04-09</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 559 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/09/《Java编程思想》读书笔记(第七章)的副本/">《Java编程思想》读书笔记(第七章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>三种代码重用机制：组合，继承，代理</p>
-<p>每一个非基本类型的对象都有一个toString()方法，而且当编译器需要一个String而你却只有一个对象时，该方法就会调用</p>
-<p>java使用super关键词来表示超类，表达式super.method()将调用基类版本的scrub()</p>
-<p>java会自动在导出类的构造器中插入对基类构造器的调用</p>
-<p>使用代理时可以拥有更多的控制力，我们可以选择提供成员对象中的方法中的子集</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpaceShipControl</span></span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">backward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpaceShipDetegent</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">private</span> String name;</span><br><span class="line">  <span class="hljs-keyword">private</span> SpaceShipControl ssp=<span class="hljs-keyword">new</span> SpaceShipControl();</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SpaceShipDetegent</span><span class="hljs-params">(String name)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name=name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">backward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> velocity)</span></span>&#123;</span><br><span class="line">    ssp.backward(velocity);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> velocity)</span></span>&#123;</span><br><span class="line">    ssp.backward(velocity);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">    SpaceShipDetegent ssd=<span class="hljs-keyword">new</span> SpaceShipDetegent(<span class="hljs-string">"NASA Protector"</span>);</span><br><span class="line">    ssd.backward(<span class="hljs-number">100</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/09/《Java编程思想》读书笔记(第七章)的副本/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-09T10:13:01.000Z">2019-04-09</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 539 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/09/《Java编程思想》读书笔记(第六章)的副本/">《Java编程思想》读书笔记(第六章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>重构即重写代码，使它更可读，更易理解，并因此更具可维护性</p>
-<p>编写软件的程序员在重构代码时需要考虑<strong>如何把变动的事物与保持不变的事物区分开来</strong></p>
-<p>类库即library</p>
-<p>java访问权限控制等级从最大到最小依次为public,protected,包访问权限（没有关键词），private</p>
-<p>使用类库的一种方式是用全名来指定，如<code>java.util.ArrayList list = new java.util.ArrayList();</code></p>
-<p>还可以使用import关键字</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line">ArrayList list = <span class="hljs-keyword">new</span> ArrayList();</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/09/《Java编程思想》读书笔记(第六章)的副本/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-09T10:13:01.000Z">2019-04-09</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 539 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/09/《Java编程思想》读书笔记(第六章)/">《Java编程思想》读书笔记(第六章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>重构即重写代码，使它更可读，更易理解，并因此更具可维护性</p>
-<p>编写软件的程序员在重构代码时需要考虑<strong>如何把变动的事物与保持不变的事物区分开来</strong></p>
-<p>类库即library</p>
-<p>java访问权限控制等级从最大到最小依次为public,protected,包访问权限（没有关键词），private</p>
-<p>使用类库的一种方式是用全名来指定，如<code>java.util.ArrayList list = new java.util.ArrayList();</code></p>
-<p>还可以使用import关键字</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line">ArrayList list = <span class="hljs-keyword">new</span> ArrayList();</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/09/《Java编程思想》读书笔记(第六章)/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2018/09/05/《Java编程思想》读书笔记(第一章)/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -717,10 +742,6 @@
             <li><a class="pagination-link is-current" href="/categories/Programming/page/3/">3</a></li>
             
             <li><a class="pagination-link has-text-black-ter" href="/categories/Programming/page/4/">4</a></li>
-            
-            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/categories/Programming/page/8/">8</a></li>
             
         </ul>
     </nav>
@@ -770,7 +791,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        72
+                        37
                     </p>
                 </div>
             </div>
@@ -780,7 +801,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -882,7 +903,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">72</span>
+                <span class="level-item tag">36</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Flutter/">
@@ -890,7 +911,7 @@
                 <span class="level-item">Flutter</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Programming/Go/">
@@ -898,7 +919,7 @@
                 <span class="level-item">Go</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Programming/Java/">
@@ -906,9 +927,17 @@
                 <span class="level-item">Java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">52</span>
+                <span class="level-item tag">26</span>
             </span>
-        </a></li></ul></li>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Testing/">
+            <span class="level-start">
+                <span class="level-item">Testing</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
             </ul>
         </div>
     </div>
@@ -939,34 +968,21 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T11:39:45.000Z">2019-06-11</time></div>
+                    <a href="/2019/06/11/等价类划分学习笔记/" class="has-link-black-ter is-size-6">等价类划分学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
                     <a href="/2019/05/29/Golang教程学习笔记/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
-                    <a href="/2019/05/29/Golang教程学习笔记的副本/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T14:08:10.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/Golang安装指南(Ubuntu环境)的副本/" class="has-link-black-ter is-size-6">Golang安装指南(Ubuntu环境)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
                     </p>
@@ -992,7 +1008,20 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T13:35:26.000Z">2019-05-07</time></div>
-                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)的副本/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T09:54:06.000Z">2019-05-07</time></div>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十六章)/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十六章)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
                     </p>
@@ -1013,12 +1042,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/05/">
                 <span class="level-start">
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1029,7 +1069,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">26</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -1040,7 +1080,7 @@
                     <span class="level-item">March 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1051,7 +1091,7 @@
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1062,7 +1102,7 @@
                     <span class="level-item">December 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1073,7 +1113,7 @@
                     <span class="level-item">November 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1084,7 +1124,7 @@
                     <span class="level-item">October 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1095,7 +1135,7 @@
                     <span class="level-item">September 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1106,7 +1146,7 @@
                     <span class="level-item">August 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1127,56 +1167,56 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Android/">
                         <span class="tag">Android</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Flutter/">
                         <span class="tag">Flutter</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Go/">
                         <span class="tag">Go</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Hexo/">
                         <span class="tag">Hexo</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">36</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Linux/">
                         <span class="tag">Linux</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/RxJava/">
                         <span class="tag">RxJava</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1207,34 +1247,21 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T11:39:45.000Z">2019-06-11</time></div>
+                    <a href="/2019/06/11/等价类划分学习笔记/" class="has-link-black-ter is-size-6">等价类划分学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
                     <a href="/2019/05/29/Golang教程学习笔记/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
-                    <a href="/2019/05/29/Golang教程学习笔记的副本/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T14:08:10.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/Golang安装指南(Ubuntu环境)的副本/" class="has-link-black-ter is-size-6">Golang安装指南(Ubuntu环境)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
                     </p>
@@ -1260,7 +1287,20 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T13:35:26.000Z">2019-05-07</time></div>
-                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)的副本/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T09:54:06.000Z">2019-05-07</time></div>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十六章)/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十六章)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
                     </p>
@@ -1281,12 +1321,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/05/">
                 <span class="level-start">
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1297,7 +1348,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">26</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -1308,7 +1359,7 @@
                     <span class="level-item">March 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1319,7 +1370,7 @@
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1330,7 +1381,7 @@
                     <span class="level-item">December 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1341,7 +1392,7 @@
                     <span class="level-item">November 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1352,7 +1403,7 @@
                     <span class="level-item">October 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1363,7 +1414,7 @@
                     <span class="level-item">September 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1374,7 +1425,7 @@
                     <span class="level-item">August 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1395,56 +1446,56 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Android/">
                         <span class="tag">Android</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Flutter/">
                         <span class="tag">Flutter</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Go/">
                         <span class="tag">Go</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Hexo/">
                         <span class="tag">Hexo</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">36</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Linux/">
                         <span class="tag">Linux</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/RxJava/">
                         <span class="tag">RxJava</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 

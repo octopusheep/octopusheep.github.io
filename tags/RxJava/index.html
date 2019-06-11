@@ -202,61 +202,6 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-20T20:15:48.000Z">2019-03-20</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    20 minutes read (About 3056 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/03/21/RxJava2 Official Document Note的副本/">RxJava2 Official Document Note1</a>
-            
-        </h1>
-        <div class="content">
-            <p>针对<a href="http://reactivex.io/" target="_blank" rel="noopener">ReactiveX官网</a>给出的官方文档我做了翻译和总结性笔记</p>
-<h2 id="Observable被观察者"><a href="#Observable被观察者" class="headerlink" title="Observable被观察者"></a>Observable被观察者</h2><p>在ReactiveX中,Observable称为被观察者,Observer称为观察者,subscribe称为订阅,emit称为发射,item成为项目,object称为对象,operator成为操作符。</p>
-<p>观察者可以订阅被观察者。在观察者订阅了被观察者后,观察者可以对被观察者发射出来的任意项目和项目序列作出反应。这个模式促进了并发操作,因为整个过程（which）可以不被等待观察者发射对象的过程阻塞。这个模式是通过创建一个观察者形式的哨兵,他随时准备对被观察者未来可能作出的任何操作作出合适的反映。</p>
-<p>这个页面解释了什么是反应模式（reactive pattern）,什么是观察者和被观察者,观察者怎样订阅被观察者,其他页面展示了你怎样使用各种被观察者操作符来将被观察者连接在一起并改变它们的行为。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/03/21/RxJava2 Official Document Note的副本/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2018-11-20T19:39:52.000Z">2018-11-20</time>
                 
                 <div class="level-item">
@@ -290,60 +235,6 @@
             <div class="level-start">
                 <div class="level-item">
                 <a class="button is-size-7 is-light" href="/2018/11/21/RxJava2学习笔记/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-20T19:39:52.000Z">2018-11-20</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 minutes read (About 805 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/11/21/RxJava2学习笔记的副本/">RxJava2学习笔记</a>
-            
-        </h1>
-        <div class="content">
-            <p>草率地看了些许RxJava的文章，自己的理解是，RxJava结合<strong>观察者模式</strong>实现异步操作，在<strong>观察者</strong>(Observable)流中处理一些事务，当流中一个事物完成后，会通知<strong>被观察者</strong>(Observer)，使其对结果再进行处理。</p>
-<h2 id="工程引用"><a href="#工程引用" class="headerlink" title="工程引用"></a>工程引用</h2><p>在app的build.gradle中添加依赖:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//添加RxJava2依赖</span></span><br><span class="line">implementation <span class="hljs-string">'io.reactivex.rxjava2:rxjava:2.2.3'</span></span><br><span class="line"><span class="hljs-comment">//添加RxAndroid依赖</span></span><br><span class="line">implementation <span class="hljs-string">'io.reactivex.rxjava2:rxandroid:2.1.0'</span></span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/11/21/RxJava2学习笔记的副本/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -416,63 +307,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-06T14:09:03.000Z">2018-10-06</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    21 minutes read (About 3123 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/06/RxJava学习笔记的副本/">RxJava学习笔记</a>
-            
-        </h1>
-        <div class="content">
-            <p>本文内容学习总结来自<a href="https://github.com/rengwuxian" target="_blank" rel="noopener">扔物线</a>所写的<a href="https://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="noopener">给 Android 开发者的 RxJava 详解</a></p>
-<h2 id="什么是RxJava"><a href="#什么是RxJava" class="headerlink" title="什么是RxJava"></a>什么是RxJava</h2><blockquote>
-<p>a library for composing asynchronous and event-based programs using observable sequences for the Java VM</p>
-</blockquote>
-<p>即一个在<strong>Java虚拟机</strong>上使用了<strong>可观测序列</strong>的组合了<strong>异步</strong>和<strong>事件驱动</strong>的<strong>程序</strong>的<strong>库</strong>，RxJava的本质是一个实现异步操作的库, 优点是把复杂的业务逻辑变得简介，可读性强。</p>
-<h2 id="API介绍和原理简析"><a href="#API介绍和原理简析" class="headerlink" title="API介绍和原理简析"></a>API介绍和原理简析</h2><p>RxJava 的异步实现，是通过一种扩展的观察者模式来实现的。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/10/06/RxJava学习笔记的副本/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 </div>
                 
 
@@ -518,7 +352,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        72
+                        37
                     </p>
                 </div>
             </div>
@@ -528,7 +362,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -630,7 +464,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">72</span>
+                <span class="level-item tag">36</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Flutter/">
@@ -638,7 +472,7 @@
                 <span class="level-item">Flutter</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Programming/Go/">
@@ -646,7 +480,7 @@
                 <span class="level-item">Go</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Programming/Java/">
@@ -654,9 +488,17 @@
                 <span class="level-item">Java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">52</span>
+                <span class="level-item tag">26</span>
             </span>
-        </a></li></ul></li>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Testing/">
+            <span class="level-start">
+                <span class="level-item">Testing</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
             </ul>
         </div>
     </div>
@@ -687,34 +529,21 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T11:39:45.000Z">2019-06-11</time></div>
+                    <a href="/2019/06/11/等价类划分学习笔记/" class="has-link-black-ter is-size-6">等价类划分学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
                     <a href="/2019/05/29/Golang教程学习笔记/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
-                    <a href="/2019/05/29/Golang教程学习笔记的副本/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T14:08:10.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/Golang安装指南(Ubuntu环境)的副本/" class="has-link-black-ter is-size-6">Golang安装指南(Ubuntu环境)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
                     </p>
@@ -740,7 +569,20 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T13:35:26.000Z">2019-05-07</time></div>
-                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)的副本/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T09:54:06.000Z">2019-05-07</time></div>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十六章)/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十六章)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
                     </p>
@@ -761,12 +603,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/05/">
                 <span class="level-start">
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -777,7 +630,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">26</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -788,7 +641,7 @@
                     <span class="level-item">March 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -799,7 +652,7 @@
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -810,7 +663,7 @@
                     <span class="level-item">December 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -821,7 +674,7 @@
                     <span class="level-item">November 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -832,7 +685,7 @@
                     <span class="level-item">October 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -843,7 +696,7 @@
                     <span class="level-item">September 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -854,7 +707,7 @@
                     <span class="level-item">August 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -875,56 +728,56 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Android/">
                         <span class="tag">Android</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Flutter/">
                         <span class="tag">Flutter</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Go/">
                         <span class="tag">Go</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Hexo/">
                         <span class="tag">Hexo</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">36</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Linux/">
                         <span class="tag">Linux</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/RxJava/">
                         <span class="tag">RxJava</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -955,34 +808,21 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T11:39:45.000Z">2019-06-11</time></div>
+                    <a href="/2019/06/11/等价类划分学习笔记/" class="has-link-black-ter is-size-6">等价类划分学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
                     <a href="/2019/05/29/Golang教程学习笔记/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
-                    <a href="/2019/05/29/Golang教程学习笔记的副本/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T14:08:10.000Z">2019-05-15</time></div>
-                    <a href="/2019/05/15/Golang安装指南(Ubuntu环境)的副本/" class="has-link-black-ter is-size-6">Golang安装指南(Ubuntu环境)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
                     </p>
@@ -1008,7 +848,20 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T13:35:26.000Z">2019-05-07</time></div>
-                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)的副本/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T09:54:06.000Z">2019-05-07</time></div>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十六章)/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十六章)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
                     </p>
@@ -1029,12 +882,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/05/">
                 <span class="level-start">
                     <span class="level-item">May 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1045,7 +909,7 @@
                     <span class="level-item">April 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">26</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -1056,7 +920,7 @@
                     <span class="level-item">March 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1067,7 +931,7 @@
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1078,7 +942,7 @@
                     <span class="level-item">December 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1089,7 +953,7 @@
                     <span class="level-item">November 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1100,7 +964,7 @@
                     <span class="level-item">October 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1111,7 +975,7 @@
                     <span class="level-item">September 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1122,7 +986,7 @@
                     <span class="level-item">August 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1143,56 +1007,56 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Android/">
                         <span class="tag">Android</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Flutter/">
                         <span class="tag">Flutter</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Git/">
                         <span class="tag">Git</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Go/">
                         <span class="tag">Go</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Hexo/">
                         <span class="tag">Hexo</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">36</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Linux/">
                         <span class="tag">Linux</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/RxJava/">
                         <span class="tag">RxJava</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 

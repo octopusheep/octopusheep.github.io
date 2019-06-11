@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>《Java编程思想》读书笔记(第十一章) - octopusheep</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="数组是保存一组对象的最有效的方式，但是具有固定的尺寸 Java实用类库提供了容器来解决这个问题，其中基本的类型是  List Set Queue Map  这些对象类型也被叫做集合类。Java类库使用了Collection来指代该类库的一个特殊子集，Java编程思想称之为容器。 容器提供了完善的方法来保存对象 不同的容器有不同的特性：Set对于每一个值只保存一个对象，Map是允许你将某一些对象与其">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Java编程思想》读书笔记(第十一章)">
+<meta property="og:url" content="http://octopusheep.com/2019/04/16/《Java编程思想》读书笔记(第十一章)的副本/index.html">
+<meta property="og:site_name" content="octopusheep">
+<meta property="og:description" content="数组是保存一组对象的最有效的方式，但是具有固定的尺寸 Java实用类库提供了容器来解决这个问题，其中基本的类型是  List Set Queue Map  这些对象类型也被叫做集合类。Java类库使用了Collection来指代该类库的一个特殊子集，Java编程思想称之为容器。 容器提供了完善的方法来保存对象 不同的容器有不同的特性：Set对于每一个值只保存一个对象，Map是允许你将某一些对象与其">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://octopusheep.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-05-21T05:53:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《Java编程思想》读书笔记(第十一章)">
+<meta name="twitter:description" content="数组是保存一组对象的最有效的方式，但是具有固定的尺寸 Java实用类库提供了容器来解决这个问题，其中基本的类型是  List Set Queue Map  这些对象类型也被叫做集合类。Java类库使用了Collection来指代该类库的一个特殊子集，Java编程思想称之为容器。 容器提供了完善的方法来保存对象 不同的容器有不同的特性：Set对于每一个值只保存一个对象，Map是允许你将某一些对象与其">
+<meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/octopus.jpg" alt="《Java编程思想》读书笔记(第十一章)" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/octopusheep">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-16T15:29:39.000Z">2019-04-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    12 minutes read (About 1859 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                《Java编程思想》读书笔记(第十一章)
+            
+        </h1>
+        <div class="content">
+            <p>数组是保存一组对象的最有效的方式，但是具有固定的尺寸</p>
+<p>Java实用类库提供了容器来解决这个问题，其中基本的类型是</p>
+<ol>
+<li>List</li>
+<li>Set</li>
+<li>Queue</li>
+<li>Map</li>
+</ol>
+<p>这些对象类型也被叫做集合类。Java类库使用了Collection来指代该类库的一个特殊子集，Java编程思想称之为容器。</p>
+<p>容器提供了完善的方法来保存对象</p>
+<p>不同的容器有不同的特性：Set对于每一个值只保存一个对象，Map是允许你将某一些对象与其他一些对象关联起来的关联数组。</p>
+<p>Java容器类可以自动调整自己的尺寸。</p>
+<a id="more"></a>
+<h2 id="范型与类型安全的容器"><a href="#范型与类型安全的容器" class="headerlink" title="范型与类型安全的容器"></a>范型与类型安全的容器</h2><p>使用ArrayList的基本步骤： </p>
+<ol>
+<li>创建一个实例</li>
+<li>用add()插入对象</li>
+<li>用get()访问对象</li>
+</ol>
+<p>访问对象时需要使用索引，就像数组一样，但是不需要方括号</p>
+<p>ArrayList还有一个size()方法，查看List中有多少个元素</p>
+<p>注解以@符号开头，可以接受参数</p>
+<p><code>@SuppressWarnings(&quot;unchecked&quot;)</code>表示只有有关”不受检查的异常“的警告信息应该被抑制</p>
+<p>如果一个类没有显式的声明继承自哪一个类，那么它将自动继承自Object</p>
+<p>定义保存特定类型的ArrayList可以声明 <code>ArrayList&lt;Type&gt;</code>，其中尖括号括起来的就是<strong>类型参数</strong>，它指定了这个容器类可以保存的类型</p>
+<p>通过使用范型，就可以在编译期防止将错误类型对象放置到容器中</p>
+<p>将元素从指定了范型的容器中取出，不再需要downcasting向下转型，因为容器知道它保存的是什么类型</p>
+<p>java对象的默认打印是由Object默认的toString()方法产生的，该方法将打印类名，后面跟随该对象的散列码的无符号十六进制表示（该散列码是通过hashCode()方法产生的）</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>java容器类类库的作用是保存对象，划分为两个概念：</p>
+<ol>
+<li>Collection，一个独立元素的序列</li>
+<li>Map，一组成对的键值对对象</li>
+</ol>
+<p>映射表允许我们使用另一个对象来查找某个对象，它也被称为关联数组</p>
+<p>创建容器的实例应该创建一个具体类的对象，将其转型为对应的接口，在其余代码内都使用这个接口</p>
+<h2 id="添加一组元素"><a href="#添加一组元素" class="headerlink" title="添加一组元素"></a>添加一组元素</h2><p>Arrays.asList()接收一个数组或一个用逗号分隔的元素列表（使用可变参数），并将其转换为List对象</p>
+<p>Collections.addAll()方法接收一个Collection对象，以及一个数组或逗号分割的列表，将元素添加到Collection中</p>
+<p>可以在Arrays.asList()中插入一条线索，以告诉编译器对于由该方法产生的List类型，实际的目标类型应该是什么，这是<strong>显式类型参数说明</strong></p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Snow&gt; snow4=Arrays.&lt;Snow&gt;asList(<span class="hljs-keyword">new</span> Light(),<span class="hljs-keyword">new</span> Heavy());</span><br></pre></td></tr></table></figure>
+
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p>List接口在Collection的基础上添加了大量的方法，使得可以在List的中间插入和移除元素</p>
+<p>List有两种类型：</p>
+<ol>
+<li>ArrayList<br>擅长于随即访问元素，但是在LIst中间插入和移除元素时较慢</li>
+<li>LinkedList<br>可以已代价较低的在List中间进行插入和删除操作，提供了优化的顺序访问，但是在随机访问方面比较慢，但是他的特性集比ArrayList更大</li>
+</ol>
+<p>page 223</p>
+<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><p>java的Iterator只能单向移动，只能用来：</p>
+<ol>
+<li>对Collection容器类使用方法iterator()返回一个Iterator，Iterator将准备号返回序列中的第一个元素</li>
+<li>使用next()获得序列中的下一个元素</li>
+<li>使用hasNext()检查序列中是否还有元素</li>
+<li>使用remove()将迭代器新近返回的元素删除</li>
+</ol>
+<p>Iterator也支持范型</p>
+<p>Iterator能将遍历序列的操作与序列底层的结构分离</p>
+<p>迭代器统一了对容器的访问方式</p>
+<h3 id="ListIterator"><a href="#ListIterator" class="headerlink" title="ListIterator"></a>ListIterator</h3><p>通过调用listIterator()方法产生一个指向List开始处的ListIterator;</p>
+<p>listIterator(n)可以创建一个一开始就指向列表索引为n的元素处的ListIterator</p>
+<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>效果</th>
+<th>类似方法</th>
+<th>效果差别</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getFirst()和element()</td>
+<td>返回List的第一个元素，而并不移除它,如果List为空，则抛出NoSuchElementException</td>
+<td>peek()</td>
+<td>如果List为空，则返回null</td>
+</tr>
+<tr>
+<td>removeFirst()和remove()</td>
+<td>移除并返回列表的头，在列表为空时抛出NoSuchElementException</td>
+<td>poll()</td>
+<td>在列表为空时返回null</td>
+</tr>
+</tbody></table>
+<h2 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h2><p>栈通常是指后进先出的容器，最后一个压入栈的元素，第一个弹出栈</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Stack</span>&lt;<span class="hljs-title">T</span>&gt;</span>&#123;</span><br><span class="line">	<span class="hljs-keyword">private</span> LinkedList&lt;T&gt; storage=<span class="hljs-keyword">new</span> LinkedList&lt;T&gt;();</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(T v)</span></span>&#123;storage.addFirst(v);&#125;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">peek</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> storage.getFirst();&#125;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">pop</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> storage.removeFirst();&#125;</span><br><span class="line">	<span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> isEmpty&#123;<span class="hljs-keyword">return</span> storage.isEmpty();&#125;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> storage.toString();&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>类名之后的<t>告诉编译器这将是一个参数化类型，而其中的类型参数，即在类被使用的时候会被实际类型替换的参数，就是T。大体上就是在声明我们在定义一个可以持有T类型对象的Stack</t></p>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>Set是基于对象的值来确定归属性的</p>
+<p>出于速度原因的考虑，HashSet使用了散列</p>
+<p>contains()可以测试Set的归属性</p>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>Java的自动包装机制会将随机生成的int转化为HashMap可以使用的Integer引用</p>
+<p>如果key不在Map容器中，get()方法将返回null，否则get()方法将返回与该键相关联的值对象</p>
+<p>Map与数组和其他Collection一样很容易扩展到多维，只需要将其值设置为Map</p>
+<p>keySet()方法产生Map中所有键组合成的Set</p>
+<h2 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h2><p>队列是典型的先进先出的容器(FIFO)</p>
+<p>offer()方法将一个元素插入队尾，或者返回false</p>
+<p>peek()和element()都在不移除元素的情况下返回队头</p>
+<h3 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a>PriorityQueue</h3><p>FIFO先进先出声明的是下一个元素应该是等待时间最长的元素</p>
+<p>优先级队列声明的是下一个弹出的元素应该是最需要的元(具有最高的优先级)</p>
+<p>优先级队列在Java SE5中被添加</p>
+<p>当我们对一个PriorityQueue调用offer()方法来插入一个对象时，这个对象会在队列中被排序，默认顺序是使用对象在队列中的自然顺序，通过提供自己的Comparator来修改这个顺序</p>
+<p>优先级队列可以确保调用peek(),poll(),remove()是，获取的元素是队列中优先级最高的元素</p>
+<h2 id="Collection和Iterator"><a href="#Collection和Iterator" class="headerlink" title="Collection和Iterator"></a>Collection和Iterator</h2><p>Collection是描述所有序列容器的共性的根接口</p>
+<p>通过针对接口而非具体类型来编写代码，我们的代码就可以应用于更多的对象类型</p>
+<p>Collection和Iterator都可以将显示容器内容的实现与底层容器的特定实现解耦</p>
+<h2 id="foreach与迭代器"><a href="#foreach与迭代器" class="headerlink" title="foreach与迭代器"></a>foreach与迭代器</h2><p>foreach语法可以用于数组和任何Collection对象，实现了Iterable接口的类</p>
+<h3 id="适配其方法惯用法"><a href="#适配其方法惯用法" class="headerlink" title="适配其方法惯用法"></a>适配其方法惯用法</h3><p>覆盖Collection对象，添加一个能够产生Iterable对象的方法</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/">Java</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="Alipay"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wechat.jpg" alt="Wechat"></div>
+</a>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<a class="button is-warning donate" onclick="document.getElementById(&#39;paypal-donate-form&#39;).submit()">
+    <span class="icon is-small">
+        <i class="fab fa-paypal"></i>
+    </span>
+    <span>Paypal</span>
+</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal-donate-form">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="octopusheep@gmail.com">
+    <input type="hidden" name="currency_code" value="USD">
+</form>
+
+                
+                
+<a class="button is-danger donate" href="https://www.octopusheep.com" target="_blank">
+    <span class="icon is-small">
+        <i class="fab fa-patreon"></i>
+    </span>
+    <span>Patreon</span>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/18/《Java编程思想》读书笔记(第十二章)的副本/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">《Java编程思想》读书笔记(第十二章)</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/16/《Java编程思想》读书笔记(第十一章)/">
+                <span class="level-item">《Java编程思想》读书笔记(第十一章)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image container is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/dog.jpg" alt="Octopusheep">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Octopusheep
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Android Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Earth,Solar System</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        72
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        8
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/octopusheep" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/octopusheep">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="http://github.com/octopusheep">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="http://github.com/octopusheep">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="http://github.com/octopusheep">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#范型与类型安全的容器">
+        <span class="has-mr-6">1</span>
+        <span>范型与类型安全的容器</span>
+        </a></li><li>
+        <a class="is-flex" href="#基本概念">
+        <span class="has-mr-6">2</span>
+        <span>基本概念</span>
+        </a></li><li>
+        <a class="is-flex" href="#添加一组元素">
+        <span class="has-mr-6">3</span>
+        <span>添加一组元素</span>
+        </a></li><li>
+        <a class="is-flex" href="#List">
+        <span class="has-mr-6">4</span>
+        <span>List</span>
+        </a></li><li>
+        <a class="is-flex" href="#迭代器">
+        <span class="has-mr-6">5</span>
+        <span>迭代器</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#ListIterator">
+        <span class="has-mr-6">5.1</span>
+        <span>ListIterator</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#LinkedList">
+        <span class="has-mr-6">6</span>
+        <span>LinkedList</span>
+        </a></li><li>
+        <a class="is-flex" href="#Stack">
+        <span class="has-mr-6">7</span>
+        <span>Stack</span>
+        </a></li><li>
+        <a class="is-flex" href="#Set">
+        <span class="has-mr-6">8</span>
+        <span>Set</span>
+        </a></li><li>
+        <a class="is-flex" href="#Map">
+        <span class="has-mr-6">9</span>
+        <span>Map</span>
+        </a></li><li>
+        <a class="is-flex" href="#Queue">
+        <span class="has-mr-6">10</span>
+        <span>Queue</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#PriorityQueue">
+        <span class="has-mr-6">10.1</span>
+        <span>PriorityQueue</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Collection和Iterator">
+        <span class="has-mr-6">11</span>
+        <span>Collection和Iterator</span>
+        </a></li><li>
+        <a class="is-flex" href="#foreach与迭代器">
+        <span class="has-mr-6">12</span>
+        <span>foreach与迭代器</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#适配其方法惯用法">
+        <span class="has-mr-6">12.1</span>
+        <span>适配其方法惯用法</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://www.jianshu.com/u/704704d68647" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Jianshu</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">www.jianshu.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Programming/">
+            <span class="level-start">
+                <span class="level-item">Programming</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">72</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Programming/Flutter/">
+            <span class="level-start">
+                <span class="level-item">Flutter</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming/Go/">
+            <span class="level-start">
+                <span class="level-item">Go</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming/Java/">
+            <span class="level-start">
+                <span class="level-item">Java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">52</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
+                    <a href="/2019/05/29/Golang教程学习笔记/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
+                    <a href="/2019/05/29/Golang教程学习笔记的副本/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T14:08:10.000Z">2019-05-15</time></div>
+                    <a href="/2019/05/15/Golang安装指南(Ubuntu环境)的副本/" class="has-link-black-ter is-size-6">Golang安装指南(Ubuntu环境)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T14:08:10.000Z">2019-05-15</time></div>
+                    <a href="/2019/05/15/Golang安装指南(Ubuntu环境)/" class="has-link-black-ter is-size-6">Golang安装指南(Ubuntu环境)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T13:35:26.000Z">2019-05-07</time></div>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)的副本/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">26</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">12</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Android/">
+                        <span class="tag">Android</span>
+                        <span class="tag is-grey">12</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Flutter/">
+                        <span class="tag">Flutter</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Git/">
+                        <span class="tag">Git</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Go/">
+                        <span class="tag">Go</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">36</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux/">
+                        <span class="tag">Linux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RxJava/">
+                        <span class="tag">RxJava</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
+                    <a href="/2019/05/29/Golang教程学习笔记/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
+                    <a href="/2019/05/29/Golang教程学习笔记的副本/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T14:08:10.000Z">2019-05-15</time></div>
+                    <a href="/2019/05/15/Golang安装指南(Ubuntu环境)的副本/" class="has-link-black-ter is-size-6">Golang安装指南(Ubuntu环境)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-15T14:08:10.000Z">2019-05-15</time></div>
+                    <a href="/2019/05/15/Golang安装指南(Ubuntu环境)/" class="has-link-black-ter is-size-6">Golang安装指南(Ubuntu环境)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-07T13:35:26.000Z">2019-05-07</time></div>
+                    <a href="/2019/05/07/《Java编程思想》读书笔记(第十七章)的副本/" class="has-link-black-ter is-size-6">《Java编程思想》读书笔记(第十七章)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">26</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">12</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Android/">
+                        <span class="tag">Android</span>
+                        <span class="tag is-grey">12</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Flutter/">
+                        <span class="tag">Flutter</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Git/">
+                        <span class="tag">Git</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Go/">
+                        <span class="tag">Go</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">36</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux/">
+                        <span class="tag">Linux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RxJava/">
+                        <span class="tag">RxJava</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/octopus.jpg" alt="《Java编程思想》读书笔记(第十一章)" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 octopusheep&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

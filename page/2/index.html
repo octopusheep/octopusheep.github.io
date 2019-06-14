@@ -137,6 +137,66 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-29T10:00:35.000Z">2019-04-29</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 543 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/29/《Java编程思想》读书笔记(第十四章)/">《Java编程思想》读书笔记(第十四章)</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>运行时类型信息使得你可以在程序运行时发现和使用类型信息</p>
+</blockquote>
+<h2 id="为什么需要RTTI"><a href="#为什么需要RTTI" class="headerlink" title="为什么需要RTTI"></a>为什么需要RTTI</h2><p>面向对象编程的基本的目的是：让代码只操纵对基类的引用</p>
+<p>通常会创建一个具体对象，把它向上转型为基类</p>
+<h2 id="CLASS对象"><a href="#CLASS对象" class="headerlink" title="CLASS对象"></a>CLASS对象</h2><p>类是程序的一部分，每一个类都有一个class对象</p>
+<p>每当编写并且编译了一个新类，就会产生一个class对象（被保存在了一个同名的.class文件中）。为了生成这个类的对象，运行这个类的JVM将使用被称为“类加载器”的子系统</p>
+<h3 id="类字面常量"><a href="#类字面常量" class="headerlink" title="类字面常量"></a>类字面常量</h3><p>java提供类字面常量来生成对Class对象的引用</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FancyToy.class</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/29/《Java编程思想》读书笔记(第十四章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-04-24T16:22:10.000Z">2019-04-24</time>
                 
                 <div class="level-item">
@@ -661,68 +721,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-08T17:37:33.000Z">2019-04-08</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 minutes read (About 1054 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/09/《Java编程思想》读书笔记(第五章)/">《Java编程思想》读书笔记(第五章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>java提供构造器，确保每个对象都会得到初始化</p>
-<p>构造器采用与类相同的名称</p>
-<p>创建对象时，先为对象分配足够的存储空间，再调用相应的构造器</p>
-<p>由于构造器的名称必须与类完全相同，所以每个方法首字母小写的编码风格并不适用于构造器</p>
-<p>不接受任何参数的构造器叫做默认构造器，javaDoc中经常使用术语“无参构造器”</p>
-<p>如果一个类中只有一个构造器，那么编译器将不会允许你以其他方式创建这个类</p>
-<p>构造器是一种特殊类型的方法，不仅没有返回值，也不会返回任何东西</p>
-<p>每一个重载的方法都必须有一个独一无二的参数类型列表，参数顺序不同也足以区分两个方法</p>
-<p>基本类型能从一个较小的类型自动提升至一个较大的类型</p>
-<p>如果传入的实际参数大于重载方法声明的形式参数，就需要通过类型转换来执行窄化转换</p>
-<p>不能通过返回值来区分重载方法</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/09/《Java编程思想》读书笔记(第五章)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -742,6 +740,8 @@
             <li><a class="pagination-link has-text-black-ter" href="/page/3/">3</a></li>
             
             <li><a class="pagination-link has-text-black-ter" href="/page/4/">4</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/5/">5</a></li>
             
         </ul>
     </nav>
@@ -791,7 +791,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        40
+                        41
                     </p>
                 </div>
             </div>
@@ -903,7 +903,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">37</span>
+                <span class="level-item tag">38</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -911,7 +911,7 @@
                 <span class="level-item">Docker</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Programming/Flutter/">
@@ -965,7 +965,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a>
+        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a>
     </div>
 </div>
 
@@ -979,6 +979,19 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-14T16:00:24.000Z">2019-06-14</time></div>
+                    <a href="/2019/06/15/docker官方文档学习笔记/" class="has-link-black-ter is-size-6">docker官方文档学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1032,19 +1045,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
-                    <a href="/2019/05/29/Golang教程学习笔记/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1063,7 +1063,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1190,7 +1190,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Docker/">
                         <span class="tag">Docker</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1277,6 +1277,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-14T16:00:24.000Z">2019-06-14</time></div>
+                    <a href="/2019/06/15/docker官方文档学习笔记/" class="has-link-black-ter is-size-6">docker官方文档学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-14T11:56:30.000Z">2019-06-14</time></div>
                     <a href="/2019/06/14/docker安装指南及基本操作(Mac环境)/" class="has-link-black-ter is-size-6">docker安装指南及基本操作(Mac环境)</a>
                     <p class="is-size-7 is-uppercase">
@@ -1325,19 +1338,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
-                    <a href="/2019/05/29/Golang教程学习笔记/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1356,7 +1356,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1483,7 +1483,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Docker/">
                         <span class="tag">Docker</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 

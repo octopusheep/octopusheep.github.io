@@ -2,20 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Category: Flutter - octopusheep</title>
+<title>docker官方文档学习笔记 - octopusheep</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="keywords" content="octopusheep">
-<meta property="og:type" content="website">
-<meta property="og:title" content="octopusheep">
-<meta property="og:url" content="http://octopusheep.com/categories/Programming/Flutter/index.html">
+    <meta name="description" content="as some kind of notes for better understanding docker and this is my original article为了更好的理解和学习docker所作的笔记 some basic concept what difference between container and VM? as the picture below: A contai">
+<meta name="keywords" content="Docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker官方文档学习笔记">
+<meta property="og:url" content="http://octopusheep.com/2019/06/15/docker官方文档学习笔记/index.html">
 <meta property="og:site_name" content="octopusheep">
+<meta property="og:description" content="as some kind of notes for better understanding docker and this is my original article为了更好的理解和学习docker所作的笔记 some basic concept what difference between container and VM? as the picture below: A contai">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-06-14T08:30:13.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="octopusheep">
+<meta name="twitter:title" content="docker官方文档学习笔记">
+<meta name="twitter:description" content="as some kind of notes for better understanding docker and this is my original article为了更好的理解和学习docker所作的笔记 some basic concept what difference between container and VM? as the picture below: A contai">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
 
@@ -85,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/octopus.jpg" alt="octopusheep" height="28">
+                <img src="/images/octopus.jpg" alt="docker官方文档学习笔记" height="28">
             
             </a>
         </div>
@@ -117,6 +121,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -131,139 +139,136 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-14T16:00:24.000Z">2019-06-14</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 172 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                docker官方文档学习笔记
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+
+<p>as some kind of notes for better understanding docker and this is my original article<br>为了更好的理解和学习docker所作的笔记</p>
+<h2 id="some-basic-concept"><a href="#some-basic-concept" class="headerlink" title="some basic concept"></a>some basic concept</h2><ul>
+<li><p>what difference between container and VM?</p>
+<p>as the picture below:<br><img src="/images/58.png" alt></p>
+<p>A container can natively runs on Linux and share the kernel of the host machine with other containers</p>
+<p>A virtual machine (VM) runs a full-size “guset” operating system with virtual access to host resources through a hypervisor</p>
+<p>and definitely VMs provide an environment with more resources than most applications need</p>
+</li>
+<li><p>containers and images</p>
+<p>a container is launched by running an image</p>
+<p>a container is a runtime instance of an image</p>
+</li>
+</ul>
+<h2 id="docker-command"><a href="#docker-command" class="headerlink" title="docker command"></a>docker command</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">## List Docker CLI commands</span><br><span class="line">docker</span><br><span class="line">docker container --help</span><br><span class="line"></span><br><span class="line">## Display Docker version and info</span><br><span class="line">docker --version</span><br><span class="line">docker version</span><br><span class="line">docker info</span><br><span class="line"></span><br><span class="line">## Execute Docker image</span><br><span class="line">docker run hello-world</span><br><span class="line"></span><br><span class="line">## List Docker images</span><br><span class="line">docker image ls</span><br><span class="line"></span><br><span class="line">## List Docker containers (running, all, all in quiet mode)</span><br><span class="line">docker container ls</span><br><span class="line">docker container ls --all</span><br><span class="line">docker container ls -aq</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Docker/">Docker</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">Categories</a></li>
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
             
-            <li><a href="/categories/Programming/">Programming</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">Flutter</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="Alipay"></div>
+</a>
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-01T19:33:34.000Z">2018-10-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Flutter/">Flutter</a>
-                </div>
                 
                 
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 371 words)
-                </span>
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wechat.jpg" alt="Wechat"></div>
+</a>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<a class="button is-warning donate" onclick="document.getElementById(&#39;paypal-donate-form&#39;).submit()">
+    <span class="icon is-small">
+        <i class="fab fa-paypal"></i>
+    </span>
+    <span>Paypal</span>
+</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal-donate-form">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="octopusheep@gmail.com">
+    <input type="hidden" name="currency_code" value="USD">
+</form>
+
                 
                 
-            </div>
+<a class="button is-danger donate" href="https://www.octopusheep.com" target="_blank">
+    <span class="icon is-small">
+        <i class="fab fa-patreon"></i>
+    </span>
+    <span>Patreon</span>
+</a>
+
+                
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/02/Flutter学习笔记(Tour the framework)/">Flutter学习笔记(Tour the framework)</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><blockquote>
-<p>Flutter widget are built by a modern react-style framework and the widget have their own configuration and state which can support the rebuilt process when those two varieties changes</p>
-</blockquote>
-<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><p>the simpiest flutter application likes this:</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line"></span><br><span class="line">void main()&#123;</span><br><span class="line">   runApp(</span><br><span class="line">      Center(</span><br><span class="line">         child: Text(</span><br><span class="line">            &apos;Hello,world!&apos;,</span><br><span class="line">            textDirection: TextDirection.lrt,</span><br><span class="line">         ),</span><br><span class="line">      ),	</span><br><span class="line">   );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/10/02/Flutter学习笔记(Tour the framework)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
     </div>
 </div>
 
 
 
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-09-29T11:20:46.000Z">2018-09-29</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Flutter/">Flutter</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 615 words)
-                </span>
-                
-                
-            </div>
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/14/docker安装指南及基本操作(Mac环境)/">
+                <span class="level-item">docker安装指南及基本操作(Mac环境)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/09/29/Flutter安装指南(Ubuntu环境)/">Flutter安装指南(Ubuntu环境)</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>根据<a href="https://flutter.io/" target="_blank" rel="noopener">flutter</a>官网的说法</p>
-<blockquote>
-<p>Flutter是谷歌的移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面。</p>
-</blockquote>
-<p>其优点总结起来包括：</p>
-<ol>
-<li><p>亚秒级别的热重载</p>
-</li>
-<li><p>媲美原生应用的性能</p>
-</li>
-<li><p>丰富的UI</p>
-</li>
-</ol>
-<p>个人认为flutter作为一个跨平台的UI框架，热重载是其最吸引人的功能，笔者目前负责的新闻项目涉及到切换主题后，应用内部的部分组件颜色也要随主题颜色变化，使用flutter框架进行开发，可以直接热重载应用界面而不用重走应用的生命周期，考虑到种种因素，故对flutter做预研。</p>
-<p>主要步骤已由<a href="https://flutterchina.club/setup-linux/" target="_blank" rel="noopener">Flutter中文网</a>给出，我重新整理了一下。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/09/29/Flutter安装指南(Ubuntu环境)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
         
     </div>
 </div>
-
-
-
-
-
-
 
 
 </div>
@@ -380,6 +385,25 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#some-basic-concept">
+        <span class="has-mr-6">1</span>
+        <span>some basic concept</span>
+        </a></li><li>
+        <a class="is-flex" href="#docker-command">
+        <span class="has-mr-6">2</span>
+        <span>docker command</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -1080,7 +1104,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/octopus.jpg" alt="octopusheep" height="28">
+                    <img src="/images/octopus.jpg" alt="docker官方文档学习笔记" height="28">
                 
                 </a>
                 <p class="is-size-7">

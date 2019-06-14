@@ -148,6 +148,65 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-14T16:00:24.000Z">2019-06-14</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 172 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/15/docker官方文档学习笔记/">docker官方文档学习笔记</a>
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+
+<p>as some kind of notes for better understanding docker and this is my original article<br>为了更好的理解和学习docker所作的笔记</p>
+<h2 id="some-basic-concept"><a href="#some-basic-concept" class="headerlink" title="some basic concept"></a>some basic concept</h2><ul>
+<li><p>what difference between container and VM?</p>
+<p>as the picture below:<br><img src="/images/58.png" alt></p>
+<p>A container can natively runs on Linux and share the kernel of the host machine with other containers</p>
+<p>A virtual machine (VM) runs a full-size “guset” operating system with virtual access to host resources through a hypervisor</p>
+<p>and definitely VMs provide an environment with more resources than most applications need</p>
+</li>
+<li><p>containers and images</p>
+<p>a container is launched by running an image</p>
+<p>a container is a runtime instance of an image</p>
+</li>
+</ul>
+<h2 id="docker-command"><a href="#docker-command" class="headerlink" title="docker command"></a>docker command</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">## List Docker CLI commands</span><br><span class="line">docker</span><br><span class="line">docker container --help</span><br><span class="line"></span><br><span class="line">## Display Docker version and info</span><br><span class="line">docker --version</span><br><span class="line">docker version</span><br><span class="line">docker info</span><br><span class="line"></span><br><span class="line">## Execute Docker image</span><br><span class="line">docker run hello-world</span><br><span class="line"></span><br><span class="line">## List Docker images</span><br><span class="line">docker image ls</span><br><span class="line"></span><br><span class="line">## List Docker containers (running, all, all in quiet mode)</span><br><span class="line">docker container ls</span><br><span class="line">docker container ls --all</span><br><span class="line">docker container ls -aq</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-06-14T11:56:30.000Z">2019-06-14</time>
                 
                 <div class="level-item">
@@ -672,69 +731,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-16T15:29:39.000Z">2019-04-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 minutes read (About 1859 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/16/《Java编程思想》读书笔记(第十一章)/">《Java编程思想》读书笔记(第十一章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>数组是保存一组对象的最有效的方式，但是具有固定的尺寸</p>
-<p>Java实用类库提供了容器来解决这个问题，其中基本的类型是</p>
-<ol>
-<li>List</li>
-<li>Set</li>
-<li>Queue</li>
-<li>Map</li>
-</ol>
-<p>这些对象类型也被叫做集合类。Java类库使用了Collection来指代该类库的一个特殊子集，Java编程思想称之为容器。</p>
-<p>容器提供了完善的方法来保存对象</p>
-<p>不同的容器有不同的特性：Set对于每一个值只保存一个对象，Map是允许你将某一些对象与其他一些对象关联起来的关联数组。</p>
-<p>Java容器类可以自动调整自己的尺寸。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/16/《Java编程思想》读书笔记(第十一章)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -803,7 +799,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        40
+                        41
                     </p>
                 </div>
             </div>
@@ -915,7 +911,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">37</span>
+                <span class="level-item tag">38</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -923,7 +919,7 @@
                 <span class="level-item">Docker</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Programming/Flutter/">
@@ -977,7 +973,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a>
+        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a>
     </div>
 </div>
 
@@ -991,6 +987,19 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-14T16:00:24.000Z">2019-06-14</time></div>
+                    <a href="/2019/06/15/docker官方文档学习笔记/" class="has-link-black-ter is-size-6">docker官方文档学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1044,19 +1053,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
-                    <a href="/2019/05/29/Golang教程学习笔记/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1075,7 +1071,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1202,7 +1198,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Docker/">
                         <span class="tag">Docker</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1289,6 +1285,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-14T16:00:24.000Z">2019-06-14</time></div>
+                    <a href="/2019/06/15/docker官方文档学习笔记/" class="has-link-black-ter is-size-6">docker官方文档学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-14T11:56:30.000Z">2019-06-14</time></div>
                     <a href="/2019/06/14/docker安装指南及基本操作(Mac环境)/" class="has-link-black-ter is-size-6">docker安装指南及基本操作(Mac环境)</a>
                     <p class="is-size-7 is-uppercase">
@@ -1337,19 +1346,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time></div>
-                    <a href="/2019/05/29/Golang教程学习笔记/" class="has-link-black-ter is-size-6">Golang教程学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1368,7 +1364,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1495,7 +1491,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Docker/">
                         <span class="tag">Docker</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 

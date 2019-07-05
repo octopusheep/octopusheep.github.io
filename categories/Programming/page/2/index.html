@@ -148,6 +148,82 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-17T20:51:31.000Z">2019-04-17</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 minutes read (About 1256 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/18/《Java编程思想》读书笔记(第十二章)/">《Java编程思想》读书笔记(第十二章)</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>Java的基本理念是结构不佳的代码不能运行</p>
+</blockquote>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>Java的异常处理机制建立在C++的基础之上</p>
+<p>异常处理方式将“描述在正常执行过程中做什么事”的代码和“出了问题怎么办”的代码相分离</p>
+<h2 id="基本异常"><a href="#基本异常" class="headerlink" title="基本异常"></a>基本异常</h2><p>exception conidtion异常情形是指阻止当前方法或作用域继续执行的问题</p>
+<table>
+<thead>
+<tr>
+<th>普通问题</th>
+<th>异常情形</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>在当前环境下能得到足够的信息，总能处理这个错误</td>
+<td>在当前环境下无法获得必要的信息来解决问题</td>
+</tr>
+</tbody></table>
+<p>抛出异常后发生的事情：</p>
+<ol>
+<li>使用new在堆上创建异常对象</li>
+<li>当前执行路径被终止，并且从当前环境中弹出对异常对象的引用</li>
+<li>异常处理机制接管程序，开始寻找恰当的地方来继续执行程序</li>
+</ol>
+<p>异常使得我们可以将每件事都当作是一个事物来考虑</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/18/《Java编程思想》读书笔记(第十二章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-04-16T15:29:39.000Z">2019-04-16</time>
                 
                 <div class="level-item">
@@ -666,61 +742,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-20T20:15:48.000Z">2019-03-20</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    20 minutes read (About 3056 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/03/21/RxJava2 Official Document Note/">RxJava2 Official Document Note1</a>
-            
-        </h1>
-        <div class="content">
-            <p>针对<a href="http://reactivex.io/" target="_blank" rel="noopener">ReactiveX官网</a>给出的官方文档我做了翻译和总结性笔记</p>
-<h2 id="Observable被观察者"><a href="#Observable被观察者" class="headerlink" title="Observable被观察者"></a>Observable被观察者</h2><p>在ReactiveX中,Observable称为被观察者,Observer称为观察者,subscribe称为订阅,emit称为发射,item成为项目,object称为对象,operator成为操作符。</p>
-<p>观察者可以订阅被观察者。在观察者订阅了被观察者后,观察者可以对被观察者发射出来的任意项目和项目序列作出反应。这个模式促进了并发操作,因为整个过程（which）可以不被等待观察者发射对象的过程阻塞。这个模式是通过创建一个观察者形式的哨兵,他随时准备对被观察者未来可能作出的任何操作作出合适的反映。</p>
-<p>这个页面解释了什么是反应模式（reactive pattern）,什么是观察者和被观察者,观察者怎样订阅被观察者,其他页面展示了你怎样使用各种被观察者操作符来将被观察者连接在一起并改变它们的行为。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/03/21/RxJava2 Official Document Note/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -789,7 +810,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        42
+                        43
                     </p>
                 </div>
             </div>
@@ -809,7 +830,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        11
+                        12
                     </p>
                 </div>
             </div>
@@ -901,7 +922,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">38</span>
+                <span class="level-item tag">39</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -963,7 +984,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 10px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -977,6 +998,19 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T10:21:15.000Z">2019-07-04</time></div>
+                    <a href="/2019/07/04/Elasticsearch学习笔记/" class="has-link-black-ter is-size-6">Elasticsearch学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1030,19 +1064,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T14:47:03.000Z">2019-06-11</time></div>
-                    <a href="/2019/06/11/状态机学习笔记/" class="has-link-black-ter is-size-6">FSM有限状态机学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1054,6 +1075,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/06/">
@@ -1189,6 +1221,13 @@
                     <a class="tags has-addons" href="/tags/Docker/">
                         <span class="tag">Docker</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Elasticsearch/">
+                        <span class="tag">Elasticsearch</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1282,6 +1321,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T10:21:15.000Z">2019-07-04</time></div>
+                    <a href="/2019/07/04/Elasticsearch学习笔记/" class="has-link-black-ter is-size-6">Elasticsearch学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-15T22:49:53.000Z">2019-06-15</time></div>
                     <a href="/2019/06/16/数据结构学习笔记/" class="has-link-black-ter is-size-6">数据结构学习笔记</a>
                     <p class="is-size-7 is-uppercase">
@@ -1330,19 +1382,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-11T14:47:03.000Z">2019-06-11</time></div>
-                    <a href="/2019/06/11/状态机学习笔记/" class="has-link-black-ter is-size-6">FSM有限状态机学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1354,6 +1393,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/06/">
@@ -1489,6 +1539,13 @@
                     <a class="tags has-addons" href="/tags/Docker/">
                         <span class="tag">Docker</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Elasticsearch/">
+                        <span class="tag">Elasticsearch</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 

@@ -2,24 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>docker官方文档学习笔记 - octopusheep</title>
+<title>Elasticsearch学习笔记 - octopusheep</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="as some kind of notes for better understanding docker and this is my original article为了更好的理解和学习docker所作的笔记 orientationsome basic concept what difference between container and VM? as the picture below:">
-<meta name="keywords" content="Docker">
+    <meta name="description" content="本文翻译总结自Elasticsearch官方文档，都是我自己翻译的yo！  You know, for search(and analysis)  Elasticsearch简介elasticsearch是一个分布式的搜索和分析引擎，它基于elasticstack的核心功能。 logstash和beats用于促成收集、整合、丰富你的数据，并将数据存储在elasticsearch中。 kibana">
+<meta name="keywords" content="Elasticsearch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker官方文档学习笔记">
-<meta property="og:url" content="http://octopusheep.com/2019/06/15/docker官方文档学习笔记/index.html">
+<meta property="og:title" content="Elasticsearch学习笔记">
+<meta property="og:url" content="http://octopusheep.com/2019/07/04/Elasticsearch学习笔记/index.html">
 <meta property="og:site_name" content="octopusheep">
-<meta property="og:description" content="as some kind of notes for better understanding docker and this is my original article为了更好的理解和学习docker所作的笔记 orientationsome basic concept what difference between container and VM? as the picture below:">
+<meta property="og:description" content="本文翻译总结自Elasticsearch官方文档，都是我自己翻译的yo！  You know, for search(and analysis)  Elasticsearch简介elasticsearch是一个分布式的搜索和分析引擎，它基于elasticstack的核心功能。 logstash和beats用于促成收集、整合、丰富你的数据，并将数据存储在elasticsearch中。 kibana">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-06-15T14:00:10.994Z">
+<meta property="og:updated_time" content="2019-07-05T07:53:24.258Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker官方文档学习笔记">
-<meta name="twitter:description" content="as some kind of notes for better understanding docker and this is my original article为了更好的理解和学习docker所作的笔记 orientationsome basic concept what difference between container and VM? as the picture below:">
+<meta name="twitter:title" content="Elasticsearch学习笔记">
+<meta name="twitter:description" content="本文翻译总结自Elasticsearch官方文档，都是我自己翻译的yo！  You know, for search(and analysis)  Elasticsearch简介elasticsearch是一个分布式的搜索和分析引擎，它基于elasticstack的核心功能。 logstash和beats用于促成收集、整合、丰富你的数据，并将数据存储在elasticsearch中。 kibana">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
 
@@ -89,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/octopus.jpg" alt="docker官方文档学习笔记" height="28">
+                <img src="/images/octopus.jpg" alt="Elasticsearch学习笔记" height="28">
             
             </a>
         </div>
@@ -144,17 +144,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-14T16:00:24.000Z">2019-06-14</time>
+                <time class="level-item has-text-grey" datetime="2019-07-04T10:21:15.000Z">2019-07-04</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 837 words)
+                    15 minutes read (About 2257 words)
                 </span>
                 
                 
@@ -163,83 +163,122 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                docker官方文档学习笔记
+                Elasticsearch学习笔记
             
         </h1>
         <div class="content">
-            <p>as some kind of notes for better understanding docker and this is my original article<br>为了更好的理解和学习docker所作的笔记</p>
-<h1 id="orientation"><a href="#orientation" class="headerlink" title="orientation"></a>orientation</h1><h2 id="some-basic-concept"><a href="#some-basic-concept" class="headerlink" title="some basic concept"></a>some basic concept</h2><ul>
-<li><p>what difference between container and VM?</p>
-<p>as the picture below:<br><img src="/images/58.png" alt></p>
-<a id="more"></a>
-<p>A container can natively runs on Linux and share the kernel of the host machine with other containers</p>
-<p>A virtual machine (VM) runs a full-size “guset” operating system with virtual access to host resources through a hypervisor</p>
-<p>and definitely VMs provide an environment with more resources than most applications need</p>
-</li>
-<li><p>containers and images</p>
-<p>a container is launched by running an image</p>
-<p>a container is a runtime instance of an image</p>
-</li>
+            <a id="more"></a>
+<p>本文翻译总结自<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html" target="_blank" rel="noopener">Elasticsearch官方文档</a>，都是我自己翻译的yo！</p>
+<blockquote>
+<p>You know, for search(and analysis)</p>
+</blockquote>
+<h1 id="Elasticsearch简介"><a href="#Elasticsearch简介" class="headerlink" title="Elasticsearch简介"></a>Elasticsearch简介</h1><p>elasticsearch是一个分布式的搜索和分析引擎，它基于elasticstack的核心功能。</p>
+<p>logstash和beats用于促成收集、整合、丰富你的数据，并将数据存储在elasticsearch中。</p>
+<p>kibana能让你交互式的探索、使数据图形化、分享你的关于数据的看法、管理和监控stack。</p>
+<p>elasticsearch是让索引、搜索、分析三大魔法发生的地方。</p>
+<p>elasticsearch为所有类型的数据提供实时搜索和分析，无论你的数据是有结构还是无结构的文本、数值型数据、地理空间数据，es都能够有效的存储它们并建立索引，且索引的方式支持快速搜索。你可以做出远远超出例如（简单的数据取回、聚合数据以发现你的数据的模式和趋势）这些事。随着你的数据和访问量的增加，es的分布式特性可以让你的部署无缝的与其协作。</p>
+<p>然而并不是所有的问题都是搜索型问题，es也提供速度和灵活性在许多不同的处理数据的案例中：</p>
+<ul>
+<li>为app或网站增加一个搜索盒(search box)</li>
+<li>存储和分析日志、指标，保护事件数据的安全</li>
+<li>使用机器学习来自动建模你的实时数据的行为</li>
+<li>使用es作为存储引擎的自动化商业工作流程</li>
+<li>通过es来管理、聚合、分析地理空间信息，作为地理信息系统(GIS)</li>
+<li>通过es来存储和处理基因数据，作为生物信息的搜索工具<!-- more -->
+我们不断的被人们使用搜索的新奇方式感到惊叹，但无论你是否符合以上的案例，抑或是使用es来解决新问题，用es操作你的数据、文档、指标的方式是相同的</li>
 </ul>
-<h2 id="docker-command"><a href="#docker-command" class="headerlink" title="docker command"></a>docker command</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">## List Docker CLI commands</span></span><br><span class="line">docker</span><br><span class="line">docker container --help</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## Display Docker version and info</span></span><br><span class="line">docker --version</span><br><span class="line">docker version</span><br><span class="line">docker info</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## Execute Docker image</span></span><br><span class="line">docker run hello-world</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## List Docker images</span></span><br><span class="line">docker image ls</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## List Docker containers (running, all, all in quiet mode)</span></span><br><span class="line">docker container ls</span><br><span class="line">docker container ls --all</span><br><span class="line">docker container ls -aq</span><br></pre></td></tr></table></figure>
-
-<h1 id="containers"><a href="#containers" class="headerlink" title="containers"></a>containers</h1><h2 id="dockerfile"><a href="#dockerfile" class="headerlink" title="dockerfile"></a>dockerfile</h2><p>Dockerfile defines what goes on in the environment inside your container</p>
-<h3 id="create-a-dockerfile"><a href="#create-a-dockerfile" class="headerlink" title="create  a dockerfile"></a>create  a dockerfile</h3><ol>
-<li>Create an empty directory on your local machine. </li>
-<li>Change directories (cd) into the new directory, create a file called Dockerfile,</li>
-<li>copy-and-paste the following content into that file, and save it.</li>
-<li>Take note of the comments that explain each statement in your new Dockerfile.</li>
+<h1 id="开始使用Elasticsearch"><a href="#开始使用Elasticsearch" class="headerlink" title="开始使用Elasticsearch"></a>开始使用Elasticsearch</h1><p>准备使用es做一个测试抑或是看看你自己怎样用REST APIs来保存、搜索、分析数据吗？</p>
+<p>初学教程的步骤：</p>
+<ol>
+<li>启动并运行es实例</li>
+<li>index一些样本文档</li>
+<li>使用es查询语言来搜索文档</li>
+<li>使用bucket和指标聚合来分析结果</li>
 </ol>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># Use an official Python runtime as a parent image</span></span><br><span class="line">FROM python:<span class="hljs-number">2.7</span>-slim</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Set the working directory to /app</span></span><br><span class="line">WORKDIR /app</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Copy the current directory contents into the container at /app</span></span><br><span class="line">COPY . /app</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Install any needed packages specified in requirements.txt</span></span><br><span class="line">RUN pip install --trusted-host pypi.python.org -r requirements.txt</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Make port 80 available to the world outside this container</span></span><br><span class="line">EXPOSE <span class="hljs-number">80</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Define environment variable</span></span><br><span class="line">ENV NAME World</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Run app.py when the container launches</span></span><br><span class="line">CMD [<span class="hljs-string">"python"</span>, <span class="hljs-string">"app.py"</span>]</span><br></pre></td></tr></table></figure>
+<p>查看<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html" target="_blank" rel="noopener">Elasticsearcb Introduction</a>来学习lingo和理解es是怎么运行的基本概念。如果你对es已经熟悉并想知道es如何与栈的其余部分一起工作，可以跳转至<a href="https://www.elastic.co/guide/en/elastic-stack-get-started/7.2/get-started-elastic-stack.html" target="_blank" rel="noopener">Elastic Stack Tutorial</a>来学习怎样设置系统监控解决方案，配套使用es、kibana、beats和logstash</p>
+<h1 id="设置Elasticsearch"><a href="#设置Elasticsearch" class="headerlink" title="设置Elasticsearch"></a>设置Elasticsearch</h1><p>这个部分包含如何设置es、让es运行的相关信息，包括：</p>
+<ol>
+<li>下载</li>
+<li>安装</li>
+<li>运行</li>
+<li>配置</li>
+</ol>
+<h2 id="支持的平台"><a href="#支持的平台" class="headerlink" title="支持的平台"></a>支持的平台</h2><p>官方支持的操作平台和JVMs的模版可以在<a href="https://www.elastic.co/support/matrix" target="_blank" rel="noopener">Support Matrix</a>获得，es可以在上述平台上被测试，但es也可能在其他平台上可以工作。</p>
+<h2 id="Java（JVM）版本"><a href="#Java（JVM）版本" class="headerlink" title="Java（JVM）版本"></a>Java（JVM）版本</h2><p>es使用java构建的，包含了一系列来自Jdk maintainer（GPLv2+CE）各分支的OpenJDK版本，<strong>The bundle JVM</strong>是推荐的JVM，并且存在于es文件目录中的<code>jdk</code>目录中</p>
+<p>如果使用自己版本的java，请配置<code>JAVA_HOME</code>环境变量，如果你使用了一个与the bundle JVM版本不同的java版本，我们推荐使用<a href="http://www.oracle.com/technetwork/java/eol-135779.html" target="_blank" rel="noopener">支持LTS的java版本</a>。如果使用了错误版本的java，es将会拒绝启动，当使用您自己的JVM时，es中的the bundle JVM目录可能将被移除。</p>
+<h1 id="安装Elasticsearch"><a href="#安装Elasticsearch" class="headerlink" title="安装Elasticsearch"></a>安装Elasticsearch</h1><h2 id="下载es"><a href="#下载es" class="headerlink" title="下载es"></a>下载es</h2><p>mac或linux环境下es的下载地址：<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html" target="_blank" rel="noopener">Install Elasticsearch from archive on Linux or MacOS</a></p>
+<h2 id="一些配置管理工具"><a href="#一些配置管理工具" class="headerlink" title="一些配置管理工具"></a>一些配置管理工具</h2><p>我们也提供了一些相关的配置管理工具来帮助您大范围的部署：</p>
+<ol>
+<li>Puppet <a href="https://github.com/elastic/puppet-elasticsearch" target="_blank" rel="noopener">puppet-elasticsearch</a></li>
+<li>Chef <a href="https://github.com/elastic/cookbook-elasticsearch" target="_blank" rel="noopener">cookbook-elasticsearch</a></li>
+<li>Ansible <a href="https://github.com/elastic/ansible-elasticsearch" target="_blank" rel="noopener">ansible-elasticsearch</a></li>
+</ol>
+<h2 id="安装es"><a href="#安装es" class="headerlink" title="安装es"></a>安装es</h2><p>兄弟，把安装包找个合适的地方解压了。</p>
+<p>需要注意<code>elasticsearch-version</code>的pwd路径就是<code>$ES_HOME</code>变量的值，记得哟</p>
+<h2 id="运行es"><a href="#运行es" class="headerlink" title="运行es"></a>运行es</h2><p><code>cd elasticsearch-[version]</code>进入es目录下</p>
+<p><code>./bin/elasticsearch</code>运行es</p>
+<h2 id="检查es是否运行"><a href="#检查es是否运行" class="headerlink" title="检查es是否运行"></a>检查es是否运行</h2><p><code>curl localhost:9200</code>测试es是否运行成功（9200端口能否返回数据）</p>
+<p>正常应收到如下回应：</p>
+<figure class="highlight json hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="hljs-attr">"name"</span> : <span class="hljs-string">"Mac.local"</span>,</span><br><span class="line">  <span class="hljs-attr">"cluster_name"</span> : <span class="hljs-string">"elasticsearch"</span>,</span><br><span class="line">  <span class="hljs-attr">"cluster_uuid"</span> : <span class="hljs-string">"X4xKA73_SD2WU3saru4sBg"</span>,</span><br><span class="line">  <span class="hljs-attr">"version"</span> : &#123;</span><br><span class="line">    <span class="hljs-attr">"number"</span> : <span class="hljs-string">"7.2.0"</span>,</span><br><span class="line">    <span class="hljs-attr">"build_flavor"</span> : <span class="hljs-string">"default"</span>,</span><br><span class="line">    <span class="hljs-attr">"build_type"</span> : <span class="hljs-string">"tar"</span>,</span><br><span class="line">    <span class="hljs-attr">"build_hash"</span> : <span class="hljs-string">"508c38a"</span>,</span><br><span class="line">    <span class="hljs-attr">"build_date"</span> : <span class="hljs-string">"2019-06-20T15:54:18.811730Z"</span>,</span><br><span class="line">    <span class="hljs-attr">"build_snapshot"</span> : <span class="hljs-literal">false</span>,</span><br><span class="line">    <span class="hljs-attr">"lucene_version"</span> : <span class="hljs-string">"8.0.0"</span>,</span><br><span class="line">    <span class="hljs-attr">"minimum_wire_compatibility_version"</span> : <span class="hljs-string">"6.8.0"</span>,</span><br><span class="line">    <span class="hljs-attr">"minimum_index_compatibility_version"</span> : <span class="hljs-string">"6.0.0-beta1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="hljs-attr">"tagline"</span> : <span class="hljs-string">"You Know, for Search"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="create-app-itself"><a href="#create-app-itself" class="headerlink" title="create app itself"></a>create app itself</h3><p> Create two more files, requirements.txt and app.py, and put them in the same folder with the Dockerfile.</p>
-<p>requirements.txt</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Flask</span><br><span class="line">Redis</span><br></pre></td></tr></table></figure>
+<h2 id="作为daemon（后台守护进程）运行"><a href="#作为daemon（后台守护进程）运行" class="headerlink" title="作为daemon（后台守护进程）运行"></a>作为daemon（后台守护进程）运行</h2><p><code>./bin/elasticsearch -d -p pid</code> -d指定daemon，-p在文件中记录process ID</p>
+<p>log信息将保存在<code>$ES_HOME/logs/</code>目录中</p>
+<p>为了终止es，要杀掉保存在<code>pid</code>文件中的process ID记录<br><code>pkill -F pid</code></p>
+<h2 id="在命令行中配置Elasticsearch"><a href="#在命令行中配置Elasticsearch" class="headerlink" title="在命令行中配置Elasticsearch"></a>在命令行中配置Elasticsearch</h2><p>es从<code>$ES_HOME/config/elasticsearch.yml</code>中加载默认配置，配置文件的格式在<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html" target="_blank" rel="noopener">Configuring Elasticsearch</a>中解释</p>
+<p>在config文件中被指定的设置也可以通过命令行来实现，使用-E的语法<br><code>./bin/elasticsearch -d -Ecluster.name=my_cluster -Enode.name=node_1</code></p>
+<blockquote>
+<p>通常集群等级的设置（如cluster_name）应该在<code>elasticsearch.yml</code>配置文件中进行配置，而节点特性设置（如node_name）应该咋i 命令行中指定</p>
+</blockquote>
+<h2 id="archives归档文件的目录结构"><a href="#archives归档文件的目录结构" class="headerlink" title="archives归档文件的目录结构"></a>archives归档文件的目录结构</h2><p>归档的分布完全是独立的哟(self-contained)！所有的文件和目录都默认包含在<code>$ES_HOME</code>中，即解压归档文件时所创建的目录</p>
+<p>真的很方便哟！为什么嫩，因为你不需要再创建其他的目录再来使用es，删除es也很简单，给<code>$ES_HOME</code>整个删了就完事了。然鹅，改变config、data、log三个目录的默认位置，是比较明智的做法，为的是你之后不会删掉重要的数据</p>
+<p>目录类型的作用：</p>
+<ul>
+<li>home es的home目录，就素<code>$ES_HOME</code></li>
+<li>bin 二进制执行脚本的目录，包括运行es的<code>elasticsearch</code>和装插件的<code>elasticsearch-plugin</code></li>
+<li>config 包含<code>elasticsearch.yml</code>的配置文件目录</li>
+<li>data 包含每个index/shard的数据文件（which分配在节点上）的目录</li>
+<li>logs 包含日志文件的目录</li>
+<li>plugins 你说全世界哪里放插件最合适，答案是放插件的<code>plugins</code>目录</li>
+<li>repo 共享文件系统仓库（repository）</li>
+<li>script 脚本文件放置处</li>
+</ul>
+<p>至此已经建立了测试es的环境，在您开始严肃的开发或使用es进入生产环境前，你必须做如下额外设置：</p>
+<ol>
+<li>学习怎么<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html" target="_blank" rel="noopener">配置Elasticsearch</a></li>
+<li>配置<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/important-settings.html" target="_blank" rel="noopener">重要的Elasticsearch设置</a></li>
+<li>配置<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/system-config.html" target="_blank" rel="noopener">重要的系统设置</a></li>
+</ol>
+<h1 id="配置Elasticsearch"><a href="#配置Elasticsearch" class="headerlink" title="配置Elasticsearch"></a>配置Elasticsearch</h1><p>es本身附带了合理的默认配置，您只需要非常少量的配置，绝大部分设置可以通过在运行的集群上通过<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-update-settings.html" target="_blank" rel="noopener">集群更新设置API</a>来更改</p>
+<p>配置文件应该包含节点特性配置（如node_name和paths）、节点加入一个集群的必要条件，如<code>cluster_name</code>和<code>network_host</code></p>
+<h2 id="配置文件的放置位置"><a href="#配置文件的放置位置" class="headerlink" title="配置文件的放置位置"></a>配置文件的放置位置</h2><p>es有三个配置文件：</p>
+<ol>
+<li>elasticsearch.yml 用于配置es</li>
+<li>jvm.option 用来配置es的JVM设置</li>
+<li>log4j2.properties 用来配置es的日志（logging）</li>
+</ol>
+<p>这些配置文件都放置在config目录中。</p>
+<p>配置目录的位置可以被更改通过<code>ES_PATH_CONF</code>环境变量，如下所示：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ES_PATH_CONF=/path/to/my/config ./bin/elasticsearch</span><br></pre></td></tr></table></figure>
 
-<p>app.py</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask</span><br><span class="line"><span class="hljs-keyword">from</span> redis <span class="hljs-keyword">import</span> Redis, RedisError</span><br><span class="line"><span class="hljs-keyword">import</span> os</span><br><span class="line"><span class="hljs-keyword">import</span> socket</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Connect to Redis</span></span><br><span class="line">redis = Redis(host=<span class="hljs-string">"redis"</span>, db=<span class="hljs-number">0</span>, socket_connect_timeout=<span class="hljs-number">2</span>, socket_timeout=<span class="hljs-number">2</span>)</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@app.route("/")</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hello</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-keyword">try</span>:</span><br><span class="line">        visits = redis.incr(<span class="hljs-string">"counter"</span>)</span><br><span class="line">    <span class="hljs-keyword">except</span> RedisError:</span><br><span class="line">        visits = <span class="hljs-string">"&lt;i&gt;cannot connect to Redis, counter disabled&lt;/i&gt;"</span></span><br><span class="line"></span><br><span class="line">    html = <span class="hljs-string">"&lt;h3&gt;Hello &#123;name&#125;!&lt;/h3&gt;"</span> \</span><br><span class="line">           <span class="hljs-string">"&lt;b&gt;Hostname:&lt;/b&gt; &#123;hostname&#125;&lt;br/&gt;"</span> \</span><br><span class="line">           <span class="hljs-string">"&lt;b&gt;Visits:&lt;/b&gt; &#123;visits&#125;"</span></span><br><span class="line">    <span class="hljs-keyword">return</span> html.format(name=os.getenv(<span class="hljs-string">"NAME"</span>, <span class="hljs-string">"world"</span>), hostname=socket.gethostname(), visits=visits)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:</span><br><span class="line">    app.run(host=<span class="hljs-string">'0.0.0.0'</span>, port=<span class="hljs-number">80</span>)</span><br></pre></td></tr></table></figure>
+<p>除此之外，你可以export这个<code>ES_PATH_CONF</code>环境变量通过命令行或通过你的shell profile</p>
+<p>对于包分发，config目录默认被放置在<code>/etc/elasticsearch</code></p>
+<h2 id="配置文件格式"><a href="#配置文件格式" class="headerlink" title="配置文件格式"></a>配置文件格式</h2><p>配置文件的格式为yaml，以下是怎样修改data、logs目录的path：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">path:</span><br><span class="line">    data: /var/lib/elasticsearch</span><br><span class="line">    logs: /var/log/elasticsearch</span><br></pre></td></tr></table></figure>
 
-<h3 id="build-the-app"><a href="#build-the-app" class="headerlink" title="build the app"></a>build the app</h3><p> Make sure you are still at the top level of your new directory</p>
- <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build --tag=friendlyhello .</span><br></pre></td></tr></table></figure>
+<p>相关设置也可以写成：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path.data: /var/lib/elasticsearch</span><br><span class="line">path.logs: /var/log/elasticsearch</span><br></pre></td></tr></table></figure>
 
-<p> when the building process completed,try check it in your machine’s local docker image registry</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image ls</span><br></pre></td></tr></table></figure>
+<h2 id="环境变量替代"><a href="#环境变量替代" class="headerlink" title="环境变量替代"></a>环境变量替代</h2><p>在配置文件中环境变量可以用<code>${...}</code>形式的注解引用，配置文件将注解替换成环境变量的值，如：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node.name:    $&#123;HOSTNAME&#125;</span><br><span class="line">network.host: $&#123;ES_NETWORK_HOST&#125;</span><br></pre></td></tr></table></figure>
 
-<p>you will find it in the list</p>
-<h3 id="run-the-app"><a href="#run-the-app" class="headerlink" title="run the app"></a>run the app</h3><p>Run the app, mapping your machine’s port 4000 to the container’s published port 80 using -p:</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p <span class="hljs-number">4000</span>:<span class="hljs-number">80</span> friendlyhello</span><br></pre></td></tr></table></figure>
-
-<p>open the url <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> in safari or just curl it<br><img src="/images/58.png" alt></p>
-<p>Now let’s run the app in the background, in detached mode</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p <span class="hljs-number">4000</span>:<span class="hljs-number">80</span> friendlyhello</span><br></pre></td></tr></table></figure>
-
-<p>when you type it in ,then a specific hash code will appear on screen<br><strong>e253b895743bafbf1ccbece83528ad8c1a966e3c04a44882b0f57951fa9f3b0d</strong></p>
-<p>You can also see the abbreviated container ID with </p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container ls</span><br></pre></td></tr></table></figure>
-
-<p>use docker container stop to end the process, using the CONTAINER ID</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container stop <span class="hljs-number">1</span>fa4ab2cf395</span><br></pre></td></tr></table></figure>
-
-<h3 id="Log-in-with-your-Docker-ID"><a href="#Log-in-with-your-Docker-ID" class="headerlink" title="Log in with your Docker ID"></a>Log in with your Docker ID</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login</span><br></pre></td></tr></table></figure>
-
-<h3 id="Tag-the-image"><a href="#Tag-the-image" class="headerlink" title="Tag the image"></a>Tag the image</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag friendlyhello gordon/get-started:part2</span><br></pre></td></tr></table></figure>
-
-<h3 id="push-the-image"><a href="#push-the-image" class="headerlink" title="push the image"></a>push the image</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker push octopusheep/demo:<span class="hljs-number">1.0</span><span class="hljs-number">.0</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Pull-and-run-the-image-from-the-remote-repository"><a href="#Pull-and-run-the-image-from-the-remote-repository" class="headerlink" title="Pull and run the image from the remote repository"></a>Pull and run the image from the remote repository</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p <span class="hljs-number">4000</span>:<span class="hljs-number">80</span> username/repository:tag</span><br></pre></td></tr></table></figure>
-
-<p>If the image isn’t available locally on the machine, Docker pulls it from the repository</p>
-<p>Here is a list of the basic Docker commands from this page, and some related ones if you’d like to explore a bit before moving on.</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">docker build -t friendlyhello .  <span class="hljs-comment"># Create image using this directory's Dockerfile</span></span><br><span class="line">docker run -p <span class="hljs-number">4000</span>:<span class="hljs-number">80</span> friendlyhello  <span class="hljs-comment"># Run "friendlyhello" mapping port 4000 to 80</span></span><br><span class="line">docker run -d -p <span class="hljs-number">4000</span>:<span class="hljs-number">80</span> friendlyhello         <span class="hljs-comment"># Same thing, but in detached mode</span></span><br><span class="line">docker container ls                                <span class="hljs-comment"># List all running containers</span></span><br><span class="line">docker container ls -a             <span class="hljs-comment"># List all containers, even those not running</span></span><br><span class="line">docker container stop &lt;hash&gt;           <span class="hljs-comment"># Gracefully stop the specified container</span></span><br><span class="line">docker container kill &lt;hash&gt;         <span class="hljs-comment"># Force shutdown of the specified container</span></span><br><span class="line">docker container rm &lt;hash&gt;        <span class="hljs-comment"># Remove specified container from this machine</span></span><br><span class="line">docker container rm $(docker container ls -a -q)         <span class="hljs-comment"># Remove all containers</span></span><br><span class="line">docker image ls -a                             <span class="hljs-comment"># List all images on this machine</span></span><br><span class="line">docker image rm &lt;image id&gt;            <span class="hljs-comment"># Remove specified image from this machine</span></span><br><span class="line">docker image rm $(docker image ls -a -q)   <span class="hljs-comment"># Remove all images from this machine</span></span><br><span class="line">docker login             <span class="hljs-comment"># Log in this CLI session using your Docker credentials</span></span><br><span class="line">docker tag &lt;image&gt; username/repository:tag  <span class="hljs-comment"># Tag &lt;image&gt; for upload to registry</span></span><br><span class="line">docker push username/repository:tag            <span class="hljs-comment"># Upload tagged image to registry</span></span><br><span class="line">docker run username/repository:tag                   <span class="hljs-comment"># Run image from a registry</span></span><br></pre></td></tr></table></figure>
-
-
+<h1 id="设置JVM配置"><a href="#设置JVM配置" class="headerlink" title="设置JVM配置"></a>设置JVM配置</h1>
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Docker/">Docker</a>
+                    <a class="has-link-grey -link" href="/tags/Elasticsearch/">Elasticsearch</a>
                 </div>
             </div>
         </div>
@@ -309,17 +348,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/06/16/数据结构学习笔记/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">数据结构学习笔记</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/14/docker安装指南及基本操作(Mac环境)/">
-                <span class="level-item">docker安装指南及基本操作(Mac环境)</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/16/数据结构学习笔记/">
+                <span class="level-item">数据结构学习笔记</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -449,58 +481,82 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#orientation">
+        <a class="is-flex" href="#Elasticsearch简介">
         <span class="has-mr-6">1</span>
-        <span>orientation</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#some-basic-concept">
-        <span class="has-mr-6">1.1</span>
-        <span>some basic concept</span>
+        <span>Elasticsearch简介</span>
         </a></li><li>
-        <a class="is-flex" href="#docker-command">
-        <span class="has-mr-6">1.2</span>
-        <span>docker command</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#containers">
+        <a class="is-flex" href="#开始使用Elasticsearch">
         <span class="has-mr-6">2</span>
-        <span>containers</span>
+        <span>开始使用Elasticsearch</span>
+        </a></li><li>
+        <a class="is-flex" href="#设置Elasticsearch">
+        <span class="has-mr-6">3</span>
+        <span>设置Elasticsearch</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#dockerfile">
-        <span class="has-mr-6">2.1</span>
-        <span>dockerfile</span>
+        <a class="is-flex" href="#支持的平台">
+        <span class="has-mr-6">3.1</span>
+        <span>支持的平台</span>
+        </a></li><li>
+        <a class="is-flex" href="#Java（JVM）版本">
+        <span class="has-mr-6">3.2</span>
+        <span>Java（JVM）版本</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#安装Elasticsearch">
+        <span class="has-mr-6">4</span>
+        <span>安装Elasticsearch</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#create-a-dockerfile">
-        <span class="has-mr-6">2.1.1</span>
-        <span>create  a dockerfile</span>
+        <a class="is-flex" href="#下载es">
+        <span class="has-mr-6">4.1</span>
+        <span>下载es</span>
         </a></li><li>
-        <a class="is-flex" href="#create-app-itself">
-        <span class="has-mr-6">2.1.2</span>
-        <span>create app itself</span>
+        <a class="is-flex" href="#一些配置管理工具">
+        <span class="has-mr-6">4.2</span>
+        <span>一些配置管理工具</span>
         </a></li><li>
-        <a class="is-flex" href="#build-the-app">
-        <span class="has-mr-6">2.1.3</span>
-        <span>build the app</span>
+        <a class="is-flex" href="#安装es">
+        <span class="has-mr-6">4.3</span>
+        <span>安装es</span>
         </a></li><li>
-        <a class="is-flex" href="#run-the-app">
-        <span class="has-mr-6">2.1.4</span>
-        <span>run the app</span>
+        <a class="is-flex" href="#运行es">
+        <span class="has-mr-6">4.4</span>
+        <span>运行es</span>
         </a></li><li>
-        <a class="is-flex" href="#Log-in-with-your-Docker-ID">
-        <span class="has-mr-6">2.1.5</span>
-        <span>Log in with your Docker ID</span>
+        <a class="is-flex" href="#检查es是否运行">
+        <span class="has-mr-6">4.5</span>
+        <span>检查es是否运行</span>
         </a></li><li>
-        <a class="is-flex" href="#Tag-the-image">
-        <span class="has-mr-6">2.1.6</span>
-        <span>Tag the image</span>
+        <a class="is-flex" href="#作为daemon（后台守护进程）运行">
+        <span class="has-mr-6">4.6</span>
+        <span>作为daemon（后台守护进程）运行</span>
         </a></li><li>
-        <a class="is-flex" href="#push-the-image">
-        <span class="has-mr-6">2.1.7</span>
-        <span>push the image</span>
+        <a class="is-flex" href="#在命令行中配置Elasticsearch">
+        <span class="has-mr-6">4.7</span>
+        <span>在命令行中配置Elasticsearch</span>
         </a></li><li>
-        <a class="is-flex" href="#Pull-and-run-the-image-from-the-remote-repository">
-        <span class="has-mr-6">2.1.8</span>
-        <span>Pull and run the image from the remote repository</span>
-        </a></li></ul></li></ul></li></ul>
+        <a class="is-flex" href="#archives归档文件的目录结构">
+        <span class="has-mr-6">4.8</span>
+        <span>archives归档文件的目录结构</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#配置Elasticsearch">
+        <span class="has-mr-6">5</span>
+        <span>配置Elasticsearch</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#配置文件的放置位置">
+        <span class="has-mr-6">5.1</span>
+        <span>配置文件的放置位置</span>
+        </a></li><li>
+        <a class="is-flex" href="#配置文件格式">
+        <span class="has-mr-6">5.2</span>
+        <span>配置文件格式</span>
+        </a></li><li>
+        <a class="is-flex" href="#环境变量替代">
+        <span class="has-mr-6">5.3</span>
+        <span>环境变量替代</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#设置JVM配置">
+        <span class="has-mr-6">6</span>
+        <span>设置JVM配置</span>
+        </a></li></ul>
         </div>
     </div>
 </div>
@@ -1255,7 +1311,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/octopus.jpg" alt="docker官方文档学习笔记" height="28">
+                    <img src="/images/octopus.jpg" alt="Elasticsearch学习笔记" height="28">
                 
                 </a>
                 <p class="is-size-7">

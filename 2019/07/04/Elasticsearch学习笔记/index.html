@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="本文翻译总结自Elasticsearch官方文档，都是我自己翻译的yo！  You know, for search(and analysis)  Elasticsearch简介elasticsearch是一个分布式的搜索和分析引擎，它基于elasticstack的核心功能。 logstash和beats用于促成收集、整合、丰富你的数据，并将数据存储在elasticsearch中。 kibana">
-<meta name="keywords" content="Elasticsearch">
+    <meta name="description" content="本文翻译总结自Elasticsearch官方文档，都是我自己翻译的yo！  You know, for search(and analysis)  Elasticsearch简介elasticsearch是一个分布式的搜索和分析引擎，它基于elasticstack的核心功能。 logstash和beats用于促成收集、整合、丰富你的数据，并将数据存储在elasticsearch中。 kibana能">
+<meta name="keywords" content="Kubernetes,Elasticsearch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Elasticsearch学习笔记">
 <meta property="og:url" content="http://octopusheep.com/2019/07/04/Elasticsearch学习笔记/index.html">
 <meta property="og:site_name" content="octopusheep">
-<meta property="og:description" content="本文翻译总结自Elasticsearch官方文档，都是我自己翻译的yo！  You know, for search(and analysis)  Elasticsearch简介elasticsearch是一个分布式的搜索和分析引擎，它基于elasticstack的核心功能。 logstash和beats用于促成收集、整合、丰富你的数据，并将数据存储在elasticsearch中。 kibana">
+<meta property="og:description" content="本文翻译总结自Elasticsearch官方文档，都是我自己翻译的yo！  You know, for search(and analysis)  Elasticsearch简介elasticsearch是一个分布式的搜索和分析引擎，它基于elasticstack的核心功能。 logstash和beats用于促成收集、整合、丰富你的数据，并将数据存储在elasticsearch中。 kibana能">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-07-05T07:53:24.258Z">
+<meta property="og:updated_time" content="2019-07-26T08:21:32.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elasticsearch学习笔记">
-<meta name="twitter:description" content="本文翻译总结自Elasticsearch官方文档，都是我自己翻译的yo！  You know, for search(and analysis)  Elasticsearch简介elasticsearch是一个分布式的搜索和分析引擎，它基于elasticstack的核心功能。 logstash和beats用于促成收集、整合、丰富你的数据，并将数据存储在elasticsearch中。 kibana">
+<meta name="twitter:description" content="本文翻译总结自Elasticsearch官方文档，都是我自己翻译的yo！  You know, for search(and analysis)  Elasticsearch简介elasticsearch是一个分布式的搜索和分析引擎，它基于elasticstack的核心功能。 logstash和beats用于促成收集、整合、丰富你的数据，并将数据存储在elasticsearch中。 kibana能">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
 
@@ -147,14 +147,14 @@
                 <time class="level-item has-text-grey" datetime="2019-07-04T10:21:15.000Z">2019-07-04</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    15 minutes read (About 2257 words)
+                    18 minutes read (About 2703 words)
                 </span>
                 
                 
@@ -167,8 +167,7 @@
             
         </h1>
         <div class="content">
-            <a id="more"></a>
-<p>本文翻译总结自<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html" target="_blank" rel="noopener">Elasticsearch官方文档</a>，都是我自己翻译的yo！</p>
+            <p>本文翻译总结自<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html" target="_blank" rel="noopener">Elasticsearch官方文档</a>，都是我自己翻译的yo！</p>
 <blockquote>
 <p>You know, for search(and analysis)</p>
 </blockquote>
@@ -184,7 +183,7 @@
 <li>使用机器学习来自动建模你的实时数据的行为</li>
 <li>使用es作为存储引擎的自动化商业工作流程</li>
 <li>通过es来管理、聚合、分析地理空间信息，作为地理信息系统(GIS)</li>
-<li>通过es来存储和处理基因数据，作为生物信息的搜索工具<!-- more -->
+<li>通过es来存储和处理基因数据，作为生物信息的搜索工具<a id="more"></a>
 我们不断的被人们使用搜索的新奇方式感到惊叹，但无论你是否符合以上的案例，抑或是使用es来解决新问题，用es操作你的数据、文档、指标的方式是相同的</li>
 </ul>
 <h1 id="开始使用Elasticsearch"><a href="#开始使用Elasticsearch" class="headerlink" title="开始使用Elasticsearch"></a>开始使用Elasticsearch</h1><p>准备使用es做一个测试抑或是看看你自己怎样用REST APIs来保存、搜索、分析数据吗？</p>
@@ -271,14 +270,41 @@
 <h2 id="环境变量替代"><a href="#环境变量替代" class="headerlink" title="环境变量替代"></a>环境变量替代</h2><p>在配置文件中环境变量可以用<code>${...}</code>形式的注解引用，配置文件将注解替换成环境变量的值，如：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node.name:    $&#123;HOSTNAME&#125;</span><br><span class="line">network.host: $&#123;ES_NETWORK_HOST&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="设置JVM配置"><a href="#设置JVM配置" class="headerlink" title="设置JVM配置"></a>设置JVM配置</h1>
+<h1 id="设置JVM配置"><a href="#设置JVM配置" class="headerlink" title="设置JVM配置"></a>设置JVM配置</h1><p>你可能几乎不需要更改jvm设置，如果你真的这么做了，最常见的更改是设置堆容量(heap size),这一节的剩余内容主要在细节上解释如何设置JVM选项</p>
+<p>首选的设置JVM选项的方法是通过更改<code>jvm.option</code>配置文件来修改</p>
+<p>这个文件包含了用线分隔的JVM参数列表，其用一种特殊的语法：</p>
+<ul>
+<li>注释行用#开头</li>
+<li>空白行直接忽略</li>
+<li><code>-</code>开头的行被当作是应用于独立的JVM版本的JVM选项 <code>-Xmx2g</code></li>
+<li>数字开头应用与对应版本的JVM <code>8:-Xmx2g</code></li>
+<li>8-开头对应version8以上的JVM版本 <code>8-:-Xmx2g</code></li>
+<li>8-9开头你还不懂啥意思吗？ <code>8-9:-Xmx2g</code></li>
+</ul>
+<p>您可以添加客制化的JVM flags在这个文件里，在你的版本控制系统中检查该配置</p>
+<p>除此之外，还可以通过设置<code>ES_JAVA_OPTS</code>环境变量来修改JVM选项，如：</p>
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">export</span> ES_JAVA_OPTS=<span class="hljs-string">"<span class="hljs-variable">$ES_JAVA_OPTS</span> -Djava.io.tmpdir=/path/to/temp/dir"</span></span><br><span class="line">./bin/elasticsearch</span><br></pre></td></tr></table></figure>
+
+<h1 id="安全设置"><a href="#安全设置" class="headerlink" title="安全设置"></a>安全设置</h1><p>一些设置是敏感的，依赖文件系统的权限来保护数值是不足够的，在这个情况下，es提供了密钥库和<code>elasticsearch-keystore</code>工具来管理密钥库中的设置</p>
+<p>这些在<code>elasticsearch.yml</code>中的设置，需要在集群的每个节点中指定。当前，集群中每个节点的安全设置值必须相同</p>
+<h2 id="创建密钥库-keystore"><a href="#创建密钥库-keystore" class="headerlink" title="创建密钥库(keystore)"></a>创建密钥库(keystore)</h2><p>使用<code>elasticsearch-keystore</code>的<code>create</code>命令</p>
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/elasticsearch-keystore create</span><br></pre></td></tr></table></figure>
+
+<h2 id="获得密钥库设置列表"><a href="#获得密钥库设置列表" class="headerlink" title="获得密钥库设置列表"></a>获得密钥库设置列表</h2><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/elasticsearch-keystore list</span><br></pre></td></tr></table></figure>
+
+<p>此外还有add、remove的等命令，详细可看官方文档，这块对我没什么用。</p>
+<h1 id="关闭Elasticsearch"><a href="#关闭Elasticsearch" class="headerlink" title="关闭Elasticsearch"></a>关闭Elasticsearch</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jps | grep Elasticsearch</span><br><span class="line">14542 Elasticsearch</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -SIGTERM 15516</span><br></pre></td></tr></table></figure>
+
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Elasticsearch/">Elasticsearch</a>
+                    <a class="has-link-grey -link" href="/tags/Elasticsearch/">Elasticsearch</a>, <a class="has-link-grey -link" href="/tags/Kubernetes/">Kubernetes</a>
                 </div>
             </div>
         </div>
@@ -348,6 +374,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/07/11/Kubernetes负载均衡学习笔记/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Kubernetes负载均衡学习笔记</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
             <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/16/数据结构学习笔记/">
@@ -405,7 +438,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        43
+                        45
                     </p>
                 </div>
             </div>
@@ -415,7 +448,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        8
                     </p>
                 </div>
             </div>
@@ -425,7 +458,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        12
+                        14
                     </p>
                 </div>
             </div>
@@ -556,6 +589,22 @@
         <a class="is-flex" href="#设置JVM配置">
         <span class="has-mr-6">6</span>
         <span>设置JVM配置</span>
+        </a></li><li>
+        <a class="is-flex" href="#安全设置">
+        <span class="has-mr-6">7</span>
+        <span>安全设置</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#创建密钥库-keystore">
+        <span class="has-mr-6">7.1</span>
+        <span>创建密钥库(keystore)</span>
+        </a></li><li>
+        <a class="is-flex" href="#获得密钥库设置列表">
+        <span class="has-mr-6">7.2</span>
+        <span>获得密钥库设置列表</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#关闭Elasticsearch">
+        <span class="has-mr-6">8</span>
+        <span>关闭Elasticsearch</span>
         </a></li></ul>
         </div>
     </div>
@@ -604,7 +653,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">39</span>
+                <span class="level-item tag">41</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -638,6 +687,14 @@
             <span class="level-end">
                 <span class="level-item tag">26</span>
             </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming/Kubernetes/">
+            <span class="level-start">
+                <span class="level-item">Kubernetes</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Studying/">
             <span class="level-start">
@@ -666,7 +723,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 10px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 10px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -685,10 +742,36 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-26T10:12:45.000Z">2019-07-26</time></div>
+                    <a href="/2019/07/26/Filebeat组件对接Logstash操作指南/" class="has-link-black-ter is-size-6">Filebeat组件对接Logstash操作指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-10T16:36:35.000Z">2019-07-10</time></div>
+                    <a href="/2019/07/11/Kubernetes负载均衡学习笔记/" class="has-link-black-ter is-size-6">Kubernetes负载均衡学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T10:21:15.000Z">2019-07-04</time></div>
                     <a href="/2019/07/04/Elasticsearch学习笔记/" class="has-link-black-ter is-size-6">Elasticsearch学习笔记</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
                     </p>
                 </div>
             </div>
@@ -720,32 +803,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-14T11:56:30.000Z">2019-06-14</time></div>
-                    <a href="/2019/06/14/docker安装指南及基本操作(Mac环境)/" class="has-link-black-ter is-size-6">docker安装指南及基本操作(Mac环境)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-13T09:42:51.000Z">2019-06-13</time></div>
-                    <a href="/2019/06/13/读研目标学校分析/" class="has-link-black-ter is-size-6">读研目标学校分析</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Studying/">Studying</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -764,7 +821,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -956,8 +1013,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Kubernetes/">
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Linux/">
                         <span class="tag">Linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Logstash/">
+                        <span class="tag">Logstash</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1003,10 +1074,36 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-26T10:12:45.000Z">2019-07-26</time></div>
+                    <a href="/2019/07/26/Filebeat组件对接Logstash操作指南/" class="has-link-black-ter is-size-6">Filebeat组件对接Logstash操作指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-10T16:36:35.000Z">2019-07-10</time></div>
+                    <a href="/2019/07/11/Kubernetes负载均衡学习笔记/" class="has-link-black-ter is-size-6">Kubernetes负载均衡学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T10:21:15.000Z">2019-07-04</time></div>
                     <a href="/2019/07/04/Elasticsearch学习笔记/" class="has-link-black-ter is-size-6">Elasticsearch学习笔记</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
                     </p>
                 </div>
             </div>
@@ -1038,32 +1135,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-14T11:56:30.000Z">2019-06-14</time></div>
-                    <a href="/2019/06/14/docker安装指南及基本操作(Mac环境)/" class="has-link-black-ter is-size-6">docker安装指南及基本操作(Mac环境)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-13T09:42:51.000Z">2019-06-13</time></div>
-                    <a href="/2019/06/13/读研目标学校分析/" class="has-link-black-ter is-size-6">读研目标学校分析</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Studying/">Studying</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1082,7 +1153,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1274,8 +1345,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Kubernetes/">
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Linux/">
                         <span class="tag">Linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Logstash/">
+                        <span class="tag">Logstash</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

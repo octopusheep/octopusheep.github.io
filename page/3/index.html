@@ -137,6 +137,121 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-15T14:06:15.000Z">2019-04-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 279 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/15/《Java编程思想》读书笔记(第八章)/">《Java编程思想》读书笔记(第八章)</a>
+            
+        </h1>
+        <div class="content">
+            <p>把某个对象的引用视为对其基类类型的引用的做法被称作upcasting向上转型</p>
+<p>将一个方法调用同一个方法主体关联起来被称作绑定，若在程序执行前进行绑定叫做前期绑定</p>
+<p>java中除了static和final方法之外，其他所有的方法都是后期绑定</p>
+<p>非private方法才能被覆盖</p>
+<p>静态对象是与类，而非与单个对象相关联的</p>
+<p>构造器的调用顺序：</p>
+<ol>
+<li>调用基类构造器，这个步骤会不断的递归下去，首先是构造这种层次结构的根，然后是下一层导出类，等等，直到最底层的导出类</li>
+<li>按声明顺序调用成员的初始化方法</li>
+<li>调用导出类构造器的主体</li></ol>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/15/《Java编程思想》读书笔记(第八章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-11T19:44:43.000Z">2019-04-11</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    10 minutes read (About 1493 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/12/Android原生TTS逻辑分析/">Android原生TTS逻辑分析</a>
+            
+        </h1>
+        <div class="content">
+            <p>本文依据API 28的安卓源码文件<code>UtteranceProgressListener.java</code>分析整理得出</p>
+<h2 id="What-is-UtteranceProgressListener"><a href="#What-is-UtteranceProgressListener" class="headerlink" title="What is UtteranceProgressListener"></a>What is UtteranceProgressListener</h2><p>UtteranceProgressListener实际上是一个抽象类，它是一个监听器，监听与发声的过程相关的事件，这个事件是通过很多步骤来处理的。每一个TTS发声事件都与函数调用相关联，分别是<code>TextToSpeech#speak</code>和<code>TextToSpeech#synthesizeToFile</code>.并且有唯一的发声ID(utterance identifier)来标识自己。这个ID就是<code>TextToSpeech.Engine#KEY_PARAM_UTTERANCE_ID</code></p>
+<p><img src="/images/42.png" alt="UtterranceProgressListener的结构"></p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/12/Android原生TTS逻辑分析/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-04-09T14:39:56.000Z">2019-04-09</time>
                 
                 <div class="level-item">
@@ -604,115 +719,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-22T11:40:16.000Z">2018-10-22</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 280 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/22/Java多线程基础/">Java多线程基础</a>
-            
-        </h1>
-        <div class="content">
-            <p>当我们执行一些耗时操作时，如果不将这类操作放置在子线程中运行，可能导致主线程被堵塞。</p>
-<h2 id="多线程的用法1：-继承Thread类"><a href="#多线程的用法1：-继承Thread类" class="headerlink" title="多线程的用法1： 继承Thread类"></a>多线程的用法1： 继承Thread类</h2><p>新建一个类继承Thread，然后重写父类的run()方法，在里面编写耗时逻辑。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SubThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-meta">@Override</span></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">		<span class="hljs-comment">//处理具体的逻辑		</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>启动线程只需要new出SubThread的实例，然后调用它的start()方法。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">new</span> SubThread().start();</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/10/22/Java多线程基础/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-08T14:38:44.000Z">2018-10-08</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 516 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/08/Android MVP框架学习笔记1/">Android MVP框架学习笔记</a>
-            
-        </h1>
-        <div class="content">
-            <p>本学习笔记总结自文章<a href="http://kaedea.com/2015/10/11/android-mvp-pattern/" target="_blank" rel="noopener">MVP模式简单易懂的介绍方式</a></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/10/08/Android MVP框架学习笔记1/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -783,7 +789,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        43
+                        45
                     </p>
                 </div>
             </div>
@@ -793,7 +799,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        8
                     </p>
                 </div>
             </div>
@@ -803,7 +809,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        12
+                        14
                     </p>
                 </div>
             </div>
@@ -895,7 +901,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">39</span>
+                <span class="level-item tag">41</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -929,6 +935,14 @@
             <span class="level-end">
                 <span class="level-item tag">26</span>
             </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming/Kubernetes/">
+            <span class="level-start">
+                <span class="level-item">Kubernetes</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Studying/">
             <span class="level-start">
@@ -957,7 +971,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 10px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 10px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -976,10 +990,36 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-26T10:12:45.000Z">2019-07-26</time></div>
+                    <a href="/2019/07/26/Filebeat组件对接Logstash操作指南/" class="has-link-black-ter is-size-6">Filebeat组件对接Logstash操作指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-10T16:36:35.000Z">2019-07-10</time></div>
+                    <a href="/2019/07/11/Kubernetes负载均衡学习笔记/" class="has-link-black-ter is-size-6">Kubernetes负载均衡学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T10:21:15.000Z">2019-07-04</time></div>
                     <a href="/2019/07/04/Elasticsearch学习笔记/" class="has-link-black-ter is-size-6">Elasticsearch学习笔记</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
                     </p>
                 </div>
             </div>
@@ -1011,32 +1051,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-14T11:56:30.000Z">2019-06-14</time></div>
-                    <a href="/2019/06/14/docker安装指南及基本操作(Mac环境)/" class="has-link-black-ter is-size-6">docker安装指南及基本操作(Mac环境)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-13T09:42:51.000Z">2019-06-13</time></div>
-                    <a href="/2019/06/13/读研目标学校分析/" class="has-link-black-ter is-size-6">读研目标学校分析</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Studying/">Studying</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1055,7 +1069,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1247,8 +1261,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Kubernetes/">
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Linux/">
                         <span class="tag">Linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Logstash/">
+                        <span class="tag">Logstash</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1294,10 +1322,36 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-26T10:12:45.000Z">2019-07-26</time></div>
+                    <a href="/2019/07/26/Filebeat组件对接Logstash操作指南/" class="has-link-black-ter is-size-6">Filebeat组件对接Logstash操作指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-10T16:36:35.000Z">2019-07-10</time></div>
+                    <a href="/2019/07/11/Kubernetes负载均衡学习笔记/" class="has-link-black-ter is-size-6">Kubernetes负载均衡学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T10:21:15.000Z">2019-07-04</time></div>
                     <a href="/2019/07/04/Elasticsearch学习笔记/" class="has-link-black-ter is-size-6">Elasticsearch学习笔记</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
                     </p>
                 </div>
             </div>
@@ -1329,32 +1383,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-14T11:56:30.000Z">2019-06-14</time></div>
-                    <a href="/2019/06/14/docker安装指南及基本操作(Mac环境)/" class="has-link-black-ter is-size-6">docker安装指南及基本操作(Mac环境)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-13T09:42:51.000Z">2019-06-13</time></div>
-                    <a href="/2019/06/13/读研目标学校分析/" class="has-link-black-ter is-size-6">读研目标学校分析</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Studying/">Studying</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1373,7 +1401,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1565,8 +1593,22 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Kubernetes/">
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Linux/">
                         <span class="tag">Linux</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Logstash/">
+                        <span class="tag">Logstash</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

@@ -2,24 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>《Java编程思想》读书笔记(第一章) - octopusheep</title>
+<title>Elasticsearch部署实践相关总结 - octopusheep</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="对象导论 编程语言始于对机器的模仿，但并非机器那么简单，它是一种不同类型的表达媒体  What is Object-oriented Programming?  人们所能够解决的问题的复杂性直接取决于抽象的类型和质量  解空间：你对问题建模的地方，如机器  问题空间：问题存在的地方   The definition of Object 问题空间的元素及其在解空间的表示  对象具有状态，行为，标识">
-<meta name="keywords" content="Java">
+    <meta name="description" content="单节点ES的部署（选做）创建networkFeel free to use an existing one or the default. 1docker network create -d bridge elastic  部署Elasticsearch1234567891011publish_host=$(hostname -I | cut -d&amp;apos; &amp;apos; -f1) \docke">
+<meta name="keywords" content="Elasticsearch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《Java编程思想》读书笔记(第一章)">
-<meta property="og:url" content="http://octopusheep.com/2018/09/05/《Java编程思想》读书笔记(第一章)/index.html">
+<meta property="og:title" content="Elasticsearch部署实践相关总结">
+<meta property="og:url" content="http://octopusheep.com/2019/07/31/Elasticsearch部署实践相关总结/index.html">
 <meta property="og:site_name" content="octopusheep">
-<meta property="og:description" content="对象导论 编程语言始于对机器的模仿，但并非机器那么简单，它是一种不同类型的表达媒体  What is Object-oriented Programming?  人们所能够解决的问题的复杂性直接取决于抽象的类型和质量  解空间：你对问题建模的地方，如机器  问题空间：问题存在的地方   The definition of Object 问题空间的元素及其在解空间的表示  对象具有状态，行为，标识">
+<meta property="og:description" content="单节点ES的部署（选做）创建networkFeel free to use an existing one or the default. 1docker network create -d bridge elastic  部署Elasticsearch1234567891011publish_host=$(hostname -I | cut -d&amp;apos; &amp;apos; -f1) \docke">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-21T05:53:20.000Z">
+<meta property="og:updated_time" content="2019-07-30T07:03:20.396Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《Java编程思想》读书笔记(第一章)">
-<meta name="twitter:description" content="对象导论 编程语言始于对机器的模仿，但并非机器那么简单，它是一种不同类型的表达媒体  What is Object-oriented Programming?  人们所能够解决的问题的复杂性直接取决于抽象的类型和质量  解空间：你对问题建模的地方，如机器  问题空间：问题存在的地方   The definition of Object 问题空间的元素及其在解空间的表示  对象具有状态，行为，标识">
+<meta name="twitter:title" content="Elasticsearch部署实践相关总结">
+<meta name="twitter:description" content="单节点ES的部署（选做）创建networkFeel free to use an existing one or the default. 1docker network create -d bridge elastic  部署Elasticsearch1234567891011publish_host=$(hostname -I | cut -d&amp;apos; &amp;apos; -f1) \docke">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
 
@@ -89,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/octopus.jpg" alt="《Java编程思想》读书笔记(第一章)" height="28">
+                <img src="/images/octopus.jpg" alt="Elasticsearch部署实践相关总结" height="28">
             
             </a>
         </div>
@@ -144,17 +144,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-09-04T19:44:56.000Z">2018-09-04</time>
+                <time class="level-item has-text-grey" datetime="2019-07-30T16:36:35.000Z">2019-07-30</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Elasticsearch/">Elasticsearch</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 361 words)
+                    3 minutes read (About 380 words)
                 </span>
                 
                 
@@ -163,54 +163,30 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                《Java编程思想》读书笔记(第一章)
+                Elasticsearch部署实践相关总结
             
         </h1>
         <div class="content">
-            <h1 id="对象导论"><a href="#对象导论" class="headerlink" title="对象导论"></a>对象导论</h1><ul>
-<li><p>编程语言始于对机器的模仿，但并非机器那么简单，它是一种不同类型的表达媒体</p>
-</li>
-<li><p>What is Object-oriented Programming?</p>
-</li>
-<li><p>人们所能够解决的问题的复杂性直接取决于抽象的类型和质量</p>
-</li>
-<li><p>解空间：你对问题建模的地方，如机器</p>
-</li>
-<li><p>问题空间：问题存在的地方</p>
-</li>
-</ul>
-<h2 id="The-definition-of-Object"><a href="#The-definition-of-Object" class="headerlink" title="The definition of Object"></a>The definition of Object</h2><ol>
-<li><p>问题空间的元素及其在解空间的表示</p>
-</li>
-<li><p>对象具有状态，行为，标识</p>
+            <h2 id="单节点ES的部署"><a href="#单节点ES的部署" class="headerlink" title="单节点ES的部署"></a>单节点ES的部署</h2><h3 id="（选做）创建network"><a href="#（选做）创建network" class="headerlink" title="（选做）创建network"></a>（选做）创建network</h3><p>Feel free to use an existing one or the default.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create -d bridge elastic</span><br></pre></td></tr></table></figure>
+
+<h3 id="部署Elasticsearch"><a href="#部署Elasticsearch" class="headerlink" title="部署Elasticsearch"></a>部署Elasticsearch</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">publish_host=$(hostname -I | cut -d&apos; &apos; -f1) \</span><br><span class="line">docker run -d \</span><br><span class="line"> --name elasticsearch \</span><br><span class="line"> -e &quot;discovery.type=single-node&quot; \</span><br><span class="line"> -e &quot;network.host=0.0.0.0&quot; \</span><br><span class="line"> -e &quot;network.publish_host=$&#123;publish_host&#125;&quot; \</span><br><span class="line"> -p 9200:9200 -p 9300:9300 \</span><br><span class="line"> --memory-reservation 4g --memory 6g \</span><br><span class="line"> --network=elastic \</span><br><span class="line"> --restart on-failure \</span><br><span class="line"> cargo.caicloudprivatetest.com/caicloud/elasticsearch:6.5.4</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
-<h2 id="面向对象的设计方式"><a href="#面向对象的设计方式" class="headerlink" title="面向对象的设计方式"></a>面向对象的设计方式</h2></li>
-<li><p>万物皆对象</p>
-</li>
-<li><p>程序是对象的集合</p>
-</li>
-<li><p>每个对象都有自己的由其他对象所构成的存储</p>
-</li>
-<li><p>每个对象都拥有其类型</p>
-</li>
-<li><p>某一特定类型的所有对象都可以接收同样的信息</p>
-</li>
-</ol>
-<h2 id="每个对象在内存中都有一个唯一的地址"><a href="#每个对象在内存中都有一个唯一的地址" class="headerlink" title="每个对象在内存中都有一个唯一的地址"></a>每个对象在内存中都有一个唯一的地址</h2><h2 id="创建对象的方式"><a href="#创建对象的方式" class="headerlink" title="创建对象的方式"></a>创建对象的方式</h2><ol>
-<li>定义这个对象的引用(reference)</li>
-<li>调用new方法创建新对象</li>
-</ol>
-<h2 id="用统一建模语言表示类"><a href="#用统一建模语言表示类" class="headerlink" title="用统一建模语言表示类"></a>用<strong>统一建模语言</strong>表示类</h2><blockquote>
-<p>UML即unified modelling language</p>
-</blockquote>
-<ul>
-<li><p>每个类都用一个方框表示，类名在方框的顶部，你所关心的任何成员变量都描述在方框的中间部分，方法在方框的底部</p>
-</li>
-<li><p>通常，只有类名和公共方法被示于UML设计图中</p>
-</li>
-<li><p>如果只对类型感兴趣，那么方框的底部也不需要给出</p>
-</li>
-</ul>
+<p><strong>Gotcha：</strong>环境变量<code>network.publish_host</code>声明上述定义是ES服务可能会连接的唯一有效的主机名，举个栗子，如果你在192.168.133.32上发布你的ES服务，但你尝试连接ES通过主机名<code>es.caicloud.io</code>，用户端将不能使用，即使主机名<code>es.caicloud.io</code>已经映射到了192.168.133.32</p>
+<p><strong>验证方式：</strong>在ES部署的任意集群上执行(假设ES被安装在<code>192.168.133.32</code>)</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl &apos;http://192.168.133.32:9200/_nodes/http?pretty&apos;</span><br></pre></td></tr></table></figure>
+
+<p>之后应该能看到如下回复：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;_nodes&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 1,</span><br><span class="line">    &quot;successful&quot; : 1,</span><br><span class="line">    &quot;failed&quot; : 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;cluster_name&quot; : &quot;docker-cluster&quot;,</span><br><span class="line">  &quot;nodes&quot; : &#123;</span><br><span class="line">    &quot;pgnaBbRGSOKJeeuq31tLcQ&quot; : &#123;</span><br><span class="line">      &quot;name&quot; : &quot;pgnaBbR&quot;,</span><br><span class="line">      &quot;transport_address&quot; : &quot;192.168.133.32:9300&quot;,</span><br><span class="line">      &quot;host&quot; : &quot;192.168.133.32&quot;,</span><br><span class="line">      &quot;ip&quot; : &quot;192.168.133.32&quot;,</span><br><span class="line">      &quot;version&quot; : &quot;6.5.4&quot;,</span><br><span class="line">      &quot;build_flavor&quot; : &quot;default&quot;,</span><br><span class="line">      &quot;build_type&quot; : &quot;tar&quot;,</span><br><span class="line">      &quot;build_hash&quot; : &quot;d2ef93d&quot;,</span><br><span class="line">      &quot;roles&quot; : [</span><br><span class="line">        &quot;master&quot;,</span><br><span class="line">        &quot;data&quot;,</span><br><span class="line">        &quot;ingest&quot;</span><br><span class="line">      ],</span><br><span class="line">      &quot;attributes&quot; : &#123;</span><br><span class="line">        &quot;ml.machine_memory&quot; : &quot;6442450944&quot;,</span><br><span class="line">        &quot;xpack.installed&quot; : &quot;true&quot;,</span><br><span class="line">        &quot;ml.max_open_jobs&quot; : &quot;20&quot;,</span><br><span class="line">        &quot;ml.enabled&quot; : &quot;true&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;http&quot; : &#123;</span><br><span class="line">        &quot;bound_address&quot; : [</span><br><span class="line">          &quot;[::]:9200&quot;</span><br><span class="line">        ],</span><br><span class="line">        &quot;publish_address&quot; : &quot;192.168.133.32:9200&quot;,</span><br><span class="line">        &quot;max_content_length_in_bytes&quot; : 104857600</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="部署kibana"><a href="#部署kibana" class="headerlink" title="部署kibana"></a>部署kibana</h3><p>kibana不是ES运行的必需组件，但其是非常重要的debug和维护工具，因此高度推荐你在部署ES实例后也部署kibana</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line"> --name kibana \</span><br><span class="line"> -e &quot;ELASTICSEARCH_URL=http://elasticsearch:9200&quot; \</span><br><span class="line"> -p 5601:5601 \</span><br><span class="line"> --network=elastic \</span><br><span class="line"> --restart on-failure \</span><br><span class="line"> cargo.caicloudprivatetest.com/caicloud/kibana-oss:6.5.4</span><br></pre></td></tr></table></figure>
+
+<h3 id="ES相关命令"><a href="#ES相关命令" class="headerlink" title="ES相关命令"></a>ES相关命令</h3><h4 id="查询全部日志概况-假设ES被安装在192-168-133-32"><a href="#查询全部日志概况-假设ES被安装在192-168-133-32" class="headerlink" title="查询全部日志概况(假设ES被安装在192.168.133.32)"></a>查询全部日志概况(假设ES被安装在<code>192.168.133.32</code>)</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://192.168.133.32:9200/_cat/indices?v</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除ES内全部日志-假设ES被安装在192-168-133-32"><a href="#删除ES内全部日志-假设ES被安装在192-168-133-32" class="headerlink" title="删除ES内全部日志(假设ES被安装在192.168.133.32)"></a>删除ES内全部日志(假设ES被安装在<code>192.168.133.32</code>)</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -XDELETE http://192.168.133.32:9200/_all</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -218,7 +194,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Java/">Java</a>
+                    <a class="has-link-grey -link" href="/tags/Elasticsearch/">Elasticsearch</a>
                 </div>
             </div>
         </div>
@@ -288,17 +264,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/09/06/《Java编程思想》读书笔记(第三章)/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">《Java编程思想》读书笔记(第三章)</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/09/04/《Java编程思想》读书笔记(序章)/">
-                <span class="level-item">《Java编程思想》读书笔记(序章)</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/26/Filebeat组件对接Logstash操作指南/">
+                <span class="level-item">Filebeat组件对接Logstash操作指南</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -428,30 +397,34 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#对象导论">
+        <a class="is-flex" href="#单节点ES的部署">
         <span class="has-mr-6">1</span>
-        <span>对象导论</span>
+        <span>单节点ES的部署</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#The-definition-of-Object">
+        <a class="is-flex" href="#（选做）创建network">
         <span class="has-mr-6">1.1</span>
-        <span>The definition of Object</span>
+        <span>（选做）创建network</span>
         </a></li><li>
-        <a class="is-flex" href="#面向对象的设计方式">
+        <a class="is-flex" href="#部署Elasticsearch">
         <span class="has-mr-6">1.2</span>
-        <span>面向对象的设计方式</span>
+        <span>部署Elasticsearch</span>
         </a></li><li>
-        <a class="is-flex" href="#每个对象在内存中都有一个唯一的地址">
+        <a class="is-flex" href="#部署kibana">
         <span class="has-mr-6">1.3</span>
-        <span>每个对象在内存中都有一个唯一的地址</span>
+        <span>部署kibana</span>
         </a></li><li>
-        <a class="is-flex" href="#创建对象的方式">
+        <a class="is-flex" href="#ES相关命令">
         <span class="has-mr-6">1.4</span>
-        <span>创建对象的方式</span>
+        <span>ES相关命令</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#查询全部日志概况-假设ES被安装在192-168-133-32">
+        <span class="has-mr-6">1.4.1</span>
+        <span>查询全部日志概况(假设ES被安装在192.168.133.32)</span>
         </a></li><li>
-        <a class="is-flex" href="#用统一建模语言表示类">
-        <span class="has-mr-6">1.5</span>
-        <span>用统一建模语言表示类</span>
-        </a></li></ul></li></ul>
+        <a class="is-flex" href="#删除ES内全部日志-假设ES被安装在192-168-133-32">
+        <span class="has-mr-6">1.4.2</span>
+        <span>删除ES内全部日志(假设ES被安装在192.168.133.32)</span>
+        </a></li></ul></li></ul></li></ul>
         </div>
     </div>
 </div>
@@ -1250,7 +1223,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/octopus.jpg" alt="《Java编程思想》读书笔记(第一章)" height="28">
+                    <img src="/images/octopus.jpg" alt="Elasticsearch部署实践相关总结" height="28">
                 
                 </a>
                 <p class="is-size-7">

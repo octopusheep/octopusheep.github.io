@@ -2,20 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Archives: 2018/12 - octopusheep</title>
+<title>集群健康检查操作指南 - octopusheep</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="keywords" content="octopusheep">
-<meta property="og:type" content="website">
-<meta property="og:title" content="octopusheep">
-<meta property="og:url" content="http://octopusheep.com/archives/2018/12/index.html">
+    <meta name="description" content="Comprisal集群健康检查主要由三个文件组成：  保存集群和节点信息的文件/etc/ansible/hosts 输出健康检查信息的shell脚本/root/cluster/check_cluster.sh 发送邮件的python文件/root/cluster/send_mail.py  以上路径均为绝对路径 Step登陆131.29节点1ssh root@192.168.131.29  该节点">
+<meta name="keywords" content="octopusheep">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集群健康检查操作指南">
+<meta property="og:url" content="http://octopusheep.com/2019/08/01/集群健康检查操作指南/index.html">
 <meta property="og:site_name" content="octopusheep">
+<meta property="og:description" content="Comprisal集群健康检查主要由三个文件组成：  保存集群和节点信息的文件/etc/ansible/hosts 输出健康检查信息的shell脚本/root/cluster/check_cluster.sh 发送邮件的python文件/root/cluster/send_mail.py  以上路径均为绝对路径 Step登陆131.29节点1ssh root@192.168.131.29  该节点">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-08-01T02:24:33.307Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="octopusheep">
+<meta name="twitter:title" content="集群健康检查操作指南">
+<meta name="twitter:description" content="Comprisal集群健康检查主要由三个文件组成：  保存集群和节点信息的文件/etc/ansible/hosts 输出健康检查信息的shell脚本/root/cluster/check_cluster.sh 发送邮件的python文件/root/cluster/send_mail.py  以上路径均为绝对路径 Step登陆131.29节点1ssh root@192.168.131.29  该节点">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
 
@@ -85,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/octopus.jpg" alt="octopusheep" height="28">
+                <img src="/images/octopus.jpg" alt="集群健康检查操作指南" height="28">
             
             </a>
         </div>
@@ -117,6 +121,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -130,35 +138,155 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        December 2018
-        </h3>
-        <div class="timeline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
         
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-01T10:21:11.000Z">2019-08-01</time>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-12-03T16:13:26.000Z">2018-12-03</time>
-                        <a href="/2018/12/04/Android MVP框架学习笔记2/" class="has-link-black-ter is-size-6">Android MVP框架学习笔记（进阶）</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
                 </div>
-            </article>
-        
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 987 words)
+                </span>
+                
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                集群健康检查操作指南
+            
+        </h1>
+        <div class="content">
+            <h2 id="Comprisal"><a href="#Comprisal" class="headerlink" title="Comprisal"></a>Comprisal</h2><p>集群健康检查主要由三个文件组成：</p>
+<ol>
+<li>保存集群和节点信息的文件<code>/etc/ansible/hosts</code></li>
+<li>输出健康检查信息的shell脚本<code>/root/cluster/check_cluster.sh</code></li>
+<li>发送邮件的python文件<code>/root/cluster/send_mail.py</code></li>
+</ol>
+<p>以上路径均为绝对路径</p>
+<h2 id="Step"><a href="#Step" class="headerlink" title="Step"></a>Step</h2><h3 id="登陆131-29节点"><a href="#登陆131-29节点" class="headerlink" title="登陆131.29节点"></a>登陆131.29节点</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@192.168.131.29</span><br></pre></td></tr></table></figure>
+
+<p>该节点为QA组执行常用操作的节点,密码为caicloud2018</p>
+<a id="more"></a>
+<h3 id="添加需要检查的集群和节点信息"><a href="#添加需要检查的集群和节点信息" class="headerlink" title="添加需要检查的集群和节点信息"></a>添加需要检查的集群和节点信息</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ansible/hosts</span><br></pre></td></tr></table></figure>
+
+<p>打开后向下翻阅找到与集群节点相关的记录</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">[cluster-30]</span><br><span class="line">192.168.129.30</span><br><span class="line">172.16.100.123</span><br><span class="line">192.168.132.10</span><br><span class="line">192.168.129.31</span><br><span class="line">#192.168.129.32</span><br><span class="line">#192.168.132.33</span><br><span class="line">192.168.129.34</span><br><span class="line">192.168.129.35</span><br><span class="line">#192.168.129.45</span><br><span class="line">#172.16.60.71</span><br><span class="line">#192.168.131.1</span><br><span class="line">192.168.129.37</span><br><span class="line">[test]</span><br><span class="line">192.168.131.29</span><br><span class="line"></span><br><span class="line">[cluster-40]</span><br><span class="line">192.168.129.40</span><br><span class="line">192.168.129.41</span><br><span class="line">192.168.129.44</span><br><span class="line">192.168.129.46</span><br><span class="line">192.168.129.48</span><br><span class="line">192.168.130.6</span><br><span class="line">192.168.131.11</span><br><span class="line">#192.168.129.45</span><br><span class="line">#172.16.60.102</span><br><span class="line">#192.168.133.11</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br></pre></td></tr></table></figure>
+
+<p>此处我们可以看到<code>[cluster-30]</code>标签下监控的ip有：</p>
+<ul>
+<li>192.168.129.30</li>
+<li>172.16.100.123</li>
+<li>192.168.132.10</li>
+<li>192.168.129.31</li>
+<li>192.168.129.34</li>
+<li>192.168.129.35</li>
+<li>192.168.129.37</li>
+</ul>
+<p>假设我们监控的是cluster-30集群，就要在<code>[cluster-30]</code>标签下添加我们需要监控的ip，按需添加即可</p>
+<h3 id="修改shell脚本"><a href="#修改shell脚本" class="headerlink" title="修改shell脚本"></a>修改shell脚本</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /root/cluster/check_cluster.sh</span><br></pre></td></tr></table></figure>
+
+<p>打开后可发现如下内容</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span>!/bin/bash</span><br><span class="line">cluster='cluster-30'  //填写需要做健康检查的集群</span><br><span class="line">node='node-30'        //填写需要做健康检查的节点</span><br><span class="line">log='/root/cluster/check_cluster.log'</span><br><span class="line">rm -rf /root/.ssh/known_hosts</span><br><span class="line">rm -rf /root/cluster/check_cluster.log</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br></pre></td></tr></table></figure>
+
+<p>在<code>check_cluster.sh</code>中填写需要做检查的集群和节点，如cluster可以填写<code>cluster-30</code>或<code>cluster-40</code>等，集群相关信息被保存在了<code>/etc/ansible/hosts</code>文件中</p>
+<h3 id="运行shell脚本"><a href="#运行shell脚本" class="headerlink" title="运行shell脚本"></a>运行shell脚本</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash /root/cluster/check_cluster.sh</span><br></pre></td></tr></table></figure>
+
+<p>执行后即输出集群健康检查日志如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">[INFO]Date 2019年 08月 01日 星期四 10:13:28 CST</span><br><span class="line">[INFO]Start checking the cluster environment</span><br><span class="line">[INFO]Start checking for cluster memory leaks</span><br><span class="line">[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to allow bad characters in group names by default, this will change, but still be user configurable</span><br><span class="line">on deprecation. This feature will be removed in version 2.10. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.</span><br><span class="line"> [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details</span><br><span class="line">172.16.100.123 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">The above is the oom component information</span><br><span class="line">Warning: Permanently added &apos;172.16.100.123&apos; (ECDSA) to the list of known hosts.</span><br><span class="line">Shared connection to 172.16.100.123 closed.</span><br><span class="line"></span><br><span class="line">192.168.129.31 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">The above is the oom component information</span><br><span class="line">Warning: Permanently added &apos;192.168.129.31&apos; (ECDSA) to the list of known hosts.</span><br><span class="line">Shared connection to 192.168.129.31 closed.</span><br><span class="line"></span><br><span class="line">192.168.132.10 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">The above is the oom component information</span><br><span class="line">Warning: Permanently added &apos;192.168.132.10&apos; (ECDSA) to the list of known hosts.</span><br><span class="line">Shared connection to 192.168.132.10 closed.</span><br><span class="line"></span><br><span class="line">192.168.129.30 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">The above is the oom component information</span><br><span class="line">Warning: Permanently added &apos;192.168.129.30&apos; (ECDSA) to the list of known hosts.</span><br><span class="line">Shared connection to 192.168.129.30 closed.</span><br><span class="line"></span><br><span class="line">192.168.129.34 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">The above is the oom component information</span><br><span class="line">Warning: Permanently added &apos;192.168.129.34&apos; (ECDSA) to the list of known hosts.</span><br><span class="line">Shared connection to 192.168.129.34 closed.</span><br><span class="line"></span><br><span class="line">192.168.129.35 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">The above is the oom component information</span><br><span class="line">Warning: Permanently added &apos;192.168.129.35&apos; (ECDSA) to the list of known hosts.</span><br><span class="line">Shared connection to 192.168.129.35 closed.</span><br><span class="line"></span><br><span class="line">192.168.129.37 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">The above is the oom component information</span><br><span class="line">Warning: Permanently added &apos;192.168.129.37&apos; (ECDSA) to the list of known hosts.</span><br><span class="line">Shared connection to 192.168.129.37 closed.</span><br><span class="line"></span><br><span class="line">[SUCCESS]Cluster check succeeded</span><br><span class="line">[INFO]Start checking for cluster pod status</span><br><span class="line">[DEPRECATION WARNING]: The TRANSFORM_INVALID_GROUP_CHARS settings is set to allow bad characters in group names by default, this will change, but still be user configurable</span><br><span class="line">on deprecation. This feature will be removed in version 2.10. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.</span><br><span class="line"> [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details</span><br><span class="line">172.16.100.123 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">kube-system   mlneuron-controller-controller-v1-0-84949558d-zsqj7              0/1     CreateContainerConfigError   0          13h</span><br><span class="line">The above is the non Running Completed component information</span><br><span class="line">Shared connection to 172.16.100.123 closed.</span><br><span class="line"></span><br><span class="line">192.168.129.30 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">The above is the non Running Completed component information</span><br><span class="line">Shared connection to 192.168.129.30 closed.</span><br><span class="line"></span><br><span class="line">192.168.129.34 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">kube-system   lb-137661599-provider-ipvsdr-lxuqc-5dc55557f8-ld69l              0/1     Pending                      0          37h</span><br><span class="line">kube-system   lb-137661599-proxy-nginx-l18nn-768fbb948c-m8f6l                  0/2     Pending                      0          37h</span><br><span class="line">kube-system   mlneuron-controller-controller-v1-0-84949558d-njkvv              0/1     CreateContainerConfigError   0          39h</span><br><span class="line">The above is the non Running Completed component information</span><br><span class="line">Shared connection to 192.168.129.34 closed.</span><br><span class="line"></span><br><span class="line">192.168.129.31 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">kube-system   mlneuron-controller-controller-v1-0-84949558d-smqd4              0/1     CreateContainerConfigError   0          39h</span><br><span class="line">kube-system   sparkoperator-init-init-v1-0-6xmwt                               0/1     Error                        0          39h</span><br><span class="line">The above is the non Running Completed component information</span><br><span class="line">Shared connection to 192.168.129.31 closed.</span><br><span class="line"></span><br><span class="line">192.168.132.10 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">kube-system   clever-spark-operator-operator-v1-0-56dbcc95cc-wwpdx             0/1     ContainerCreating            0          39h</span><br><span class="line">kube-system   mlneuron-controller-controller-v1-0-84949558d-5d9mh              0/1     CreateContainerConfigError   0          39h</span><br><span class="line">kube-system   sparkoperator-init-init-v1-0-ptkf6                               0/1     ContainerCreating            0          39h</span><br><span class="line">The above is the non Running Completed component information</span><br><span class="line">Shared connection to 192.168.132.10 closed.</span><br><span class="line"></span><br><span class="line">192.168.129.35 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">kube-system    mlneuron-controller-controller-v1-0-84949558d-8lw6v              0/1     CreateContainerConfigError   0          39h</span><br><span class="line">The above is the non Running Completed component information</span><br><span class="line">Shared connection to 192.168.129.35 closed.</span><br><span class="line"></span><br><span class="line">192.168.129.37 | CHANGED | rc=0 &gt;&gt;</span><br><span class="line">kube-system    mlneuron-controller-controller-v1-0-84949558d-kzj5z              0/1     CreateContainerConfigError   0          39h</span><br><span class="line">The above is the non Running Completed component information</span><br><span class="line">Shared connection to 192.168.129.37 closed.</span><br><span class="line"></span><br><span class="line">[SUCCESS]Cluster check succeeded</span><br></pre></td></tr></table></figure>
+
+<h3 id="发送邮件至相关通知人"><a href="#发送邮件至相关通知人" class="headerlink" title="发送邮件至相关通知人"></a>发送邮件至相关通知人</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python /root/cluster/send_mail.py</span><br></pre></td></tr></table></figure>
+
+<p>执行后提示，即发送成功</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Thu, 01 Aug 2019 10:15:40 +0800</span><br><span class="line">邮件已发送至对应账号！！</span><br></pre></td></tr></table></figure>
+
+<h2 id="Gotcha"><a href="#Gotcha" class="headerlink" title="Gotcha"></a>Gotcha</h2><p>其实整个健康检查就一个shell脚本和一个发送邮件的python文件，诸如更改日志保存路径和更改邮箱收件人自己看看代码就明白了</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="Alipay"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wechat.jpg" alt="Wechat"></div>
+</a>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<a class="button is-warning donate" onclick="document.getElementById(&#39;paypal-donate-form&#39;).submit()">
+    <span class="icon is-small">
+        <i class="fab fa-paypal"></i>
+    </span>
+    <span>Paypal</span>
+</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal-donate-form">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="octopusheep@gmail.com">
+    <input type="hidden" name="currency_code" value="USD">
+</form>
+
+                
+                
+<a class="button is-danger donate" href="https://www.octopusheep.com" target="_blank">
+    <span class="icon is-small">
+        <i class="fab fa-patreon"></i>
+    </span>
+    <span>Patreon</span>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/31/Elasticsearch部署实践相关总结/">
+                <span class="level-item">Elasticsearch部署实践相关总结</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
     </div>
 </div>
 
@@ -277,6 +405,49 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#Comprisal">
+        <span class="has-mr-6">1</span>
+        <span>Comprisal</span>
+        </a></li><li>
+        <a class="is-flex" href="#Step">
+        <span class="has-mr-6">2</span>
+        <span>Step</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#登陆131-29节点">
+        <span class="has-mr-6">2.1</span>
+        <span>登陆131.29节点</span>
+        </a></li><li>
+        <a class="is-flex" href="#添加需要检查的集群和节点信息">
+        <span class="has-mr-6">2.2</span>
+        <span>添加需要检查的集群和节点信息</span>
+        </a></li><li>
+        <a class="is-flex" href="#修改shell脚本">
+        <span class="has-mr-6">2.3</span>
+        <span>修改shell脚本</span>
+        </a></li><li>
+        <a class="is-flex" href="#运行shell脚本">
+        <span class="has-mr-6">2.4</span>
+        <span>运行shell脚本</span>
+        </a></li><li>
+        <a class="is-flex" href="#发送邮件至相关通知人">
+        <span class="has-mr-6">2.5</span>
+        <span>发送邮件至相关通知人</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Gotcha">
+        <span class="has-mr-6">3</span>
+        <span>Gotcha</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -1093,7 +1264,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/octopus.jpg" alt="octopusheep" height="28">
+                    <img src="/images/octopus.jpg" alt="集群健康检查操作指南" height="28">
                 
                 </a>
                 <p class="is-size-7">

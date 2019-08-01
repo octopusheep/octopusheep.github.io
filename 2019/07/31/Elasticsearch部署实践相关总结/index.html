@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="单节点ES的部署（选做）创建networkFeel free to use an existing one or the default. 1docker network create -d bridge elastic  部署Elasticsearch1234567891011publish_host=$(hostname -I | cut -d&amp;apos; &amp;apos; -f1) \docke">
+    <meta name="description" content="单节点ES的部署（选做）创建network1docker network create -d bridge elastic  部署Elasticsearch1234567891011publish_host=$(hostname -I | cut -d&amp;apos; &amp;apos; -f1) \docker run -d \ --name elasticsearch \ -e &amp;quot;discov">
 <meta name="keywords" content="Elasticsearch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Elasticsearch部署实践相关总结">
 <meta property="og:url" content="http://octopusheep.com/2019/07/31/Elasticsearch部署实践相关总结/index.html">
 <meta property="og:site_name" content="octopusheep">
-<meta property="og:description" content="单节点ES的部署（选做）创建networkFeel free to use an existing one or the default. 1docker network create -d bridge elastic  部署Elasticsearch1234567891011publish_host=$(hostname -I | cut -d&amp;apos; &amp;apos; -f1) \docke">
+<meta property="og:description" content="单节点ES的部署（选做）创建network1docker network create -d bridge elastic  部署Elasticsearch1234567891011publish_host=$(hostname -I | cut -d&amp;apos; &amp;apos; -f1) \docker run -d \ --name elasticsearch \ -e &amp;quot;discov">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-07-30T07:03:20.396Z">
+<meta property="og:updated_time" content="2019-07-30T07:09:37.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elasticsearch部署实践相关总结">
-<meta name="twitter:description" content="单节点ES的部署（选做）创建networkFeel free to use an existing one or the default. 1docker network create -d bridge elastic  部署Elasticsearch1234567891011publish_host=$(hostname -I | cut -d&amp;apos; &amp;apos; -f1) \docke">
+<meta name="twitter:description" content="单节点ES的部署（选做）创建network1docker network create -d bridge elastic  部署Elasticsearch1234567891011publish_host=$(hostname -I | cut -d&amp;apos; &amp;apos; -f1) \docker run -d \ --name elasticsearch \ -e &amp;quot;discov">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
 
@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 380 words)
+                    2 minutes read (About 370 words)
                 </span>
                 
                 
@@ -167,8 +167,7 @@
             
         </h1>
         <div class="content">
-            <h2 id="单节点ES的部署"><a href="#单节点ES的部署" class="headerlink" title="单节点ES的部署"></a>单节点ES的部署</h2><h3 id="（选做）创建network"><a href="#（选做）创建network" class="headerlink" title="（选做）创建network"></a>（选做）创建network</h3><p>Feel free to use an existing one or the default.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create -d bridge elastic</span><br></pre></td></tr></table></figure>
+            <h2 id="单节点ES的部署"><a href="#单节点ES的部署" class="headerlink" title="单节点ES的部署"></a>单节点ES的部署</h2><h3 id="（选做）创建network"><a href="#（选做）创建network" class="headerlink" title="（选做）创建network"></a>（选做）创建network</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create -d bridge elastic</span><br></pre></td></tr></table></figure>
 
 <h3 id="部署Elasticsearch"><a href="#部署Elasticsearch" class="headerlink" title="部署Elasticsearch"></a>部署Elasticsearch</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">publish_host=$(hostname -I | cut -d&apos; &apos; -f1) \</span><br><span class="line">docker run -d \</span><br><span class="line"> --name elasticsearch \</span><br><span class="line"> -e &quot;discovery.type=single-node&quot; \</span><br><span class="line"> -e &quot;network.host=0.0.0.0&quot; \</span><br><span class="line"> -e &quot;network.publish_host=$&#123;publish_host&#125;&quot; \</span><br><span class="line"> -p 9200:9200 -p 9300:9300 \</span><br><span class="line"> --memory-reservation 4g --memory 6g \</span><br><span class="line"> --network=elastic \</span><br><span class="line"> --restart on-failure \</span><br><span class="line"> cargo.caicloudprivatetest.com/caicloud/elasticsearch:6.5.4</span><br></pre></td></tr></table></figure>
 
@@ -264,6 +263,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/01/集群健康检查操作指南/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">集群健康检查操作指南</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
             <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/26/Filebeat组件对接Logstash操作指南/">
@@ -321,7 +327,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        46
+                        47
                     </p>
                 </div>
             </div>
@@ -536,7 +542,7 @@
                 <span class="level-item">Testing</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li>
             </ul>
@@ -564,6 +570,19 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-01T10:21:11.000Z">2019-08-01</time></div>
+                    <a href="/2019/08/01/集群健康检查操作指南/" class="has-link-black-ter is-size-6">集群健康检查操作指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -617,19 +636,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-15T22:49:53.000Z">2019-06-15</time></div>
-                    <a href="/2019/06/16/数据结构学习笔记/" class="has-link-black-ter is-size-6">数据结构学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Studying/">Studying</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -641,6 +647,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/07/">
@@ -901,6 +918,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-01T10:21:11.000Z">2019-08-01</time></div>
+                    <a href="/2019/08/01/集群健康检查操作指南/" class="has-link-black-ter is-size-6">集群健康检查操作指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-30T16:36:35.000Z">2019-07-30</time></div>
                     <a href="/2019/07/31/Elasticsearch部署实践相关总结/" class="has-link-black-ter is-size-6">Elasticsearch部署实践相关总结</a>
                     <p class="is-size-7 is-uppercase">
@@ -949,19 +979,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-15T22:49:53.000Z">2019-06-15</time></div>
-                    <a href="/2019/06/16/数据结构学习笔记/" class="has-link-black-ter is-size-6">数据结构学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Studying/">Studying</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -973,6 +990,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/07/">

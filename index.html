@@ -137,6 +137,67 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-01T10:21:11.000Z">2019-08-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 987 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/01/集群健康检查操作指南/">集群健康检查操作指南</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Comprisal"><a href="#Comprisal" class="headerlink" title="Comprisal"></a>Comprisal</h2><p>集群健康检查主要由三个文件组成：</p>
+<ol>
+<li>保存集群和节点信息的文件<code>/etc/ansible/hosts</code></li>
+<li>输出健康检查信息的shell脚本<code>/root/cluster/check_cluster.sh</code></li>
+<li>发送邮件的python文件<code>/root/cluster/send_mail.py</code></li>
+</ol>
+<p>以上路径均为绝对路径</p>
+<h2 id="Step"><a href="#Step" class="headerlink" title="Step"></a>Step</h2><h3 id="登陆131-29节点"><a href="#登陆131-29节点" class="headerlink" title="登陆131.29节点"></a>登陆131.29节点</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@192.168.131.29</span><br></pre></td></tr></table></figure>
+
+<p>该节点为QA组执行常用操作的节点,密码为caicloud2018</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/08/01/集群健康检查操作指南/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-07-30T16:36:35.000Z">2019-07-30</time>
                 
                 <div class="level-item">
@@ -147,7 +208,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 380 words)
+                    2 minutes read (About 370 words)
                 </span>
                 
                 
@@ -160,8 +221,7 @@
             
         </h1>
         <div class="content">
-            <h2 id="单节点ES的部署"><a href="#单节点ES的部署" class="headerlink" title="单节点ES的部署"></a>单节点ES的部署</h2><h3 id="（选做）创建network"><a href="#（选做）创建network" class="headerlink" title="（选做）创建network"></a>（选做）创建network</h3><p>Feel free to use an existing one or the default.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create -d bridge elastic</span><br></pre></td></tr></table></figure>
+            <h2 id="单节点ES的部署"><a href="#单节点ES的部署" class="headerlink" title="单节点ES的部署"></a>单节点ES的部署</h2><h3 id="（选做）创建network"><a href="#（选做）创建network" class="headerlink" title="（选做）创建network"></a>（选做）创建network</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create -d bridge elastic</span><br></pre></td></tr></table></figure>
 
 <h3 id="部署Elasticsearch"><a href="#部署Elasticsearch" class="headerlink" title="部署Elasticsearch"></a>部署Elasticsearch</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">publish_host=$(hostname -I | cut -d&apos; &apos; -f1) \</span><br><span class="line">docker run -d \</span><br><span class="line"> --name elasticsearch \</span><br><span class="line"> -e &quot;discovery.type=single-node&quot; \</span><br><span class="line"> -e &quot;network.host=0.0.0.0&quot; \</span><br><span class="line"> -e &quot;network.publish_host=$&#123;publish_host&#125;&quot; \</span><br><span class="line"> -p 9200:9200 -p 9300:9300 \</span><br><span class="line"> --memory-reservation 4g --memory 6g \</span><br><span class="line"> --network=elastic \</span><br><span class="line"> --restart on-failure \</span><br><span class="line"> cargo.caicloudprivatetest.com/caicloud/elasticsearch:6.5.4</span><br></pre></td></tr></table></figure>
         </div>
@@ -696,64 +756,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-11T11:39:45.000Z">2019-06-11</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 406 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/06/11/等价类划分学习笔记/">等价类划分学习笔记</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>等价类划分，指的是一种典型的、重要的黑盒测试方法。其就是解决如何选择适当的数据子集来代表整个数据集的问题，通过降低测试的数目去实现“合理的”覆盖，以此来发现更多的软件缺陷.</p>
-<h2 id="等价类类别"><a href="#等价类类别" class="headerlink" title="等价类类别"></a>等价类类别</h2><ul>
-<li><p>有效等价类：对于程序来说，有意义的合理的输入数据集合，用来测试功能是否正确实现</p>
-</li>
-<li><p>无效等价类：对于对程序来说，无意义的、不合理的输入数据集合—用来测试程序是否有强大的异常处理能力（健壮性）</p>
-</li>
-</ul>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/11/等价类划分学习笔记/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -822,7 +824,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        46
+                        47
                     </p>
                 </div>
             </div>
@@ -998,7 +1000,7 @@
                 <span class="level-item">Testing</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li>
             </ul>
@@ -1026,6 +1028,19 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-01T10:21:11.000Z">2019-08-01</time></div>
+                    <a href="/2019/08/01/集群健康检查操作指南/" class="has-link-black-ter is-size-6">集群健康检查操作指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1079,19 +1094,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-15T22:49:53.000Z">2019-06-15</time></div>
-                    <a href="/2019/06/16/数据结构学习笔记/" class="has-link-black-ter is-size-6">数据结构学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Studying/">Studying</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1103,6 +1105,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/07/">
@@ -1363,6 +1376,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-01T10:21:11.000Z">2019-08-01</time></div>
+                    <a href="/2019/08/01/集群健康检查操作指南/" class="has-link-black-ter is-size-6">集群健康检查操作指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Testing/">Testing</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-30T16:36:35.000Z">2019-07-30</time></div>
                     <a href="/2019/07/31/Elasticsearch部署实践相关总结/" class="has-link-black-ter is-size-6">Elasticsearch部署实践相关总结</a>
                     <p class="is-size-7 is-uppercase">
@@ -1411,19 +1437,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-15T22:49:53.000Z">2019-06-15</time></div>
-                    <a href="/2019/06/16/数据结构学习笔记/" class="has-link-black-ter is-size-6">数据结构学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Studying/">Studying</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1435,6 +1448,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/07/">

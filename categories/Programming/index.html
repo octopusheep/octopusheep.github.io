@@ -148,6 +148,63 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-07T17:12:35.000Z">2019-08-07</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Kafka/">Kafka</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes read (About 678 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/08/Kafka Dockerimage Instruction/">Kafka Dockerimage Instruction</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Comprisal"><a href="#Comprisal" class="headerlink" title="Comprisal"></a>Comprisal</h2><p>kafaka needs Java(JDK 8) and zookeeper as prerequisite so we should prepare a docker container  within JDK8 </p>
+<h2 id="Create-docker-container-with-JDK8"><a href="#Create-docker-container-with-JDK8" class="headerlink" title="Create docker container with JDK8"></a>Create docker container with JDK8</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d openjdk:8</span><br></pre></td></tr></table></figure>
+
+<p>then u get the docker container within JDK8 that runs in backgroud</p>
+<p><strong>Hint:</strong> <code>docker ps</code>for find this container id,such as <code>26aa42c88586</code></p>
+<h2 id="Download-Kafka"><a href="#Download-Kafka" class="headerlink" title="Download Kafka"></a>Download Kafka</h2><p>get latest kafaka tar in <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.3.0/kafka_2.12-2.3.0.tgz" target="_blank" rel="noopener">Kafka Offical website</a>, the kafka version in this doc is <code>kafka_2.12-2.3.0.tgz</code></p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/08/08/Kafka Dockerimage Instruction/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-07-30T16:36:35.000Z">2019-07-30</time>
                 
                 <div class="level-item">
@@ -677,59 +734,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-07T09:54:06.000Z">2019-05-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 minutes read (About 719 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/07/《Java编程思想》读书笔记(第十六章)/">《Java编程思想》读书笔记(第十六章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>我突然意识到static和final的含义：static表示它所定义的域和方法对于这个类来说有且仅有一份;final表示它所定义的域对实例来说是不可改变的，final类型的域随实例的创建而被创建，不像static与整个类相关联。同时用static和final修饰域则表示常量，即其对于整个类来说只有一份且不可修改。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BerylliumSphere</span></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">long</span> counter;</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> id=counter++;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-string">"Sphere "</span>+id;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/07/《Java编程思想》读书笔记(第十六章)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -798,7 +802,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        47
+                        48
                     </p>
                 </div>
             </div>
@@ -808,7 +812,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        10
                     </p>
                 </div>
             </div>
@@ -818,7 +822,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        14
+                        15
                     </p>
                 </div>
             </div>
@@ -910,7 +914,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">42</span>
+                <span class="level-item tag">43</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -953,6 +957,14 @@
                 <span class="level-item tag">26</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming/Kafka/">
+            <span class="level-start">
+                <span class="level-item">Kafka</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/Programming/Kubernetes/">
             <span class="level-start">
                 <span class="level-item">Kubernetes</span>
@@ -988,7 +1000,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -1002,6 +1014,19 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T17:12:35.000Z">2019-08-07</time></div>
+                    <a href="/2019/08/08/Kafka Dockerimage Instruction/" class="has-link-black-ter is-size-6">Kafka Dockerimage Instruction</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kafka/">Kafka</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1055,19 +1080,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T10:21:15.000Z">2019-07-04</time></div>
-                    <a href="/2019/07/04/Elasticsearch学习笔记/" class="has-link-black-ter is-size-6">Elasticsearch学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1086,7 +1098,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1285,6 +1297,13 @@
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
                         <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Kafka/">
+                        <span class="tag">Kafka</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1350,6 +1369,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T17:12:35.000Z">2019-08-07</time></div>
+                    <a href="/2019/08/08/Kafka Dockerimage Instruction/" class="has-link-black-ter is-size-6">Kafka Dockerimage Instruction</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kafka/">Kafka</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-01T10:21:11.000Z">2019-08-01</time></div>
                     <a href="/2019/08/01/集群健康检查操作指南/" class="has-link-black-ter is-size-6">集群健康检查操作指南</a>
                     <p class="is-size-7 is-uppercase">
@@ -1398,19 +1430,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T10:21:15.000Z">2019-07-04</time></div>
-                    <a href="/2019/07/04/Elasticsearch学习笔记/" class="has-link-black-ter is-size-6">Elasticsearch学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1429,7 +1448,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1628,6 +1647,13 @@
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
                         <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Kafka/">
+                        <span class="tag">Kafka</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 

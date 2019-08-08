@@ -148,6 +148,93 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-08T08:59:44.000Z">2019-08-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 465 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/08/VM Password Freee Instruction/">VM Password Freee Instruction</a>
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+<p>The people always say:</p>
+<blockquote>
+<p>两岸🐒声啼不住，密码输到手抽搐</p>
+</blockquote>
+<h2 id="Comprisal"><a href="#Comprisal" class="headerlink" title="Comprisal"></a>Comprisal</h2><p>if u wanna login VM and free for password, the prerequisite is <strong>sshpass</strong> and some mistery shell code</p>
+<h2 id="Install-sshpass"><a href="#Install-sshpass" class="headerlink" title="Install sshpass"></a>Install sshpass</h2><h3 id="Download-sshpass"><a href="#Download-sshpass" class="headerlink" title="Download sshpass"></a>Download sshpass</h3><p>u can get sshpass in <a href="https://sourceforge.net/projects/sshpass/files/sshpass/" target="_blank" rel="noopener">sourceforge</a>, download it.</p>
+<p><strong>Hint:</strong> the sshpass version is <code>sshpass-1.06.tar.gz</code> in this document.</p>
+<h3 id="Depressure-sshpass"><a href="#Depressure-sshpass" class="headerlink" title="Depressure sshpass"></a>Depressure sshpass</h3><p>depressures <code>sshpass-1.06.tar.gz</code> to current directory</p>
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf sshpass-1.06.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h3 id="check-environment"><a href="#check-environment" class="headerlink" title="check environment"></a>check environment</h3><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br></pre></td></tr></table></figure>
+
+<h3 id="compile-source-code"><a href="#compile-source-code" class="headerlink" title="compile source code"></a>compile source code</h3><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make&amp;&amp;make install</span><br></pre></td></tr></table></figure>
+
+<p><strong>Hint:</strong> excute <code>sshpass</code>and show the message,which means that u installed sshpass successfully.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Mac:~ zhangyuyang$ sshpass</span><br><span class="line">Usage: sshpass [-f|-d|-p|-e] [-hV] command parameters</span><br><span class="line">   -f filename   Take password to use from file</span><br><span class="line">   -d number     Use number as file descriptor for getting password</span><br><span class="line">   -p password   Provide password as argument (security unwise)</span><br><span class="line">   -e            Password is passed as env-var &quot;SSHPASS&quot;</span><br><span class="line">   With no parameters - password will be taken from stdin</span><br><span class="line"></span><br><span class="line">   -P prompt     Which string should sshpass search for to detect a password prompt</span><br><span class="line">   -v            Be verbose about what you&apos;re doing</span><br><span class="line">   -h            Show help (this screen)</span><br><span class="line">   -V            Print version information</span><br><span class="line">At most one of -f, -d, -p or -e should be used</span><br></pre></td></tr></table></figure>
+
+<h2 id="Setting-password-free-in-shell"><a href="#Setting-password-free-in-shell" class="headerlink" title="Setting password free in shell"></a>Setting password free in shell</h2><p>saving those shell code as shell in any directory u like:</p>
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#passwordfree.sh</span></span><br><span class="line"></span><br><span class="line">password=<span class="hljs-string">'caicloud2019'</span></span><br><span class="line">network_segment=<span class="hljs-string">'192.168.133.'</span></span><br><span class="line"><span class="hljs-built_in">log</span>=<span class="hljs-string">'./log/elasticserch.log'</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#INFO打印</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">info_log</span></span>()&#123;</span><br><span class="line">    <span class="hljs-built_in">echo</span> -e <span class="hljs-string">"[INFO]<span class="hljs-variable">$1</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#SUCCESS打印</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">success_log</span></span>()&#123;</span><br><span class="line">    <span class="hljs-built_in">echo</span> -e <span class="hljs-string">"\033[32m[SUCCESS]\033[0m<span class="hljs-variable">$1</span>"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#ERROR打印</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">error_log</span></span>()&#123;</span><br><span class="line">    <span class="hljs-built_in">echo</span> -e <span class="hljs-string">"\033[31m[ERROR]\033[0m<span class="hljs-variable">$1</span>"</span></span><br><span class="line">    <span class="hljs-built_in">exit</span> 0</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 分发root密钥</span></span><br><span class="line"><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">distribution_key</span></span>()&#123;</span><br><span class="line">    ping <span class="hljs-variable">$&#123;ip&#125;</span> -c1  &gt;&gt; <span class="hljs-variable">$&#123;log&#125;</span> 2&gt;&amp;1</span><br><span class="line">    <span class="hljs-keyword">if</span> [ $? -gt 0 ];<span class="hljs-keyword">then</span></span><br><span class="line">        error_log <span class="hljs-string">"<span class="hljs-variable">$&#123;ip&#125;</span> 无法ping通请检查网络"</span> |tee -a <span class="hljs-variable">$&#123;log&#125;</span></span><br><span class="line">        <span class="hljs-built_in">continue</span></span><br><span class="line">    <span class="hljs-keyword">fi</span></span><br><span class="line">    sshpass -p <span class="hljs-variable">$&#123;password&#125;</span> ssh-copy-id -i ~/.ssh/others/id_rsa_zhangyuyang -o StrictHostKeyChecking=no root@<span class="hljs-variable">$&#123;ip&#125;</span>  &gt;&gt; <span class="hljs-variable">$&#123;log&#125;</span> 2&gt;&amp;1</span><br><span class="line">    <span class="hljs-keyword">if</span> [ $? -gt 0 ];<span class="hljs-keyword">then</span></span><br><span class="line">        error_log <span class="hljs-string">"<span class="hljs-variable">$ip</span> 密钥分发失败"</span> |tee -a <span class="hljs-variable">$&#123;log&#125;</span></span><br><span class="line">        <span class="hljs-built_in">continue</span></span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">        success_log <span class="hljs-string">"<span class="hljs-variable">$ip</span> 密钥分发成功"</span> |tee -a <span class="hljs-variable">$&#123;log&#125;</span></span><br><span class="line">    <span class="hljs-keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 执行操作</span></span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> &#123;30..31&#125;;</span><br><span class="line"><span class="hljs-keyword">do</span></span><br><span class="line">    ip=<span class="hljs-variable">$&#123;network_segment&#125;</span><span class="hljs-variable">$&#123;i&#125;</span></span><br><span class="line">     distribution_key</span><br><span class="line"><span class="hljs-keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>in this code,u need to edit some field:</p>
+<ul>
+<li><p><code>password</code> VM’s password </p>
+</li>
+<li><p><code>network_segment</code> VM’s IP srgment</p>
+</li>
+<li><p><code>for i in {30..31};</code> VM’s IP last index range</p>
+</li>
+<li><p><code>~/.ssh/others/id_rsa_zhangyuyang</code> ur RSA public key</p>
+</li>
+</ul>
+<h2 id="Excute-shell-script"><a href="#Excute-shell-script" class="headerlink" title="Excute shell script"></a>Excute shell script</h2><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash passwordfree.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="Copy-and-rename-public-key"><a href="#Copy-and-rename-public-key" class="headerlink" title="Copy and rename public key"></a>Copy and rename public key</h2><p><strong>Gotcha:</strong> this step is crucial for whole process, go into the directory where u store public key</p>
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">cd</span> .ssh/others/</span><br></pre></td></tr></table></figure>
+
+<p>then copy the public key file and rename it:</p>
+<figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp id_rsa_zhangyuyang id_rsa_zhangyuyang.pub</span><br></pre></td></tr></table></figure>
+
+<h2 id="Excute-shell-script-again"><a href="#Excute-shell-script-again" class="headerlink" title="Excute shell script again"></a>Excute shell script again</h2><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash passwordfree.sh</span><br></pre></td></tr></table></figure>
+
+<p>then u can passsword freee to login VM.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-08-07T17:12:35.000Z">2019-08-07</time>
                 
                 <div class="level-item">
@@ -685,55 +772,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-07T13:35:26.000Z">2019-05-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 93 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/07/《Java编程思想》读书笔记(第十七章)/">《Java编程思想》读书笔记(第十七章)</a>
-            
-        </h1>
-        <div class="content">
-            <a id="more"></a>
-
-<p>Collections.nCopies(传入的对象个数，new Object())方法产生List传递给构造器</p>
-<p>Collections.fill(需要填充的list对象，new Object())方法替换已经在list中存在的元素，而不能添加新的元素</p>
-<h2 id="一种Generator解决方案"><a href="#一种Generator解决方案" class="headerlink" title="一种Generator解决方案"></a>一种Generator解决方案</h2><p>所有的Collection子类型都有一个能够接受另一个Collection对象的构造器</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -802,7 +840,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        48
+                        49
                     </p>
                 </div>
             </div>
@@ -822,7 +860,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        15
+                        16
                     </p>
                 </div>
             </div>
@@ -914,7 +952,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">43</span>
+                <span class="level-item tag">44</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -1000,7 +1038,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -1014,6 +1052,19 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T08:59:44.000Z">2019-08-08</time></div>
+                    <a href="/2019/08/08/VM Password Freee Instruction/" class="has-link-black-ter is-size-6">VM Password Freee Instruction</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1067,19 +1118,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-10T16:36:35.000Z">2019-07-10</time></div>
-                    <a href="/2019/07/11/Kubernetes负载均衡学习笔记/" class="has-link-black-ter is-size-6">Kubernetes负载均衡学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1098,7 +1136,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1332,6 +1370,13 @@
                     <a class="tags has-addons" href="/tags/RxJava/">
                         <span class="tag">RxJava</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Sshpass/">
+                        <span class="tag">Sshpass</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1369,6 +1414,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T08:59:44.000Z">2019-08-08</time></div>
+                    <a href="/2019/08/08/VM Password Freee Instruction/" class="has-link-black-ter is-size-6">VM Password Freee Instruction</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T17:12:35.000Z">2019-08-07</time></div>
                     <a href="/2019/08/08/Kafka Dockerimage Instruction/" class="has-link-black-ter is-size-6">Kafka Dockerimage Instruction</a>
                     <p class="is-size-7 is-uppercase">
@@ -1417,19 +1475,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-10T16:36:35.000Z">2019-07-10</time></div>
-                    <a href="/2019/07/11/Kubernetes负载均衡学习笔记/" class="has-link-black-ter is-size-6">Kubernetes负载均衡学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1448,7 +1493,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1682,6 +1727,13 @@
                     <a class="tags has-addons" href="/tags/RxJava/">
                         <span class="tag">RxJava</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Sshpass/">
+                        <span class="tag">Sshpass</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 

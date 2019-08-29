@@ -16,7 +16,7 @@
 <meta property="og:description" content="Insight历史日志最近五分钟查询不到ES日志由于我们的VM配置为单核8G内存，对于收集整个集群的日志而言，VM的配置过低（内存较小）。在单节点ES上该问题暂时无法解决。 部署ES后收集不到日志该问题可能有两个不同的原因导致： ES节点磁盘写满，filebeat不再写入数据ssh登陆Elasticsearch节点后台（假定节点192.168.133.32）： 1ssh root@192.168.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-29T02:24:22.075Z">
+<meta property="og:updated_time" content="2019-08-29T04:11:50.022Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Insight及LB模块定位问题通用checklist">
 <meta name="twitter:description" content="Insight历史日志最近五分钟查询不到ES日志由于我们的VM配置为单核8G内存，对于收集整个集群的日志而言，VM的配置过低（内存较小）。在单节点ES上该问题暂时无法解决。 部署ES后收集不到日志该问题可能有两个不同的原因导致： ES节点磁盘写满，filebeat不再写入数据ssh登陆Elasticsearch节点后台（假定节点192.168.133.32）： 1ssh root@192.168.">
@@ -205,7 +205,7 @@
 <p>正常情况应输出如下内容：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kube-system              monitoring-prometheus-prometheus-v1-0-0                         3/3     Running             1          2d9h</span><br></pre></td></tr></table></figure>
 
-<p>如果peometheus非running状态，可能是因为节点上资源不够无法调度，杀掉其他的pod，让peometheus运行起来就完事了</p>
+<p>如果prometheus非running状态，可能是因为节点上资源不够无法调度，杀掉其他的pod，让prometheus运行起来就完事了</p>
 
         </div>
         

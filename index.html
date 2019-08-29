@@ -137,6 +137,64 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-29T10:24:15.000Z">2019-08-29</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes read (About 712 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/29/Insight及LB模块定位问题通用checklist/">Insight及LB模块定位问题通用checklist</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Insight"><a href="#Insight" class="headerlink" title="Insight"></a>Insight</h2><h3 id="历史日志最近五分钟查询不到ES日志"><a href="#历史日志最近五分钟查询不到ES日志" class="headerlink" title="历史日志最近五分钟查询不到ES日志"></a>历史日志最近五分钟查询不到ES日志</h3><p>由于我们的VM配置为单核8G内存，对于收集整个集群的日志而言，VM的配置过低（内存较小）。在单节点ES上该问题暂时无法解决。</p>
+<h3 id="部署ES后收集不到日志"><a href="#部署ES后收集不到日志" class="headerlink" title="部署ES后收集不到日志"></a>部署ES后收集不到日志</h3><p>该问题可能有两个不同的原因导致：</p>
+<h4 id="ES节点磁盘写满，filebeat不再写入数据"><a href="#ES节点磁盘写满，filebeat不再写入数据" class="headerlink" title="ES节点磁盘写满，filebeat不再写入数据"></a>ES节点磁盘写满，filebeat不再写入数据</h4><p>ssh登陆Elasticsearch节点后台（假定节点192.168.133.32）：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@192.168.133.32</span><br></pre></td></tr></table></figure>
+
+<p>查看文件系统的磁盘空间占用情况：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/08/29/Insight及LB模块定位问题通用checklist/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-08-08T08:59:44.000Z">2019-08-08</time>
                 
                 <div class="level-item">
@@ -676,64 +734,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-14T11:56:30.000Z">2019-06-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 153 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/06/14/docker安装指南及基本操作(Mac环境)/">docker安装指南及基本操作(Mac环境)</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p>Docker is a platform for developers and sysadmins to develop, deploy, and run applications with containers.</p>
-</blockquote>
-<p>for more precisely manifest docker,all the doc i collected is from official website,and this is my original article</p>
-<h2 id="download-docker"><a href="#download-docker" class="headerlink" title="download docker"></a>download docker</h2><p>we can download docker desktop for mac on <a href="https://hub.docker.com/?overlay=onboarding" target="_blank" rel="noopener">dock hub</a></p>
-<h2 id="install-docker"><a href="#install-docker" class="headerlink" title="install docker"></a>install docker</h2><p>as it hint,just drag &amp; drop docker icon into applications</p>
-<p><img src="/images/55.png" alt="Docker.dmg"></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/14/docker安装指南及基本操作(Mac环境)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -802,7 +802,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        49
+                        50
                     </p>
                 </div>
             </div>
@@ -914,7 +914,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">44</span>
+                <span class="level-item tag">45</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -1019,6 +1019,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-29T10:24:15.000Z">2019-08-29</time></div>
+                    <a href="/2019/08/29/Insight及LB模块定位问题通用checklist/" class="has-link-black-ter is-size-6">Insight及LB模块定位问题通用checklist</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T08:59:44.000Z">2019-08-08</time></div>
                     <a href="/2019/08/08/VM Password Free Instruction/" class="has-link-black-ter is-size-6">VM Password Free Instruction</a>
                     <p class="is-size-7 is-uppercase">
@@ -1067,19 +1080,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-26T10:12:45.000Z">2019-07-26</time></div>
-                    <a href="/2019/07/26/Filebeat组件对接Logstash操作指南/" class="has-link-black-ter is-size-6">Filebeat组件对接Logstash操作指南</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1098,7 +1098,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1376,6 +1376,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-29T10:24:15.000Z">2019-08-29</time></div>
+                    <a href="/2019/08/29/Insight及LB模块定位问题通用checklist/" class="has-link-black-ter is-size-6">Insight及LB模块定位问题通用checklist</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T08:59:44.000Z">2019-08-08</time></div>
                     <a href="/2019/08/08/VM Password Free Instruction/" class="has-link-black-ter is-size-6">VM Password Free Instruction</a>
                     <p class="is-size-7 is-uppercase">
@@ -1424,19 +1437,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-26T10:12:45.000Z">2019-07-26</time></div>
-                    <a href="/2019/07/26/Filebeat组件对接Logstash操作指南/" class="has-link-black-ter is-size-6">Filebeat组件对接Logstash操作指南</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1455,7 +1455,7 @@
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>

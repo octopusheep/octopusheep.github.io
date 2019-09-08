@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="Install Pythonin macos we need to install python3 edition instead og python2  download py3 in offical website and run python3 in teminals First python programremember the difference between command mo">
+    <meta name="description" content="update at 7:10pm sep8 2019 Install Pythonin macos we need to install python3 edition instead og python2  download py3 in offical website and run python3 in teminals First python programremember the di">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Studying Note">
 <meta property="og:url" content="http://octopusheep.com/2019/09/06/Python Studying Note/index.html">
 <meta property="og:site_name" content="octopusheep">
-<meta property="og:description" content="Install Pythonin macos we need to install python3 edition instead og python2  download py3 in offical website and run python3 in teminals First python programremember the difference between command mo">
+<meta property="og:description" content="update at 7:10pm sep8 2019 Install Pythonin macos we need to install python3 edition instead og python2  download py3 in offical website and run python3 in teminals First python programremember the di">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-09-05T12:32:45.163Z">
+<meta property="og:updated_time" content="2019-09-08T11:11:56.544Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Studying Note">
-<meta name="twitter:description" content="Install Pythonin macos we need to install python3 edition instead og python2  download py3 in offical website and run python3 in teminals First python programremember the difference between command mo">
+<meta name="twitter:description" content="update at 7:10pm sep8 2019 Install Pythonin macos we need to install python3 edition instead og python2  download py3 in offical website and run python3 in teminals First python programremember the di">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
 
@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 438 words)
+                    13 minutes read (About 2017 words)
                 </span>
                 
                 
@@ -167,7 +167,8 @@
             
         </h1>
         <div class="content">
-            <h2 id="Install-Python"><a href="#Install-Python" class="headerlink" title="Install Python"></a>Install Python</h2><p>in macos we need to install python3 edition instead og python2 </p>
+            <p>update at 7:10pm sep8 2019</p>
+<h2 id="Install-Python"><a href="#Install-Python" class="headerlink" title="Install Python"></a>Install Python</h2><p>in macos we need to install python3 edition instead og python2 </p>
 <p>download py3 in offical website and run <code>python3</code> in teminals</p>
 <h2 id="First-python-program"><a href="#First-python-program" class="headerlink" title="First python program"></a>First python program</h2><p>remember the difference between command mode and python interactive mode</p>
 <p>commadn mode:</p>
@@ -231,6 +232,394 @@
 <li>constant</li>
 </ul>
 <p>using all upcase alpha to declare a constant like <code>PI</code></p>
+<h3 id="String-and-coding"><a href="#String-and-coding" class="headerlink" title="String and coding"></a>String and coding</h3><p>8 bit = 1 byte</p>
+<ul>
+<li><p>ASCII using 1 byte to save a alpha</p>
+</li>
+<li><p>Unicode using 2 byte to save a alpha</p>
+</li>
+<li><p>UTF-8 using 1 byte to save a English alpha and using more than 3 byte to save a Chinese alpha</p>
+</li>
+</ul>
+<p>if the data have a lot of enlish alpha, using UTF-8 can save space</p>
+<p>the another advantage of UTF-8 is that ASCII can be a part of UTF-8, which means  lots of historical software using ASCII can working in UTF-8 env</p>
+<p>there only use Unicode in Memory</p>
+<h4 id="string-in-python3"><a href="#string-in-python3" class="headerlink" title="string in python3"></a>string in python3</h4><p>in python3, string be code by Unicode, which means python support multi-language</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; print(&apos;你好呀xixixi&apos;)</span><br><span class="line">你好呀xixixi</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>ord()</li>
+</ul>
+<p>change single string as coding number</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; ord(&apos;你&apos;)</span><br><span class="line">20320</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>chr()</li>
+</ul>
+<p>change coding number as single string</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; chr(88)</span><br><span class="line">&apos;X&apos;</span><br><span class="line">&gt;&gt;&gt; chr(66)</span><br><span class="line">&apos;B&apos;</span><br><span class="line">&gt;&gt;&gt; chr(25991)</span><br><span class="line">&apos;文&apos;</span><br></pre></td></tr></table></figure>
+
+<p><code>b&#39;content&#39;</code> means <code>bytes</code> type data</p>
+<ul>
+<li>encode()</li>
+</ul>
+<p>Unicode<code>str</code> can be encode specific <code>bytes</code></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; &apos;aBc&apos;.encode(&apos;ascii&apos;)</span><br><span class="line">b&apos;aBc&apos;</span><br><span class="line">&gt;&gt;&gt; &apos;阳仔007真的很牛匹&apos;.encode(&apos;utf-8&apos;)</span><br><span class="line">b&apos;\xe9\x98\xb3\xe4\xbb\x94007\xe7\x9c\x9f\xe7\x9a\x84\xe5\xbe\x88\xe7\x89\x9b\xe5\x8c\xb9&apos;</span><br><span class="line">&gt;&gt;&gt; &apos;阳仔007真的很牛匹&apos;.encode(&apos;ascii&apos;)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">UnicodeEncodeError: &apos;ascii&apos; codec can&apos;t encode characters in position 0-1: ordinal not in range(128)</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">- decode()</span><br><span class="line"></span><br><span class="line">`bytes` can be decode as a Unicode `str`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>b’AbF’.decode(‘utf-8’)<br>‘AbF’<br>b’AbF’.decode(‘ascii’)<br>‘AbF’<br>b’\xe4\xb8’.decode(‘ascii’)<br>Traceback (most recent call last):<br>  File “<stdin>“, line 1, in <module><br>UnicodeDecodeError: ‘ascii’ codec can’t decode byte 0xe4 in position 0: ordinal not in range(128)<br>b’\xe4\xb8’.decode(‘utf-8’)<br>Traceback (most recent call last):<br>  File “<stdin>“, line 1, in <module><br>UnicodeDecodeError: ‘utf-8’ codec can’t decode bytes in position 0-1: unexpected end of data<br>b’\xe4\xb8\xad’.decode(‘utf-8’)<br>‘中’</module></stdin></module></stdin></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">if `bytes` contains some invalid byte, `decode()` will get error</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>b’\xe4\xb8\xad\xff’.decode(‘utf-8’)<br>Traceback (most recent call last):<br>  File “<stdin>“, line 1, in <module><br>UnicodeDecodeError: ‘utf-8’ codec can’t decode byte 0xff in position 3: invalid start byte</module></stdin></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">but if `bytes` just contains a part of invalid byte, ad parameter `errors` into `decode()`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>b’\xe4\xb8\xad\xff’.decode(‘utf-8’,errors=’ignore’)<br>‘中’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- len()</span><br><span class="line"></span><br><span class="line">`len()` can show how many single string contained in Unicode `str` or show how many byte contained in specific `bytes`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>len(‘octopusheep’)<br>11<br>len(‘阳仔007’)<br>5</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>len(b’octopusheep’)<br>11<br>len(b’\xe7\xab\xa0\xe5\xae\x87\xe9\x98\xb3’)<br>9</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**Gotcha:** if py code contains chinese alpha, we need add following annotations at the head of py code</span><br></pre></td></tr></table></figure>
+
+<p>#!/usr/bin/env python3</p>
+<h1 id="coding-utf-8"><a href="#coding-utf-8" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">make sure your text editor save code encoded in **UTF-8 without BOM**</span><br><span class="line"></span><br><span class="line">#### format string</span><br><span class="line"></span><br><span class="line">using `%` to format string</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>‘Hi, %s, you have $%d in our bank.’%(‘octopusheep’,23333)<br>‘Hi, octopusheep, you have $23333 in our bank.’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- `%d` format int</span><br><span class="line">- `%s` format string</span><br><span class="line">- `%f` format float</span><br><span class="line">- `%x` format hex int</span><br><span class="line"></span><br><span class="line">`%%` can transfer % as a common alpha</span><br><span class="line"></span><br><span class="line">#### format()</span><br><span class="line"></span><br><span class="line">`format()` can format string by call method</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>‘Hi!{0},your investment incresing rate is {1:.3f}% now’.format(‘octopusheep’,2.33333333333333)<br>‘Hi!octopusheep,your investment incresing rate is 2.333% now’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### list and tuple</span><br><span class="line"></span><br><span class="line">`list` is a kind of python data type</span><br><span class="line"></span><br><span class="line">`list` is a ordered element lollection and can insert/delete element at any time</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>octopusheep=[‘handsome’,’happy’,’ensusiastic’]<br>octopusheep<br>[‘handsome’, ‘happy’, ‘ensusiastic’]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`len()` can get `list` element count</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>len(octopusheep)<br>3</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">using index to get certain element in `list`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>octopusheep<br>[‘handsome’, ‘happy’, ‘ensusiastic’]<br>octopusheep[0]<br>‘handsome’<br>octopusheep[1]<br>‘happy’<br>octopusheep[2]<br>‘ensusiastic’<br>octopusheep[3]<br>Traceback (most recent call last):<br>  File “<stdin>“, line 1, in <module><br>IndexError: list index out of range<br>octopusheep[-1]<br>‘ensusiastic’<br>octopusheep[-2]<br>‘happy’<br>octopusheep[-3]<br>‘handsome’<br>octopusheep[-4]<br>Traceback (most recent call last):<br>  File “<stdin>“, line 1, in <module><br>IndexError: list index out of range</module></stdin></module></stdin></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">using negative index can get last element by order</span><br><span class="line"></span><br><span class="line">#### append()</span><br><span class="line"></span><br><span class="line">insert element into `list` at last index</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>octopusheep.append(666)<br>octopusheep<br>[‘handsome’, ‘happy’, ‘ensusiastic’, 666]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### insert()</span><br><span class="line"></span><br><span class="line">insert element into `list` at specific index</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>octopusheep<br>[‘handsome’, ‘happy’, ‘ensusiastic’, 666]<br>octopusheep.insert(2,’tough’)<br>octopusheep<br>[‘handsome’, ‘happy’, ‘tough’, ‘ensusiastic’, 666]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### pop()</span><br><span class="line"></span><br><span class="line">`pop()`can delete last element in `list`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>octopusheep<br>[‘handsome’, ‘happy’, ‘tough’, ‘ensusiastic’, 666]<br>octopusheep.pop()<br>666<br>octopusheep<br>[‘handsome’, ‘happy’, ‘tough’, ‘ensusiastic’]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`pop()`also can delete element in `list` by specific index</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>octopusheep<br>[‘handsome’, ‘happy’, ‘tough’, ‘ensusiastic’]<br>octopusheep.pop(2)<br>‘tough’<br>octopusheep<br>[‘handsome’, ‘happy’, ‘ensusiastic’]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### change element value in `list`</span><br><span class="line"></span><br><span class="line">given value directly</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>octopusheep<br>[‘handsome’, ‘happy’, ‘ensusiastic’]<br>octopusheep[0]=’very handsome’<br>octopusheep<br>[‘very handsome’, ‘happy’, ‘ensusiastic’]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`list` element can be `list`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>octopusheep.append([‘flamboyant’,’invincible’])<br>octopusheep<br>[‘very handsome’, ‘happy’, ‘ensusiastic’, [‘flamboyant’, ‘invincible’]]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if a `list` do not have any element,its length is zero</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>L=[]<br>len(L)<br>0</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">--</span><br><span class="line"></span><br><span class="line">`tuple` is another kind of `list`, but element of `tuple` is fixed</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>zhangyuyang=(1,2,’hard’,True)<br>zhangyuyang<br>(1, 2, ‘hard’, True)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">define a empty `tuple`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>emptytuple=()<br>emptytuple<br>()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">define a `tuple` that have only one element needs add `,` in parameter list</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>tuple_only_one_element=(233,)<br>tuple_only_one_element<br>(233,)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">when python show `tuple`that have only one element, it will add `,` automaticlly</span><br><span class="line"></span><br><span class="line">if element of `tuple` is a `list`,the element value of this `list` can be changed, because `tuple` just storage the ref of element</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>tuple_have_element_is_list=(1,2,[3,4])<br>tuple_have_element_is_list<br>(1, 2, [3, 4])<br>tuple_have_element_is_list[2][0]=9999<br>tuple_have_element_is_list<br>(1, 2, [9999, 4])</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### conditional judge</span><br><span class="line"></span><br><span class="line">in python, using `if` syntax to complete conditional judge</span><br></pre></td></tr></table></figure>
+
+<p>age = 3<br>if age &gt;18:<br>    print(‘your age is’,age)<br>    print(‘adult’)<br>elif age &gt;6:<br>    print(‘your age is’,age)<br>    print(‘teenager’)<br>else:<br>    print(‘your age is’,age)<br>    print(‘kid’)</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`if` judgement condition can be simplify, if variety is non-zero number or non-null string or list, the judgement result is `True`</span><br></pre></td></tr></table></figure>
+
+<p>x=input(‘input something here:’)<br>if x:<br>    print(‘True’)<br>else:<br>    print(‘False’)</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### int()</span><br><span class="line"></span><br><span class="line">when we use `input()` to get what user type into PC, we just get `string` type data, we should use `int()` to transfer its type</span><br><span class="line"></span><br><span class="line">in this case, i don&apos;t transfer `str` to `int`</span><br></pre></td></tr></table></figure>
+
+<p>birthday=input(‘please type your birth year here:’)<br>if birthday&gt;2000:<br>    print(‘after 2000’)<br>else:<br>    print(‘before 2000’)</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">then show this error:</span><br></pre></td></tr></table></figure>
+
+<p>~/Public » p demo_transferint.py                                                    zhangyuyang@Mac<br>please type your birth year here:1984<br>Traceback (most recent call last):<br>  File “demo_transferint.py”, line 2, in <module><br>    if birthday&gt;2000:<br>TypeError: ‘&gt;’ not supported between instances of ‘str’ and ‘int’</module></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">so we must transfer type to correct</span><br></pre></td></tr></table></figure>
+
+<p>birthday=input(‘please type your birth year here:’)<br>birthday=int(birthday)<br>if birthday&gt;2000:<br>    print(‘after 2000’)<br>else:<br>    print(‘before 2000’)</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">then we can fix this type-relative issue</span><br><span class="line"></span><br><span class="line">#### the py program to calculate bmi</span><br></pre></td></tr></table></figure>
+
+<p>height=float(input(‘plz input your height:’))<br>weight=float(input(‘plz input your weight:’))<br>bmi = weight/(height*height)<br>print(‘your bmi is’,bmi)<br>if bmi&lt;18.5:<br>    print(‘too light’)<br>elif bmi &gt;=18.5 and bmi&lt;25:<br>    print(‘normal’)<br>elif bmi &gt;=25 and bmi&lt;28:<br>    print(‘fat’)<br>elif bmi &gt;=28 and bmi&lt;32:<br>    print(‘seriously fat’)</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### circle</span><br><span class="line"></span><br><span class="line">#### forin circle</span><br><span class="line"></span><br><span class="line">`for in` circle can show every element in `list` or `tuple` by order</span><br></pre></td></tr></table></figure>
+
+<p>names=[‘zyy’,’yyy’,’ayy’]<br>for name in names:<br>    print(name)</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### range() and list()</span><br><span class="line"></span><br><span class="line">`range()` can create an int array, then using `list()` to make it to a `list`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>list(range(100))<br>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### while circle</span><br></pre></td></tr></table></figure>
+
+<p>sum=0<br>index=99</p>
+<p>while index&gt;0:<br>    sum =sum +index<br>    print(‘index:’,index,’sum:’,sum)<br>    index=index-2</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### break</span><br><span class="line"></span><br><span class="line">`break` can stop and jump out whole circle syntax</span><br></pre></td></tr></table></figure>
+
+<p>index=0<br>while index&lt;100:<br>    if index&gt;10:<br>        break<br>    print(index)<br>    index=index+1<br>print(‘END’)</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### continue</span><br><span class="line"></span><br><span class="line">`continue` can jump current circle count</span><br></pre></td></tr></table></figure>
+
+<p>index=0</p>
+<p>while index&lt;10:<br>    index=index+1<br>    if index%2==0:<br>        continue<br>    print(index)</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**Hint:** `break` and `continue` often be used with `if`</span><br><span class="line"></span><br><span class="line">### using `dict` and `set`</span><br><span class="line"></span><br><span class="line">#### dict</span><br><span class="line"></span><br><span class="line">python put dictionary inside called `dict`</span><br><span class="line"></span><br><span class="line">in other programming language it also called `map` which be storaged by kty-value couple and have **extremely fast query speed**</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>dict={‘octopusheep’:23,’jacky chan’:50,’gustav’:78}<br>dict<br>{‘octopusheep’: 23, ‘jacky chan’: 50, ‘gustav’: 78}</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">the way to put element into `dict` is that putting it when initialing and by seting key</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>dict<br>{‘octopusheep’: 23, ‘jacky chan’: 50, ‘gustav’: 78}<br>dict[‘donkey’]=666<br>dict<br>{‘octopusheep’: 23, ‘jacky chan’: 50, ‘gustav’: 78, ‘donkey’: 666}</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">using same way to change value but u should a key just have only one value</span><br><span class="line"></span><br><span class="line">if key is not existed, you will get an error:</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>dict<br>{‘octopusheep’: 23, ‘jacky chan’: 50, ‘gustav’: 78, ‘donkey’: 666}<br>dict[‘lightening’]<br>Traceback (most recent call last):<br>  File “<stdin>“, line 1, in <module><br>KeyError: ‘lightening’</module></stdin></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">two way to get value from `dict`:</span><br><span class="line"></span><br><span class="line">- `str` in `dict`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>‘octopusheep’in dict<br>True<br>‘jack’in dict<br>False</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- `dict`.get(`str`)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>dict.get(‘octopusheep’)<br>23<br>dict.get(‘octopusheep1’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">you can set default value of this method:</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>dict.get(‘octopusheep1’,’i beg you a padon’)<br>‘i beg you a padon’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`pop()`can delete a key and his value from `dict`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>dict<br>{‘octopusheep’: 23, ‘jacky chan’: 50, ‘gustav’: 78, ‘donkey’: 666}<br>dict.pop(‘jacky chan’)<br>50<br>dict<br>{‘octopusheep’: 23, ‘gustav’: 78, ‘donkey’: 666}</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">using key to calculate the loaction of value be called **hash algorithm**</span><br><span class="line"></span><br><span class="line">to be sure the correction of hash, the key cannot be changed, so `str` and `int`,etc can be key, on the contrary, `list` is changable so it cannot be key in `dict`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>k=[1,2,3]<br>dict[k]=”happy mother’s day”<br>Traceback (most recent call last):<br>  File “<stdin>“, line 1, in <module><br>TypeError: unhashable type: ‘list’</module></stdin></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### set</span><br><span class="line"></span><br><span class="line">set is a collection of some key, but its key does not have value</span><br><span class="line"></span><br><span class="line">using a `list` as the parameter of `set()`, which to get a `set`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>s =set([1,2,23,3,43,34,4,4])<br>s
+{1, 2, 3, 34, 4, 43, 23}</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">same element will be filtered in `set`</span><br><span class="line"></span><br><span class="line">`add()` can add element in `set`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>s
+{1, 2, 3, 34, 4, 43, 23}<br>s.add(99)<br>s
+{1, 2, 3, 34, 4, 99, 43, 23}</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`remove()` can delete element in `set`</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>s
+{1, 2, 3, 34, 4, 99, 43, 23}<br>s.remove(1)<br>s
+{2, 3, 34, 4, 99, 43, 23}</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">set can be think as a element collection without order and same element in math, so it can do some specific math manipulation like `&amp;` and `|`:</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>s1=set([1,2,3])<br>s2=set([3,4,5])<br>s1&amp;s2<br>{3}<br>s1|s2<br>{1, 2, 3, 4, 5}</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">you cannot put `list` as key into `set`,becasuse `list` is unhashable</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<p>s3=set([1,2,3,[1,2,3]])<br>Traceback (most recent call last):<br>  File “<stdin>“, line 1, in <module><br>TypeError: unhashable type: ‘list’</module></stdin></p>
+<pre><code></code></pre></blockquote>
+</blockquote>
+</blockquote>
+<h4 id="discuss-“unchangable”-again"><a href="#discuss-“unchangable”-again" class="headerlink" title="discuss “unchangable” again"></a>discuss “unchangable” again</h4><p>understand the ref and the object that ref point to</p>
 
         </div>
         
@@ -440,35 +829,43 @@
             <h3 class="menu-label">
                 Catalogue
             </h3>
-            <ul class="menu-list"><li>
+            <ul class="menu-list"><ul class="menu-list"><li>
         <a class="is-flex" href="#Install-Python">
-        <span class="has-mr-6">1</span>
+        <span class="has-mr-6">1.1</span>
         <span>Install Python</span>
         </a></li><li>
         <a class="is-flex" href="#First-python-program">
-        <span class="has-mr-6">2</span>
+        <span class="has-mr-6">1.2</span>
         <span>First python program</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#Running-py-directly">
-        <span class="has-mr-6">2.1</span>
+        <span class="has-mr-6">1.2.1</span>
         <span>Running .py directly</span>
         </a></li><li>
         <a class="is-flex" href="#print">
-        <span class="has-mr-6">2.2</span>
+        <span class="has-mr-6">1.2.2</span>
         <span>print()</span>
         </a></li><li>
         <a class="is-flex" href="#input">
-        <span class="has-mr-6">2.3</span>
+        <span class="has-mr-6">1.2.3</span>
         <span>input()</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#Basic-syntax">
-        <span class="has-mr-6">3</span>
+        <span class="has-mr-6">1.3</span>
         <span>Basic syntax</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#data-type">
-        <span class="has-mr-6">3.1</span>
+        <span class="has-mr-6">1.3.1</span>
         <span>data type</span>
-        </a></li></ul></li></ul>
+        </a></li><li>
+        <a class="is-flex" href="#String-and-coding">
+        <span class="has-mr-6">1.3.2</span>
+        <span>String and coding</span>
+        </a></li></ul></li></ul><li>
+        <a class="is-flex" href="#coding-utf-8">
+        <span class="has-mr-6">2</span>
+        <span>-- coding: utf-8 --</span>
+        </a></li></ul>
         </div>
     </div>
 </div>

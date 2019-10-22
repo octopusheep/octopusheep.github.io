@@ -16,7 +16,7 @@
 <meta property="og:description" content="Rulesas we all know, there are three sticks in space and  one spectical stick have 64 round plates, which all plates follow the rules that bigger one in the bottom. the destination of this game is mov">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-22T03:28:10.007Z">
+<meta property="og:updated_time" content="2019-10-22T03:36:33.985Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Thinking in Hanoi Tower">
 <meta name="twitter:description" content="Rulesas we all know, there are three sticks in space and  one spectical stick have 64 round plates, which all plates follow the rules that bigger one in the bottom. the destination of this game is mov">
@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 225 words)
+                    2 minutes read (About 281 words)
                 </span>
                 
                 
@@ -184,6 +184,9 @@ finding the trace about this order,i find that no matter how many plate sticked 
 <h2 id="Correct-answer"><a href="#Correct-answer" class="headerlink" title="Correct answer"></a>Correct answer</h2><p>considering top n-1 counts plate as an unit called Y, then move this unit Y from A to B, then move biggest plate from A to C, then considering Y as a new plate group which base in B, just move it from B to C by A, just like initial time.</p>
 <p>so the code like:</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def hanoi(n,a,b,c):</span><br><span class="line">	if n==1:</span><br><span class="line">		print(a,&apos;--&gt;&apos;,c)</span><br><span class="line">	else:</span><br><span class="line">		hanoi(n-1,a,c,b)</span><br><span class="line">		print(a,&apos;--&gt;&apos;,c)</span><br><span class="line">		hanoi(n-1,b,a,c)</span><br></pre></td></tr></table></figure>
+
+<p>here is the output:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; hanoi(3,&apos;A&apos;,&apos;B&apos;,&apos;C&apos;)</span><br><span class="line">A --&gt; C</span><br><span class="line">A --&gt; B</span><br><span class="line">C --&gt; B</span><br><span class="line">A --&gt; C</span><br><span class="line">B --&gt; A</span><br><span class="line">B --&gt; C</span><br><span class="line">A --&gt; C</span><br><span class="line">&gt;&gt;&gt; hanoi(4,&apos;A&apos;,&apos;B&apos;,&apos;C&apos;)</span><br><span class="line">A --&gt; B</span><br><span class="line">A --&gt; C</span><br><span class="line">B --&gt; C</span><br><span class="line">A --&gt; B</span><br><span class="line">C --&gt; A</span><br><span class="line">C --&gt; B</span><br><span class="line">A --&gt; B</span><br><span class="line">A --&gt; C</span><br><span class="line">B --&gt; C</span><br><span class="line">B --&gt; A</span><br><span class="line">C --&gt; A</span><br><span class="line">B --&gt; C</span><br><span class="line">A --&gt; B</span><br><span class="line">A --&gt; C</span><br><span class="line">B --&gt; C</span><br></pre></td></tr></table></figure>
 
 <p>such a funny question.</p>
 

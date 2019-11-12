@@ -137,6 +137,142 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-07-10T16:36:35.000Z">2019-07-10</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 275 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/07/11/Kubernetes负载均衡学习笔记/">Kubernetes负载均衡学习笔记</a>
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+<p>该内容总结自19/07/10韩欢乐老师所讲解的负载均衡内容</p>
+<h1 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h1><p>最早负载均衡器是由硬件F5提供</p>
+<p>两种经典的四层lb方式</p>
+<ol>
+<li>NAT</li>
+<li>direct route</li>
+</ol>
+<p><img src="/images/60.png" alt="负载均衡器分发请求"></p>
+<p>http与https规则的区别：四层之上多了TLS加密层，再到http</p>
+<p>lb的实现方式；</p>
+<ol>
+<li>F5</li>
+<li>HAProxy</li>
+<li>nginx</li>
+<li>ingress-nginx（包含web和反向代理）</li>
+<li>ipvs（四层）</li>
+<li>istio（适合微服务）</li>
+</ol>
+<h1 id="K8s负载均衡常用命令"><a href="#K8s负载均衡常用命令" class="headerlink" title="K8s负载均衡常用命令"></a>K8s负载均衡常用命令</h1><p>ssh root@ip 进入负载均衡器后台<br>docker ps|grep proxy|grep nginx 搜索docker中运行lb的容器id<br>docker container  exec -it  fc8e583fde24 bash 进入lb容器后台<br>cat nginx.conf |grep proxy_buffer 查看proxy_buffers的配置</p>
+<p>kubectl get –all-namespaces loadbalancers 查看CPS当前的lb资源<br>kubectl get –all-namespaces configmap -owide 查看CPS当前的configmap资源<br>kubectl describe -n kube-system loadbalancer apiserver 查看lb配置</p>
+<p>kubectl get ingress 查看http规则<br>kubectl get cm -n kube-system lb-2011287880-proxy-nginx-tcp -oyaml 查看tcp/udp规则</p>
+<p>kubectl describe ingress domain-ingress</p>
+<h1 id="负载均衡规则详情"><a href="#负载均衡规则详情" class="headerlink" title="负载均衡规则详情"></a>负载均衡规则详情</h1><p>kubectl get -n p1 ingress rule1 -oyaml</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-07-04T10:21:15.000Z">2019-07-04</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    18 minutes read (About 2703 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/07/04/Elasticsearch学习笔记/">Elasticsearch学习笔记</a>
+            
+        </h1>
+        <div class="content">
+            <p>本文翻译总结自<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html" target="_blank" rel="noopener">Elasticsearch官方文档</a>，都是我自己翻译的yo！</p>
+<blockquote>
+<p>You know, for search(and analysis)</p>
+</blockquote>
+<h1 id="Elasticsearch简介"><a href="#Elasticsearch简介" class="headerlink" title="Elasticsearch简介"></a>Elasticsearch简介</h1><p>elasticsearch是一个分布式的搜索和分析引擎，它基于elasticstack的核心功能。</p>
+<p>logstash和beats用于促成收集、整合、丰富你的数据，并将数据存储在elasticsearch中。</p>
+<p>kibana能让你交互式的探索、使数据图形化、分享你的关于数据的看法、管理和监控stack。</p>
+<p>elasticsearch是让索引、搜索、分析三大魔法发生的地方。</p>
+<p>elasticsearch为所有类型的数据提供实时搜索和分析，无论你的数据是有结构还是无结构的文本、数值型数据、地理空间数据，es都能够有效的存储它们并建立索引，且索引的方式支持快速搜索。你可以做出远远超出例如（简单的数据取回、聚合数据以发现你的数据的模式和趋势）这些事。随着你的数据和访问量的增加，es的分布式特性可以让你的部署无缝的与其协作。</p>
+<p>然而并不是所有的问题都是搜索型问题，es也提供速度和灵活性在许多不同的处理数据的案例中：</p>
+<ul>
+<li>为app或网站增加一个搜索盒(search box)</li>
+<li>存储和分析日志、指标，保护事件数据的安全</li>
+<li>使用机器学习来自动建模你的实时数据的行为</li>
+<li>使用es作为存储引擎的自动化商业工作流程</li>
+<li>通过es来管理、聚合、分析地理空间信息，作为地理信息系统(GIS)</li>
+<li>通过es来存储和处理基因数据，作为生物信息的搜索工具</li></ul>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/07/04/Elasticsearch学习笔记/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-06-15T22:49:53.000Z">2019-06-15</time>
                 
                 <div class="level-item">
@@ -622,108 +758,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-07T13:35:26.000Z">2019-05-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 93 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/07/《Java编程思想》读书笔记(第十七章)/">《Java编程思想》读书笔记(第十七章)</a>
-            
-        </h1>
-        <div class="content">
-            <a id="more"></a>
-
-<p>Collections.nCopies(传入的对象个数，new Object())方法产生List传递给构造器</p>
-<p>Collections.fill(需要填充的list对象，new Object())方法替换已经在list中存在的元素，而不能添加新的元素</p>
-<h2 id="一种Generator解决方案"><a href="#一种Generator解决方案" class="headerlink" title="一种Generator解决方案"></a>一种Generator解决方案</h2><p>所有的Collection子类型都有一个能够接受另一个Collection对象的构造器</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-07T09:54:06.000Z">2019-05-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 minutes read (About 719 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/07/《Java编程思想》读书笔记(第十六章)/">《Java编程思想》读书笔记(第十六章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>我突然意识到static和final的含义：static表示它所定义的域和方法对于这个类来说有且仅有一份;final表示它所定义的域对实例来说是不可改变的，final类型的域随实例的创建而被创建，不像static与整个类相关联。同时用static和final修饰域则表示常量，即其对于整个类来说只有一份且不可修改。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BerylliumSphere</span></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">long</span> counter;</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> id=counter++;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-string">"Sphere "</span>+id;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/07/《Java编程思想》读书笔记(第十六章)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -794,7 +828,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        52
+                        54
                     </p>
                 </div>
             </div>
@@ -814,7 +848,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        19
+                        21
                     </p>
                 </div>
             </div>
@@ -906,7 +940,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">47</span>
+                <span class="level-item tag">49</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -970,7 +1004,7 @@
                 <span class="level-item">Python</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Studying/">
@@ -1000,7 +1034,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -1014,6 +1048,32 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-12T10:42:58.000Z">2019-11-12</time></div>
+                    <a href="/2019/11/12/外网VPN无法访问Jira的解决方法/" class="has-link-black-ter is-size-6">外网VPN无法访问Jira的解决方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-28T10:35:41.000Z">2019-10-28</time></div>
+                    <a href="/2019/10/28/Web Scraping Note/" class="has-link-black-ter is-size-6">Web Scraping Note</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Python/">Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1054,32 +1114,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T08:59:44.000Z">2019-08-08</time></div>
-                    <a href="/2019/08/08/VM Password Free Instruction/" class="has-link-black-ter is-size-6">VM Password Free Instruction</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T17:12:35.000Z">2019-08-07</time></div>
-                    <a href="/2019/08/08/Kafka Dockerimage Instruction/" class="has-link-black-ter is-size-6">Kafka Dockerimage Instruction</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kafka/">Kafka</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1093,12 +1127,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/10/">
                 <span class="level-start">
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1337,6 +1382,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Jira/">
+                        <span class="tag">Jira</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Kafka/">
                         <span class="tag">Kafka</span>
                         <span class="tag is-grey">1</span>
@@ -1367,7 +1419,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1375,6 +1427,13 @@
                     <a class="tags has-addons" href="/tags/RxJava/">
                         <span class="tag">RxJava</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Scraping/">
+                        <span class="tag">Scraping</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1419,6 +1478,32 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-12T10:42:58.000Z">2019-11-12</time></div>
+                    <a href="/2019/11/12/外网VPN无法访问Jira的解决方法/" class="has-link-black-ter is-size-6">外网VPN无法访问Jira的解决方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-28T10:35:41.000Z">2019-10-28</time></div>
+                    <a href="/2019/10/28/Web Scraping Note/" class="has-link-black-ter is-size-6">Web Scraping Note</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Python/">Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-22T11:25:24.000Z">2019-10-22</time></div>
                     <a href="/2019/10/22/Thinking in Hanoi Tower/" class="has-link-black-ter is-size-6">Thinking in Hanoi Tower</a>
                     <p class="is-size-7 is-uppercase">
@@ -1454,32 +1539,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T08:59:44.000Z">2019-08-08</time></div>
-                    <a href="/2019/08/08/VM Password Free Instruction/" class="has-link-black-ter is-size-6">VM Password Free Instruction</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T17:12:35.000Z">2019-08-07</time></div>
-                    <a href="/2019/08/08/Kafka Dockerimage Instruction/" class="has-link-black-ter is-size-6">Kafka Dockerimage Instruction</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kafka/">Kafka</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1493,12 +1552,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/10/">
                 <span class="level-start">
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1737,6 +1807,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Jira/">
+                        <span class="tag">Jira</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Kafka/">
                         <span class="tag">Kafka</span>
                         <span class="tag is-grey">1</span>
@@ -1767,7 +1844,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1775,6 +1852,13 @@
                     <a class="tags has-addons" href="/tags/RxJava/">
                         <span class="tag">RxJava</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Scraping/">
+                        <span class="tag">Scraping</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 

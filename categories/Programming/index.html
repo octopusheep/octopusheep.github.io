@@ -148,6 +148,116 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-12T10:42:58.000Z">2019-11-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 153 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/11/12/外网VPN无法访问Jira的解决方法/">外网VPN无法访问Jira的解决方法</a>
+            
+        </h1>
+        <div class="content">
+            <p>🈶️🈚️发现连了外网VPN后无法登陆jira系统嫩</p>
+<h2 id="查看VPN的网关"><a href="#查看VPN的网关" class="headerlink" title="查看VPN的网关"></a>查看VPN的网关</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -rn | grep utun</span><br></pre></td></tr></table></figure>
+
+<p>执行后出现如下内容</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">0/1                192.168.250.129    UGSc           51        0   utun2</span><br><span class="line">10.200/16          192.168.250.129    UGSc            0        0   utun2</span><br><span class="line">128.0/1            192.168.250.129    UGSc           14        0   utun2</span><br><span class="line">192.168.1          192.168.250.129    UGSc            0        0   utun2</span><br><span class="line">192.168.1.11/32    192.168.250.129    UGSc            1        0   utun2</span><br><span class="line">192.168.1.168/29   192.168.250.129    UGSc            0        0   utun2</span><br><span class="line">192.168.10         192.168.250.129    UGSc            0        0   utun2</span><br><span class="line">192.168.16/20      192.168.250.129    UGSc            0        0   utun2</span><br><span class="line">192.168.32         192.168.250.129    UGSc            0        0   utun2</span><br><span class="line">192.168.128/18     192.168.250.129    UGSc            0        0   utun2</span><br><span class="line">192.168.250.1/32   192.168.250.129    UGSc            0        0   utun2</span><br><span class="line">192.168.250.129    192.168.250.130    UHr            31        0   utun2</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/11/12/外网VPN无法访问Jira的解决方法/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-28T10:35:41.000Z">2019-10-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Python/">Python</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 84 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/10/28/Web Scraping Note/">Web Scraping Note</a>
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+
+<h2 id="Prerequisite预置条件"><a href="#Prerequisite预置条件" class="headerlink" title="Prerequisite预置条件"></a>Prerequisite预置条件</h2><ul>
+<li>Requests</li>
+<li>BeautifulSoup</li>
+<li>lxml</li>
+</ul>
+<h2 id="Detail实现细节"><a href="#Detail实现细节" class="headerlink" title="Detail实现细节"></a>Detail实现细节</h2><h3 id="Data-Module数据保存模块"><a href="#Data-Module数据保存模块" class="headerlink" title="Data Module数据保存模块"></a>Data Module数据保存模块</h3><h4 id="Video-Module视频数据模块"><a href="#Video-Module视频数据模块" class="headerlink" title="Video Module视频数据模块"></a>Video Module视频数据模块</h4><p>‘Video’ class contains essential video information: title, link</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># model</span><br><span class="line">class Video(object):</span><br><span class="line"></span><br><span class="line">    def __init__(self, title, link):</span><br><span class="line">        self.title = title</span><br><span class="line">        self.link = link</span><br><span class="line"></span><br><span class="line">    def information(self):</span><br><span class="line">        SPLIT_LINE = &apos;----------------------------------&apos;</span><br><span class="line">        print(&apos;%s\nvideo title: %s\nvideo link: %s\n%s&apos;</span><br><span class="line">              % (SPLIT_LINE, self.title, self.link, SPLIT_LINE))</span><br></pre></td></tr></table></figure>
+
+<h3 id="Network-Model网络请求模块"><a href="#Network-Model网络请求模块" class="headerlink" title="Network Model网络请求模块"></a>Network Model网络请求模块</h3>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-10-22T11:25:24.000Z">2019-10-22</time>
                 
                 <div class="level-item">
@@ -621,129 +731,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-04T10:21:15.000Z">2019-07-04</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    18 minutes read (About 2703 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/07/04/Elasticsearch学习笔记/">Elasticsearch学习笔记</a>
-            
-        </h1>
-        <div class="content">
-            <p>本文翻译总结自<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html" target="_blank" rel="noopener">Elasticsearch官方文档</a>，都是我自己翻译的yo！</p>
-<blockquote>
-<p>You know, for search(and analysis)</p>
-</blockquote>
-<h1 id="Elasticsearch简介"><a href="#Elasticsearch简介" class="headerlink" title="Elasticsearch简介"></a>Elasticsearch简介</h1><p>elasticsearch是一个分布式的搜索和分析引擎，它基于elasticstack的核心功能。</p>
-<p>logstash和beats用于促成收集、整合、丰富你的数据，并将数据存储在elasticsearch中。</p>
-<p>kibana能让你交互式的探索、使数据图形化、分享你的关于数据的看法、管理和监控stack。</p>
-<p>elasticsearch是让索引、搜索、分析三大魔法发生的地方。</p>
-<p>elasticsearch为所有类型的数据提供实时搜索和分析，无论你的数据是有结构还是无结构的文本、数值型数据、地理空间数据，es都能够有效的存储它们并建立索引，且索引的方式支持快速搜索。你可以做出远远超出例如（简单的数据取回、聚合数据以发现你的数据的模式和趋势）这些事。随着你的数据和访问量的增加，es的分布式特性可以让你的部署无缝的与其协作。</p>
-<p>然而并不是所有的问题都是搜索型问题，es也提供速度和灵活性在许多不同的处理数据的案例中：</p>
-<ul>
-<li>为app或网站增加一个搜索盒(search box)</li>
-<li>存储和分析日志、指标，保护事件数据的安全</li>
-<li>使用机器学习来自动建模你的实时数据的行为</li>
-<li>使用es作为存储引擎的自动化商业工作流程</li>
-<li>通过es来管理、聚合、分析地理空间信息，作为地理信息系统(GIS)</li>
-<li>通过es来存储和处理基因数据，作为生物信息的搜索工具</li></ul>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/07/04/Elasticsearch学习笔记/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-14T16:00:24.000Z">2019-06-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    6 minutes read (About 837 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/06/15/docker官方文档学习笔记/">docker官方文档学习笔记</a>
-            
-        </h1>
-        <div class="content">
-            <p>as some kind of notes for better understanding docker and this is my original article<br>为了更好的理解和学习docker所作的笔记</p>
-<h1 id="orientation"><a href="#orientation" class="headerlink" title="orientation"></a>orientation</h1><h2 id="some-basic-concept"><a href="#some-basic-concept" class="headerlink" title="some basic concept"></a>some basic concept</h2><ul>
-<li><p>what difference between container and VM?</p>
-<p>as the picture below:<br><img src="/images/58.png" alt></p></li></ul>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/15/docker官方文档学习笔记/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -812,7 +799,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        52
+                        54
                     </p>
                 </div>
             </div>
@@ -832,7 +819,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        19
+                        21
                     </p>
                 </div>
             </div>
@@ -924,7 +911,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">47</span>
+                <span class="level-item tag">49</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -988,7 +975,7 @@
                 <span class="level-item">Python</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Studying/">
@@ -1018,7 +1005,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -1032,6 +1019,32 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-12T10:42:58.000Z">2019-11-12</time></div>
+                    <a href="/2019/11/12/外网VPN无法访问Jira的解决方法/" class="has-link-black-ter is-size-6">外网VPN无法访问Jira的解决方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-28T10:35:41.000Z">2019-10-28</time></div>
+                    <a href="/2019/10/28/Web Scraping Note/" class="has-link-black-ter is-size-6">Web Scraping Note</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Python/">Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1072,32 +1085,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T08:59:44.000Z">2019-08-08</time></div>
-                    <a href="/2019/08/08/VM Password Free Instruction/" class="has-link-black-ter is-size-6">VM Password Free Instruction</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T17:12:35.000Z">2019-08-07</time></div>
-                    <a href="/2019/08/08/Kafka Dockerimage Instruction/" class="has-link-black-ter is-size-6">Kafka Dockerimage Instruction</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kafka/">Kafka</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1111,12 +1098,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/10/">
                 <span class="level-start">
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1355,6 +1353,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Jira/">
+                        <span class="tag">Jira</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Kafka/">
                         <span class="tag">Kafka</span>
                         <span class="tag is-grey">1</span>
@@ -1385,7 +1390,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1393,6 +1398,13 @@
                     <a class="tags has-addons" href="/tags/RxJava/">
                         <span class="tag">RxJava</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Scraping/">
+                        <span class="tag">Scraping</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1437,6 +1449,32 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-12T10:42:58.000Z">2019-11-12</time></div>
+                    <a href="/2019/11/12/外网VPN无法访问Jira的解决方法/" class="has-link-black-ter is-size-6">外网VPN无法访问Jira的解决方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-28T10:35:41.000Z">2019-10-28</time></div>
+                    <a href="/2019/10/28/Web Scraping Note/" class="has-link-black-ter is-size-6">Web Scraping Note</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Python/">Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-22T11:25:24.000Z">2019-10-22</time></div>
                     <a href="/2019/10/22/Thinking in Hanoi Tower/" class="has-link-black-ter is-size-6">Thinking in Hanoi Tower</a>
                     <p class="is-size-7 is-uppercase">
@@ -1472,32 +1510,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T08:59:44.000Z">2019-08-08</time></div>
-                    <a href="/2019/08/08/VM Password Free Instruction/" class="has-link-black-ter is-size-6">VM Password Free Instruction</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T17:12:35.000Z">2019-08-07</time></div>
-                    <a href="/2019/08/08/Kafka Dockerimage Instruction/" class="has-link-black-ter is-size-6">Kafka Dockerimage Instruction</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Kafka/">Kafka</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1511,12 +1523,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/10/">
                 <span class="level-start">
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1755,6 +1778,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Jira/">
+                        <span class="tag">Jira</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Kafka/">
                         <span class="tag">Kafka</span>
                         <span class="tag is-grey">1</span>
@@ -1785,7 +1815,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Python/">
                         <span class="tag">Python</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1793,6 +1823,13 @@
                     <a class="tags has-addons" href="/tags/RxJava/">
                         <span class="tag">RxJava</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Scraping/">
+                        <span class="tag">Scraping</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 

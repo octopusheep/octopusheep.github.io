@@ -148,6 +148,63 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-19T19:22:52.000Z">2019-11-19</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 963 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/11/20/LDAP Studying Note/">LDAP Studying Note</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>LDAP（Light Directory Access Portocol），它是基于X.500标准的轻量级目录访问协议。</p>
+</blockquote>
+<h2 id="What-is-LDAP"><a href="#What-is-LDAP" class="headerlink" title="What is LDAP"></a>What is LDAP</h2><p><strong>LDAP</strong>是指<strong>轻量级目录访问协议</strong>，LDAP目录服务由<strong>目录数据库</strong>和<strong>一套访问协议</strong>组成</p>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>目录是一个为查询、浏览和搜索而优化的数据库，它成<strong>树状结构组织数据</strong>，类似文件目录一样</p>
+<p>目录数据库和关系数据库不同，它有<strong>优异的读性能</strong>，但<strong>写性能差</strong>，并且没有事务处理、回滚等复杂功能，不适于存储修改频繁的数据。</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/11/20/LDAP Studying Note/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-11-12T10:42:58.000Z">2019-11-12</time>
                 
                 <div class="level-item">
@@ -663,74 +720,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-10T16:36:35.000Z">2019-07-10</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Kubernetes/">Kubernetes</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 275 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/07/11/Kubernetes负载均衡学习笔记/">Kubernetes负载均衡学习笔记</a>
-            
-        </h1>
-        <div class="content">
-            <a id="more"></a>
-<p>该内容总结自19/07/10韩欢乐老师所讲解的负载均衡内容</p>
-<h1 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h1><p>最早负载均衡器是由硬件F5提供</p>
-<p>两种经典的四层lb方式</p>
-<ol>
-<li>NAT</li>
-<li>direct route</li>
-</ol>
-<p><img src="/images/60.png" alt="负载均衡器分发请求"></p>
-<p>http与https规则的区别：四层之上多了TLS加密层，再到http</p>
-<p>lb的实现方式；</p>
-<ol>
-<li>F5</li>
-<li>HAProxy</li>
-<li>nginx</li>
-<li>ingress-nginx（包含web和反向代理）</li>
-<li>ipvs（四层）</li>
-<li>istio（适合微服务）</li>
-</ol>
-<h1 id="K8s负载均衡常用命令"><a href="#K8s负载均衡常用命令" class="headerlink" title="K8s负载均衡常用命令"></a>K8s负载均衡常用命令</h1><p>ssh root@ip 进入负载均衡器后台<br>docker ps|grep proxy|grep nginx 搜索docker中运行lb的容器id<br>docker container  exec -it  fc8e583fde24 bash 进入lb容器后台<br>cat nginx.conf |grep proxy_buffer 查看proxy_buffers的配置</p>
-<p>kubectl get –all-namespaces loadbalancers 查看CPS当前的lb资源<br>kubectl get –all-namespaces configmap -owide 查看CPS当前的configmap资源<br>kubectl describe -n kube-system loadbalancer apiserver 查看lb配置</p>
-<p>kubectl get ingress 查看http规则<br>kubectl get cm -n kube-system lb-2011287880-proxy-nginx-tcp -oyaml 查看tcp/udp规则</p>
-<p>kubectl describe ingress domain-ingress</p>
-<h1 id="负载均衡规则详情"><a href="#负载均衡规则详情" class="headerlink" title="负载均衡规则详情"></a>负载均衡规则详情</h1><p>kubectl get -n p1 ingress rule1 -oyaml</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -799,7 +788,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        54
+                        55
                     </p>
                 </div>
             </div>
@@ -819,7 +808,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        21
+                        22
                     </p>
                 </div>
             </div>
@@ -911,7 +900,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">49</span>
+                <span class="level-item tag">50</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -1005,7 +994,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/LDAP/" style="font-size: 10px;">LDAP</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -1019,6 +1008,19 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-19T19:22:52.000Z">2019-11-19</time></div>
+                    <a href="/2019/11/20/LDAP Studying Note/" class="has-link-black-ter is-size-6">LDAP Studying Note</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1072,19 +1074,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-29T10:24:15.000Z">2019-08-29</time></div>
-                    <a href="/2019/08/29/Insight及LB模块定位问题通用checklist/" class="has-link-black-ter is-size-6">Insight及LB模块定位问题通用checklist</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1103,7 +1092,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1370,6 +1359,13 @@
                     <a class="tags has-addons" href="/tags/Kubernetes/">
                         <span class="tag">Kubernetes</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/LDAP/">
+                        <span class="tag">LDAP</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1449,6 +1445,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-19T19:22:52.000Z">2019-11-19</time></div>
+                    <a href="/2019/11/20/LDAP Studying Note/" class="has-link-black-ter is-size-6">LDAP Studying Note</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-12T10:42:58.000Z">2019-11-12</time></div>
                     <a href="/2019/11/12/外网VPN无法访问Jira的解决方法/" class="has-link-black-ter is-size-6">外网VPN无法访问Jira的解决方法</a>
                     <p class="is-size-7 is-uppercase">
@@ -1497,19 +1506,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-29T10:24:15.000Z">2019-08-29</time></div>
-                    <a href="/2019/08/29/Insight及LB模块定位问题通用checklist/" class="has-link-black-ter is-size-6">Insight及LB模块定位问题通用checklist</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1528,7 +1524,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1795,6 +1791,13 @@
                     <a class="tags has-addons" href="/tags/Kubernetes/">
                         <span class="tag">Kubernetes</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/LDAP/">
+                        <span class="tag">LDAP</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 

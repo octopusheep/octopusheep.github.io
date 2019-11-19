@@ -2,24 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Kafka Dockerimage Instruction - octopusheep</title>
+<title>LDAP Studying Note - octopusheep</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Comprisalkafaka needs Java(JDK 8) and zookeeper as prerequisite so we should prepare a docker container  within JDK8  Create docker container with JDK81docker run -d openjdk:8  then u get the docker c">
-<meta name="keywords" content="Kafka">
+    <meta name="description" content="LDAP（Light Directory Access Portocol），它是基于X.500标准的轻量级目录访问协议。  What is LDAPLDAP是指轻量级目录访问协议，LDAP目录服务由目录数据库和一套访问协议组成 目录目录是一个为查询、浏览和搜索而优化的数据库，它成树状结构组织数据，类似文件目录一样 目录数据库和关系数据库不同，它有优异的读性能，但写性能差，并且没有事务处理、回滚等">
+<meta name="keywords" content="LDAP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kafka Dockerimage Instruction">
-<meta property="og:url" content="http://octopusheep.com/2019/08/08/Kafka Dockerimage Instruction/index.html">
+<meta property="og:title" content="LDAP Studying Note">
+<meta property="og:url" content="http://octopusheep.com/2019/11/20/LDAP Studying Note/index.html">
 <meta property="og:site_name" content="octopusheep">
-<meta property="og:description" content="Comprisalkafaka needs Java(JDK 8) and zookeeper as prerequisite so we should prepare a docker container  within JDK8  Create docker container with JDK81docker run -d openjdk:8  then u get the docker c">
+<meta property="og:description" content="LDAP（Light Directory Access Portocol），它是基于X.500标准的轻量级目录访问协议。  What is LDAPLDAP是指轻量级目录访问协议，LDAP目录服务由目录数据库和一套访问协议组成 目录目录是一个为查询、浏览和搜索而优化的数据库，它成树状结构组织数据，类似文件目录一样 目录数据库和关系数据库不同，它有优异的读性能，但写性能差，并且没有事务处理、回滚等">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-19T08:06:52.658Z">
+<meta property="og:updated_time" content="2019-11-19T12:06:33.309Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kafka Dockerimage Instruction">
-<meta name="twitter:description" content="Comprisalkafaka needs Java(JDK 8) and zookeeper as prerequisite so we should prepare a docker container  within JDK8  Create docker container with JDK81docker run -d openjdk:8  then u get the docker c">
+<meta name="twitter:title" content="LDAP Studying Note">
+<meta name="twitter:description" content="LDAP（Light Directory Access Portocol），它是基于X.500标准的轻量级目录访问协议。  What is LDAPLDAP是指轻量级目录访问协议，LDAP目录服务由目录数据库和一套访问协议组成 目录目录是一个为查询、浏览和搜索而优化的数据库，它成树状结构组织数据，类似文件目录一样 目录数据库和关系数据库不同，它有优异的读性能，但写性能差，并且没有事务处理、回滚等">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
 
@@ -89,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/octopus.jpg" alt="Kafka Dockerimage Instruction" height="28">
+                <img src="/images/octopus.jpg" alt="LDAP Studying Note" height="28">
             
             </a>
         </div>
@@ -144,17 +144,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-07T17:12:35.000Z">2019-08-07</time>
+                <time class="level-item has-text-grey" datetime="2019-11-19T19:22:52.000Z">2019-11-19</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Kafka/">Kafka</a>
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 861 words)
+                    6 minutes read (About 963 words)
                 </span>
                 
                 
@@ -163,68 +163,56 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Kafka Dockerimage Instruction
+                LDAP Studying Note
             
         </h1>
         <div class="content">
-            <h2 id="Comprisal"><a href="#Comprisal" class="headerlink" title="Comprisal"></a>Comprisal</h2><p>kafaka needs Java(JDK 8) and zookeeper as prerequisite so we should prepare a docker container  within JDK8 </p>
-<h2 id="Create-docker-container-with-JDK8"><a href="#Create-docker-container-with-JDK8" class="headerlink" title="Create docker container with JDK8"></a>Create docker container with JDK8</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d openjdk:8</span><br></pre></td></tr></table></figure>
-
-<p>then u get the docker container within JDK8 that runs in backgroud</p>
-<p><strong>Hint:</strong> <code>docker ps</code>for find this container id,such as <code>26aa42c88586</code></p>
-<h2 id="Download-Kafka"><a href="#Download-Kafka" class="headerlink" title="Download Kafka"></a>Download Kafka</h2><p>get latest kafaka tar in <a href="https://www.apache.org/dyn/closer.cgi?path=/kafka/2.3.0/kafka_2.12-2.3.0.tgz" target="_blank" rel="noopener">Kafka Offical website</a>, the kafka version in this doc is <code>kafka_2.12-2.3.0.tgz</code></p>
+            <blockquote>
+<p>LDAP（Light Directory Access Portocol），它是基于X.500标准的轻量级目录访问协议。</p>
+</blockquote>
+<h2 id="What-is-LDAP"><a href="#What-is-LDAP" class="headerlink" title="What is LDAP"></a>What is LDAP</h2><p><strong>LDAP</strong>是指<strong>轻量级目录访问协议</strong>，LDAP目录服务由<strong>目录数据库</strong>和<strong>一套访问协议</strong>组成</p>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>目录是一个为查询、浏览和搜索而优化的数据库，它成<strong>树状结构组织数据</strong>，类似文件目录一样</p>
+<p>目录数据库和关系数据库不同，它有<strong>优异的读性能</strong>，但<strong>写性能差</strong>，并且没有事务处理、回滚等复杂功能，不适于存储修改频繁的数据。</p>
 <a id="more"></a>
-<h2 id="Copy-Kafka-into-container"><a href="#Copy-Kafka-into-container" class="headerlink" title="Copy Kafka into container"></a>Copy Kafka into container</h2><p>in this case, we imagine the container id is <code>26aa42c88586</code></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 26aa42c88586 bash</span><br></pre></td></tr></table></figure>
+<h2 id="LDAP的基本模型"><a href="#LDAP的基本模型" class="headerlink" title="LDAP的基本模型"></a>LDAP的基本模型</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><h4 id="目录树"><a href="#目录树" class="headerlink" title="目录树"></a>目录树</h4><p>在一个目录服务系统中，整个目录信息集可以表示为一个目录信息树，<strong>树中的每个节点是一个条目</strong>。</p>
+<h4 id="条目"><a href="#条目" class="headerlink" title="条目"></a>条目</h4><p><strong>每个条目就是一条记录</strong>，每个条目有自己的唯一可区别的名称（DN）。</p>
+<h4 id="对象类"><a href="#对象类" class="headerlink" title="对象类"></a>对象类</h4><p>与某个实体类型对应的一组属性，<strong>对象类是可以继承的</strong>，这样父类的必须属性也会被继承下来</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>描述条目的某个方面的信息，<strong>一个属性由一个属性类型和一个或多个属性值组成</strong>，属性有必须属性和非必须属性</p>
+<h3 id="Acronym"><a href="#Acronym" class="headerlink" title="Acronym"></a>Acronym</h3><h4 id="DC-domain-component"><a href="#DC-domain-component" class="headerlink" title="DC domain component"></a>DC domain component</h4><p>域名的部分，其格式是将完整的域名分成几部分，如域名为example.com变成dc=example,dc=com（一条记录的所属位置）</p>
+<h4 id="UID-user-id"><a href="#UID-user-id" class="headerlink" title="UID user id"></a>UID user id</h4><p>用户ID yuyang.zhang（一条记录的ID）</p>
+<h4 id="OU-organization-unit"><a href="#OU-organization-unit" class="headerlink" title="OU organization unit"></a>OU organization unit</h4><p>组织单位，组织单位可以包含其他各种对象（包括其他组织单元），如“QA组”（一条记录的所属组织）</p>
+<h4 id="CN-common-name"><a href="#CN-common-name" class="headerlink" title="CN common name"></a>CN common name</h4><p>公共名称，如“Joey Young”（一条记录的名称）</p>
+<h4 id="SN-surname"><a href="#SN-surname" class="headerlink" title="SN surname"></a>SN surname</h4><p>姓，如“章”</p>
+<h4 id="DN-distinguished-name"><a href="#DN-distinguished-name" class="headerlink" title="DN distinguished name"></a>DN distinguished name</h4><p>“uid=yuyang.zhang,ou=QA组,dc=example,dc=com”，一条记录的位置（唯一）</p>
+<h4 id="RDN-relative-distinguished-name"><a href="#RDN-relative-distinguished-name" class="headerlink" title="RDN relative distinguished name"></a>RDN relative distinguished name</h4><p>相对辨别名，类似于文件系统中的相对路径，它是与目录树结构无关的部分，如“uid=yuyang.zhang”或“cn=Joey Young”</p>
+<h3 id="基本模型"><a href="#基本模型" class="headerlink" title="基本模型"></a>基本模型</h3><h4 id="信息模型"><a href="#信息模型" class="headerlink" title="信息模型"></a>信息模型</h4><p>在LDAP中信息以<strong>树状方式</strong>组织，在树状信息中<strong>基本数据单元</strong>是<strong>条目</strong>，每个条目由<strong>属性</strong>组成，属性中存储有<strong>属性值</strong></p>
+<h4 id="命名模型"><a href="#命名模型" class="headerlink" title="命名模型"></a>命名模型</h4><p>LDAP的命名模型是<strong>条目定位方式</strong>，在LDAP中<strong>每个条目都有自己的DN</strong>，DN是该条目在整个树中的唯一名称标识，如同文件系统中，带路径的文件名就是DN</p>
+<h4 id="功能模型"><a href="#功能模型" class="headerlink" title="功能模型"></a>功能模型</h4><p>在LDAP中共有四类10种操作：</p>
+<ul>
+<li><p><strong>查询类操作</strong></p>
+<p>  搜索、比较</p>
+</li>
+<li><p><strong>更新类操作</strong></p>
+<p>  添加条目、删除条目、修改条目、修改条目名</p>
+</li>
+<li><p><strong>认证类操作</strong></p>
+<p>  绑定、解绑</p>
+</li>
+<li><p><strong>其他操作</strong></p>
+<p>  放弃、扩展操作</p>
+</li>
+</ul>
+<h4 id="安全模型"><a href="#安全模型" class="headerlink" title="安全模型"></a>安全模型</h4><p>LDAP的安全模型主要通过<strong>身份认证</strong>、<strong>安全通道</strong>和<strong>访问控制</strong>来实现</p>
+<h2 id="LDAP的使用"><a href="#LDAP的使用" class="headerlink" title="LDAP的使用"></a>LDAP的使用</h2><p>统一身份认证主要是改变原有的认证策略，使需要认证的软件都通过LDAP进行认证，在统一身份认证之后，用户的所有信息都存储在AD Server中。终端用户在需要使用公司内部服务的时候，都需要通过AD服务器的认证。</p>
+<p>以PHP脚本作为例子：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ldapconn = ldap_connect(“10.1.8.78&quot;)</span><br><span class="line">$ldapbind = ldap_bind($ldapconn, &apos;username&apos;, $ldappass);</span><br><span class="line">$searchRows= ldap_search($ldapconn, $basedn, &quot;(cn=*)&quot;);</span><br><span class="line">$searchResult = ldap_get_entries($ldapconn, $searchRows);</span><br><span class="line">ldap_close($ldapconn);</span><br></pre></td></tr></table></figure>
 
-<p>create directory called <code>kafka</code></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@26aa42c88586:/# mkdir kafka</span><br></pre></td></tr></table></figure>
-
-<p>back to outside of cantianer,and transit kafka tar into container</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp Downloads/kafka_2.12-2.3.0.tgz 26aa42c88586:/kafka/kafka_2.12-2.3.0.tgz</span><br></pre></td></tr></table></figure>
-
-<h2 id="Decompress-Kafka"><a href="#Decompress-Kafka" class="headerlink" title="Decompress Kafka"></a>Decompress Kafka</h2><p>go into directory <code>kafka</code></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@26aa42c88586:/# cd kafka/</span><br></pre></td></tr></table></figure>
-
-<p>decompress kafka tar</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzf kafka_2.12-2.3.0.tgz</span><br></pre></td></tr></table></figure>
-
-<p>go into directory <code>kafka_2.12-2.3.0</code></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@26aa42c88586:/kafka# cd kafka_2.12-2.3.0</span><br></pre></td></tr></table></figure>
-
-<h2 id="Run-zookeeper"><a href="#Run-zookeeper" class="headerlink" title="Run zookeeper"></a>Run zookeeper</h2><p>configure config/zookeeper.properties</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># Licensed to the Apache Software Foundation (ASF) under one or more</span><br><span class="line"># contributor license agreements.  See the NOTICE file distributed with</span><br><span class="line"># this work for additional information regarding copyright ownership.</span><br><span class="line"># The ASF licenses this file to You under the Apache License, Version 2.0</span><br><span class="line"># (the &quot;License&quot;); you may not use this file except in compliance with</span><br><span class="line"># the License.  You may obtain a copy of the License at</span><br><span class="line">#</span><br><span class="line">#    http://www.apache.org/licenses/LICENSE-2.0</span><br><span class="line">#</span><br><span class="line"># Unless required by applicable law or agreed to in writing, software</span><br><span class="line"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span><br><span class="line"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span><br><span class="line"># See the License for the specific language governing permissions and</span><br><span class="line"># limitations under the License.</span><br><span class="line"># the directory where the snapshot is stored.</span><br><span class="line">dataDir=/root/kafka/log-zookeeper</span><br><span class="line"># the port at which the clients will connect</span><br><span class="line">clientPort=2181</span><br><span class="line"># disable the per-ip limit on the number of connections since this is a non-production config</span><br><span class="line">maxClientCnxns=0</span><br></pre></td></tr></table></figure>
-
-<p>then start zookeeper</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@26aa42c88586:/kafka# bin/zookeeper-server-start.sh config/zookeeper.properties</span><br></pre></td></tr></table></figure>
-
-<p>when it finish ,u will see some log like:</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[2019-08-05 11:56:32,689] INFO Server environment:java.io.tmpdir=/tmp (org.apache.zookeeper.server.ZooKeeperServer)</span><br><span class="line">[2019-08-05 11:56:32,689] INFO Server environment:java.compiler=&lt;NA&gt; (org.apache.zookeeper.server.ZooKeeperServer)</span><br><span class="line">[2019-08-05 11:56:32,689] INFO Server environment:os.name=Linux (org.apache.zookeeper.server.ZooKeeperServer)</span><br><span class="line">[2019-08-05 11:56:32,689] INFO Server environment:os.arch=amd64 (org.apache.zookeeper.server.ZooKeeperServer)</span><br><span class="line">[2019-08-05 11:56:32,690] INFO Server environment:os.version=4.9.125-linuxkit (org.apache.zookeeper.server.ZooKeeperServer)</span><br><span class="line">[2019-08-05 11:56:32,690] INFO Server environment:user.name=root (org.apache.zookeeper.server.ZooKeeperServer)</span><br><span class="line">[2019-08-05 11:56:32,691] INFO Server environment:user.home=/root (org.apache.zookeeper.server.ZooKeeperServer)</span><br><span class="line">[2019-08-05 11:56:32,691] INFO Server environment:user.dir=/kafka/kafka_2.12-2.3.0 (org.apache.zookeeper.server.ZooKeeperServer)</span><br><span class="line">[2019-08-05 11:56:32,709] INFO tickTime set to 3000 (org.apache.zookeeper.server.ZooKeeperServer)</span><br><span class="line">[2019-08-05 11:56:32,709] INFO minSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)</span><br><span class="line">[2019-08-05 11:56:32,709] INFO maxSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)</span><br><span class="line">[2019-08-05 11:56:32,727] INFO Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory (org.apache.zookeeper.server.ServerCnxnFactory)</span><br><span class="line">[2019-08-05 11:56:32,739] INFO binding to port 0.0.0.0/0.0.0.0:2181 (org.apache.zookeeper.server.NIOServerCnxnFactory)</span><br></pre></td></tr></table></figure>
-
-<p>DO NOT CLOSE THIS TERMINAL WINDOW, JUST HOLD IT.</p>
-<h2 id="Run-kafka-server"><a href="#Run-kafka-server" class="headerlink" title="Run kafka server"></a>Run kafka server</h2><p><strong>Gotcha:</strong> u should excute this step in another termial window by excuting <code>command +T</code> in ur termials</p>
-<p>configure config/server.properties</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">listeners=PLAINTEXT://0.0.0.0:9092</span><br><span class="line"></span><br><span class="line">advertised.listeners=PLAINTEXT://192.168.133.30:9092 //your real hostname</span><br><span class="line"></span><br><span class="line">log.dirs=/root/kafka/log-kafka</span><br><span class="line"></span><br><span class="line">zookeeper.connect=localhost:2181</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 26aa42c88586 bash</span><br></pre></td></tr></table></figure>
-
-<p>when u go into the container bash, start kafka server</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@26aa42c88586:/kafka# bin/kafka-server-start.sh config/server.properties</span><br></pre></td></tr></table></figure>
-
-<p>then u will see some new log like:</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[2019-08-05 11:57:12,846] INFO [ProducerId Manager 0]: Acquired new producerId block (brokerId:0,blockStartProducerId:0,blockEndProducerId:999) by writing to Zk with path version 1 (kafka.coordinator.transaction.ProducerIdManager)</span><br><span class="line">[2019-08-05 11:57:12,894] INFO [TransactionCoordinator id=0] Starting up. (kafka.coordinator.transaction.TransactionCoordinator)</span><br><span class="line">[2019-08-05 11:57:12,897] INFO [Transaction Marker Channel Manager 0]: Starting (kafka.coordinator.transaction.TransactionMarkerChannelManager)</span><br><span class="line">[2019-08-05 11:57:12,897] INFO [TransactionCoordinator id=0] Startup complete. (kafka.coordinator.transaction.TransactionCoordinator)</span><br><span class="line">[2019-08-05 11:57:12,977] INFO [/config/changes-event-process-thread]: Starting (kafka.common.ZkNodeChangeNotificationListener$ChangeEventProcessThread)</span><br><span class="line">[2019-08-05 11:57:13,008] INFO [SocketServer brokerId=0] Started data-plane processors for 1 acceptors (kafka.network.SocketServer)</span><br><span class="line">[2019-08-05 11:57:13,028] INFO Kafka version: 2.3.0 (org.apache.kafka.common.utils.AppInfoParser)</span><br><span class="line">[2019-08-05 11:57:13,028] INFO Kafka commitId: fc1aaa116b661c8a (org.apache.kafka.common.utils.AppInfoParser)</span><br><span class="line">[2019-08-05 11:57:13,028] INFO Kafka startTimeMs: 1565006233011 (org.apache.kafka.common.utils.AppInfoParser)</span><br><span class="line">[2019-08-05 11:57:13,033] INFO [KafkaServer id=0] started (kafka.server.KafkaServer)</span><br></pre></td></tr></table></figure>
-
-<h2 id="Create-a-topic"><a href="#Create-a-topic" class="headerlink" title="Create a topic"></a>Create a topic</h2><p>I just create a topic called <code>octopusheep</code>, u can choose any topic name u like by replacing this field</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@26aa42c88586:/kafka# bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic octopusheep</span><br></pre></td></tr></table></figure>
-
-<p><strong>Gotcha:</strong> <code>bin/kafka-topics.sh --list --bootstrap-server localhost:9092</code> can query all topic u created in this container/host</p>
-<h2 id="Send-some-message"><a href="#Send-some-message" class="headerlink" title="Send some message"></a>Send some message</h2><p>Run the producer and then type a few messages into the console to send to the server</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@26aa42c88586:/kafka# bin/kafka-console-producer.sh --broker-list localhost:9092 --topic octopusheep</span><br><span class="line"></span><br><span class="line">&gt; hello world!</span><br><span class="line">&gt; he gives man speech, and speech created thoughts, which is the measure of the universe.</span><br></pre></td></tr></table></figure>
-
-<h2 id="start-a-consumer"><a href="#start-a-consumer" class="headerlink" title="start a consumer"></a>start a consumer</h2><p>Kafka also has a co∑mmand line consumer that will dump out messages to standard output.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@26aa42c88586:/kafka/kafka_2.12-2.3.0# bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic octopusheep --from-beginning</span><br><span class="line"></span><br><span class="line">hello world!</span><br><span class="line">he gives man speech, and speech created thoughts, which is the measure of the universe.</span><br></pre></td></tr></table></figure>
-
-<p>now u can see the message sent by producer can be received to consumer.</p>
+<ol>
+<li>连接LDAP服务器</li>
+<li>绑定到LDAP服务器</li>
+<li>在LDAP服务器上执行所需的任何操作</li>
+<li>释放LDAP服务器的连接</li>
+</ol>
 
         </div>
         
@@ -232,7 +220,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Kafka/">Kafka</a>
+                    <a class="has-link-grey -link" href="/tags/LDAP/">LDAP</a>
                 </div>
             </div>
         </div>
@@ -302,17 +290,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/08/VM Password Free Instruction/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">VM Password Free Instruction</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/01/集群健康检查操作指南/">
-                <span class="level-item">集群健康检查操作指南</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/12/外网VPN无法访问Jira的解决方法/">
+                <span class="level-item">外网VPN无法访问Jira的解决方法</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -442,45 +423,93 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#Comprisal">
+        <a class="is-flex" href="#What-is-LDAP">
         <span class="has-mr-6">1</span>
-        <span>Comprisal</span>
-        </a></li><li>
-        <a class="is-flex" href="#Create-docker-container-with-JDK8">
+        <span>What is LDAP</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#目录">
+        <span class="has-mr-6">1.1</span>
+        <span>目录</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#LDAP的基本模型">
         <span class="has-mr-6">2</span>
-        <span>Create docker container with JDK8</span>
+        <span>LDAP的基本模型</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#概念">
+        <span class="has-mr-6">2.1</span>
+        <span>概念</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#目录树">
+        <span class="has-mr-6">2.1.1</span>
+        <span>目录树</span>
         </a></li><li>
-        <a class="is-flex" href="#Download-Kafka">
+        <a class="is-flex" href="#条目">
+        <span class="has-mr-6">2.1.2</span>
+        <span>条目</span>
+        </a></li><li>
+        <a class="is-flex" href="#对象类">
+        <span class="has-mr-6">2.1.3</span>
+        <span>对象类</span>
+        </a></li><li>
+        <a class="is-flex" href="#属性">
+        <span class="has-mr-6">2.1.4</span>
+        <span>属性</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Acronym">
+        <span class="has-mr-6">2.2</span>
+        <span>Acronym</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#DC-domain-component">
+        <span class="has-mr-6">2.2.1</span>
+        <span>DC domain component</span>
+        </a></li><li>
+        <a class="is-flex" href="#UID-user-id">
+        <span class="has-mr-6">2.2.2</span>
+        <span>UID user id</span>
+        </a></li><li>
+        <a class="is-flex" href="#OU-organization-unit">
+        <span class="has-mr-6">2.2.3</span>
+        <span>OU organization unit</span>
+        </a></li><li>
+        <a class="is-flex" href="#CN-common-name">
+        <span class="has-mr-6">2.2.4</span>
+        <span>CN common name</span>
+        </a></li><li>
+        <a class="is-flex" href="#SN-surname">
+        <span class="has-mr-6">2.2.5</span>
+        <span>SN surname</span>
+        </a></li><li>
+        <a class="is-flex" href="#DN-distinguished-name">
+        <span class="has-mr-6">2.2.6</span>
+        <span>DN distinguished name</span>
+        </a></li><li>
+        <a class="is-flex" href="#RDN-relative-distinguished-name">
+        <span class="has-mr-6">2.2.7</span>
+        <span>RDN relative distinguished name</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#基本模型">
+        <span class="has-mr-6">2.3</span>
+        <span>基本模型</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#信息模型">
+        <span class="has-mr-6">2.3.1</span>
+        <span>信息模型</span>
+        </a></li><li>
+        <a class="is-flex" href="#命名模型">
+        <span class="has-mr-6">2.3.2</span>
+        <span>命名模型</span>
+        </a></li><li>
+        <a class="is-flex" href="#功能模型">
+        <span class="has-mr-6">2.3.3</span>
+        <span>功能模型</span>
+        </a></li><li>
+        <a class="is-flex" href="#安全模型">
+        <span class="has-mr-6">2.3.4</span>
+        <span>安全模型</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#LDAP的使用">
         <span class="has-mr-6">3</span>
-        <span>Download Kafka</span>
-        </a></li><li>
-        <a class="is-flex" href="#Copy-Kafka-into-container">
-        <span class="has-mr-6">4</span>
-        <span>Copy Kafka into container</span>
-        </a></li><li>
-        <a class="is-flex" href="#Decompress-Kafka">
-        <span class="has-mr-6">5</span>
-        <span>Decompress Kafka</span>
-        </a></li><li>
-        <a class="is-flex" href="#Run-zookeeper">
-        <span class="has-mr-6">6</span>
-        <span>Run zookeeper</span>
-        </a></li><li>
-        <a class="is-flex" href="#Run-kafka-server">
-        <span class="has-mr-6">7</span>
-        <span>Run kafka server</span>
-        </a></li><li>
-        <a class="is-flex" href="#Create-a-topic">
-        <span class="has-mr-6">8</span>
-        <span>Create a topic</span>
-        </a></li><li>
-        <a class="is-flex" href="#Send-some-message">
-        <span class="has-mr-6">9</span>
-        <span>Send some message</span>
-        </a></li><li>
-        <a class="is-flex" href="#start-a-consumer">
-        <span class="has-mr-6">10</span>
-        <span>start a consumer</span>
+        <span>LDAP的使用</span>
         </a></li></ul>
         </div>
     </div>
@@ -1496,7 +1525,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/octopus.jpg" alt="Kafka Dockerimage Instruction" height="28">
+                    <img src="/images/octopus.jpg" alt="LDAP Studying Note" height="28">
                 
                 </a>
                 <p class="is-size-7">

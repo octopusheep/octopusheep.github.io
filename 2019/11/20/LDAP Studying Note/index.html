@@ -16,7 +16,7 @@
 <meta property="og:description" content="LDAP（Light Directory Access Portocol），它是基于X.500标准的轻量级目录访问协议。  What is LDAPLDAP是指轻量级目录访问协议，LDAP目录服务由目录数据库和一套访问协议组成 目录目录是一个为查询、浏览和搜索而优化的数据库，它成树状结构组织数据，类似文件目录一样 目录数据库和关系数据库不同，它有优异的读性能，但写性能差，并且没有事务处理、回滚等">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-11-19T12:06:33.309Z">
+<meta property="og:updated_time" content="2019-11-19T12:24:01.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LDAP Studying Note">
 <meta name="twitter:description" content="LDAP（Light Directory Access Portocol），它是基于X.500标准的轻量级目录访问协议。  What is LDAPLDAP是指轻量级目录访问协议，LDAP目录服务由目录数据库和一套访问协议组成 目录目录是一个为查询、浏览和搜索而优化的数据库，它成树状结构组织数据，类似文件目录一样 目录数据库和关系数据库不同，它有优异的读性能，但写性能差，并且没有事务处理、回滚等">
@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 963 words)
+                    8 minutes read (About 1223 words)
                 </span>
                 
                 
@@ -213,6 +213,49 @@
 <li>在LDAP服务器上执行所需的任何操作</li>
 <li>释放LDAP服务器的连接</li>
 </ol>
+<h2 id="LDAP-Filter-Note"><a href="#LDAP-Filter-Note" class="headerlink" title="LDAP Filter Note"></a>LDAP Filter Note</h2><h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ul>
+<li>等于(EQUAL TO)：  =</li>
+<li>大于等于(Greater than)：  &gt;=</li>
+<li>小于等于(Less than)：  &lt;=</li>
+<li>通配符(wildcard)：  *</li>
+</ul>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><ul>
+<li>逻辑与(logical AND)：  &amp; </li>
+<li>逻辑或(logical OR)：   | </li>
+<li>逻辑非(logical NOT)：   ! </li>
+</ul>
+<h3 id="举例操作"><a href="#举例操作" class="headerlink" title="举例操作"></a>举例操作</h3><p>以用户信息存储来举例，假设，用户目录树ou=user,dc=domain，结构如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dc=domain</span><br><span class="line">      |-ou=user</span><br><span class="line">            |-cn=zhangsan</span><br><span class="line">            |-cn=lisi</span><br><span class="line">            |-cn=wangwu</span><br><span class="line">            |-cn=zhaoliu</span><br></pre></td></tr></table></figure>
+
+<p>用户信息属性如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cn=zhangsan</span><br><span class="line">objectClass=top</span><br><span class="line">objectClass=person</span><br><span class="line">name=张三</span><br><span class="line">sex=男</span><br><span class="line">age=28</span><br><span class="line">pwd=123456</span><br><span class="line">email=zhangsan@163.com</span><br><span class="line">desc=描述</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>查询所有name为张三，sex为男的用户</p>
+<p>  <code>(&amp;(name=张三)(sex=男))</code></p>
+</li>
+<li><p>查询所有age不为28的用户</p>
+<p>  <code>(!(age=28))</code></p>
+</li>
+<li><p>查询所有age为28，并且name不为张三的用户</p>
+<p>  <code>(&amp;(age=28)(!(name=张三)))</code></p>
+</li>
+<li><p>查询所有age为28，或者name为张三的用户</p>
+<p>  <code>(|(age=28)(name=张三))</code></p>
+</li>
+<li><p>查询所有name的姓为张，或者desc包含描述的用户</p>
+<p>  <code>(|(name=张*)(desc=*描述*))</code></p>
+</li>
+<li><p>查询所有有email为空的用户</p>
+<p>  <code>(email=)</code></p>
+</li>
+<li><p>查询所有没有desc属性的用户</p>
+<p>  <code>(!(desc=*))</code></p>
+</li>
+<li><p>查询所有有desc属性的用户</p>
+<p>  <code>(desc=*)</code></p>
+</li>
+</ul>
 
         </div>
         
@@ -510,7 +553,23 @@
         <a class="is-flex" href="#LDAP的使用">
         <span class="has-mr-6">3</span>
         <span>LDAP的使用</span>
-        </a></li></ul>
+        </a></li><li>
+        <a class="is-flex" href="#LDAP-Filter-Note">
+        <span class="has-mr-6">4</span>
+        <span>LDAP Filter Note</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#运算符">
+        <span class="has-mr-6">4.1</span>
+        <span>运算符</span>
+        </a></li><li>
+        <a class="is-flex" href="#逻辑运算符">
+        <span class="has-mr-6">4.2</span>
+        <span>逻辑运算符</span>
+        </a></li><li>
+        <a class="is-flex" href="#举例操作">
+        <span class="has-mr-6">4.3</span>
+        <span>举例操作</span>
+        </a></li></ul></li></ul>
         </div>
     </div>
 </div>

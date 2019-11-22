@@ -2,24 +2,20 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Android原生TTS逻辑分析 - octopusheep</title>
+<title>Category: Programming - octopusheep</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="本文依据API 28的安卓源码文件UtteranceProgressListener.java分析整理得出 What is UtteranceProgressListenerUtteranceProgressListener实际上是一个抽象类，它是一个监听器，监听与发声的过程相关的事件，这个事件是通过很多步骤来处理的。每一个TTS发声事件都与函数调用相关联，分别是TextToSpeech#spea">
-<meta name="keywords" content="Android">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Android原生TTS逻辑分析">
-<meta property="og:url" content="http://octopusheep.com/2019/04/12/Android原生TTS逻辑分析/index.html">
+    <meta name="keywords" content="octopusheep">
+<meta property="og:type" content="website">
+<meta property="og:title" content="octopusheep">
+<meta property="og:url" content="http://octopusheep.com/categories/Programming/page/6/index.html">
 <meta property="og:site_name" content="octopusheep">
-<meta property="og:description" content="本文依据API 28的安卓源码文件UtteranceProgressListener.java分析整理得出 What is UtteranceProgressListenerUtteranceProgressListener实际上是一个抽象类，它是一个监听器，监听与发声的过程相关的事件，这个事件是通过很多步骤来处理的。每一个TTS发声事件都与函数调用相关联，分别是TextToSpeech#spea">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-21T05:51:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android原生TTS逻辑分析">
-<meta name="twitter:description" content="本文依据API 28的安卓源码文件UtteranceProgressListener.java分析整理得出 What is UtteranceProgressListenerUtteranceProgressListener实际上是一个抽象类，它是一个监听器，监听与发声的过程相关的事件，这个事件是通过很多步骤来处理的。每一个TTS发声事件都与函数调用相关联，分别是TextToSpeech#spea">
+<meta name="twitter:title" content="octopusheep">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
 
@@ -89,7 +85,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/octopus.jpg" alt="Android原生TTS逻辑分析" height="28">
+                <img src="/images/octopus.jpg" alt="octopusheep" height="28">
             
             </a>
         </div>
@@ -121,10 +117,6 @@
                     
                 
                 
-                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -139,22 +131,34 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/categories">Categories</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">Programming</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-11T19:44:43.000Z">2019-04-11</time>
+                <time class="level-item has-text-grey" datetime="2018-08-14T00:00:00.000Z">2018-08-14</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    10 minutes read (About 1493 words)
+                    8 minutes read (About 1215 words)
                 </span>
                 
                 
@@ -163,129 +167,60 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Android原生TTS逻辑分析
+                <a class="has-link-black-ter" href="/2018/08/14/Hexo使用指南一(Ubuntu环境)/">Hexo使用指南一(Ubuntu环境)</a>
             
         </h1>
         <div class="content">
-            <p>本文依据API 28的安卓源码文件<code>UtteranceProgressListener.java</code>分析整理得出</p>
-<h2 id="What-is-UtteranceProgressListener"><a href="#What-is-UtteranceProgressListener" class="headerlink" title="What is UtteranceProgressListener"></a>What is UtteranceProgressListener</h2><p>UtteranceProgressListener实际上是一个抽象类，它是一个监听器，监听与发声的过程相关的事件，这个事件是通过很多步骤来处理的。每一个TTS发声事件都与函数调用相关联，分别是<code>TextToSpeech#speak</code>和<code>TextToSpeech#synthesizeToFile</code>.并且有唯一的发声ID(utterance identifier)来标识自己。这个ID就是<code>TextToSpeech.Engine#KEY_PARAM_UTTERANCE_ID</code></p>
-<p><img src="/images/42.png" alt="UtterranceProgressListener的结构"></p>
-<a id="more"></a>
-<h2 id="TTS回调类型"><a href="#TTS回调类型" class="headerlink" title="TTS回调类型"></a>TTS回调类型</h2><ul>
-<li><strong>onStart(String utteranceId)</strong><br>该回调会在TTS发声之前被调用，TTS发声是由于<code>TextToSpeech#speak</code>或<code>TextToSpeech#synthesizeToFile</code>的调用引起的，<br>参数为该发声事件的发声ID(utteranceId)</li>
-</ul>
-<ul>
-<li><strong>onDone(String utteranceId)</strong><br>当TTS发声过程成功完成后（要说的话从头到尾一字不落全说完），调用该回调。可以保证onDone回调一定是在对应的onStart回调之后调用的,参数为该发声事件的发声ID(utteranceId)</li>
-</ul>
-<ul>
-<li><strong>onError(String utteranceId)</strong><br>当TTS发声过程中出现一个错误时调用该回调，在TTS语音合成过程的任意时间点都可以调用该回调，一个onStart只对应一个onDone或onError回调,参数为该发声事件的发声ID(utteranceId)</li>
-</ul>
-<ul>
-<li><strong>onError(String utteranceId, int errorCode)</strong><br>当TTS发声过程中出现一个错误时调用该回调，在TTS语音合成过程的任意时间点都可以调用该回调，一个onStart只对应一个onDone或onError回调，比单参数错误回调多返回一个来自<code>TextToSpeech</code>的错误代码(ERROR_* codes from TextToSpeech)</li>
-</ul>
-<ul>
-<li><strong>onStop(String utteranceId, boolean interrupted)</strong><br>当TTS播放过程中停止播放或合成队列刷新过程时调用该回调，这个回调可以发生在调用<code>TextToSpeech#stop()</code>方法或者使用<code>TextToSpeech#QUEUE_FLUSH</code>作为参数调用<code>TextToSpeech#speak</code>和<code>TextToSpeech#synthesizeToFile</code>方法时.参数为该发声事件的发声ID(utteranceId)和布尔型参数<code>interrupted</code>.<code>interrupted</code>为true时，TTS发声过程将在正在语音合成的过程中被打断，且输出是不完整的;为flase时，TTS发声事件将在语音合成开始之前被刷新</li>
-</ul>
-<p>-</p>
-<p>文件源码：</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Copyright 2011 Google Inc. All Rights Reserved.</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">package</span> android.speech.tts;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> android.media.AudioFormat;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Listener for events relating to the progress of an utterance through</span></span><br><span class="line"><span class="hljs-comment"> * the synthesis queue. Each utterance is associated with a call to</span></span><br><span class="line"><span class="hljs-comment"> * &#123;<span class="hljs-doctag">@link</span> TextToSpeech#speak&#125; or &#123;<span class="hljs-doctag">@link</span> TextToSpeech#synthesizeToFile&#125; with an</span></span><br><span class="line"><span class="hljs-comment"> * associated utterance identifier, as per &#123;<span class="hljs-doctag">@link</span> TextToSpeech.Engine#KEY_PARAM_UTTERANCE_ID&#125;.</span></span><br><span class="line"><span class="hljs-comment"> *</span></span><br><span class="line"><span class="hljs-comment"> * The callbacks specified in this method can be called from multiple threads.</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UtteranceProgressListener</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * Called when an utterance "starts" as perceived by the caller. This will</span></span><br><span class="line"><span class="hljs-comment">     * be soon before audio is played back in the case of a &#123;<span class="hljs-doctag">@link</span> TextToSpeech#speak&#125;</span></span><br><span class="line"><span class="hljs-comment">     * or before the first bytes of a file are written to the file system in the case</span></span><br><span class="line"><span class="hljs-comment">     * of &#123;<span class="hljs-doctag">@link</span> TextToSpeech#synthesizeToFile&#125;.</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> utteranceId The utterance ID of the utterance.</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onStart</span><span class="hljs-params">(String utteranceId)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * Called when an utterance has successfully completed processing.</span></span><br><span class="line"><span class="hljs-comment">     * All audio will have been played back by this point for audible output, and all</span></span><br><span class="line"><span class="hljs-comment">     * output will have been written to disk for file synthesis requests.</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * This request is guaranteed to be called after &#123;<span class="hljs-doctag">@link</span> #onStart(String)&#125;.</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> utteranceId The utterance ID of the utterance.</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onDone</span><span class="hljs-params">(String utteranceId)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * Called when an error has occurred during processing. This can be called</span></span><br><span class="line"><span class="hljs-comment">     * at any point in the synthesis process. Note that there might be calls</span></span><br><span class="line"><span class="hljs-comment">     * to &#123;<span class="hljs-doctag">@link</span> #onStart(String)&#125; for specified utteranceId but there will never</span></span><br><span class="line"><span class="hljs-comment">     * be a call to both &#123;<span class="hljs-doctag">@link</span> #onDone(String)&#125; and &#123;<span class="hljs-doctag">@link</span> #onError(String)&#125; for</span></span><br><span class="line"><span class="hljs-comment">     * the same utterance.</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> utteranceId The utterance ID of the utterance.</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@deprecated</span> Use &#123;<span class="hljs-doctag">@link</span> #onError(String,int)&#125; instead</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-meta">@Deprecated</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String utteranceId)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * Called when an error has occurred during processing. This can be called</span></span><br><span class="line"><span class="hljs-comment">     * at any point in the synthesis process. Note that there might be calls</span></span><br><span class="line"><span class="hljs-comment">     * to &#123;<span class="hljs-doctag">@link</span> #onStart(String)&#125; for specified utteranceId but there will never</span></span><br><span class="line"><span class="hljs-comment">     * be a call to both &#123;<span class="hljs-doctag">@link</span> #onDone(String)&#125; and &#123;<span class="hljs-doctag">@link</span> #onError(String,int)&#125; for</span></span><br><span class="line"><span class="hljs-comment">     * the same utterance. The default implementation calls &#123;<span class="hljs-doctag">@link</span> #onError(String)&#125;.</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> utteranceId The utterance ID of the utterance.</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> errorCode one of the ERROR_* codes from &#123;<span class="hljs-doctag">@link</span> TextToSpeech&#125;</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String utteranceId, <span class="hljs-keyword">int</span> errorCode)</span> </span>&#123;</span><br><span class="line">        onError(utteranceId);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * Called when an utterance has been stopped while in progress or flushed from the</span></span><br><span class="line"><span class="hljs-comment">     * synthesis queue. This can happen if a client calls &#123;<span class="hljs-doctag">@link</span> TextToSpeech#stop()&#125;</span></span><br><span class="line"><span class="hljs-comment">     * or uses &#123;<span class="hljs-doctag">@link</span> TextToSpeech#QUEUE_FLUSH&#125; as an argument with the</span></span><br><span class="line"><span class="hljs-comment">     * &#123;<span class="hljs-doctag">@link</span> TextToSpeech#speak&#125; or &#123;<span class="hljs-doctag">@link</span> TextToSpeech#synthesizeToFile&#125; methods.</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> utteranceId The utterance ID of the utterance.</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> interrupted If true, then the utterance was interrupted while being synthesized</span></span><br><span class="line"><span class="hljs-comment">     *        and its output is incomplete. If false, then the utterance was flushed</span></span><br><span class="line"><span class="hljs-comment">     *        before the synthesis started.</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onStop</span><span class="hljs-params">(String utteranceId, <span class="hljs-keyword">boolean</span> interrupted)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * Called when the TTS engine begins to synthesize the audio for a request.</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="hljs-comment">     * It provides information about the format of the byte array for subsequent</span></span><br><span class="line"><span class="hljs-comment">     * &#123;<span class="hljs-doctag">@link</span> #onAudioAvailable&#125; calls.</span></span><br><span class="line"><span class="hljs-comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="hljs-comment">     * This is called when the TTS engine starts synthesizing audio for the request. If an</span></span><br><span class="line"><span class="hljs-comment">     * application wishes to know when the audio is about to start playing, &#123;#onStart(String)&#125;</span></span><br><span class="line"><span class="hljs-comment">     * should be used instead.</span></span><br><span class="line"><span class="hljs-comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> utteranceId The utterance ID of the utterance.</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> sampleRateInHz Sample rate in hertz of the generated audio.</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> audioFormat Audio format of the generated audio. Should be one of</span></span><br><span class="line"><span class="hljs-comment">     *        &#123;<span class="hljs-doctag">@link</span> AudioFormat#ENCODING_PCM_8BIT&#125;, &#123;<span class="hljs-doctag">@link</span> AudioFormat#ENCODING_PCM_16BIT&#125; or</span></span><br><span class="line"><span class="hljs-comment">     *        &#123;<span class="hljs-doctag">@link</span> AudioFormat#ENCODING_PCM_FLOAT&#125;.</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> channelCount The number of channels.</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onBeginSynthesis</span><span class="hljs-params">(String utteranceId, <span class="hljs-keyword">int</span> sampleRateInHz, <span class="hljs-keyword">int</span> audioFormat, <span class="hljs-keyword">int</span> channelCount)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * This is called when a chunk of audio is ready for consumption.</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="hljs-comment">     * The audio parameter is a copy of what will be synthesized to the speakers (when synthesis was</span></span><br><span class="line"><span class="hljs-comment">     * initiated with a &#123;<span class="hljs-doctag">@link</span> TextToSpeech#speak&#125; call) or written to the file system (for</span></span><br><span class="line"><span class="hljs-comment">     * &#123;<span class="hljs-doctag">@link</span> TextToSpeech#synthesizeToFile&#125;). The audio bytes are delivered in one or more chunks;</span></span><br><span class="line"><span class="hljs-comment">     * if &#123;<span class="hljs-doctag">@link</span> #onDone&#125; or &#123;<span class="hljs-doctag">@link</span> #onError&#125; is called all chunks have been received.</span></span><br><span class="line"><span class="hljs-comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="hljs-comment">     * The audio received here may not be played for some time depending on buffer sizes and the</span></span><br><span class="line"><span class="hljs-comment">     * amount of items on the synthesis queue.</span></span><br><span class="line"><span class="hljs-comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> utteranceId The utterance ID of the utterance.</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> audio A chunk of audio; the format can be known by listening to</span></span><br><span class="line"><span class="hljs-comment">     *        &#123;<span class="hljs-doctag">@link</span> #onBeginSynthesis(String, int, int, int)&#125;.</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onAudioAvailable</span><span class="hljs-params">(String utteranceId, <span class="hljs-keyword">byte</span>[] audio)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * This is called when the TTS service is about to speak the specified range of the utterance</span></span><br><span class="line"><span class="hljs-comment">     * with the given utteranceId.</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * &lt;p&gt;This method is called when the audio is expected to start playing on the speaker. Note</span></span><br><span class="line"><span class="hljs-comment">     * that this is different from &#123;<span class="hljs-doctag">@link</span> #onAudioAvailable&#125; which is called as soon as the audio is</span></span><br><span class="line"><span class="hljs-comment">     * generated.</span></span><br><span class="line"><span class="hljs-comment"></span></span><br><span class="line"><span class="hljs-comment">     * &lt;p&gt;This information can be used, for example, to highlight ranges of the text while it is</span></span><br><span class="line"><span class="hljs-comment">     * spoken.</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * &lt;p&gt;Only called if the engine supplies timing information by calling &#123;<span class="hljs-doctag">@link</span></span></span><br><span class="line"><span class="hljs-comment">     * SynthesisCallback#rangeStart(int, int, int)&#125;.</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> utteranceId Unique id identifying the synthesis request.</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> start The start index of the range in the utterance text.</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> end The end index of the range (exclusive) in the utterance text.</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> frame The position in frames in the audio of the request where this range is spoken.</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onRangeStart</span><span class="hljs-params">(String utteranceId, <span class="hljs-keyword">int</span> start, <span class="hljs-keyword">int</span> end, <span class="hljs-keyword">int</span> frame)</span> </span>&#123;</span><br><span class="line">        onUtteranceRangeStart(utteranceId, start, end);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/** <span class="hljs-doctag">@removed</span> */</span></span><br><span class="line">    <span class="hljs-meta">@Deprecated</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onUtteranceRangeStart</span><span class="hljs-params">(String utteranceId, <span class="hljs-keyword">int</span> start, <span class="hljs-keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * Wraps an old deprecated OnUtteranceCompletedListener with a shiny new progress listener.</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@hide</span></span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">static</span> UtteranceProgressListener <span class="hljs-title">from</span><span class="hljs-params">(</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-params">            <span class="hljs-keyword">final</span> TextToSpeech.OnUtteranceCompletedListener listener)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> UtteranceProgressListener() &#123;</span><br><span class="line">            <span class="hljs-meta">@Override</span></span><br><span class="line">            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onDone</span><span class="hljs-params">(String utteranceId)</span> </span>&#123;</span><br><span class="line">                listener.onUtteranceCompleted(utteranceId);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="hljs-meta">@Override</span></span><br><span class="line">            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(String utteranceId)</span> </span>&#123;</span><br><span class="line">                listener.onUtteranceCompleted(utteranceId);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="hljs-meta">@Override</span></span><br><span class="line">            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onStart</span><span class="hljs-params">(String utteranceId)</span> </span>&#123;</span><br><span class="line">                <span class="hljs-comment">// Left unimplemented, has no equivalent in the old</span></span><br><span class="line">                <span class="hljs-comment">// API.</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="hljs-meta">@Override</span></span><br><span class="line">            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onStop</span><span class="hljs-params">(String utteranceId, <span class="hljs-keyword">boolean</span> interrupted)</span> </span>&#123;</span><br><span class="line">                listener.onUtteranceCompleted(utteranceId);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>按照<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo官网</a>的说法</p>
+<blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架. Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页.</p>
+</blockquote>
+<p>利用Hexo,我们可以用极低的成本构建属于自己的博客，并且自动为博文分类和归档，这篇教程是我使用Hexo构建个人博客时候做的总结. 这份Hexo使用指南适用于<a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a>环境，写这份指南时所用的操作系统版本为<a href="https://www.ubuntu.com/download/desktop" target="_blank" rel="noopener">Ubuntu18.04</a>.通过这份<strong>Hexo使用指南一</strong>，你可以快速掌握本地部署博客的方法. 完成本教程后，下一教程将会向您展示如何花费人民币1元的代价，购入属于自己的域名并与本教程中本地存在的Hexo博客关联.</p>
         </div>
         
-        <div class="level is-size-7 is-uppercase">
+        
+        <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Android/">Android</a>
+                <a class="button is-size-7 is-light" href="/2018/08/14/Hexo使用指南一(Ubuntu环境)/#more">Read More</a>
                 </div>
             </div>
         </div>
         
         
-        
     </div>
 </div>
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
-        <div class="buttons is-centered">
-            
-                
-<a class="button is-info donate">
-    <span class="icon is-small">
-        <i class="fab fa-alipay"></i>
-    </span>
-    <span>Alipay</span>
-    <div class="qrcode"><img src="/images/alipay.jpg" alt="Alipay"></div>
-</a>
-
-                
-                
-<a class="button is-success donate">
-    <span class="icon is-small">
-        <i class="fab fa-weixin"></i>
-    </span>
-    <span>Wechat</span>
-    <div class="qrcode"><img src="/images/wechat.jpg" alt="Wechat"></div>
-</a>
-
-                
-                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
-
-<a class="button is-warning donate" onclick="document.getElementById(&#39;paypal-donate-form&#39;).submit()">
-    <span class="icon is-small">
-        <i class="fab fa-paypal"></i>
-    </span>
-    <span>Paypal</span>
-</a>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal-donate-form">
-    <input type="hidden" name="cmd" value="_donations">
-    <input type="hidden" name="business" value="octopusheep@gmail.com">
-    <input type="hidden" name="currency_code" value="USD">
-</form>
-
-                
-                
-<a class="button is-danger donate" href="https://www.octopusheep.com" target="_blank">
-    <span class="icon is-small">
-        <i class="fab fa-patreon"></i>
-    </span>
-    <span>Patreon</span>
-</a>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
+
+
+
+    
 <div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/15/《Java编程思想》读书笔记(第八章)/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">《Java编程思想》读书笔记(第八章)</span>
-            </a>
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous">
+            <a class="is-flex-grow has-text-black-ter" href="/categories/Programming/page/5/">Previous</a>
         </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/09/《Java编程思想》读书笔记(第七章)/">
-                <span class="level-item">《Java编程思想》读书笔记(第七章)</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
+        <div class="pagination-next is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="/categories/Programming/page/7/">Next</a>
         </div>
-        
-    </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link has-text-black-ter" href="/categories/Programming/">1</a></li>
+            
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/categories/Programming/page/5/">5</a></li>
+            
+            <li><a class="pagination-link is-current" href="/categories/Programming/page/6/">6</a></li>
+            
+        </ul>
+    </nav>
 </div>
-
-
 </div>
                 
 
@@ -400,25 +335,6 @@
 </div>
     
         
-<div class="card widget" id="toc">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Catalogue
-            </h3>
-            <ul class="menu-list"><li>
-        <a class="is-flex" href="#What-is-UtteranceProgressListener">
-        <span class="has-mr-6">1</span>
-        <span>What is UtteranceProgressListener</span>
-        </a></li><li>
-        <a class="is-flex" href="#TTS回调类型">
-        <span class="has-mr-6">2</span>
-        <span>TTS回调类型</span>
-        </a></li></ul>
-        </div>
-    </div>
-</div>
-
     
         
 
@@ -1443,7 +1359,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/octopus.jpg" alt="Android原生TTS逻辑分析" height="28">
+                    <img src="/images/octopus.jpg" alt="octopusheep" height="28">
                 
                 </a>
                 <p class="is-size-7">

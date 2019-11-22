@@ -137,6 +137,69 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-22T11:10:41.000Z">2019-11-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 203 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/11/22/VI:VIM常用命令/">VI/VIM常用命令</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>Vim is a highly configurable text editor for efficiently creating and changing any kind of text.</p>
+</blockquote>
+<p>vim是一个高度可配置的的文本编辑器，用于有效地创建和修改任何类型的文本，官方中文操作手册可以在<a href="https://sourceforge.net/projects/vimcdoc/files/pdf-manual/user_manual-2.1.0.pdf/download" target="_blank" rel="noopener">SOURCEFORGE</a>下载</p>
+<h2 id="基本模式"><a href="#基本模式" class="headerlink" title="基本模式"></a>基本模式</h2><ul>
+<li><p>普通模式</p>
+</li>
+<li><p>插入模式</p>
+</li>
+<li><p>命令模式</p>
+</li>
+</ul>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/11/22/VI:VIM常用命令/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-11-19T19:22:52.000Z">2019-11-19</time>
                 
                 <div class="level-item">
@@ -654,60 +717,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-30T16:36:35.000Z">2019-07-30</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Elasticsearch/">Elasticsearch</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 370 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/07/31/Elasticsearch部署实践相关总结/">Elasticsearch部署实践相关总结</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="单节点ES的部署"><a href="#单节点ES的部署" class="headerlink" title="单节点ES的部署"></a>单节点ES的部署</h2><h3 id="（选做）创建network"><a href="#（选做）创建network" class="headerlink" title="（选做）创建network"></a>（选做）创建network</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create -d bridge elastic</span><br></pre></td></tr></table></figure>
-
-<h3 id="部署Elasticsearch"><a href="#部署Elasticsearch" class="headerlink" title="部署Elasticsearch"></a>部署Elasticsearch</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">publish_host=$(hostname -I | cut -d&apos; &apos; -f1) \</span><br><span class="line">docker run -d \</span><br><span class="line"> --name elasticsearch \</span><br><span class="line"> -e &quot;discovery.type=single-node&quot; \</span><br><span class="line"> -e &quot;network.host=0.0.0.0&quot; \</span><br><span class="line"> -e &quot;network.publish_host=$&#123;publish_host&#125;&quot; \</span><br><span class="line"> -p 9200:9200 -p 9300:9300 \</span><br><span class="line"> --memory-reservation 4g --memory 6g \</span><br><span class="line"> --network=elastic \</span><br><span class="line"> --restart on-failure \</span><br><span class="line"> cargo.caicloudprivatetest.com/caicloud/elasticsearch:6.5.4</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/07/31/Elasticsearch部署实践相关总结/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -776,7 +785,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        55
+                        56
                     </p>
                 </div>
             </div>
@@ -796,7 +805,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        22
+                        23
                     </p>
                 </div>
             </div>
@@ -888,7 +897,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">50</span>
+                <span class="level-item tag">51</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -982,7 +991,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/LDAP/" style="font-size: 10px;">LDAP</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 12.5px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/LDAP/" style="font-size: 10px;">LDAP</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/VI/" style="font-size: 10px;">VI</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -996,6 +1005,19 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-22T11:10:41.000Z">2019-11-22</time></div>
+                    <a href="/2019/11/22/VI:VIM常用命令/" class="has-link-black-ter is-size-6">VI/VIM常用命令</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1049,19 +1071,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-05T20:32:01.000Z">2019-09-05</time></div>
-                    <a href="/2019/09/06/Python Studying Note/" class="has-link-black-ter is-size-6">Python Studying Note</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Python/">Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1080,7 +1089,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1395,6 +1404,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Sshpass/">
                         <span class="tag">Sshpass</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VI/">
+                        <span class="tag">VI</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1433,6 +1449,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-22T11:10:41.000Z">2019-11-22</time></div>
+                    <a href="/2019/11/22/VI:VIM常用命令/" class="has-link-black-ter is-size-6">VI/VIM常用命令</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-19T19:22:52.000Z">2019-11-19</time></div>
                     <a href="/2019/11/20/LDAP Studying Note/" class="has-link-black-ter is-size-6">LDAP Studying Note</a>
                     <p class="is-size-7 is-uppercase">
@@ -1481,19 +1510,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-05T20:32:01.000Z">2019-09-05</time></div>
-                    <a href="/2019/09/06/Python Studying Note/" class="has-link-black-ter is-size-6">Python Studying Note</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a> / <a class="has-link-grey -link" href="/categories/Programming/Python/">Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1512,7 +1528,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1827,6 +1843,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Sshpass/">
                         <span class="tag">Sshpass</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VI/">
+                        <span class="tag">VI</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

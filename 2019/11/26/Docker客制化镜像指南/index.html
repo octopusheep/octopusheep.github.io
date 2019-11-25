@@ -2,20 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Category: Studying - octopusheep</title>
+<title>Docker客制化镜像指南 - octopusheep</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="keywords" content="octopusheep">
-<meta property="og:type" content="website">
-<meta property="og:title" content="octopusheep">
-<meta property="og:url" content="http://octopusheep.com/categories/Studying/index.html">
+    <meta name="description" content="本教程已ubuntu:latest镜像作为基础镜像，创建一个启动后自动打印日志的docker镜像  下载基础镜像下载ubuntu镜像作为基础镜像： 1docker pull ubuntu  启动ubuntu镜像容器：1docker run -it ubuntu  更新软件源(容器内)1root@03da790f4a63:/# apt-get update  下载所需软件(容器内)1root@03">
+<meta name="keywords" content="Docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker客制化镜像指南">
+<meta property="og:url" content="http://octopusheep.com/2019/11/26/Docker客制化镜像指南/index.html">
 <meta property="og:site_name" content="octopusheep">
+<meta property="og:description" content="本教程已ubuntu:latest镜像作为基础镜像，创建一个启动后自动打印日志的docker镜像  下载基础镜像下载ubuntu镜像作为基础镜像： 1docker pull ubuntu  启动ubuntu镜像容器：1docker run -it ubuntu  更新软件源(容器内)1root@03da790f4a63:/# apt-get update  下载所需软件(容器内)1root@03">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-11-25T11:17:46.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="octopusheep">
+<meta name="twitter:title" content="Docker客制化镜像指南">
+<meta name="twitter:description" content="本教程已ubuntu:latest镜像作为基础镜像，创建一个启动后自动打印日志的docker镜像  下载基础镜像下载ubuntu镜像作为基础镜像： 1docker pull ubuntu  启动ubuntu镜像容器：1docker run -it ubuntu  更新软件源(容器内)1root@03da790f4a63:/# apt-get update  下载所需软件(容器内)1root@03">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
 
@@ -85,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/octopus.jpg" alt="octopusheep" height="28">
+                <img src="/images/octopus.jpg" alt="Docker客制化镜像指南" height="28">
             
             </a>
         </div>
@@ -117,6 +121,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -131,157 +139,179 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-25T19:16:43.000Z">2019-11-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 998 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Docker客制化镜像指南
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>本教程已ubuntu:latest镜像作为基础镜像，创建一个启动后自动打印日志的docker镜像</p>
+</blockquote>
+<h2 id="下载基础镜像"><a href="#下载基础镜像" class="headerlink" title="下载基础镜像"></a>下载基础镜像</h2><p>下载ubuntu镜像作为基础镜像：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动ubuntu镜像容器："><a href="#启动ubuntu镜像容器：" class="headerlink" title="启动ubuntu镜像容器："></a>启动ubuntu镜像容器：</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it ubuntu</span><br></pre></td></tr></table></figure>
+
+<h2 id="更新软件源-容器内"><a href="#更新软件源-容器内" class="headerlink" title="更新软件源(容器内)"></a>更新软件源(容器内)</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@03da790f4a63:/# apt-get update</span><br></pre></td></tr></table></figure>
+
+<h2 id="下载所需软件-容器内"><a href="#下载所需软件-容器内" class="headerlink" title="下载所需软件(容器内)"></a>下载所需软件(容器内)</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@03da790f4a63:/# apt-get install vim</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+<h2 id="编写自动打印日志的shell脚本并保存-容器内"><a href="#编写自动打印日志的shell脚本并保存-容器内" class="headerlink" title="编写自动打印日志的shell脚本并保存(容器内)"></a>编写自动打印日志的shell脚本并保存(容器内)</h2><p>在<code>./</code>根路径使用<code>vim</code>命令创建shell脚本文件：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@03da790f4a63:/# ls</span><br><span class="line"></span><br><span class="line">bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var</span><br><span class="line"></span><br><span class="line">root@03da790f4a63:/# pwd</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line">root@03da790f4a63:/# vim script.sh</span><br></pre></td></tr></table></figure>
+
+<p>输入如下脚本内容：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i=0;</span><br><span class="line">while true</span><br><span class="line">do</span><br><span class="line">echo current index: $i;</span><br><span class="line">echo current index in log/log1: $i &gt;&gt; /log/log1;</span><br><span class="line">i=`expr $i + 1`;</span><br><span class="line">sleep 1;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<p>这个脚本做了4件事情：<br>    1. 定义了变量<code>i</code><br>    2. 创建了一个while无限循环<br>    3. 每次循环会用<code>echo</code>命令向终端输出<code>current index: i</code>的日志信息，并向<code>./log/log1</code>文件中写入相同日志信息<br>    4. 每次循环最后会将变量<code>i</code>的值加1</p>
+<p>保存并退出脚本和当前容器<code>3da790f4a63</code></p>
+<h2 id="创建log文件夹-容器内"><a href="#创建log文件夹-容器内" class="headerlink" title="创建log文件夹(容器内)"></a>创建log文件夹(容器内)</h2><p>在容器内尝试执行<code>script.sh</code>:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@03da790f4a63:/# sh script.sh</span><br></pre></td></tr></table></figure>
+
+<p>你会发现命令行内会输出如下内容：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">current index: 0</span><br><span class="line">script.sh: 5: script.sh: cannot create /log/log1: Directory nonexistent</span><br><span class="line">current index: 1</span><br><span class="line">script.sh: 5: script.sh: cannot create /log/log1: Directory nonexistent</span><br><span class="line">^[current index: 2</span><br><span class="line">script.sh: 5: script.sh: cannot create /log/log1: Directory nonexistent</span><br><span class="line">Lcurrent index: 3</span><br><span class="line">script.sh: 5: script.sh: cannot create /log/log1: Directory nonexistent</span><br><span class="line">current index: 4</span><br><span class="line">script.sh: 5: script.sh: cannot create /log/log1: Directory nonexistent</span><br></pre></td></tr></table></figure>
+
+<p>👀眼睛一眯就发现原来是<code>echo</code>命令没有创建文件夹的权限，Bravo！</p>
+<p>因此我摸了摸我杂乱的小胡子，创建了一个文件夹，解决这个问题：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@03da790f4a63:/# mkdir log</span><br></pre></td></tr></table></figure>
+
+<p>至此，我们已经创建了一个具有以下特性的容器：<br>    1. 基于ubuntu容器<br>    2. 安装有vim文字编辑器<br>    3. 保存了循环打印日志的shell脚本</p>
+<h2 id="查看容器ID"><a href="#查看容器ID" class="headerlink" title="查看容器ID"></a>查看容器ID</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p>出现如下docker进程：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS                         PORTS               NAMES</span><br><span class="line">03da790f4a63        ubuntu                          &quot;/bin/bash&quot;              25 minutes ago      Up 25 minutes                                      priceless_edison</span><br><span class="line">b5b1243d00d7        tangjiawei/banana:v0.0.1        &quot;/bin/sh -c &apos;sh ./ap…&quot;   39 minutes ago      Up 39 minutes                                      priceless_golick</span><br><span class="line">a9905e4f5cff        af2b1144440a                    &quot;/bin/sh -c &apos;/bash/s…&quot;   40 minutes ago      Exited (127) 40 minutes ago                        jovial_germain</span><br></pre></td></tr></table></figure>
+
+<p>找到上一步我们客制化的容器ID为<code>03da790f4a63</code></p>
+<h2 id="创建客制化镜像"><a href="#创建客制化镜像" class="headerlink" title="创建客制化镜像"></a>创建客制化镜像</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit 03da790f4a63 octopusheep/apple:v0.0.1</span><br></pre></td></tr></table></figure>
+
+<p>至此，我们客制化了一个具有一个具有以下特性的镜像：<br>    1. 基于ubuntu容器<br>    2. 安装有vim文字编辑器<br>    3. 保存了循环打印日志的shell脚本</p>
+<p>However，这个镜像产生的容器并不能运行后自动运行我们编写的shell脚本，因此需要使用Dockerfile生成可以自动启动脚本的镜像</p>
+<h2 id="创建Dockerfile文件"><a href="#创建Dockerfile文件" class="headerlink" title="创建Dockerfile文件"></a>创建Dockerfile文件</h2><p>在你的电脑内新建一个空文件夹，新建一个<code>Dockerfile</code>文件</p>
+<p>我放在了<code>/Documents/Dockerfile资料/essential</code>路径下，大家可以随意</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/Documents/Dockerfile资料/essential » vi Dockerfile</span><br></pre></td></tr></table></figure>
+
+<p>在<code>Dockerfile</code>文件中输入一下内容：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM    octopusheep/apple:v0.0.1</span><br><span class="line">MAINTAINER      octopusheep &quot;octopusheep@gmail.com&quot;</span><br><span class="line"></span><br><span class="line">CMD sh ./script.sh</span><br></pre></td></tr></table></figure>
+
+<p>保存并退出Dockerfile</p>
+<h2 id="使用Dockerfile创建客制化镜像"><a href="#使用Dockerfile创建客制化镜像" class="headerlink" title="使用Dockerfile创建客制化镜像"></a>使用Dockerfile创建客制化镜像</h2><p>在<code>Dockerfile</code>所在的文件夹下使用<code>docker build</code>命令，创建镜像：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/Documents/Dockerfile资料/essential » docker build -t octopusheep/banana:v0.0.1 .</span><br></pre></td></tr></table></figure>
+
+<p>出现如下信息即表示镜像构建成功：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Sending build context to Docker daemon  9.216kB</span><br><span class="line">Step 1/3 : FROM    octopusheep/apple:v0.0.1</span><br><span class="line"> ---&gt; 8b1a82856dc9</span><br><span class="line">Step 2/3 : MAINTAINER      octopusheep &quot;octopusheep@gmail.com&quot;</span><br><span class="line"> ---&gt; Running in c80e6b9b5a30</span><br><span class="line">Removing intermediate container c80e6b9b5a30</span><br><span class="line"> ---&gt; 25fa612ede72</span><br><span class="line">Step 3/3 : CMD sh ./script.sh</span><br><span class="line"> ---&gt; Running in 5e5f3e80566a</span><br><span class="line">Removing intermediate container 5e5f3e80566a</span><br><span class="line"> ---&gt; ad98405d0524</span><br><span class="line">Successfully built ad98405d0524</span><br><span class="line">Successfully tagged octopusheep/banana:v0.0.1</span><br></pre></td></tr></table></figure>
+
+<p>至此，至此，我们客制化了一个具有一个具有以下特性的镜像：<br>    1. 基于ubuntu容器<br>    2. 安装有vim文字编辑器<br>    3. 保存了循环打印日志的shell脚本<br>    4. 容器一运行就会自动执行shell脚本</p>
+<p>Bingo！</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Docker/">Docker</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">Categories</a></li>
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
             
-            <li class="is-active"><a href="#" aria-current="page">Studying</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="Alipay"></div>
+</a>
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-15T22:49:53.000Z">2019-06-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Studying/">Studying</a>
-                </div>
                 
                 
-                <span class="level-item has-text-grey">
-                    
-                    
-                    6 minutes read (About 871 words)
-                </span>
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wechat.jpg" alt="Wechat"></div>
+</a>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<a class="button is-warning donate" onclick="document.getElementById(&#39;paypal-donate-form&#39;).submit()">
+    <span class="icon is-small">
+        <i class="fab fa-paypal"></i>
+    </span>
+    <span>Paypal</span>
+</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal-donate-form">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="octopusheep@gmail.com">
+    <input type="hidden" name="currency_code" value="USD">
+</form>
+
                 
                 
-            </div>
+<a class="button is-danger donate" href="https://www.octopusheep.com" target="_blank">
+    <span class="icon is-small">
+        <i class="fab fa-patreon"></i>
+    </span>
+    <span>Patreon</span>
+</a>
+
+                
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/06/16/数据结构学习笔记/">数据结构学习笔记</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><p>非数值计算程序设计需要考虑待处理对象的特性以及各处理对象之间的关系</p>
-<h2 id="什么是数据结构"><a href="#什么是数据结构" class="headerlink" title="什么是数据结构"></a>什么是数据结构</h2><p>需求数学模型的实质是分析问题，从中提取出操作的对象，并找出这些对象之间所含有的关系，用数学的语言加以描述</p>
-<ul>
-<li>非数值计算问题的例子<ol>
-<li>树木检索系统自动化问题（线性的数据结构）</li>
-<li>计算机和人对弈的问题（数）</li>
-<li>多岔路口交通灯的管理问题</li>
-</ol>
-</li>
-</ul>
-<p>数据结构是一门研究非数值计算问题的程序设计中计算机所操纵的想象以及它们之间的关系和操作等的学科</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/16/数据结构学习笔记/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
     </div>
 </div>
 
 
 
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-13T09:42:51.000Z">2019-06-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Studying/">Studying</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 526 words)
-                </span>
-                
-                
-            </div>
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/22/VI:VIM常用命令/">
+                <span class="level-item">VI/VIM常用命令</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/06/13/读研目标学校分析/">读研目标学校分析</a>
-            
-        </h1>
-        <div class="content">
-            <p>为挑选目标高校，特此将其往年专业报考人数和录取人数做统计，方便横向对比</p>
-<h2 id="厦门大学"><a href="#厦门大学" class="headerlink" title="厦门大学"></a>厦门大学</h2><h3 id="招生简章"><a href="#招生简章" class="headerlink" title="招生简章"></a>招生简章</h3><p><a href="https://zs.xmu.edu.cn/2018/0814/c5797a349598/page.htm" target="_blank" rel="noopener">厦门大学2019年硕士研究生招生简章</a></p>
-<h3 id="报考人数与录取人数"><a href="#报考人数与录取人数" class="headerlink" title="报考人数与录取人数"></a>报考人数与录取人数</h3><p>根据<a href="http://kszx.xmu.edu.cn/index.php/welcome/detail/302" target="_blank" rel="noopener">厦门大学2019年硕士研究生招生考试各专业报考人数</a>    </p>
-<table>
-<thead>
-<tr>
-<th>报考院系代码</th>
-<th>报考院系名称</th>
-<th>报考专业代码</th>
-<th>报考专业名称</th>
-<th>人数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>131</td>
-<td>计算机科学系</td>
-<td>081200</td>
-<td>计算机科学与技术</td>
-<td>130</td>
-</tr>
-<tr>
-<td>135</td>
-<td>智能科学与技术系</td>
-<td>081200</td>
-<td>计算机科学与技术</td>
-<td>104</td>
-</tr>
-<tr>
-<td></td></tr></tbody></table>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/13/读研目标学校分析/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
         
     </div>
 </div>
-
-
-
-
-
-
 
 
 </div>
@@ -398,6 +428,57 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#下载基础镜像">
+        <span class="has-mr-6">1</span>
+        <span>下载基础镜像</span>
+        </a></li><li>
+        <a class="is-flex" href="#启动ubuntu镜像容器：">
+        <span class="has-mr-6">2</span>
+        <span>启动ubuntu镜像容器：</span>
+        </a></li><li>
+        <a class="is-flex" href="#更新软件源-容器内">
+        <span class="has-mr-6">3</span>
+        <span>更新软件源(容器内)</span>
+        </a></li><li>
+        <a class="is-flex" href="#下载所需软件-容器内">
+        <span class="has-mr-6">4</span>
+        <span>下载所需软件(容器内)</span>
+        </a></li><li>
+        <a class="is-flex" href="#编写自动打印日志的shell脚本并保存-容器内">
+        <span class="has-mr-6">5</span>
+        <span>编写自动打印日志的shell脚本并保存(容器内)</span>
+        </a></li><li>
+        <a class="is-flex" href="#创建log文件夹-容器内">
+        <span class="has-mr-6">6</span>
+        <span>创建log文件夹(容器内)</span>
+        </a></li><li>
+        <a class="is-flex" href="#查看容器ID">
+        <span class="has-mr-6">7</span>
+        <span>查看容器ID</span>
+        </a></li><li>
+        <a class="is-flex" href="#创建客制化镜像">
+        <span class="has-mr-6">8</span>
+        <span>创建客制化镜像</span>
+        </a></li><li>
+        <a class="is-flex" href="#创建Dockerfile文件">
+        <span class="has-mr-6">9</span>
+        <span>创建Dockerfile文件</span>
+        </a></li><li>
+        <a class="is-flex" href="#使用Dockerfile创建客制化镜像">
+        <span class="has-mr-6">10</span>
+        <span>使用Dockerfile创建客制化镜像</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -1422,7 +1503,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/octopus.jpg" alt="octopusheep" height="28">
+                    <img src="/images/octopus.jpg" alt="Docker客制化镜像指南" height="28">
                 
                 </a>
                 <p class="is-size-7">

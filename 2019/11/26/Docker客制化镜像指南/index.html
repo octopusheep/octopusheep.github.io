@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="本教程已ubuntu:latest镜像作为基础镜像，创建一个启动后自动打印日志的docker镜像  下载基础镜像下载ubuntu镜像作为基础镜像： 1docker pull ubuntu  启动ubuntu镜像容器：1docker run -it ubuntu  更新软件源(容器内)1root@03da790f4a63:/# apt-get update  下载所需软件(容器内)1root@03">
+    <meta name="description" content="本教程以ubuntu:latest镜像作为基础镜像，创建一个启动后自动打印日志的docker镜像  下载基础镜像下载ubuntu镜像作为基础镜像： 1docker pull ubuntu  启动ubuntu镜像容器：1docker run -it ubuntu  更新软件源(容器内)1root@03da790f4a63:/# apt-get update  下载所需软件(容器内)1root@03">
 <meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker客制化镜像指南">
 <meta property="og:url" content="http://octopusheep.com/2019/11/26/Docker客制化镜像指南/index.html">
 <meta property="og:site_name" content="octopusheep">
-<meta property="og:description" content="本教程已ubuntu:latest镜像作为基础镜像，创建一个启动后自动打印日志的docker镜像  下载基础镜像下载ubuntu镜像作为基础镜像： 1docker pull ubuntu  启动ubuntu镜像容器：1docker run -it ubuntu  更新软件源(容器内)1root@03da790f4a63:/# apt-get update  下载所需软件(容器内)1root@03">
+<meta property="og:description" content="本教程以ubuntu:latest镜像作为基础镜像，创建一个启动后自动打印日志的docker镜像  下载基础镜像下载ubuntu镜像作为基础镜像： 1docker pull ubuntu  启动ubuntu镜像容器：1docker run -it ubuntu  更新软件源(容器内)1root@03da790f4a63:/# apt-get update  下载所需软件(容器内)1root@03">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-11-25T11:17:46.439Z">
+<meta property="og:updated_time" content="2019-11-25T11:25:26.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker客制化镜像指南">
-<meta name="twitter:description" content="本教程已ubuntu:latest镜像作为基础镜像，创建一个启动后自动打印日志的docker镜像  下载基础镜像下载ubuntu镜像作为基础镜像： 1docker pull ubuntu  启动ubuntu镜像容器：1docker run -it ubuntu  更新软件源(容器内)1root@03da790f4a63:/# apt-get update  下载所需软件(容器内)1root@03">
+<meta name="twitter:description" content="本教程以ubuntu:latest镜像作为基础镜像，创建一个启动后自动打印日志的docker镜像  下载基础镜像下载ubuntu镜像作为基础镜像： 1docker pull ubuntu  启动ubuntu镜像容器：1docker run -it ubuntu  更新软件源(容器内)1root@03da790f4a63:/# apt-get update  下载所需软件(容器内)1root@03">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
 
@@ -168,7 +168,7 @@
         </h1>
         <div class="content">
             <blockquote>
-<p>本教程已ubuntu:latest镜像作为基础镜像，创建一个启动后自动打印日志的docker镜像</p>
+<p>本教程以ubuntu:latest镜像作为基础镜像，创建一个启动后自动打印日志的docker镜像</p>
 </blockquote>
 <h2 id="下载基础镜像"><a href="#下载基础镜像" class="headerlink" title="下载基础镜像"></a>下载基础镜像</h2><p>下载ubuntu镜像作为基础镜像：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu</span><br></pre></td></tr></table></figure>
@@ -181,7 +181,7 @@
 
 <a id="more"></a>
 <h2 id="编写自动打印日志的shell脚本并保存-容器内"><a href="#编写自动打印日志的shell脚本并保存-容器内" class="headerlink" title="编写自动打印日志的shell脚本并保存(容器内)"></a>编写自动打印日志的shell脚本并保存(容器内)</h2><p>在<code>./</code>根路径使用<code>vim</code>命令创建shell脚本文件：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@03da790f4a63:/# ls</span><br><span class="line"></span><br><span class="line">bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var</span><br><span class="line"></span><br><span class="line">root@03da790f4a63:/# pwd</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line">root@03da790f4a63:/# vim script.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@03da790f4a63:/# ls</span><br><span class="line">bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var</span><br><span class="line">root@03da790f4a63:/# pwd</span><br><span class="line">/</span><br><span class="line">root@03da790f4a63:/# vim script.sh</span><br></pre></td></tr></table></figure>
 
 <p>输入如下脚本内容：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i=0;</span><br><span class="line">while true</span><br><span class="line">do</span><br><span class="line">echo current index: $i;</span><br><span class="line">echo current index in log/log1: $i &gt;&gt; /log/log1;</span><br><span class="line">i=`expr $i + 1`;</span><br><span class="line">sleep 1;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>

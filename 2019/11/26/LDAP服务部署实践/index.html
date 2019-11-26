@@ -2,24 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>《Java编程思想》读书笔记(第十二章) - octopusheep</title>
+<title>LDAP服务部署实践 - octopusheep</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Java的基本理念是结构不佳的代码不能运行  概念Java的异常处理机制建立在C++的基础之上 异常处理方式将“描述在正常执行过程中做什么事”的代码和“出了问题怎么办”的代码相分离 基本异常exception conidtion异常情形是指阻止当前方法或作用域继续执行的问题    普通问题 异常情形    在当前环境下能得到足够的信息，总能处理这个错误 在当前环境下无法获得必要的信息来解决问题">
-<meta name="keywords" content="Java">
+    <meta name="description" content="LDAP服务由ladpadmin和ldapserver两个无状态服务组成  新建应用分区创建LDAP服务专用的应用分区 ladpadmin服务容器配置 镜像名称：osixia/phpldapadmin:latest CPU请求：0.5Core CPU上限：1Core 内存请求：1GiB 内存上限：2GiB PHPLDAPADMIN_LDAP_HOSTS:ldapserver PHPLDAPADM">
+<meta name="keywords" content="LDAP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《Java编程思想》读书笔记(第十二章)">
-<meta property="og:url" content="http://octopusheep.com/2019/04/18/《Java编程思想》读书笔记(第十二章)/index.html">
+<meta property="og:title" content="LDAP服务部署实践">
+<meta property="og:url" content="http://octopusheep.com/2019/11/26/LDAP服务部署实践/index.html">
 <meta property="og:site_name" content="octopusheep">
-<meta property="og:description" content="Java的基本理念是结构不佳的代码不能运行  概念Java的异常处理机制建立在C++的基础之上 异常处理方式将“描述在正常执行过程中做什么事”的代码和“出了问题怎么办”的代码相分离 基本异常exception conidtion异常情形是指阻止当前方法或作用域继续执行的问题    普通问题 异常情形    在当前环境下能得到足够的信息，总能处理这个错误 在当前环境下无法获得必要的信息来解决问题">
+<meta property="og:description" content="LDAP服务由ladpadmin和ldapserver两个无状态服务组成  新建应用分区创建LDAP服务专用的应用分区 ladpadmin服务容器配置 镜像名称：osixia/phpldapadmin:latest CPU请求：0.5Core CPU上限：1Core 内存请求：1GiB 内存上限：2GiB PHPLDAPADMIN_LDAP_HOSTS:ldapserver PHPLDAPADM">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://octopusheep.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-21T05:52:20.000Z">
+<meta property="og:updated_time" content="2019-11-26T07:22:32.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《Java编程思想》读书笔记(第十二章)">
-<meta name="twitter:description" content="Java的基本理念是结构不佳的代码不能运行  概念Java的异常处理机制建立在C++的基础之上 异常处理方式将“描述在正常执行过程中做什么事”的代码和“出了问题怎么办”的代码相分离 基本异常exception conidtion异常情形是指阻止当前方法或作用域继续执行的问题    普通问题 异常情形    在当前环境下能得到足够的信息，总能处理这个错误 在当前环境下无法获得必要的信息来解决问题">
+<meta name="twitter:title" content="LDAP服务部署实践">
+<meta name="twitter:description" content="LDAP服务由ladpadmin和ldapserver两个无状态服务组成  新建应用分区创建LDAP服务专用的应用分区 ladpadmin服务容器配置 镜像名称：osixia/phpldapadmin:latest CPU请求：0.5Core CPU上限：1Core 内存请求：1GiB 内存上限：2GiB PHPLDAPADMIN_LDAP_HOSTS:ldapserver PHPLDAPADM">
 <meta name="twitter:image" content="http://octopusheep.com/images/og_image.png">
 
 
@@ -89,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/octopus.jpg" alt="《Java编程思想》读书笔记(第十二章)" height="28">
+                <img src="/images/octopus.jpg" alt="LDAP服务部署实践" height="28">
             
             </a>
         </div>
@@ -144,17 +144,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-17T20:51:31.000Z">2019-04-17</time>
+                <time class="level-item has-text-grey" datetime="2019-11-26T15:21:28.000Z">2019-11-26</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    8 minutes read (About 1256 words)
+                    2 minutes read (About 317 words)
                 </span>
                 
                 
@@ -163,86 +163,57 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                《Java编程思想》读书笔记(第十二章)
+                LDAP服务部署实践
             
         </h1>
         <div class="content">
             <blockquote>
-<p>Java的基本理念是结构不佳的代码不能运行</p>
+<p>LDAP服务由ladpadmin和ldapserver两个无状态服务组成</p>
 </blockquote>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>Java的异常处理机制建立在C++的基础之上</p>
-<p>异常处理方式将“描述在正常执行过程中做什么事”的代码和“出了问题怎么办”的代码相分离</p>
-<h2 id="基本异常"><a href="#基本异常" class="headerlink" title="基本异常"></a>基本异常</h2><p>exception conidtion异常情形是指阻止当前方法或作用域继续执行的问题</p>
-<table>
-<thead>
-<tr>
-<th>普通问题</th>
-<th>异常情形</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>在当前环境下能得到足够的信息，总能处理这个错误</td>
-<td>在当前环境下无法获得必要的信息来解决问题</td>
-</tr>
-</tbody></table>
-<p>抛出异常后发生的事情：</p>
-<ol>
-<li>使用new在堆上创建异常对象</li>
-<li>当前执行路径被终止，并且从当前环境中弹出对异常对象的引用</li>
-<li>异常处理机制接管程序，开始寻找恰当的地方来继续执行程序</li>
-</ol>
-<p>异常使得我们可以将每件事都当作是一个事物来考虑</p>
-<a id="more"></a>
-<h3 id="异常参数"><a href="#异常参数" class="headerlink" title="异常参数"></a>异常参数</h3><p>在使用new创建了异常对象之后，此对象的引用将传给throw</p>
-<p>异常返回的地点和普通方法调用返回的地点完全不同</p>
-<p>能够抛出任意类型的Throwable对象，它是异常类型的根类</p>
-<p>通常异常对象中仅有的信息就是异常类型</p>
-<h2 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h2><p>guarded region监视区域是指已端可能会产生异常的代码，并且在后面跟着处理这些异常的代码</p>
-<h3 id="try块"><a href="#try块" class="headerlink" title="try块"></a>try块</h3><p>如果在方法内部抛出了异常，这个方法将在抛出异常的过程中结束。要是不希望方法就此结束，可以在方法内设置一个特殊的块来捕获异常。</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">try</span>&#123;</span><br><span class="line">	<span class="hljs-comment">//Code that might generate exception</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="新建应用分区"><a href="#新建应用分区" class="headerlink" title="新建应用分区"></a>新建应用分区</h2><p>创建LDAP服务专用的应用分区</p>
+<h2 id="ladpadmin服务"><a href="#ladpadmin服务" class="headerlink" title="ladpadmin服务"></a>ladpadmin服务</h2><h3 id="容器配置"><a href="#容器配置" class="headerlink" title="容器配置"></a>容器配置</h3><ul>
+<li>镜像名称：osixia/phpldapadmin:latest</li>
+<li>CPU请求：0.5Core</li>
+<li>CPU上限：1Core</li>
+<li>内存请求：1GiB</li>
+<li>内存上限：2GiB</li>
+<li>PHPLDAPADMIN_LDAP_HOSTS:ldapserver</li>
+<li>PHPLDAPADMIN_HTTPS:false<a id="more"></a>
 
-<h3 id="异常处理程序"><a href="#异常处理程序" class="headerlink" title="异常处理程序"></a>异常处理程序</h3><p>异常处理程序将处理在try块中捕获到的异常，以关键字catch表示</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">try</span>&#123;</span><br><span class="line">	<span class="hljs-comment">//Code that might generate exception</span></span><br><span class="line">&#125;<span class="hljs-keyword">catch</span>(Type1 id1)&#123;</span><br><span class="line">	<span class="hljs-comment">//Handle exception of Type1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建自定义异常"><a href="#创建自定义异常" class="headerlink" title="创建自定义异常"></a>创建自定义异常</h2><p>要自己定义异常类，必须从已有的异常类继承</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SimpleException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Exception</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在异常处理程序中，调用了在Throwable类声明（Exception即从此类继承）的printStackTrace()方法，它将打印从方法调用处直到异常抛出处的方法调用序列</p>
-<p>printStackTrace()方法默认将打印信息输出到标准错误流，如果参数为System.out，则输出到正常log控制台</p>
-<h3 id="异常与记录日志"><a href="#异常与记录日志" class="headerlink" title="异常与记录日志"></a>异常与记录日志</h3><p>java标准类库中的java.util.logging工具将输出记录到日志中</p>
-<p>静态的Logger.getLogger()方法创建了一个String参数相关联的Logger对象（通常与错误相关联的包名和类名）</p>
-<p>对于异常类来说，getMessage()方法有点类似于toString()方法</p>
-<h2 id="异常说明"><a href="#异常说明" class="headerlink" title="异常说明"></a>异常说明</h2><p>java提供<strong>异常说明</strong>来告知客户端程序员某个方法可能会抛出的异常类型，它属于方法声明的一部分，紧跟在形式参数列表之后</p>
-<p>异常说明使用了附加的关键字throws,后面接一个所有潜在异常类型的列表</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">func</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> TooBig,TooSmall,DivZero</span>&#123; <span class="hljs-comment">//...&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果方法声明未包含异常声明，则表示该方法不会抛出任何异常（除了从RuntimeException继承的异常，它们可以在没有异常说明的情况下被抛出）</p>
-<h2 id="捕获所有的异常"><a href="#捕获所有的异常" class="headerlink" title="捕获所有的异常"></a>捕获所有的异常</h2><p>通过捕获异常类型的基类Exception可以捕获所有类型的异常</p>
-<p>Exception可以调用它从其基类Throwable继承的方法：</p>
-<ul>
-<li>String getMessage()</li>
-<li>String getLocalizedMessage()</li>
-<li>String toString()</li>
-<li>void printStackTrace()</li>
-<li>Throwable fillInStackTrace()</li>
+</li>
 </ul>
-<h3 id="栈轨迹"><a href="#栈轨迹" class="headerlink" title="栈轨迹"></a>栈轨迹</h3><p>printStackTrace()方法所提供的信息可以通过getStackTrace()方法来直接访问，getStackTrace()方法返回一个由栈轨迹中的元素所构成的数组</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">try</span>&#123;</span><br><span class="line">	<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Exception(<span class="hljs-string">"My Exception"</span>);</span><br><span class="line">&#125;<span class="hljs-keyword">catch</span>(Exception e)&#123;</span><br><span class="line">	<span class="hljs-keyword">for</span>(StackTraceElement ste:e.getStackTrace())&#123;</span><br><span class="line">		syso(ste.getMethodName());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="访问配置"><a href="#访问配置" class="headerlink" title="访问配置"></a>访问配置</h3><h4 id="ldapadmin"><a href="#ldapadmin" class="headerlink" title="ldapadmin"></a>ldapadmin</h4><ul>
+<li>访问类型：集群内访问</li>
+<li>访问端口：HTTP协议/80容器端口</li>
+</ul>
+<h4 id="ldapadminnodeport32000"><a href="#ldapadminnodeport32000" class="headerlink" title="ldapadminnodeport32000"></a>ldapadminnodeport32000</h4><ul>
+<li>访问类型：集群外访问</li>
+<li>访问端口：HTTP协议/80容器端口/32000节点端口</li>
+</ul>
+<h2 id="ldapserver服务"><a href="#ldapserver服务" class="headerlink" title="ldapserver服务"></a>ldapserver服务</h2><h3 id="容器配置-1"><a href="#容器配置-1" class="headerlink" title="容器配置"></a>容器配置</h3><ul>
+<li>镜像名称：osixia/openldap</li>
+<li>CPU请求：0.5Core</li>
+<li>CPU上限：1Core</li>
+<li>内存请求：1GiB</li>
+<li>内存上限：2GiB</li>
+</ul>
+<h3 id="访问配置-1"><a href="#访问配置-1" class="headerlink" title="访问配置"></a>访问配置</h3><h4 id="ldapserver"><a href="#ldapserver" class="headerlink" title="ldapserver"></a>ldapserver</h4><ul>
+<li>访问类型：集群内访问</li>
+<li>访问端口1：TCP协议/389容器端口</li>
+<li>访问端口2：UDP协议/389容器端口</li>
+</ul>
+<h2 id="ldap服务器设置"><a href="#ldap服务器设置" class="headerlink" title="ldap服务器设置"></a>ldap服务器设置</h2><ul>
+<li>服务器地址：ldapserver.ldap</li>
+<li>端口：389</li>
+<li>账号：cn=admin,dc=example,dc=org</li>
+<li>密码：admin</li>
+<li>BaseDN：dc=example,dc=org</li>
+<li>账号字段：cn</li>
+<li>姓名字段：sn</li>
+<li>邮箱字段：mail</li>
+</ul>
+<h2 id="另一种部署方式：docker-run"><a href="#另一种部署方式：docker-run" class="headerlink" title="另一种部署方式：docker run"></a>另一种部署方式：docker run</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 389:389 --name myopenldap --network bridge --hostname openldap-host --env LDAP_ORGANISATION=&quot;mylitboy&quot; --env LDAP_DOMAIN=&quot;mylitboy.com&quot; --env LDAP_ADMIN_PASSWORD=&quot;ldap123&quot; --detach osixia/openldap</span><br><span class="line"></span><br><span class="line">docker run -d --privileged -p 10004:80 --name myphpldapadmin --env PHPLDAPADMIN_HTTPS=false --env PHPLDAPADMIN_LDAP_HOSTS=10.1.1.12 --detach osixia/phpldapadmin</span><br></pre></td></tr></table></figure>
 
-<h3 id="重新抛出异常"><a href="#重新抛出异常" class="headerlink" title="重新抛出异常"></a>重新抛出异常</h3><p>在捕获到某个异常后可以将它重新抛出,重抛异常将会把异常交给上一级环境中的异常处理程序，同一个try块的后续catch字句将被忽略</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">catch</span>(Exception e)&#123;</span><br><span class="line">	syso(<span class="hljs-string">"An exception was thrown"</span>);</span><br><span class="line">	<span class="hljs-keyword">throw</span> e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Java标准异常"><a href="#Java标准异常" class="headerlink" title="Java标准异常"></a>Java标准异常</h2><p>Throwable这个Java类被用来表示任何可以作为异常被抛出的类</p>
-<p>Throwable对象的两种类型：</p>
-<ol>
-<li>Error用来表示编译时和系统错误</li>
-<li>Exception表示可以被抛出的基本类型</li>
-</ol>
-<p>如果对null引用进行调用，java会自动抛出NullPointException异常</p>
-<p>对于RunTimeException异常类型，Java不需要异常说明，其输出被报告给了System.err</p>
-<h2 id="使用finally进行清理"><a href="#使用finally进行清理" class="headerlink" title="使用finally进行清理"></a>使用finally进行清理</h2><p>无论异常是否被抛出，finally字句总能被执行</p>
-<h3 id="在return中使用finally"><a href="#在return中使用finally" class="headerlink" title="在return中使用finally"></a>在return中使用finally</h3><p>因为finally子句总会执行，所以在一个方法中，可以从多个点返回，并且可以保证重要的清理工作仍旧会执行</p>
-<p>page 269</p>
 
         </div>
         
@@ -250,7 +221,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Java/">Java</a>
+                    <a class="has-link-grey -link" href="/tags/LDAP/">LDAP</a>
                 </div>
             </div>
         </div>
@@ -320,17 +291,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/25/《Java编程思想》读书笔记(第十三章)/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">《Java编程思想》读书笔记(第十三章)</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/04/16/《Java编程思想》读书笔记(第十一章)/">
-                <span class="level-item">《Java编程思想》读书笔记(第十一章)</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/26/kafka部署实践/">
+                <span class="level-item">Kafka部署实践</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -460,66 +424,54 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#概念">
+        <a class="is-flex" href="#新建应用分区">
         <span class="has-mr-6">1</span>
-        <span>概念</span>
+        <span>新建应用分区</span>
         </a></li><li>
-        <a class="is-flex" href="#基本异常">
+        <a class="is-flex" href="#ladpadmin服务">
         <span class="has-mr-6">2</span>
-        <span>基本异常</span>
+        <span>ladpadmin服务</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#异常参数">
+        <a class="is-flex" href="#容器配置">
         <span class="has-mr-6">2.1</span>
-        <span>异常参数</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#捕获异常">
+        <span>容器配置</span>
+        </a></li><li>
+        <a class="is-flex" href="#访问配置">
+        <span class="has-mr-6">2.2</span>
+        <span>访问配置</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#ldapadmin">
+        <span class="has-mr-6">2.2.1</span>
+        <span>ldapadmin</span>
+        </a></li><li>
+        <a class="is-flex" href="#ldapadminnodeport32000">
+        <span class="has-mr-6">2.2.2</span>
+        <span>ldapadminnodeport32000</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#ldapserver服务">
         <span class="has-mr-6">3</span>
-        <span>捕获异常</span>
+        <span>ldapserver服务</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#try块">
+        <a class="is-flex" href="#容器配置-1">
         <span class="has-mr-6">3.1</span>
-        <span>try块</span>
+        <span>容器配置</span>
         </a></li><li>
-        <a class="is-flex" href="#异常处理程序">
+        <a class="is-flex" href="#访问配置-1">
         <span class="has-mr-6">3.2</span>
-        <span>异常处理程序</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#创建自定义异常">
+        <span>访问配置</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#ldapserver">
+        <span class="has-mr-6">3.2.1</span>
+        <span>ldapserver</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#ldap服务器设置">
         <span class="has-mr-6">4</span>
-        <span>创建自定义异常</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#异常与记录日志">
-        <span class="has-mr-6">4.1</span>
-        <span>异常与记录日志</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#异常说明">
+        <span>ldap服务器设置</span>
+        </a></li><li>
+        <a class="is-flex" href="#另一种部署方式：docker-run">
         <span class="has-mr-6">5</span>
-        <span>异常说明</span>
-        </a></li><li>
-        <a class="is-flex" href="#捕获所有的异常">
-        <span class="has-mr-6">6</span>
-        <span>捕获所有的异常</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#栈轨迹">
-        <span class="has-mr-6">6.1</span>
-        <span>栈轨迹</span>
-        </a></li><li>
-        <a class="is-flex" href="#重新抛出异常">
-        <span class="has-mr-6">6.2</span>
-        <span>重新抛出异常</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#Java标准异常">
-        <span class="has-mr-6">7</span>
-        <span>Java标准异常</span>
-        </a></li><li>
-        <a class="is-flex" href="#使用finally进行清理">
-        <span class="has-mr-6">8</span>
-        <span>使用finally进行清理</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#在return中使用finally">
-        <span class="has-mr-6">8.1</span>
-        <span>在return中使用finally</span>
-        </a></li></ul></li></ul>
+        <span>另一种部署方式：docker run</span>
+        </a></li></ul>
         </div>
     </div>
 </div>
@@ -1548,7 +1500,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/octopus.jpg" alt="《Java编程思想》读书笔记(第十二章)" height="28">
+                    <img src="/images/octopus.jpg" alt="LDAP服务部署实践" height="28">
                 
                 </a>
                 <p class="is-size-7">

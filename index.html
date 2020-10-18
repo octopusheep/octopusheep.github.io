@@ -137,6 +137,174 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-10-19T01:34:14.000Z">2020-10-19</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 513 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/10/19/在vultr服务器上部署shadowsocks/">在vultr服务器上部署shadowsocks</a>
+            
+        </h1>
+        <div class="content">
+            <p>首先得有一台vultr服务器，或者其他国外运营商的云服务器</p>
+<h2 id="SSH登陆云服务器"><a href="#SSH登陆云服务器" class="headerlink" title="SSH登陆云服务器"></a>SSH登陆云服务器</h2><p>在Terminals中使用ssh命令登陆服务器</p>
+<h2 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get install python-pip python-gevent python-m2crypto</span><br><span class="line">pip install --upgrade setuptools</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装shadowsocks"><a href="#安装shadowsocks" class="headerlink" title="安装shadowsocks"></a>安装shadowsocks</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置shadowsocks"><a href="#配置shadowsocks" class="headerlink" title="配置shadowsocks"></a>配置shadowsocks</h2><p>在/etc目录下新建文件夹<code>shadowsocks</code>,然后在<code>shadowsocks</code>文件夹下新建文件<code>config.json</code>:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /etc/shadowsocks</span><br><span class="line">vim /etc/shadowsocks/config.json</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/10/19/在vultr服务器上部署shadowsocks/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-10-19T01:28:43.000Z">2020-10-19</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 432 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/10/19/购买vultr服务器指南/">购买vultr服务器指南</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="注册vultr账号"><a href="#注册vultr账号" class="headerlink" title="注册vultr账号"></a>注册vultr账号</h2><p>使用<a href="https://www.vultr.com/promo/try50/?ref=7770938-4F" target="_blank" rel="noopener">优惠链接</a>注册vultr账号,或者直接点击<a href="vultr.com">官网链接</a>注册</p>
+<h2 id="测试各服务器与本地网络的延迟"><a href="#测试各服务器与本地网络的延迟" class="headerlink" title="测试各服务器与本地网络的延迟"></a>测试各服务器与本地网络的延迟</h2><p>下表给出所有vultr服务器的IP地址，使用terminals执行ping指令找出延迟最低的服务器</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ping fra-de-ping.vultr.com    </span><br><span class="line">ping par-fr-ping.vultr.com    </span><br><span class="line">ping ams-nl-ping.vultr.com    </span><br><span class="line">ping lon-gb-ping.vultr.com    </span><br><span class="line">ping sgp-ping.vultr.com    </span><br><span class="line">ping nj-us-ping.vultr.com    </span><br><span class="line">ping hnd-jp-ping.vultr.com    </span><br><span class="line">ping il-us-ping.vultr.com    </span><br><span class="line">ping ga-us-ping.vultr.com    </span><br><span class="line">ping fl-us-ping.vultr.com    </span><br><span class="line">ping wa-us-ping.vultr.com    </span><br><span class="line">ping tx-us-ping.vultr.com    </span><br><span class="line">ping sjo-ca-us-ping.vultr.com    </span><br><span class="line">ping lax-ca-us-ping.vultr.com    </span><br><span class="line">ping syd-au-ping.vultr.com</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/10/19/购买vultr服务器指南/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-10-19T01:21:22.000Z">2020-10-19</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 230 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/10/19/iTerm2终端美化教程/">iTerm2终端美化教程</a>
+            
+        </h1>
+        <div class="content">
+            <p>从<a href="iterm2.com">iterm2官网</a>下载软件后安装</p>
+<h2 id="切换zsh为默认shell"><a href="#切换zsh为默认shell" class="headerlink" title="切换zsh为默认shell"></a>切换zsh为默认shell</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh-my-zsh"></a>安装 oh-my-zsh</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/10/19/iTerm2终端美化教程/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-10-19T01:04:14.000Z">2020-10-19</time>
                 
                 <div class="level-item">
@@ -161,7 +329,7 @@
         </h1>
         <div class="content">
             <p>经整理可用于sublime build3211版本license认证的步骤</p>
-<h2 id="modify-host"><a href="#modify-host" class="headerlink" title="modify host"></a>modify host</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/hosts</span><br></pre></td></tr></table></figure>
+<h2 id="Modify-host"><a href="#Modify-host" class="headerlink" title="Modify host"></a>Modify host</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/hosts</span><br></pre></td></tr></table></figure>
 
 <p>add following text into hosts:</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 sublimetext.com</span><br><span class="line">127.0.0.1 sublimehq.com</span><br><span class="line">127.0.0.1 license.sublimehq.com</span><br><span class="line">127.0.0.1 45.55.255.55</span><br><span class="line">127.0.0.1 45.55.41.223</span><br><span class="line">0.0.0.0 license.sublimehq.com</span><br><span class="line">0.0.0.0 45.55.255.55</span><br><span class="line">0.0.0.0 45.55.41.223</span><br></pre></td></tr></table></figure>
@@ -551,182 +719,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-28T10:35:41.000Z">2019-10-28</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Python/">Python</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 84 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/10/28/Web Scraping Note/">Web Scraping Note</a>
-            
-        </h1>
-        <div class="content">
-            <a id="more"></a>
-
-<h2 id="Prerequisite预置条件"><a href="#Prerequisite预置条件" class="headerlink" title="Prerequisite预置条件"></a>Prerequisite预置条件</h2><ul>
-<li>Requests</li>
-<li>BeautifulSoup</li>
-<li>lxml</li>
-</ul>
-<h2 id="Detail实现细节"><a href="#Detail实现细节" class="headerlink" title="Detail实现细节"></a>Detail实现细节</h2><h3 id="Data-Module数据保存模块"><a href="#Data-Module数据保存模块" class="headerlink" title="Data Module数据保存模块"></a>Data Module数据保存模块</h3><h4 id="Video-Module视频数据模块"><a href="#Video-Module视频数据模块" class="headerlink" title="Video Module视频数据模块"></a>Video Module视频数据模块</h4><p>‘Video’ class contains essential video information: title, link</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># model</span><br><span class="line">class Video(object):</span><br><span class="line"></span><br><span class="line">    def __init__(self, title, link):</span><br><span class="line">        self.title = title</span><br><span class="line">        self.link = link</span><br><span class="line"></span><br><span class="line">    def information(self):</span><br><span class="line">        SPLIT_LINE = &apos;----------------------------------&apos;</span><br><span class="line">        print(&apos;%s\nvideo title: %s\nvideo link: %s\n%s&apos;</span><br><span class="line">              % (SPLIT_LINE, self.title, self.link, SPLIT_LINE))</span><br></pre></td></tr></table></figure>
-
-<h3 id="Network-Model网络请求模块"><a href="#Network-Model网络请求模块" class="headerlink" title="Network Model网络请求模块"></a>Network Model网络请求模块</h3>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-22T11:25:24.000Z">2019-10-22</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 281 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/10/22/Thinking in Hanoi Tower/">Thinking in Hanoi Tower</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><p>as we all know, there are three sticks in space and  one spectical stick have 64 round plates, which all plates follow the rules that bigger one in the bottom. the destination of this game is move all plate to another stick</p>
-<h2 id="Note-by-myself"><a href="#Note-by-myself" class="headerlink" title="Note by myself"></a>Note by myself</h2><p>assuming that there just have 3 plates in Hanoi environment, three sticks be called A,B,C one by one and all 3 plates be stack in A stick.</p>
-<p>so the move order like:</p>
-<ol>
-<li>A-&gt;B</li>
-<li>A-&gt;C</li>
-<li>B-&gt;C</li>
-<li>A-&gt;B</li>
-<li>C-&gt;A</li>
-<li>C-&gt;B</li>
-<li>A-&gt;B</li></ol>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/10/22/Thinking in Hanoi Tower/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-05T20:32:01.000Z">2019-09-05</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Python/">Python</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    13 minutes read (About 2017 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/09/06/Python Studying Note/">Python Studying Note</a>
-            
-        </h1>
-        <div class="content">
-            <p>update at 7:10pm sep8 2019</p>
-<h2 id="Install-Python"><a href="#Install-Python" class="headerlink" title="Install Python"></a>Install Python</h2><p>in macos we need to install python3 edition instead og python2 </p>
-<p>download py3 in offical website and run <code>python3</code> in teminals</p>
-<h2 id="First-python-program"><a href="#First-python-program" class="headerlink" title="First python program"></a>First python program</h2><p>remember the difference between command mode and python interactive mode</p>
-<p>commadn mode:</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mac:~ zhangyuyang$</span><br></pre></td></tr></table></figure>
-
-<p>python interactive mode:</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Mac:~ zhangyuyang$ python3</span><br><span class="line">Python 3.7.4 (v3.7.4:e09359112e, Jul  8 2019, 14:54:52)</span><br><span class="line">[Clang 6.0 (clang-600.0.57)] on darwin</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/09/06/Python Studying Note/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -745,7 +737,7 @@
             
             <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/6/">6</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/7/">7</a></li>
             
         </ul>
     </nav>
@@ -795,7 +787,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        60
+                        63
                     </p>
                 </div>
             </div>
@@ -815,7 +807,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        24
+                        28
                     </p>
                 </div>
             </div>
@@ -907,7 +899,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">55</span>
+                <span class="level-item tag">58</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -1001,7 +993,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/LDAP/" style="font-size: 12.5px;">LDAP</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/VI/" style="font-size: 10px;">VI</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/LDAP/" style="font-size: 12.5px;">LDAP</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/VI/" style="font-size: 10px;">VI</a> <a href="/tags/VPS/" style="font-size: 10px;">VPS</a> <a href="/tags/Vultr/" style="font-size: 12.5px;">Vultr</a> <a href="/tags/iTerm2/" style="font-size: 10px;">iTerm2</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -1015,6 +1007,45 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:34:14.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/在vultr服务器上部署shadowsocks/" class="has-link-black-ter is-size-6">在vultr服务器上部署shadowsocks</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:28:43.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/购买vultr服务器指南/" class="has-link-black-ter is-size-6">购买vultr服务器指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:21:22.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/iTerm2终端美化教程/" class="has-link-black-ter is-size-6">iTerm2终端美化教程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1042,45 +1073,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T20:56:03.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/kafka部署实践/" class="has-link-black-ter is-size-6">Kafka部署实践</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T19:16:43.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/Docker客制化镜像指南/" class="has-link-black-ter is-size-6">Docker客制化镜像指南</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-22T11:10:41.000Z">2019-11-22</time></div>
-                    <a href="/2019/11/22/VI:VIM常用命令/" class="has-link-black-ter is-size-6">VI/VIM常用命令</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1099,7 +1091,7 @@
                     <span class="level-item">October 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1423,6 +1415,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Shadowsocks/">
+                        <span class="tag">Shadowsocks</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Sshpass/">
                         <span class="tag">Sshpass</span>
                         <span class="tag is-grey">1</span>
@@ -1439,6 +1438,27 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/VI/">
                         <span class="tag">VI</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VPS/">
+                        <span class="tag">VPS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vultr/">
+                        <span class="tag">Vultr</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/iTerm2/">
+                        <span class="tag">iTerm2</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1477,6 +1497,45 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:34:14.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/在vultr服务器上部署shadowsocks/" class="has-link-black-ter is-size-6">在vultr服务器上部署shadowsocks</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:28:43.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/购买vultr服务器指南/" class="has-link-black-ter is-size-6">购买vultr服务器指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:21:22.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/iTerm2终端美化教程/" class="has-link-black-ter is-size-6">iTerm2终端美化教程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:04:14.000Z">2020-10-19</time></div>
                     <a href="/2020/10/19/Sublime License Verify/" class="has-link-black-ter is-size-6">Sublime License Verify</a>
                     <p class="is-size-7 is-uppercase">
@@ -1492,45 +1551,6 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T15:21:28.000Z">2019-11-26</time></div>
                     <a href="/2019/11/26/LDAP服务部署实践/" class="has-link-black-ter is-size-6">LDAP服务部署实践</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T20:56:03.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/kafka部署实践/" class="has-link-black-ter is-size-6">Kafka部署实践</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T19:16:43.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/Docker客制化镜像指南/" class="has-link-black-ter is-size-6">Docker客制化镜像指南</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-22T11:10:41.000Z">2019-11-22</time></div>
-                    <a href="/2019/11/22/VI:VIM常用命令/" class="has-link-black-ter is-size-6">VI/VIM常用命令</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
                     </p>
@@ -1556,7 +1576,7 @@
                     <span class="level-item">October 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1880,6 +1900,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Shadowsocks/">
+                        <span class="tag">Shadowsocks</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Sshpass/">
                         <span class="tag">Sshpass</span>
                         <span class="tag is-grey">1</span>
@@ -1896,6 +1923,27 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/VI/">
                         <span class="tag">VI</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VPS/">
+                        <span class="tag">VPS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vultr/">
+                        <span class="tag">Vultr</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/iTerm2/">
+                        <span class="tag">iTerm2</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

@@ -148,6 +148,173 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-16T15:29:39.000Z">2019-04-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    12 minutes read (About 1859 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/16/《Java编程思想》读书笔记(第十一章)/">《Java编程思想》读书笔记(第十一章)</a>
+            
+        </h1>
+        <div class="content">
+            <p>数组是保存一组对象的最有效的方式，但是具有固定的尺寸</p>
+<p>Java实用类库提供了容器来解决这个问题，其中基本的类型是</p>
+<ol>
+<li>List</li>
+<li>Set</li>
+<li>Queue</li>
+<li>Map</li>
+</ol>
+<p>这些对象类型也被叫做集合类。Java类库使用了Collection来指代该类库的一个特殊子集，Java编程思想称之为容器。</p>
+<p>容器提供了完善的方法来保存对象</p>
+<p>不同的容器有不同的特性：Set对于每一个值只保存一个对象，Map是允许你将某一些对象与其他一些对象关联起来的关联数组。</p>
+<p>Java容器类可以自动调整自己的尺寸。</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/16/《Java编程思想》读书笔记(第十一章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-15T19:28:32.000Z">2019-04-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 644 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/16/《Java编程思想》读书笔记(第十章)/">《Java编程思想》读书笔记(第十章)</a>
+            
+        </h1>
+        <div class="content">
+            <p>可以将一个类的定义方在另一个类的定义内部，这就是内部类</p>
+<p>内部类和组合是完全不同的概念</p>
+<p>如果想从外部类的非静态方法之外的任意位置创建某个内部类的对象，那么必须具体的指明这个对象的类型：<br>OuterClassName.InnerClassName</p>
+<p>内部类可以实现迭代器设计模式</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Selector</span></span>&#123;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">end</span><span class="hljs-params">()</span></span>;</span><br><span class="line">	<span class="hljs-function">Object <span class="hljs-title">current</span><span class="hljs-params">()</span></span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">next</span><span class="hljs-params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sequence</span></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">private</span> Object[] items;</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> next=<span class="hljs-number">0</span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Sequence</span><span class="hljs-params">(<span class="hljs-keyword">int</span> size)</span></span>&#123;</span><br><span class="line">		items=<span class="hljs-keyword">new</span> Object[size];	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(Object x)</span></span>&#123;</span><br><span class="line">		<span class="hljs-keyword">if</span>(next &lt; items.length)&#123;</span><br><span class="line">			items[next ++]=x;		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SequenceSelector</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Selector</span></span>&#123;</span><br><span class="line">		<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;</span><br><span class="line">		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">end</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">			<span class="hljs-keyword">return</span> i==items.length;		</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">current</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">			<span class="hljs-keyword">return</span> items[i];			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">next</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">			<span class="hljs-keyword">if</span>(i&lt;items.length) i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> Selector <span class="hljs-title">selector</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> SequenceSelector();	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">		Sequence sequence = <span class="hljs-keyword">new</span> Sequence(<span class="hljs-number">10</span>);</span><br><span class="line">		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)&#123;</span><br><span class="line">			sequence.add(Integer.toSting(i));		</span><br><span class="line">		&#125;</span><br><span class="line">		Selector selector= sequence.selector();</span><br><span class="line">		<span class="hljs-keyword">while</span>(!selector.end())&#123;</span><br><span class="line">			System.out.print(selector.current()+<span class="hljs-string">" "</span>);</span><br><span class="line">			selector.next();		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/16/《Java编程思想》读书笔记(第十章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-15T16:52:16.000Z">2019-04-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 141 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/16/《Java编程思想》读书笔记(第九章)/">《Java编程思想》读书笔记(第九章)</a>
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+<p>接口和内部类为我们提供了一种将接口与实现分离的更加结构化的方法</p>
+<p>包含抽象方法的类叫做抽象类，抽象方法只有声明而没有方法体</p>
+<p>如果从一个抽象类继承，并且想创建该新类的对象，那么就必须为基类中所有的抽象方法提供方法定义。如果不这么做，那么导出类也是抽象类，且编译器会强制我们用abstract来限定这个类</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-04-15T14:06:15.000Z">2019-04-15</time>
                 
                 <div class="level-item">
@@ -554,182 +721,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-02-13T10:05:55.000Z">2019-02-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 492 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/02/13/Ubuntu系统下adb检测不到设备的处理方案/">Ubuntu系统下adb检测不到设备的处理方案</a>
-            
-        </h1>
-        <div class="content">
-            <p>Ubuntu18.04环境下adb经常连接不上安卓设备，或者连接上后很快断开。</p>
-<div align="center">![此时usb接口已经连接了安卓设备,adb却检测不到](/images/35.png)</div>
-
-<h1 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h1><p>经查阅文档，该问题的原因为adb的<strong>特征识别码</strong>中未保存我们车机的相关信息，导致usb口能识别设备，但adb无法识别改设备。</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>须手动保存相应的设备信息</p>
-<ol>
-<li>查看usb设备</li>
-</ol>
-<p>断开安卓设备与PC的usb连接，使用命令<code>lsusb</code>查看usb设备，如图：<br><img src="/images/36.png" alt="此时只有8个bus"></p>
-<p>重新将安卓设备与PC的usb接口连接，再次使用<code>lsusb</code>查看usb设备，如图：<br><img src="/images/37.png" alt="此时有10个bus"></p>
-<p>可以发现usb接口插入安卓设备后，多出了两个bus：<br><img src="/images/38.png" alt="您安卓设备的usb信息"></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/02/13/Ubuntu系统下adb检测不到设备的处理方案/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-12-03T16:13:26.000Z">2018-12-03</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    10 minutes read (About 1470 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/12/04/Android MVP框架学习笔记2/">Android MVP框架学习笔记（进阶）</a>
-            
-        </h1>
-        <div class="content">
-            <p>本学习笔记总结自文章<a href="http://www.jcodecraeer.com/a/anzhuokaifa/2017/1020/8625.html?1508484926" target="_blank" rel="noopener">Android MVP架构搭建</a></p>
-<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>在学习Android MVP的过程中，我发现第一篇文章中的MVP结构存在诸多问题，一是对每一个Activity都需要写一套MVP结构，异常麻烦；二是Model层中只包含JavaBean，未包含数据请求部分，导致presenter层中需要加上数据请求。</p>
-<p>学习了这篇文章后我觉得主要掌握的几点有：</p>
-<ol>
-<li><p>为MVP各层级添加base基类和范型大大增加复用性</p>
-</li>
-<li><p>对view层为null的情况做兼容处理</p>
-</li>
-<li><p>对model层请求数据采用callback的方式通知presenter层实现view层界面的刷新</p></li></ol>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/12/04/Android MVP框架学习笔记2/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-20T19:39:52.000Z">2018-11-20</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 minutes read (About 805 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/11/21/RxJava2学习笔记/">RxJava2学习笔记</a>
-            
-        </h1>
-        <div class="content">
-            <p>草率地看了些许RxJava的文章，自己的理解是，RxJava结合<strong>观察者模式</strong>实现异步操作，在<strong>观察者</strong>(Observable)流中处理一些事务，当流中一个事物完成后，会通知<strong>被观察者</strong>(Observer)，使其对结果再进行处理。</p>
-<h2 id="工程引用"><a href="#工程引用" class="headerlink" title="工程引用"></a>工程引用</h2><p>在app的build.gradle中添加依赖:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//添加RxJava2依赖</span></span><br><span class="line">implementation <span class="hljs-string">'io.reactivex.rxjava2:rxjava:2.2.3'</span></span><br><span class="line"><span class="hljs-comment">//添加RxAndroid依赖</span></span><br><span class="line">implementation <span class="hljs-string">'io.reactivex.rxjava2:rxandroid:2.1.0'</span></span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/11/21/RxJava2学习笔记/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -802,7 +793,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        60
+                        63
                     </p>
                 </div>
             </div>
@@ -822,7 +813,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        24
+                        28
                     </p>
                 </div>
             </div>
@@ -914,7 +905,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">55</span>
+                <span class="level-item tag">58</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -1008,7 +999,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/LDAP/" style="font-size: 12.5px;">LDAP</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/VI/" style="font-size: 10px;">VI</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/LDAP/" style="font-size: 12.5px;">LDAP</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/VI/" style="font-size: 10px;">VI</a> <a href="/tags/VPS/" style="font-size: 10px;">VPS</a> <a href="/tags/Vultr/" style="font-size: 12.5px;">Vultr</a> <a href="/tags/iTerm2/" style="font-size: 10px;">iTerm2</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -1022,6 +1013,45 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:34:14.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/在vultr服务器上部署shadowsocks/" class="has-link-black-ter is-size-6">在vultr服务器上部署shadowsocks</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:28:43.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/购买vultr服务器指南/" class="has-link-black-ter is-size-6">购买vultr服务器指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:21:22.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/iTerm2终端美化教程/" class="has-link-black-ter is-size-6">iTerm2终端美化教程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1049,45 +1079,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T20:56:03.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/kafka部署实践/" class="has-link-black-ter is-size-6">Kafka部署实践</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T19:16:43.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/Docker客制化镜像指南/" class="has-link-black-ter is-size-6">Docker客制化镜像指南</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-22T11:10:41.000Z">2019-11-22</time></div>
-                    <a href="/2019/11/22/VI:VIM常用命令/" class="has-link-black-ter is-size-6">VI/VIM常用命令</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1106,7 +1097,7 @@
                     <span class="level-item">October 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1430,6 +1421,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Shadowsocks/">
+                        <span class="tag">Shadowsocks</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Sshpass/">
                         <span class="tag">Sshpass</span>
                         <span class="tag is-grey">1</span>
@@ -1446,6 +1444,27 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/VI/">
                         <span class="tag">VI</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VPS/">
+                        <span class="tag">VPS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vultr/">
+                        <span class="tag">Vultr</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/iTerm2/">
+                        <span class="tag">iTerm2</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1484,6 +1503,45 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:34:14.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/在vultr服务器上部署shadowsocks/" class="has-link-black-ter is-size-6">在vultr服务器上部署shadowsocks</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:28:43.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/购买vultr服务器指南/" class="has-link-black-ter is-size-6">购买vultr服务器指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:21:22.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/iTerm2终端美化教程/" class="has-link-black-ter is-size-6">iTerm2终端美化教程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:04:14.000Z">2020-10-19</time></div>
                     <a href="/2020/10/19/Sublime License Verify/" class="has-link-black-ter is-size-6">Sublime License Verify</a>
                     <p class="is-size-7 is-uppercase">
@@ -1499,45 +1557,6 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T15:21:28.000Z">2019-11-26</time></div>
                     <a href="/2019/11/26/LDAP服务部署实践/" class="has-link-black-ter is-size-6">LDAP服务部署实践</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T20:56:03.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/kafka部署实践/" class="has-link-black-ter is-size-6">Kafka部署实践</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T19:16:43.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/Docker客制化镜像指南/" class="has-link-black-ter is-size-6">Docker客制化镜像指南</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-22T11:10:41.000Z">2019-11-22</time></div>
-                    <a href="/2019/11/22/VI:VIM常用命令/" class="has-link-black-ter is-size-6">VI/VIM常用命令</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
                     </p>
@@ -1563,7 +1582,7 @@
                     <span class="level-item">October 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1887,6 +1906,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Shadowsocks/">
+                        <span class="tag">Shadowsocks</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Sshpass/">
                         <span class="tag">Sshpass</span>
                         <span class="tag is-grey">1</span>
@@ -1903,6 +1929,27 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/VI/">
                         <span class="tag">VI</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VPS/">
+                        <span class="tag">VPS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vultr/">
+                        <span class="tag">Vultr</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/iTerm2/">
+                        <span class="tag">iTerm2</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

@@ -137,6 +137,175 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-07T09:54:06.000Z">2019-05-07</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes read (About 719 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/07/《Java编程思想》读书笔记(第十六章)/">《Java编程思想》读书笔记(第十六章)</a>
+            
+        </h1>
+        <div class="content">
+            <p>我突然意识到static和final的含义：static表示它所定义的域和方法对于这个类来说有且仅有一份;final表示它所定义的域对实例来说是不可改变的，final类型的域随实例的创建而被创建，不像static与整个类相关联。同时用static和final修饰域则表示常量，即其对于整个类来说只有一份且不可修改。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BerylliumSphere</span></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">long</span> counter;</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> id=counter++;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-string">"Sphere "</span>+id;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/05/07/《Java编程思想》读书笔记(第十六章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-30T11:23:02.000Z">2019-04-30</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    15 minutes read (About 2221 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/30/《Java编程思想》读书笔记(第十五章)/">《Java编程思想》读书笔记(第十五章)</a>
+            
+        </h1>
+        <div class="content">
+            <p>范型实现了参数化类型的概念，使得代码可以应用于多种类型</p>
+<p>范型这个术语的意思是适用于许多许多的类型</p>
+<h2 id="简单范型"><a href="#简单范型" class="headerlink" title="简单范型"></a>简单范型</h2><p>范型出现的一个重要原因是为了创造容器类，容器就是存放要使用的对象的地方</p>
+<p>只持有一个对象的类</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Automobile</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Holder1</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">private</span> Automobile a;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Holder1</span><span class="hljs-params">(Automobile a)</span></span>&#123;</span><br><span class="line">		<span class="hljs-keyword">this</span>.a=a;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function">Automobile <span class="hljs-title">get</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">		<span class="hljs-keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/30/《Java编程思想》读书笔记(第十五章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-29T10:00:35.000Z">2019-04-29</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 543 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/29/《Java编程思想》读书笔记(第十四章)/">《Java编程思想》读书笔记(第十四章)</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>运行时类型信息使得你可以在程序运行时发现和使用类型信息</p>
+</blockquote>
+<h2 id="为什么需要RTTI"><a href="#为什么需要RTTI" class="headerlink" title="为什么需要RTTI"></a>为什么需要RTTI</h2><p>面向对象编程的基本的目的是：让代码只操纵对基类的引用</p>
+<p>通常会创建一个具体对象，把它向上转型为基类</p>
+<h2 id="CLASS对象"><a href="#CLASS对象" class="headerlink" title="CLASS对象"></a>CLASS对象</h2><p>类是程序的一部分，每一个类都有一个class对象</p>
+<p>每当编写并且编译了一个新类，就会产生一个class对象（被保存在了一个同名的.class文件中）。为了生成这个类的对象，运行这个类的JVM将使用被称为“类加载器”的子系统</p>
+<h3 id="类字面常量"><a href="#类字面常量" class="headerlink" title="类字面常量"></a>类字面常量</h3><p>java提供类字面常量来生成对Class对象的引用</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FancyToy.class</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/04/29/《Java编程思想》读书笔记(第十四章)/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-04-24T16:22:10.000Z">2019-04-24</time>
                 
                 <div class="level-item">
@@ -546,183 +715,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-09T14:39:56.000Z">2019-04-09</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 559 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/09/《Java编程思想》读书笔记(第七章)/">《Java编程思想》读书笔记(第七章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>三种代码重用机制：组合，继承，代理</p>
-<p>每一个非基本类型的对象都有一个toString()方法，而且当编译器需要一个String而你却只有一个对象时，该方法就会调用</p>
-<p>java使用super关键词来表示超类，表达式super.method()将调用基类版本的scrub()</p>
-<p>java会自动在导出类的构造器中插入对基类构造器的调用</p>
-<p>使用代理时可以拥有更多的控制力，我们可以选择提供成员对象中的方法中的子集</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpaceShipControl</span></span>&#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">backward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-keyword">int</span> speed)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpaceShipDetegent</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">private</span> String name;</span><br><span class="line">  <span class="hljs-keyword">private</span> SpaceShipControl ssp=<span class="hljs-keyword">new</span> SpaceShipControl();</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SpaceShipDetegent</span><span class="hljs-params">(String name)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.name=name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">backward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> velocity)</span></span>&#123;</span><br><span class="line">    ssp.backward(velocity);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-keyword">int</span> velocity)</span></span>&#123;</span><br><span class="line">    ssp.backward(velocity);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">    SpaceShipDetegent ssd=<span class="hljs-keyword">new</span> SpaceShipDetegent(<span class="hljs-string">"NASA Protector"</span>);</span><br><span class="line">    ssd.backward(<span class="hljs-number">100</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/09/《Java编程思想》读书笔记(第七章)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-09T10:13:01.000Z">2019-04-09</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 539 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/09/《Java编程思想》读书笔记(第六章)/">《Java编程思想》读书笔记(第六章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>重构即重写代码，使它更可读，更易理解，并因此更具可维护性</p>
-<p>编写软件的程序员在重构代码时需要考虑<strong>如何把变动的事物与保持不变的事物区分开来</strong></p>
-<p>类库即library</p>
-<p>java访问权限控制等级从最大到最小依次为public,protected,包访问权限（没有关键词），private</p>
-<p>使用类库的一种方式是用全名来指定，如<code>java.util.ArrayList list = new java.util.ArrayList();</code></p>
-<p>还可以使用import关键字</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line">ArrayList list = <span class="hljs-keyword">new</span> ArrayList();</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/09/《Java编程思想》读书笔记(第六章)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-08T17:37:33.000Z">2019-04-08</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Java/">Java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 minutes read (About 1054 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/04/09/《Java编程思想》读书笔记(第五章)/">《Java编程思想》读书笔记(第五章)</a>
-            
-        </h1>
-        <div class="content">
-            <p>java提供构造器，确保每个对象都会得到初始化</p>
-<p>构造器采用与类相同的名称</p>
-<p>创建对象时，先为对象分配足够的存储空间，再调用相应的构造器</p>
-<p>由于构造器的名称必须与类完全相同，所以每个方法首字母小写的编码风格并不适用于构造器</p>
-<p>不接受任何参数的构造器叫做默认构造器，javaDoc中经常使用术语“无参构造器”</p>
-<p>如果一个类中只有一个构造器，那么编译器将不会允许你以其他方式创建这个类</p>
-<p>构造器是一种特殊类型的方法，不仅没有返回值，也不会返回任何东西</p>
-<p>每一个重载的方法都必须有一个独一无二的参数类型列表，参数顺序不同也足以区分两个方法</p>
-<p>基本类型能从一个较小的类型自动提升至一个较大的类型</p>
-<p>如果传入的实际参数大于重载方法声明的形式参数，就需要通过类型转换来执行窄化转换</p>
-<p>不能通过返回值来区分重载方法</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/04/09/《Java编程思想》读书笔记(第五章)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -746,6 +738,8 @@
             <li><a class="pagination-link has-text-black-ter" href="/page/5/">5</a></li>
             
             <li><a class="pagination-link has-text-black-ter" href="/page/6/">6</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/7/">7</a></li>
             
         </ul>
     </nav>
@@ -795,7 +789,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        60
+                        63
                     </p>
                 </div>
             </div>
@@ -815,7 +809,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        24
+                        28
                     </p>
                 </div>
             </div>
@@ -907,7 +901,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">55</span>
+                <span class="level-item tag">58</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -1001,7 +995,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/LDAP/" style="font-size: 12.5px;">LDAP</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/VI/" style="font-size: 10px;">VI</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/LDAP/" style="font-size: 12.5px;">LDAP</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/VI/" style="font-size: 10px;">VI</a> <a href="/tags/VPS/" style="font-size: 10px;">VPS</a> <a href="/tags/Vultr/" style="font-size: 12.5px;">Vultr</a> <a href="/tags/iTerm2/" style="font-size: 10px;">iTerm2</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -1015,6 +1009,45 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:34:14.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/在vultr服务器上部署shadowsocks/" class="has-link-black-ter is-size-6">在vultr服务器上部署shadowsocks</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:28:43.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/购买vultr服务器指南/" class="has-link-black-ter is-size-6">购买vultr服务器指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:21:22.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/iTerm2终端美化教程/" class="has-link-black-ter is-size-6">iTerm2终端美化教程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1042,45 +1075,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T20:56:03.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/kafka部署实践/" class="has-link-black-ter is-size-6">Kafka部署实践</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T19:16:43.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/Docker客制化镜像指南/" class="has-link-black-ter is-size-6">Docker客制化镜像指南</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-22T11:10:41.000Z">2019-11-22</time></div>
-                    <a href="/2019/11/22/VI:VIM常用命令/" class="has-link-black-ter is-size-6">VI/VIM常用命令</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1099,7 +1093,7 @@
                     <span class="level-item">October 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1423,6 +1417,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Shadowsocks/">
+                        <span class="tag">Shadowsocks</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Sshpass/">
                         <span class="tag">Sshpass</span>
                         <span class="tag is-grey">1</span>
@@ -1439,6 +1440,27 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/VI/">
                         <span class="tag">VI</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VPS/">
+                        <span class="tag">VPS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vultr/">
+                        <span class="tag">Vultr</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/iTerm2/">
+                        <span class="tag">iTerm2</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1477,6 +1499,45 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:34:14.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/在vultr服务器上部署shadowsocks/" class="has-link-black-ter is-size-6">在vultr服务器上部署shadowsocks</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:28:43.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/购买vultr服务器指南/" class="has-link-black-ter is-size-6">购买vultr服务器指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:21:22.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/iTerm2终端美化教程/" class="has-link-black-ter is-size-6">iTerm2终端美化教程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:04:14.000Z">2020-10-19</time></div>
                     <a href="/2020/10/19/Sublime License Verify/" class="has-link-black-ter is-size-6">Sublime License Verify</a>
                     <p class="is-size-7 is-uppercase">
@@ -1492,45 +1553,6 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T15:21:28.000Z">2019-11-26</time></div>
                     <a href="/2019/11/26/LDAP服务部署实践/" class="has-link-black-ter is-size-6">LDAP服务部署实践</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T20:56:03.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/kafka部署实践/" class="has-link-black-ter is-size-6">Kafka部署实践</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T19:16:43.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/Docker客制化镜像指南/" class="has-link-black-ter is-size-6">Docker客制化镜像指南</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-22T11:10:41.000Z">2019-11-22</time></div>
-                    <a href="/2019/11/22/VI:VIM常用命令/" class="has-link-black-ter is-size-6">VI/VIM常用命令</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
                     </p>
@@ -1556,7 +1578,7 @@
                     <span class="level-item">October 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1880,6 +1902,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Shadowsocks/">
+                        <span class="tag">Shadowsocks</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Sshpass/">
                         <span class="tag">Sshpass</span>
                         <span class="tag is-grey">1</span>
@@ -1896,6 +1925,27 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/VI/">
                         <span class="tag">VI</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VPS/">
+                        <span class="tag">VPS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vultr/">
+                        <span class="tag">Vultr</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/iTerm2/">
+                        <span class="tag">iTerm2</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

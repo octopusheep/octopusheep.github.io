@@ -148,6 +148,182 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-28T10:35:41.000Z">2019-10-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Python/">Python</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 84 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/10/28/Web Scraping Note/">Web Scraping Note</a>
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+
+<h2 id="Prerequisite预置条件"><a href="#Prerequisite预置条件" class="headerlink" title="Prerequisite预置条件"></a>Prerequisite预置条件</h2><ul>
+<li>Requests</li>
+<li>BeautifulSoup</li>
+<li>lxml</li>
+</ul>
+<h2 id="Detail实现细节"><a href="#Detail实现细节" class="headerlink" title="Detail实现细节"></a>Detail实现细节</h2><h3 id="Data-Module数据保存模块"><a href="#Data-Module数据保存模块" class="headerlink" title="Data Module数据保存模块"></a>Data Module数据保存模块</h3><h4 id="Video-Module视频数据模块"><a href="#Video-Module视频数据模块" class="headerlink" title="Video Module视频数据模块"></a>Video Module视频数据模块</h4><p>‘Video’ class contains essential video information: title, link</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># model</span><br><span class="line">class Video(object):</span><br><span class="line"></span><br><span class="line">    def __init__(self, title, link):</span><br><span class="line">        self.title = title</span><br><span class="line">        self.link = link</span><br><span class="line"></span><br><span class="line">    def information(self):</span><br><span class="line">        SPLIT_LINE = &apos;----------------------------------&apos;</span><br><span class="line">        print(&apos;%s\nvideo title: %s\nvideo link: %s\n%s&apos;</span><br><span class="line">              % (SPLIT_LINE, self.title, self.link, SPLIT_LINE))</span><br></pre></td></tr></table></figure>
+
+<h3 id="Network-Model网络请求模块"><a href="#Network-Model网络请求模块" class="headerlink" title="Network Model网络请求模块"></a>Network Model网络请求模块</h3>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-22T11:25:24.000Z">2019-10-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 281 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/10/22/Thinking in Hanoi Tower/">Thinking in Hanoi Tower</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><p>as we all know, there are three sticks in space and  one spectical stick have 64 round plates, which all plates follow the rules that bigger one in the bottom. the destination of this game is move all plate to another stick</p>
+<h2 id="Note-by-myself"><a href="#Note-by-myself" class="headerlink" title="Note by myself"></a>Note by myself</h2><p>assuming that there just have 3 plates in Hanoi environment, three sticks be called A,B,C one by one and all 3 plates be stack in A stick.</p>
+<p>so the move order like:</p>
+<ol>
+<li>A-&gt;B</li>
+<li>A-&gt;C</li>
+<li>B-&gt;C</li>
+<li>A-&gt;B</li>
+<li>C-&gt;A</li>
+<li>C-&gt;B</li>
+<li>A-&gt;B</li></ol>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/22/Thinking in Hanoi Tower/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-09-05T20:32:01.000Z">2019-09-05</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Python/">Python</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    13 minutes read (About 2017 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/09/06/Python Studying Note/">Python Studying Note</a>
+            
+        </h1>
+        <div class="content">
+            <p>update at 7:10pm sep8 2019</p>
+<h2 id="Install-Python"><a href="#Install-Python" class="headerlink" title="Install Python"></a>Install Python</h2><p>in macos we need to install python3 edition instead og python2 </p>
+<p>download py3 in offical website and run <code>python3</code> in teminals</p>
+<h2 id="First-python-program"><a href="#First-python-program" class="headerlink" title="First python program"></a>First python program</h2><p>remember the difference between command mode and python interactive mode</p>
+<p>commadn mode:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mac:~ zhangyuyang$</span><br></pre></td></tr></table></figure>
+
+<p>python interactive mode:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Mac:~ zhangyuyang$ python3</span><br><span class="line">Python 3.7.4 (v3.7.4:e09359112e, Jul  8 2019, 14:54:52)</span><br><span class="line">[Clang 6.0 (clang-600.0.57)] on darwin</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/09/06/Python Studying Note/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-08-29T10:24:15.000Z">2019-08-29</time>
                 
                 <div class="level-item">
@@ -567,183 +743,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-14T16:00:24.000Z">2019-06-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    6 minutes read (About 837 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/06/15/docker官方文档学习笔记/">docker官方文档学习笔记</a>
-            
-        </h1>
-        <div class="content">
-            <p>as some kind of notes for better understanding docker and this is my original article<br>为了更好的理解和学习docker所作的笔记</p>
-<h1 id="orientation"><a href="#orientation" class="headerlink" title="orientation"></a>orientation</h1><h2 id="some-basic-concept"><a href="#some-basic-concept" class="headerlink" title="some basic concept"></a>some basic concept</h2><ul>
-<li><p>what difference between container and VM?</p>
-<p>as the picture below:<br><img src="/images/58.png" alt></p></li></ul>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/15/docker官方文档学习笔记/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-14T11:56:30.000Z">2019-06-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Docker/">Docker</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 153 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/06/14/docker安装指南及基本操作(Mac环境)/">docker安装指南及基本操作(Mac环境)</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p>Docker is a platform for developers and sysadmins to develop, deploy, and run applications with containers.</p>
-</blockquote>
-<p>for more precisely manifest docker,all the doc i collected is from official website,and this is my original article</p>
-<h2 id="download-docker"><a href="#download-docker" class="headerlink" title="download docker"></a>download docker</h2><p>we can download docker desktop for mac on <a href="https://hub.docker.com/?overlay=onboarding" target="_blank" rel="noopener">dock hub</a></p>
-<h2 id="install-docker"><a href="#install-docker" class="headerlink" title="install docker"></a>install docker</h2><p>as it hint,just drag &amp; drop docker icon into applications</p>
-<p><img src="/images/55.png" alt="Docker.dmg"></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/14/docker安装指南及基本操作(Mac环境)/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-29T13:37:24.000Z">2019-05-29</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming/Go/">Go</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 648 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/29/Golang教程学习笔记/">Golang教程学习笔记</a>
-            
-        </h1>
-        <div class="content">
-            <p>本文内容总结自<a href="https://www.runoob.com/go/go-tutorial.html" target="_blank" rel="noopener">菜鸟教程Go语言教程</a>和<a href="https://golang.google.cn/" target="_blank" rel="noopener">Golang官网</a></p>
-<blockquote>
-<p>Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.</p>
-</blockquote>
-<p>即Go 是一门开源的编程语言，使<strong>构建简单，可靠，有效的软件</strong>更加简单</p>
-<h2 id="go语言结构"><a href="#go语言结构" class="headerlink" title="go语言结构"></a>go语言结构</h2><p>go语言的基础组成主要包括6个部分：</p>
-<ol>
-<li>包声明</li>
-<li>引入包</li>
-<li>函数</li>
-<li>变量</li>
-<li>语句&amp;表达式</li>
-<li>注释</li></ol>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/05/29/Golang教程学习笔记/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -814,7 +813,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        60
+                        63
                     </p>
                 </div>
             </div>
@@ -834,7 +833,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        24
+                        28
                     </p>
                 </div>
             </div>
@@ -926,7 +925,7 @@
                 <span class="level-item">Programming</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">55</span>
+                <span class="level-item tag">58</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Programming/Docker/">
@@ -1020,7 +1019,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/LDAP/" style="font-size: 12.5px;">LDAP</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/VI/" style="font-size: 10px;">VI</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/Elasticsearch/" style="font-size: 12.5px;">Elasticsearch</a> <a href="/tags/FSM/" style="font-size: 10px;">FSM</a> <a href="/tags/Flutter/" style="font-size: 12.5px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/Go/" style="font-size: 12.5px;">Go</a> <a href="/tags/Hanoi/" style="font-size: 10px;">Hanoi</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Jira/" style="font-size: 10px;">Jira</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Kubernetes/" style="font-size: 12.5px;">Kubernetes</a> <a href="/tags/LDAP/" style="font-size: 12.5px;">LDAP</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/RxJava/" style="font-size: 15px;">RxJava</a> <a href="/tags/Scraping/" style="font-size: 10px;">Scraping</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Sshpass/" style="font-size: 10px;">Sshpass</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/VI/" style="font-size: 10px;">VI</a> <a href="/tags/VPS/" style="font-size: 10px;">VPS</a> <a href="/tags/Vultr/" style="font-size: 12.5px;">Vultr</a> <a href="/tags/iTerm2/" style="font-size: 10px;">iTerm2</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -1034,6 +1033,45 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:34:14.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/在vultr服务器上部署shadowsocks/" class="has-link-black-ter is-size-6">在vultr服务器上部署shadowsocks</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:28:43.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/购买vultr服务器指南/" class="has-link-black-ter is-size-6">购买vultr服务器指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:21:22.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/iTerm2终端美化教程/" class="has-link-black-ter is-size-6">iTerm2终端美化教程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1061,45 +1099,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T20:56:03.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/kafka部署实践/" class="has-link-black-ter is-size-6">Kafka部署实践</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T19:16:43.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/Docker客制化镜像指南/" class="has-link-black-ter is-size-6">Docker客制化镜像指南</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-22T11:10:41.000Z">2019-11-22</time></div>
-                    <a href="/2019/11/22/VI:VIM常用命令/" class="has-link-black-ter is-size-6">VI/VIM常用命令</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1118,7 +1117,7 @@
                     <span class="level-item">October 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1442,6 +1441,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Shadowsocks/">
+                        <span class="tag">Shadowsocks</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Sshpass/">
                         <span class="tag">Sshpass</span>
                         <span class="tag is-grey">1</span>
@@ -1458,6 +1464,27 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/VI/">
                         <span class="tag">VI</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VPS/">
+                        <span class="tag">VPS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vultr/">
+                        <span class="tag">Vultr</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/iTerm2/">
+                        <span class="tag">iTerm2</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1496,6 +1523,45 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:34:14.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/在vultr服务器上部署shadowsocks/" class="has-link-black-ter is-size-6">在vultr服务器上部署shadowsocks</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:28:43.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/购买vultr服务器指南/" class="has-link-black-ter is-size-6">购买vultr服务器指南</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:21:22.000Z">2020-10-19</time></div>
+                    <a href="/2020/10/19/iTerm2终端美化教程/" class="has-link-black-ter is-size-6">iTerm2终端美化教程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-19T01:04:14.000Z">2020-10-19</time></div>
                     <a href="/2020/10/19/Sublime License Verify/" class="has-link-black-ter is-size-6">Sublime License Verify</a>
                     <p class="is-size-7 is-uppercase">
@@ -1511,45 +1577,6 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T15:21:28.000Z">2019-11-26</time></div>
                     <a href="/2019/11/26/LDAP服务部署实践/" class="has-link-black-ter is-size-6">LDAP服务部署实践</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T20:56:03.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/kafka部署实践/" class="has-link-black-ter is-size-6">Kafka部署实践</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-25T19:16:43.000Z">2019-11-25</time></div>
-                    <a href="/2019/11/26/Docker客制化镜像指南/" class="has-link-black-ter is-size-6">Docker客制化镜像指南</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-22T11:10:41.000Z">2019-11-22</time></div>
-                    <a href="/2019/11/22/VI:VIM常用命令/" class="has-link-black-ter is-size-6">VI/VIM常用命令</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Programming/">Programming</a>
                     </p>
@@ -1575,7 +1602,7 @@
                     <span class="level-item">October 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -1899,6 +1926,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Shadowsocks/">
+                        <span class="tag">Shadowsocks</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Sshpass/">
                         <span class="tag">Sshpass</span>
                         <span class="tag is-grey">1</span>
@@ -1915,6 +1949,27 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/VI/">
                         <span class="tag">VI</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/VPS/">
+                        <span class="tag">VPS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vultr/">
+                        <span class="tag">Vultr</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/iTerm2/">
+                        <span class="tag">iTerm2</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

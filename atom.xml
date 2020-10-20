@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2020-10-20T15:54:33.315Z</updated>
+  <updated>2020-10-20T16:01:18.716Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://octopusheep.com/2020/10/21/Terminals%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>http://octopusheep.com/2020/10/21/Terminals%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95/</id>
     <published>2020-10-20T23:46:31.000Z</published>
-    <updated>2020-10-20T15:54:33.315Z</updated>
+    <updated>2020-10-20T16:01:18.716Z</updated>
     
     
     <summary type="html">&lt;p&gt;利用Python抓取国外网站内容时，时常遇到终端不走socks5的问题，导致不能访问，需要做如下设置&lt;/p&gt;
@@ -41,6 +41,10 @@
     <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
     
     
+    <category term="Scraping" scheme="http://octopusheep.com/tags/Scraping/"/>
+    
+    <category term="Terminals" scheme="http://octopusheep.com/tags/Terminals/"/>
+    
   </entry>
   
   <entry>
@@ -48,7 +52,7 @@
     <link href="http://octopusheep.com/2020/10/21/Terminals%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E5%91%BD%E4%BB%A4/"/>
     <id>http://octopusheep.com/2020/10/21/Terminals%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E5%91%BD%E4%BB%A4/</id>
     <published>2020-10-20T23:37:27.000Z</published>
-    <updated>2020-10-20T15:44:48.924Z</updated>
+    <updated>2020-10-20T16:00:53.005Z</updated>
     
     
     <summary type="html">&lt;p&gt;长期以来饱受alias不接受参数的困扰，此次发现可以在.zshrc文件中通过如下方式实现自定义带参数的命令&lt;/p&gt;
@@ -65,6 +69,8 @@
     
     <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
     
+    
+    <category term="Terminals" scheme="http://octopusheep.com/tags/Terminals/"/>
     
   </entry>
   

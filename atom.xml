@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2020-10-18T17:46:40.061Z</updated>
+  <updated>2020-10-20T15:54:33.315Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -15,6 +15,90 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Terminals开启代理的方法</title>
+    <link href="http://octopusheep.com/2020/10/21/Terminals%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://octopusheep.com/2020/10/21/Terminals%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95/</id>
+    <published>2020-10-20T23:46:31.000Z</published>
+    <updated>2020-10-20T15:54:33.315Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;利用Python抓取国外网站内容时，时常遇到终端不走socks5的问题，导致不能访问，需要做如下设置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;进入.zshrc文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi .zshrc&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;设置函数开启终端代理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;添加终端走代理的函数，注意&lt;code&gt;http_proxy&lt;/code&gt;参数不用修改，保持&lt;code&gt;http://127.0.0.1:1087&lt;/code&gt;即可&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# proxy list&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;function proxy_off()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        unset http_proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        unset https_proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        unset ftp_proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        unset rsync_proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        echo -e &amp;quot;已关闭代理&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;function proxy_on() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        export no_proxy&amp;#x3D;&amp;quot;localhost,127.0.0.1,localaddress,.localdomain.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        export http_proxy&amp;#x3D;&amp;quot;http:&amp;#x2F;&amp;#x2F;127.0.0.1:1087&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        export https_proxy&amp;#x3D;$http_proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        export ftp_proxy&amp;#x3D;$http_proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        export rsync_proxy&amp;#x3D;$http_proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        export HTTP_PROXY&amp;#x3D;$http_proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        export HTTPS_PROXY&amp;#x3D;$http_proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        export FTP_PROXY&amp;#x3D;$http_proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        export RSYNC_PROXY&amp;#x3D;$http_proxy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        echo -e &amp;quot;已开启代理&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Terminals自定义带参数的命令</title>
+    <link href="http://octopusheep.com/2020/10/21/Terminals%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E5%91%BD%E4%BB%A4/"/>
+    <id>http://octopusheep.com/2020/10/21/Terminals%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E5%91%BD%E4%BB%A4/</id>
+    <published>2020-10-20T23:37:27.000Z</published>
+    <updated>2020-10-20T15:44:48.924Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;长期以来饱受alias不接受参数的困扰，此次发现可以在.zshrc文件中通过如下方式实现自定义带参数的命令&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;定义函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;首先进入.zshrc文件&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi .zshrc&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在.zshrc文件中定义函数&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;function blog()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd &amp;#x2F;Users&amp;#x2F;zhangyuyang&amp;#x2F;Library&amp;#x2F;Mobile\ Documents&amp;#x2F;com~apple~CloudDocs&amp;#x2F;Documents&amp;#x2F;技&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;术博客资料&amp;#x2F;octopusheep.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hunter Project Note</title>
+    <link href="http://octopusheep.com/2020/10/21/Hunter%20Project%20Note/"/>
+    <id>http://octopusheep.com/2020/10/21/Hunter%20Project%20Note/</id>
+    <published>2020-10-20T23:12:04.000Z</published>
+    <updated>2020-10-20T15:27:14.795Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;this is no first time i have the idea that scraping videos website and that is the frist step to do this ,this project made by Python.&lt;/p&gt;
+&lt;p&gt;there have some reprequiste for using it&lt;/p&gt;
+&lt;h2 id=&quot;Prerequisite&quot;&gt;&lt;a href=&quot;#Prerequisite&quot; class=&quot;headerlink&quot; title=&quot;Prerequisite&quot;&gt;&lt;/a&gt;Prerequisite&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;you can download Python in &lt;a href=&quot;https://www.python.org/downloads/mac-osx/&quot;&gt;Official Website&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;then install it.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Requests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;which is an elegant and simple HTTP library for Python&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;python3 -m pip install requests&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
+    
+    
+    <category term="Python" scheme="http://octopusheep.com/tags/Python/"/>
+    
+    <category term="Scraping" scheme="http://octopusheep.com/tags/Scraping/"/>
+    
+  </entry>
   
   <entry>
     <title>在vultr服务器上部署shadowsocks</title>
@@ -464,89 +548,6 @@
     
     <category term="Testing" scheme="http://octopusheep.com/categories/Testing/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Elasticsearch部署实践相关总结</title>
-    <link href="http://octopusheep.com/2019/07/31/Elasticsearch%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/"/>
-    <id>http://octopusheep.com/2019/07/31/Elasticsearch%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/</id>
-    <published>2019-07-30T16:36:35.000Z</published>
-    <updated>2019-07-30T07:09:37.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;单节点ES的部署&quot;&gt;&lt;a href=&quot;#单节点ES的部署&quot; class=&quot;headerlink&quot; title=&quot;单节点ES的部署&quot;&gt;&lt;/a&gt;单节点ES的部署&lt;/h2&gt;&lt;h3 id=&quot;（选做）创建network&quot;&gt;&lt;a href=&quot;#（选做）创建network&quot; class=&quot;headerlink&quot; title=&quot;（选做）创建network&quot;&gt;&lt;/a&gt;（选做）创建network&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker network create -d bridge elastic&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;部署Elasticsearch&quot;&gt;&lt;a href=&quot;#部署Elasticsearch&quot; class=&quot;headerlink&quot; title=&quot;部署Elasticsearch&quot;&gt;&lt;/a&gt;部署Elasticsearch&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;publish_host&amp;#x3D;$(hostname -I | cut -d&amp;#39; &amp;#39; -f1) \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;docker run -d \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; --name elasticsearch \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; -e &amp;quot;discovery.type&amp;#x3D;single-node&amp;quot; \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; -e &amp;quot;network.host&amp;#x3D;0.0.0.0&amp;quot; \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; -e &amp;quot;network.publish_host&amp;#x3D;$&amp;#123;publish_host&amp;#125;&amp;quot; \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; -p 9200:9200 -p 9300:9300 \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; --memory-reservation 4g --memory 6g \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; --network&amp;#x3D;elastic \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; --restart on-failure \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; cargo.caicloudprivatetest.com&amp;#x2F;caicloud&amp;#x2F;elasticsearch:6.5.4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    <category term="Elasticsearch" scheme="http://octopusheep.com/categories/Programming/Elasticsearch/"/>
-    
-    
-    <category term="Elasticsearch" scheme="http://octopusheep.com/tags/Elasticsearch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Filebeat组件对接Logstash操作指南</title>
-    <link href="http://octopusheep.com/2019/07/26/Filebeat%E7%BB%84%E4%BB%B6%E5%AF%B9%E6%8E%A5Logstash%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/"/>
-    <id>http://octopusheep.com/2019/07/26/Filebeat%E7%BB%84%E4%BB%B6%E5%AF%B9%E6%8E%A5Logstash%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</id>
-    <published>2019-07-26T10:12:45.000Z</published>
-    <updated>2019-07-26T08:32:52.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;CPS系统通过filebeat组件输出日志，日志会经过kafka或logstash后，再输出给ES做持久化保存&lt;/p&gt;
-&lt;h2 id=&quot;组件交互&quot;&gt;&lt;a href=&quot;#组件交互&quot; class=&quot;headerlink&quot; title=&quot;组件交互&quot;&gt;&lt;/a&gt;组件交互&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Filebeat -&amp;gt; Logsatsh -&amp;gt; Elasticsearch&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;因此要实现filebeat对接logstash，需要做两步重要操作：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;配置filebeat，使其日志输出到logstash&lt;/li&gt;
-&lt;li&gt;配置logstash，使其日志保存到elasticsearch&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;配置Filebeat&quot;&gt;&lt;a href=&quot;#配置Filebeat&quot; class=&quot;headerlink&quot; title=&quot;配置Filebeat&quot;&gt;&lt;/a&gt;配置Filebeat&lt;/h2&gt;&lt;p&gt;先前filebeat的日志是直接输出到ES中的，所以要修改为将日志输出到logstash中，因此需要修改filebeat的configmap&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;进入CPS的控制节点后台&lt;/p&gt;
-&lt;p&gt;  &lt;code&gt;ssh root@192.168.130.101&lt;/code&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    <category term="Kubernetes" scheme="http://octopusheep.com/categories/Programming/Kubernetes/"/>
-    
-    
-    <category term="Logstash" scheme="http://octopusheep.com/tags/Logstash/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Kubernetes负载均衡学习笔记</title>
-    <link href="http://octopusheep.com/2019/07/11/Kubernetes%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://octopusheep.com/2019/07/11/Kubernetes%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2019-07-10T16:36:35.000Z</published>
-    <updated>2019-07-26T08:23:46.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;该内容总结自19/07/10韩欢乐老师所讲解的负载均衡内容&lt;/p&gt;
-&lt;h1 id=&quot;基本知识&quot;&gt;&lt;a href=&quot;#基本知识&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    <category term="Kubernetes" scheme="http://octopusheep.com/categories/Programming/Kubernetes/"/>
-    
-    
-    <category term="Kubernetes" scheme="http://octopusheep.com/tags/Kubernetes/"/>
     
   </entry>
   

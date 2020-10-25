@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2020-10-20T16:01:18.716Z</updated>
+  <updated>2020-10-25T12:14:27.919Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ClashX使用指南</title>
+    <link href="http://octopusheep.com/2020/10/26/ClashX%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>http://octopusheep.com/2020/10/26/ClashX%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <published>2020-10-25T20:04:58.000Z</published>
+    <updated>2020-10-25T12:14:27.919Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;ClashX界面美观功能强大，支持vmess、shadowsocks、trojan等多种协议&lt;/p&gt;
+&lt;h1 id=&quot;下载ClashX&quot;&gt;&lt;a href=&quot;#下载ClashX&quot; class=&quot;headerlink&quot; title=&quot;下载ClashX&quot;&gt;&lt;/a&gt;下载ClashX&lt;/h1&gt;&lt;p&gt;在&lt;a href=&quot;https://github.com/yichengchen/clashX/releases&quot;&gt;Clash官方Github&lt;/a&gt;中下载&lt;/p&gt;
+&lt;h1 id=&quot;下载配置文件模版&quot;&gt;&lt;a href=&quot;#下载配置文件模版&quot; class=&quot;headerlink&quot; title=&quot;下载配置文件模版&quot;&gt;&lt;/a&gt;下载配置文件模版&lt;/h1&gt;&lt;p&gt;在&lt;a href=&quot;https://v2raytech.com/clash_template2.yaml&quot;&gt;https://v2raytech.com/clash_template2.yaml&lt;/a&gt;下载配置文件模版，修改模版中V2Ray相关配置&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# VMess&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- name: &amp;quot;v2ray&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: vmess&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  server: 233.233.233.233  &amp;#x2F;&amp;#x2F;需要修改&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  port: 233  &amp;#x2F;&amp;#x2F;需要修改&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  uuid: 1ebf343d-5979-40ec-a3c5-bd3863680suc  &amp;#x2F;&amp;#x2F;需要修改&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  alterId: 64  &amp;#x2F;&amp;#x2F;需要修改&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  cipher: auto&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  # udp: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  # tls: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  # skip-cert-verify: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  # network: ws&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  # ws-path: &amp;#x2F;path&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  # ws-headers: #这一行后面不要写东西&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  #   Host: v2ray.com # 填你的主机名&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
+    
+    
+    <category term="V2Ray" scheme="http://octopusheep.com/tags/V2Ray/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在vultr服务器上部署V2Ray</title>
+    <link href="http://octopusheep.com/2020/10/26/%E5%9C%A8vultr%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2V2Ray/"/>
+    <id>http://octopusheep.com/2020/10/26/%E5%9C%A8vultr%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2V2Ray/</id>
+    <published>2020-10-25T20:00:14.000Z</published>
+    <updated>2020-10-25T12:02:27.375Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;首先得有一台vultr服务器，或者其他国外运营商的云服务器&lt;/p&gt;
+&lt;h2 id=&quot;SSH登陆云服务器&quot;&gt;&lt;a href=&quot;#SSH登陆云服务器&quot; class=&quot;headerlink&quot; title=&quot;SSH登陆云服务器&quot;&gt;&lt;/a&gt;SSH登陆云服务器&lt;/h2&gt;&lt;p&gt;在Terminals中使用ssh命令登陆服务器&lt;/p&gt;
+&lt;h2 id=&quot;安装依赖包&quot;&gt;&lt;a href=&quot;#安装依赖包&quot; class=&quot;headerlink&quot; title=&quot;安装依赖包&quot;&gt;&lt;/a&gt;安装依赖包&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt install curl&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;安装V2Ray&quot;&gt;&lt;a href=&quot;#安装V2Ray&quot; class=&quot;headerlink&quot; title=&quot;安装V2Ray&quot;&gt;&lt;/a&gt;安装V2Ray&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;bash &amp;lt;(curl -sL https:&amp;#x2F;&amp;#x2F;raw.githubusercontent.com&amp;#x2F;hijkpw&amp;#x2F;scripts&amp;#x2F;master&amp;#x2F;goV2.sh)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+
+&lt;h2 id=&quot;查看V2Ray配置文件&quot;&gt;&lt;a href=&quot;#查看V2Ray配置文件&quot; class=&quot;headerlink&quot; title=&quot;查看V2Ray配置文件&quot;&gt;&lt;/a&gt;查看V2Ray配置文件&lt;/h2&gt;&lt;p&gt;安装完成后，配置文件为&lt;code&gt;/etc/v2ray/config.json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;使用&lt;code&gt;cat&lt;/code&gt;命令查看配置文件&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cat &amp;#x2F;etc&amp;#x2F;v2ray&amp;#x2F;config.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
+    
+    
+    <category term="Vultr" scheme="http://octopusheep.com/tags/Vultr/"/>
+    
+    <category term="V2Ray" scheme="http://octopusheep.com/tags/V2Ray/"/>
+    
+  </entry>
   
   <entry>
     <title>Terminals开启代理的方法</title>
@@ -503,57 +556,6 @@
     
     
     <category term="Sshpass" scheme="http://octopusheep.com/tags/Sshpass/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Kafka Dockerimage Instruction</title>
-    <link href="http://octopusheep.com/2019/08/08/Kafka%20Dockerimage%20Instruction/"/>
-    <id>http://octopusheep.com/2019/08/08/Kafka%20Dockerimage%20Instruction/</id>
-    <published>2019-08-07T17:12:35.000Z</published>
-    <updated>2019-08-19T08:06:52.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;Comprisal&quot;&gt;&lt;a href=&quot;#Comprisal&quot; class=&quot;headerlink&quot; title=&quot;Comprisal&quot;&gt;&lt;/a&gt;Comprisal&lt;/h2&gt;&lt;p&gt;kafaka needs Java(JDK 8) and zookeeper as prerequisite so we should prepare a docker container  within JDK8 &lt;/p&gt;
-&lt;h2 id=&quot;Create-docker-container-with-JDK8&quot;&gt;&lt;a href=&quot;#Create-docker-container-with-JDK8&quot; class=&quot;headerlink&quot; title=&quot;Create docker container with JDK8&quot;&gt;&lt;/a&gt;Create docker container with JDK8&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run -d openjdk:8 &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;then u get the docker container within JDK8 that runs in backgroud&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt; &lt;code&gt;docker ps&lt;/code&gt;for find this container id,such as &lt;code&gt;26aa42c88586&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Download-Kafka&quot;&gt;&lt;a href=&quot;#Download-Kafka&quot; class=&quot;headerlink&quot; title=&quot;Download Kafka&quot;&gt;&lt;/a&gt;Download Kafka&lt;/h2&gt;&lt;p&gt;get latest kafaka tar in &lt;a href=&quot;https://www.apache.org/dyn/closer.cgi?path=/kafka/2.3.0/kafka_2.12-2.3.0.tgz&quot;&gt;Kafka Offical website&lt;/a&gt;, the kafka version in this doc is &lt;code&gt;kafka_2.12-2.3.0.tgz&lt;/code&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    <category term="Kafka" scheme="http://octopusheep.com/categories/Programming/Kafka/"/>
-    
-    
-    <category term="Kafka" scheme="http://octopusheep.com/tags/Kafka/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>集群健康检查操作指南</title>
-    <link href="http://octopusheep.com/2019/08/01/%E9%9B%86%E7%BE%A4%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/"/>
-    <id>http://octopusheep.com/2019/08/01/%E9%9B%86%E7%BE%A4%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</id>
-    <published>2019-08-01T10:21:11.000Z</published>
-    <updated>2019-08-01T02:24:33.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;Comprisal&quot;&gt;&lt;a href=&quot;#Comprisal&quot; class=&quot;headerlink&quot; title=&quot;Comprisal&quot;&gt;&lt;/a&gt;Comprisal&lt;/h2&gt;&lt;p&gt;集群健康检查主要由三个文件组成：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;保存集群和节点信息的文件&lt;code&gt;/etc/ansible/hosts&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;输出健康检查信息的shell脚本&lt;code&gt;/root/cluster/check_cluster.sh&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;发送邮件的python文件&lt;code&gt;/root/cluster/send_mail.py&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;以上路径均为绝对路径&lt;/p&gt;
-&lt;h2 id=&quot;Step&quot;&gt;&lt;a href=&quot;#Step&quot; class=&quot;headerlink&quot; title=&quot;Step&quot;&gt;&lt;/a&gt;Step&lt;/h2&gt;&lt;h3 id=&quot;登陆131-29节点&quot;&gt;&lt;a href=&quot;#登陆131-29节点&quot; class=&quot;headerlink&quot; title=&quot;登陆131.29节点&quot;&gt;&lt;/a&gt;登陆131.29节点&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssh root@192.168.131.29&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;该节点为QA组执行常用操作的节点,密码为caicloud2018&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Testing" scheme="http://octopusheep.com/categories/Testing/"/>
-    
     
   </entry>
   

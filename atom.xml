@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2020-10-25T12:14:27.919Z</updated>
+  <updated>2020-11-29T03:39:53.726Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Go语言中的指针浅析</title>
+    <link href="http://octopusheep.com/2020/11/29/Go%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%8C%87%E9%92%88%E6%B5%85%E6%9E%90/"/>
+    <id>http://octopusheep.com/2020/11/29/Go%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%8C%87%E9%92%88%E6%B5%85%E6%9E%90/</id>
+    <published>2020-11-29T11:03:11.000Z</published>
+    <updated>2020-11-29T03:39:53.726Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
+    
+    
+    <category term="Go" scheme="http://octopusheep.com/tags/Go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NodeJs文件表溢出异常处理指南</title>
+    <link href="http://octopusheep.com/2020/10/26/NodeJs%E6%96%87%E4%BB%B6%E8%A1%A8%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%8C%87%E5%8D%97/"/>
+    <id>http://octopusheep.com/2020/10/26/NodeJs%E6%96%87%E4%BB%B6%E8%A1%A8%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%8C%87%E5%8D%97/</id>
+    <published>2020-10-25T22:13:38.000Z</published>
+    <updated>2020-10-25T14:19:54.940Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;使用&lt;code&gt;hexo g&lt;/code&gt;生成大量博客文件时(数量超过2W条)会遇到&lt;code&gt;Error: ENFILE: file table overflow&lt;/code&gt;问题，即文件表溢出&lt;/p&gt;
+&lt;h2 id=&quot;产生原因&quot;&gt;&lt;a href=&quot;#产生原因&quot; class=&quot;headerlink&quot; title=&quot;产生原因&quot;&gt;&lt;/a&gt;产生原因&lt;/h2&gt;&lt;p&gt;文件打开太多了，超过了macOS操作系统的限制&lt;/p&gt;
+&lt;p&gt;在&lt;a href=&quot;https://github.com/meteor/meteor/issues/8057&quot;&gt;Gituhub&lt;/a&gt;上可以查看到相关issue&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I’m glad this is solving it for everyone. Unfortunately, Apple sets ridiculously low limits by default which might be good for some users, but is awful for developers.&lt;br&gt;For what it’s worth, I would recommend setting the limit much much higher than 65536 (524288 is great).&lt;br&gt;Additionally, I would recommend using a method that doesn’t modify /etc/ files directly since throughout the years Apple has randomly decided to stop loading these files (for example, it used to be a common recommendation to put this in /etc/launchd.conf, but that no longer works in Yosemite).&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>ClashX使用指南</title>
@@ -509,53 +556,6 @@
     
     
     <category term="Python" scheme="http://octopusheep.com/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Insight及LB模块定位问题通用checklist</title>
-    <link href="http://octopusheep.com/2019/08/29/Insight%E5%8F%8ALB%E6%A8%A1%E5%9D%97%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98%E9%80%9A%E7%94%A8checklist/"/>
-    <id>http://octopusheep.com/2019/08/29/Insight%E5%8F%8ALB%E6%A8%A1%E5%9D%97%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98%E9%80%9A%E7%94%A8checklist/</id>
-    <published>2019-08-29T10:24:15.000Z</published>
-    <updated>2019-08-29T04:11:50.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;Insight&quot;&gt;&lt;a href=&quot;#Insight&quot; class=&quot;headerlink&quot; title=&quot;Insight&quot;&gt;&lt;/a&gt;Insight&lt;/h2&gt;&lt;h3 id=&quot;历史日志最近五分钟查询不到ES日志&quot;&gt;&lt;a href=&quot;#历史日志最近五分钟查询不到ES日志&quot; class=&quot;headerlink&quot; title=&quot;历史日志最近五分钟查询不到ES日志&quot;&gt;&lt;/a&gt;历史日志最近五分钟查询不到ES日志&lt;/h3&gt;&lt;p&gt;由于我们的VM配置为单核8G内存，对于收集整个集群的日志而言，VM的配置过低（内存较小）。在单节点ES上该问题暂时无法解决。&lt;/p&gt;
-&lt;h3 id=&quot;部署ES后收集不到日志&quot;&gt;&lt;a href=&quot;#部署ES后收集不到日志&quot; class=&quot;headerlink&quot; title=&quot;部署ES后收集不到日志&quot;&gt;&lt;/a&gt;部署ES后收集不到日志&lt;/h3&gt;&lt;p&gt;该问题可能有两个不同的原因导致：&lt;/p&gt;
-&lt;h4 id=&quot;ES节点磁盘写满，filebeat不再写入数据&quot;&gt;&lt;a href=&quot;#ES节点磁盘写满，filebeat不再写入数据&quot; class=&quot;headerlink&quot; title=&quot;ES节点磁盘写满，filebeat不再写入数据&quot;&gt;&lt;/a&gt;ES节点磁盘写满，filebeat不再写入数据&lt;/h4&gt;&lt;p&gt;ssh登陆Elasticsearch节点后台（假定节点192.168.133.32）：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssh root@192.168.133.32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;查看文件系统的磁盘空间占用情况：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;df -h&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>VM Password Free Instruction</title>
-    <link href="http://octopusheep.com/2019/08/08/VM%20Password%20Free%20Instruction/"/>
-    <id>http://octopusheep.com/2019/08/08/VM%20Password%20Free%20Instruction/</id>
-    <published>2019-08-08T08:59:44.000Z</published>
-    <updated>2019-08-08T01:11:27.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;The people always say:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;两岸🐒声啼不住，密码输到手抽搐&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Comprisal&quot;&gt;&lt;a href=&quot;#Comprisal&quot; class=&quot;headerlink&quot; title=&quot;Comprisal&quot;&gt;&lt;/a&gt;Comprisal&lt;/h2&gt;&lt;p&gt;if u wanna login VM and free for password, the prerequisite is &lt;strong&gt;sshpass&lt;/strong&gt; and some mistery shell code&lt;/p&gt;
-&lt;h2 id=&quot;Install-sshpass&quot;&gt;&lt;a href=&quot;#Install-sshpass&quot; class=&quot;headerlink&quot; title=&quot;Install sshpass&quot;&gt;&lt;/a&gt;Install sshpass&lt;/h2&gt;&lt;h3 id=&quot;Download-sshpass&quot;&gt;&lt;a href=&quot;#Download-sshpass&quot; class=&quot;headerlink&quot; title=&quot;Download sshpass&quot;&gt;&lt;/a&gt;Download sshpass&lt;/h3&gt;&lt;p&gt;u can get sshpass in &lt;a href=&quot;https://sourceforge.net/projects/sshpass/files/sshpass/&quot;&gt;sourceforge&lt;/a&gt;, download it.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Hint:&lt;/strong&gt; the sshpass version is &lt;code&gt;sshpass-1.06.tar.gz&lt;/code&gt; in this document.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    
-    <category term="Sshpass" scheme="http://octopusheep.com/tags/Sshpass/"/>
     
   </entry>
   

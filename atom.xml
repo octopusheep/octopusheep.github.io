@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2020-11-29T03:39:53.726Z</updated>
+  <updated>2020-11-29T03:40:56.615Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -21,16 +21,12 @@
     <link href="http://octopusheep.com/2020/11/29/Go%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%8C%87%E9%92%88%E6%B5%85%E6%9E%90/"/>
     <id>http://octopusheep.com/2020/11/29/Go%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E6%8C%87%E9%92%88%E6%B5%85%E6%9E%90/</id>
     <published>2020-11-29T11:03:11.000Z</published>
-    <updated>2020-11-29T03:39:53.726Z</updated>
+    <updated>2020-11-29T03:40:56.615Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;a</summary>
-        
-      
+    <summary type="html">&lt;p&gt;由基础的Go数据类型我们知道Go语言中包含类型指针&lt;code&gt;*Type&lt;/code&gt;,但很多情况下，我们对&lt;code&gt;*Type&lt;/code&gt;、&lt;code&gt;&amp;amp;var&lt;/code&gt;、&lt;code&gt;*ptr&lt;/code&gt;感到困惑，因为三者经常放在一起使用，我总结一下我的看法&lt;/p&gt;
+&lt;h2 id=&quot;什么是-Type&quot;&gt;&lt;a href=&quot;#什么是-Type&quot; class=&quot;headerlink&quot; title=&quot;什么是*Type&quot;&gt;&lt;/a&gt;什么是&lt;code&gt;*Type&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;*Type&lt;/code&gt;用于定义类型指针变量，只在定义指针时出现&lt;/p&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; main&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// *Type用于定义函数指针，只在定义时出现 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ptr *&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;//定义全局变量类型指针&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ptr *&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;//定义局部变量类型指针&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     

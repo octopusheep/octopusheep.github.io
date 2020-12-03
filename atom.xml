@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2020-12-01T11:12:40.572Z</updated>
+  <updated>2020-12-03T12:58:16.720Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Go语言常用工具链浅析</title>
+    <link href="http://octopusheep.com/2020/12/04/Go%E8%AF%AD%E8%A8%80%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E9%93%BE%E6%B5%85%E6%9E%90/"/>
+    <id>http://octopusheep.com/2020/12/04/Go%E8%AF%AD%E8%A8%80%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E9%93%BE%E6%B5%85%E6%9E%90/</id>
+    <published>2020-12-03T20:41:23.000Z</published>
+    <updated>2020-12-03T12:58:16.720Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Go语言的build-in工具链异常强大，我简单总结一下test和benchmark的用法&lt;/p&gt;
+&lt;h2 id=&quot;go-test&quot;&gt;&lt;a href=&quot;#go-test&quot; class=&quot;headerlink&quot; title=&quot;go test&quot;&gt;&lt;/a&gt;go test&lt;/h2&gt;&lt;p&gt;test用于测试代码，需要遵从以下几点原则&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;测试文件命名&lt;code&gt;XXX_test.go&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;测试文件需要&lt;code&gt;import testing&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;测试函数命名&lt;code&gt;TestXXX&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;测试函数入参&lt;code&gt;t *testing.T&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;函数打印错误信息&lt;code&gt;t.Errorf(“message”)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;测试函数如需跳过，可使用&lt;code&gt;t.SkipNow()&lt;/code&gt;且必须放在测试函数第一行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;t.Run来执行subtest控制test输出和test顺序&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;T.Run(“a1”,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(t *testing.T)&lt;/span&gt;&lt;/span&gt;&amp;#123;fmt.Println(“a1”)&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;T.Run(“a2”,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(t *testing.T)&lt;/span&gt;&lt;/span&gt;&amp;#123;fmt.Println(“a2”)&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;T.Run(“a3”,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(t *testing.T)&lt;/span&gt;&lt;/span&gt;&amp;#123;fmt.Println(“a3”)&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
+    
+    
+    <category term="Go" scheme="http://octopusheep.com/tags/Go/"/>
+    
+  </entry>
   
   <entry>
     <title>再谈Go语言指针</title>
@@ -117,7 +154,7 @@
     <link href="http://octopusheep.com/2020/10/26/NodeJs%E6%96%87%E4%BB%B6%E8%A1%A8%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%8C%87%E5%8D%97/"/>
     <id>http://octopusheep.com/2020/10/26/NodeJs%E6%96%87%E4%BB%B6%E8%A1%A8%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%8C%87%E5%8D%97/</id>
     <published>2020-10-25T22:13:38.000Z</published>
-    <updated>2020-10-25T14:19:54.940Z</updated>
+    <updated>2020-12-01T11:21:38.334Z</updated>
     
     
     <summary type="html">&lt;p&gt;使用&lt;code&gt;hexo g&lt;/code&gt;生成大量博客文件时(数量超过2W条)会遇到&lt;code&gt;Error: ENFILE: file table overflow&lt;/code&gt;问题，即文件表溢出&lt;/p&gt;
@@ -511,29 +548,6 @@
     
     
     <category term="LDAP" scheme="http://octopusheep.com/tags/LDAP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>外网VPN无法访问Jira的解决方法</title>
-    <link href="http://octopusheep.com/2019/11/12/%E5%A4%96%E7%BD%91VPN%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEJira%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>http://octopusheep.com/2019/11/12/%E5%A4%96%E7%BD%91VPN%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEJira%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
-    <published>2019-11-12T10:42:58.000Z</published>
-    <updated>2019-11-12T02:44:22.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;🈶️🈚️发现连了外网VPN后无法登陆jira系统嫩&lt;/p&gt;
-&lt;h2 id=&quot;查看VPN的网关&quot;&gt;&lt;a href=&quot;#查看VPN的网关&quot; class=&quot;headerlink&quot; title=&quot;查看VPN的网关&quot;&gt;&lt;/a&gt;查看VPN的网关&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;netstat -rn | grep utun&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;执行后出现如下内容&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;0&amp;#x2F;1                192.168.250.129    UGSc           51        0   utun2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10.200&amp;#x2F;16          192.168.250.129    UGSc            0        0   utun2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;128.0&amp;#x2F;1            192.168.250.129    UGSc           14        0   utun2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;192.168.1          192.168.250.129    UGSc            0        0   utun2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;192.168.1.11&amp;#x2F;32    192.168.250.129    UGSc            1        0   utun2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;192.168.1.168&amp;#x2F;29   192.168.250.129    UGSc            0        0   utun2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;192.168.10         192.168.250.129    UGSc            0        0   utun2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;192.168.16&amp;#x2F;20      192.168.250.129    UGSc            0        0   utun2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;192.168.32         192.168.250.129    UGSc            0        0   utun2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;192.168.128&amp;#x2F;18     192.168.250.129    UGSc            0        0   utun2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;192.168.250.1&amp;#x2F;32   192.168.250.129    UGSc            0        0   utun2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;192.168.250.129    192.168.250.130    UHr            31        0   utun2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    
-    <category term="Jira" scheme="http://octopusheep.com/tags/Jira/"/>
     
   </entry>
   

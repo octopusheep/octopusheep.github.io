@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2020-12-03T12:58:16.720Z</updated>
+  <updated>2020-12-04T12:40:46.765Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Go语言快速实现WebServer</title>
+    <link href="http://octopusheep.com/2020/12/05/Go%E8%AF%AD%E8%A8%80%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0WebServer/"/>
+    <id>http://octopusheep.com/2020/12/05/Go%E8%AF%AD%E8%A8%80%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0WebServer/</id>
+    <published>2020-12-04T20:28:25.000Z</published>
+    <updated>2020-12-04T12:40:46.765Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Go语言的&lt;code&gt;bulid-in库&lt;/code&gt;异常强大，其中&lt;code&gt;net/http&lt;/code&gt;库包括了端口监听和请求处理的功能，基于以上特性我们用Go来实现一个简单的WebServer&lt;/p&gt;
+&lt;h2 id=&quot;所需库类型&quot;&gt;&lt;a href=&quot;#所需库类型&quot; class=&quot;headerlink&quot; title=&quot;所需库类型&quot;&gt;&lt;/a&gt;所需库类型&lt;/h2&gt;&lt;p&gt;涉及网络请求必定有IO操作和http协议，因此需要用到以下两个库&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;io&lt;/li&gt;
+&lt;li&gt;net/http&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;代码实现&quot;&gt;&lt;a href=&quot;#代码实现&quot; class=&quot;headerlink&quot; title=&quot;代码实现&quot;&gt;&lt;/a&gt;代码实现&lt;/h2&gt;&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; main&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt;(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&amp;quot;io&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&amp;quot;net/http&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;firstPage&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(w http.ResponseWriter,r *http.Request)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	io.WriteString(w,&lt;span class=&quot;string&quot;&gt;&amp;quot;&amp;lt;h1&amp;gt;Hello, this is my first page!&amp;lt;/h1&amp;gt;&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	http.HandleFunc(&lt;span class=&quot;string&quot;&gt;&amp;quot;/&amp;quot;&lt;/span&gt;,firstPage)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	http.ListenAndServe(&lt;span class=&quot;string&quot;&gt;&amp;quot;:8000&amp;quot;&lt;/span&gt;,&lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
+    
+    <category term="Go" scheme="http://octopusheep.com/categories/Programming/Go/"/>
+    
+    
+    <category term="Go" scheme="http://octopusheep.com/tags/Go/"/>
+    
+  </entry>
   
   <entry>
     <title>Go语言常用工具链浅析</title>
@@ -524,30 +551,6 @@
     
     
     <category term="VI" scheme="http://octopusheep.com/tags/VI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LDAP Studying Note</title>
-    <link href="http://octopusheep.com/2019/11/20/LDAP%20Studying%20Note/"/>
-    <id>http://octopusheep.com/2019/11/20/LDAP%20Studying%20Note/</id>
-    <published>2019-11-19T19:22:52.000Z</published>
-    <updated>2019-11-19T12:24:01.000Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;LDAP（Light Directory Access Portocol），它是基于X.500标准的轻量级目录访问协议。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;What-is-LDAP&quot;&gt;&lt;a href=&quot;#What-is-LDAP&quot; class=&quot;headerlink&quot; title=&quot;What is LDAP&quot;&gt;&lt;/a&gt;What is LDAP&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;LDAP&lt;/strong&gt;是指&lt;strong&gt;轻量级目录访问协议&lt;/strong&gt;，LDAP目录服务由&lt;strong&gt;目录数据库&lt;/strong&gt;和&lt;strong&gt;一套访问协议&lt;/strong&gt;组成&lt;/p&gt;
-&lt;h3 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h3&gt;&lt;p&gt;目录是一个为查询、浏览和搜索而优化的数据库，它成&lt;strong&gt;树状结构组织数据&lt;/strong&gt;，类似文件目录一样&lt;/p&gt;
-&lt;p&gt;目录数据库和关系数据库不同，它有&lt;strong&gt;优异的读性能&lt;/strong&gt;，但&lt;strong&gt;写性能差&lt;/strong&gt;，并且没有事务处理、回滚等复杂功能，不适于存储修改频繁的数据。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    
-    <category term="LDAP" scheme="http://octopusheep.com/tags/LDAP/"/>
     
   </entry>
   

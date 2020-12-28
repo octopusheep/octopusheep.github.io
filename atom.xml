@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2020-12-04T14:39:45.690Z</updated>
+  <updated>2020-12-28T09:51:15.448Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>家用软路由方案指南</title>
+    <link href="http://octopusheep.com/2020/12/28/%E5%AE%B6%E7%94%A8%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%96%B9%E6%A1%88%E6%8C%87%E5%8D%97/"/>
+    <id>http://octopusheep.com/2020/12/28/%E5%AE%B6%E7%94%A8%E8%BD%AF%E8%B7%AF%E7%94%B1%E6%96%B9%E6%A1%88%E6%8C%87%E5%8D%97/</id>
+    <published>2020-12-28T15:39:08.000Z</published>
+    <updated>2020-12-28T09:51:15.448Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;装修时给客厅、餐厅、书房各安排1个网口，主卧和次卧各两个网口，一共7个户内网线插座。值得一提的是装修留的弱电箱很大，有14U。&lt;/p&gt;
+&lt;h2 id=&quot;前情回顾&quot;&gt;&lt;a href=&quot;#前情回顾&quot; class=&quot;headerlink&quot; title=&quot;前情回顾&quot;&gt;&lt;/a&gt;前情回顾&lt;/h2&gt;&lt;p&gt;女朋友家里接了一根300M移动宽带，使用良好，但只有一个路由器，放在客厅，因此当前的网络拓扑如下：&lt;/p&gt;
+&lt;p&gt;入户光纤-&amp;gt;光猫-&amp;gt;路由器&lt;/p&gt;
+&lt;h2 id=&quot;改动前我们顺着网线走一遍&quot;&gt;&lt;a href=&quot;#改动前我们顺着网线走一遍&quot; class=&quot;headerlink&quot; title=&quot;改动前我们顺着网线走一遍&quot;&gt;&lt;/a&gt;改动前我们顺着网线走一遍&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;户外篇&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;室外光纤-&amp;gt;弱电箱&lt;/p&gt;
+&lt;p&gt;一根孤独的光纤顺着水泥墙，爬进了我家的弱电箱，对于我们家来讲它是个外人，但带来了互联网信号&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Studying" scheme="http://octopusheep.com/categories/Studying/"/>
+    
+    
+    <category term="软路由" scheme="http://octopusheep.com/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/"/>
+    
+  </entry>
   
   <entry>
     <title>RESTful风格API初探</title>
@@ -290,9 +316,9 @@
     <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
     
     
-    <category term="Vultr" scheme="http://octopusheep.com/tags/Vultr/"/>
-    
     <category term="V2Ray" scheme="http://octopusheep.com/tags/V2Ray/"/>
+    
+    <category term="Vultr" scheme="http://octopusheep.com/tags/Vultr/"/>
     
   </entry>
   
@@ -359,7 +385,7 @@
     <link href="http://octopusheep.com/2020/10/21/Hunter%20Project%20Note/"/>
     <id>http://octopusheep.com/2020/10/21/Hunter%20Project%20Note/</id>
     <published>2020-10-20T23:12:04.000Z</published>
-    <updated>2020-10-20T15:27:14.795Z</updated>
+    <updated>2020-10-20T15:58:43.079Z</updated>
     
     
     <summary type="html">&lt;p&gt;this is no first time i have the idea that scraping videos website and that is the frist step to do this ,this project made by Python.&lt;/p&gt;
@@ -537,35 +563,6 @@
     
     <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Docker客制化镜像指南</title>
-    <link href="http://octopusheep.com/2019/11/26/Docker%E5%AE%A2%E5%88%B6%E5%8C%96%E9%95%9C%E5%83%8F%E6%8C%87%E5%8D%97/"/>
-    <id>http://octopusheep.com/2019/11/26/Docker%E5%AE%A2%E5%88%B6%E5%8C%96%E9%95%9C%E5%83%8F%E6%8C%87%E5%8D%97/</id>
-    <published>2019-11-25T19:16:43.000Z</published>
-    <updated>2019-11-25T11:25:26.000Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本教程以ubuntu:latest镜像作为基础镜像，创建一个启动后自动打印日志的docker镜像&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;下载基础镜像&quot;&gt;&lt;a href=&quot;#下载基础镜像&quot; class=&quot;headerlink&quot; title=&quot;下载基础镜像&quot;&gt;&lt;/a&gt;下载基础镜像&lt;/h2&gt;&lt;p&gt;下载ubuntu镜像作为基础镜像：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker pull ubuntu&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;启动ubuntu镜像容器：&quot;&gt;&lt;a href=&quot;#启动ubuntu镜像容器：&quot; class=&quot;headerlink&quot; title=&quot;启动ubuntu镜像容器：&quot;&gt;&lt;/a&gt;启动ubuntu镜像容器：&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;docker run -it ubuntu&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;更新软件源-容器内&quot;&gt;&lt;a href=&quot;#更新软件源-容器内&quot; class=&quot;headerlink&quot; title=&quot;更新软件源(容器内)&quot;&gt;&lt;/a&gt;更新软件源(容器内)&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;root@03da790f4a63:&amp;#x2F;# apt-get update&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;下载所需软件-容器内&quot;&gt;&lt;a href=&quot;#下载所需软件-容器内&quot; class=&quot;headerlink&quot; title=&quot;下载所需软件(容器内)&quot;&gt;&lt;/a&gt;下载所需软件(容器内)&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;root@03da790f4a63:&amp;#x2F;# apt-get install vim&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    
-    <category term="Docker" scheme="http://octopusheep.com/tags/Docker/"/>
     
   </entry>
   

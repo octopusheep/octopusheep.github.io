@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2021-02-22T19:45:04.028Z</updated>
+  <updated>2021-02-22T19:56:03.149Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -17,22 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>自译《how does the Internet work?》</title>
-    <link href="http://octopusheep.com/2021/02/23/%E8%87%AA%E8%AF%91%E3%80%8Ahow%20does%20the%20Internet%20work?%E3%80%8B/"/>
-    <id>http://octopusheep.com/2021/02/23/%E8%87%AA%E8%AF%91%E3%80%8Ahow%20does%20the%20Internet%20work?%E3%80%8B/</id>
+    <title>《how does the Internet work》自译</title>
+    <link href="http://octopusheep.com/2021/02/23/%E3%80%8Ahow%20does%20the%20Internet%20work%E3%80%8B%E8%87%AA%E8%AF%91/"/>
+    <id>http://octopusheep.com/2021/02/23/%E3%80%8Ahow%20does%20the%20Internet%20work%E3%80%8B%E8%87%AA%E8%AF%91/</id>
     <published>2021-02-23T01:32:08.000Z</published>
-    <updated>2021-02-22T19:45:04.028Z</updated>
+    <updated>2021-02-22T19:56:03.149Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-
-&lt;h2 id=&quot;Origin-Text&quot;&gt;&lt;a href=&quot;#Origin-Text&quot; class=&quot;headerlink&quot; title=&quot;Origin Text&quot;&gt;&lt;/a&gt;Origin Text&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
-        
-      
+    <summary type="html">&lt;p&gt;本文由octopusheep人工翻译，并未使用任何翻译软件，请放心食用。&lt;/p&gt;
+&lt;h2 id=&quot;Origin-Text&quot;&gt;&lt;a href=&quot;#Origin-Text&quot; class=&quot;headerlink&quot; title=&quot;Origin Text&quot;&gt;&lt;/a&gt;Origin Text&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.html&quot;&gt;How Does the Internet work?&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Before-Reading&quot;&gt;&lt;a href=&quot;#Before-Reading&quot; class=&quot;headerlink&quot; title=&quot;Before Reading&quot;&gt;&lt;/a&gt;Before Reading&lt;/h2&gt;&lt;p&gt;该篇文章由Rus Shuler于1998年完成，并在2002年更新文章内容，浅析了互联网（Internet）的工作原理，我认为是一篇极其优秀的科普文章，从tcp/ip协议族的抽象层面和硬件层面（Protocol Stack）以及基础设施层面（Infrastructure）梳理了数据在互联网上的流动，并生动的给出了图示用于讲解互联网的硬件设施以及常用应用层协议数据传输过程。&lt;/p&gt;
+&lt;p&gt;这篇文章贼鸡儿棒，比大学时计算机网络的老师讲的强多了，这也是我翻译这篇文章的初衷。比起枯燥敷衍的说一遍OSI七层网络模型，听的人云里雾里,不如像这篇文章里分四层，从每一层的作用入手，配合ping、routetrace等工具详细讲解，这样网络的概念理解起来才会容易。能否把知识以别人能够听懂、能够理解的方式传授出去，我觉得是我们这个时代教育里极其欠缺的。&lt;/p&gt;
+&lt;h2 id=&quot;Acronym&quot;&gt;&lt;a href=&quot;#Acronym&quot; class=&quot;headerlink&quot; title=&quot;Acronym&quot;&gt;&lt;/a&gt;Acronym&lt;/h2&gt;&lt;p&gt;Internet 互联网&lt;br&gt;Protocol Stack 协议族&lt;/p&gt;</summary>
     
     
     

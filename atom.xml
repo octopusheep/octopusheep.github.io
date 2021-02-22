@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2020-12-29T07:00:23.329Z</updated>
+  <updated>2021-02-22T19:45:04.028Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自译《how does the Internet work?》</title>
+    <link href="http://octopusheep.com/2021/02/23/%E8%87%AA%E8%AF%91%E3%80%8Ahow%20does%20the%20Internet%20work?%E3%80%8B/"/>
+    <id>http://octopusheep.com/2021/02/23/%E8%87%AA%E8%AF%91%E3%80%8Ahow%20does%20the%20Internet%20work?%E3%80%8B/</id>
+    <published>2021-02-23T01:32:08.000Z</published>
+    <updated>2021-02-22T19:45:04.028Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;h2 id=&quot;Origin-Text&quot;&gt;&lt;a href=&quot;#Origin-Text&quot; class=&quot;headerlink&quot; title=&quot;Origin Text&quot;&gt;&lt;/a&gt;Origin Text&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
+    
+    
+    <category term="Internet" scheme="http://octopusheep.com/tags/Internet/"/>
+    
+  </entry>
   
   <entry>
     <title>自制网线指南</title>
@@ -543,36 +570,6 @@
     
     
     <category term="Sublime" scheme="http://octopusheep.com/tags/Sublime/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LDAP服务部署实践</title>
-    <link href="http://octopusheep.com/2019/11/26/LDAP%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5/"/>
-    <id>http://octopusheep.com/2019/11/26/LDAP%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5/</id>
-    <published>2019-11-26T15:21:28.000Z</published>
-    <updated>2019-11-26T07:22:32.000Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;LDAP服务由ladpadmin和ldapserver两个无状态服务组成&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;新建应用分区&quot;&gt;&lt;a href=&quot;#新建应用分区&quot; class=&quot;headerlink&quot; title=&quot;新建应用分区&quot;&gt;&lt;/a&gt;新建应用分区&lt;/h2&gt;&lt;p&gt;创建LDAP服务专用的应用分区&lt;/p&gt;
-&lt;h2 id=&quot;ladpadmin服务&quot;&gt;&lt;a href=&quot;#ladpadmin服务&quot; class=&quot;headerlink&quot; title=&quot;ladpadmin服务&quot;&gt;&lt;/a&gt;ladpadmin服务&lt;/h2&gt;&lt;h3 id=&quot;容器配置&quot;&gt;&lt;a href=&quot;#容器配置&quot; class=&quot;headerlink&quot; title=&quot;容器配置&quot;&gt;&lt;/a&gt;容器配置&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;镜像名称：osixia/phpldapadmin:latest&lt;/li&gt;
-&lt;li&gt;CPU请求：0.5Core&lt;/li&gt;
-&lt;li&gt;CPU上限：1Core&lt;/li&gt;
-&lt;li&gt;内存请求：1GiB&lt;/li&gt;
-&lt;li&gt;内存上限：2GiB&lt;/li&gt;
-&lt;li&gt;PHPLDAPADMIN_LDAP_HOSTS:ldapserver&lt;/li&gt;
-&lt;li&gt;PHPLDAPADMIN_HTTPS:false</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    
-    <category term="LDAP" scheme="http://octopusheep.com/tags/LDAP/"/>
     
   </entry>
   

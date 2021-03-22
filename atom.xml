@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2021-02-22T19:56:03.149Z</updated>
+  <updated>2021-02-22T19:56:03.000Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://octopusheep.com/2021/02/23/%E3%80%8Ahow%20does%20the%20Internet%20work%E3%80%8B%E8%87%AA%E8%AF%91/"/>
     <id>http://octopusheep.com/2021/02/23/%E3%80%8Ahow%20does%20the%20Internet%20work%E3%80%8B%E8%87%AA%E8%AF%91/</id>
     <published>2021-02-23T01:32:08.000Z</published>
-    <updated>2021-02-22T19:56:03.149Z</updated>
+    <updated>2021-02-22T19:56:03.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文由octopusheep人工翻译，并未使用任何翻译软件，请放心食用。&lt;/p&gt;
@@ -36,42 +36,6 @@
     
     
     <category term="Internet" scheme="http://octopusheep.com/tags/Internet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自制网线指南</title>
-    <link href="http://octopusheep.com/2020/12/29/%E8%87%AA%E5%88%B6%E7%BD%91%E7%BA%BF%E6%8C%87%E5%8D%97/"/>
-    <id>http://octopusheep.com/2020/12/29/%E8%87%AA%E5%88%B6%E7%BD%91%E7%BA%BF%E6%8C%87%E5%8D%97/</id>
-    <published>2020-12-29T12:36:57.000Z</published>
-    <updated>2020-12-29T07:00:23.329Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;自己制作网线有很多好处，我能想到的有以下几点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;省钱&lt;/li&gt;
-&lt;li&gt;自定义任何长度&lt;/li&gt;
-&lt;li&gt;重新接弱电箱里的水晶头，美化家用设备&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;不好的地方也有一点：自制的网线，可能由于自己制作手艺问题，导致降速（反正我不手残）。&lt;/p&gt;
-&lt;h2 id=&quot;需要购买的物料&quot;&gt;&lt;a href=&quot;#需要购买的物料&quot; class=&quot;headerlink&quot; title=&quot;需要购买的物料&quot;&gt;&lt;/a&gt;需要购买的物料&lt;/h2&gt;&lt;p&gt;制作网线当然要买材料啦，一根网线能够接通，需要&lt;code&gt;网线&lt;/code&gt;和&lt;code&gt;水晶接头&lt;/code&gt;，但这还不够，对我而言，一个有&lt;code&gt;护套&lt;/code&gt;的水晶头才更加美观。此外，你还需要准备制作网线的相关工具,工具包括：&lt;code&gt;网线钳&lt;/code&gt;、&lt;code&gt;剥线器&lt;/code&gt;、&lt;code&gt;网线连通测试器&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;因此需要购买的物品清单如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;非成品网线一卷&lt;/li&gt;
-&lt;li&gt;水晶接头若干个&lt;/li&gt;
-&lt;li&gt;接头护套若干个&lt;/li&gt;
-&lt;li&gt;网线钳&lt;/li&gt;
-&lt;li&gt;剥线器&lt;/li&gt;
-&lt;li&gt;网线连通测试器&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;我将按照顺序介绍一步一步介绍如何制作一根令我满意的网线&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Studying" scheme="http://octopusheep.com/categories/Studying/"/>
-    
-    
-    <category term="软路由" scheme="http://octopusheep.com/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/"/>
     
   </entry>
   
@@ -566,6 +530,36 @@
     
     
     <category term="Sublime" scheme="http://octopusheep.com/tags/Sublime/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LDAP服务部署实践</title>
+    <link href="http://octopusheep.com/2019/11/26/LDAP%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5/"/>
+    <id>http://octopusheep.com/2019/11/26/LDAP%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5/</id>
+    <published>2019-11-26T15:21:28.000Z</published>
+    <updated>2019-11-26T07:22:32.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;LDAP服务由ladpadmin和ldapserver两个无状态服务组成&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;新建应用分区&quot;&gt;&lt;a href=&quot;#新建应用分区&quot; class=&quot;headerlink&quot; title=&quot;新建应用分区&quot;&gt;&lt;/a&gt;新建应用分区&lt;/h2&gt;&lt;p&gt;创建LDAP服务专用的应用分区&lt;/p&gt;
+&lt;h2 id=&quot;ladpadmin服务&quot;&gt;&lt;a href=&quot;#ladpadmin服务&quot; class=&quot;headerlink&quot; title=&quot;ladpadmin服务&quot;&gt;&lt;/a&gt;ladpadmin服务&lt;/h2&gt;&lt;h3 id=&quot;容器配置&quot;&gt;&lt;a href=&quot;#容器配置&quot; class=&quot;headerlink&quot; title=&quot;容器配置&quot;&gt;&lt;/a&gt;容器配置&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;镜像名称：osixia/phpldapadmin:latest&lt;/li&gt;
+&lt;li&gt;CPU请求：0.5Core&lt;/li&gt;
+&lt;li&gt;CPU上限：1Core&lt;/li&gt;
+&lt;li&gt;内存请求：1GiB&lt;/li&gt;
+&lt;li&gt;内存上限：2GiB&lt;/li&gt;
+&lt;li&gt;PHPLDAPADMIN_LDAP_HOSTS:ldapserver&lt;/li&gt;
+&lt;li&gt;PHPLDAPADMIN_HTTPS:false</summary>
+    
+    
+    
+    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
+    
+    
+    <category term="LDAP" scheme="http://octopusheep.com/tags/LDAP/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2021-06-23T12:18:32.190Z</updated>
+  <updated>2021-06-23T12:21:17.634Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -15,67 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Selenium学习笔记</title>
-    <link href="http://octopusheep.com/2021/06/24/Selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://octopusheep.com/2021/06/24/Selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2021-06-23T20:07:10.000Z</published>
-    <updated>2021-06-23T12:18:32.190Z</updated>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;what-is-Selenium&quot;&gt;&lt;a href=&quot;#what-is-Selenium&quot; class=&quot;headerlink&quot; title=&quot;what is Selenium&quot;&gt;&lt;/a&gt;what is Selenium&lt;/h3&gt;&lt;p&gt;引用官方的话&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Selenium is an umbrella project for a range of tools and libraries that enable and support the automation of web browsers.It provides extensions to emulate user interaction with browsers, a distribution server for scaling browser allocation, and the infrastructure for implementations of the W3C WebDriver specification that lets you write interchangeable code for all major web browsers.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;基本就是说：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Selenium是一个包含了各种工具和库的项目，用来实现浏览器的自动化&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;它提供一些插件，用以实现在浏览器中模拟用户操作&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Testing" scheme="http://octopusheep.com/categories/Testing/"/>
-    
-    
-    <category term="Selenium" scheme="http://octopusheep.com/tags/Selenium/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AirTest学习笔记</title>
-    <link href="http://octopusheep.com/2021/06/24/AirTest%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://octopusheep.com/2021/06/24/AirTest%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2021-06-23T20:07:06.000Z</published>
-    <updated>2021-06-23T12:19:38.146Z</updated>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;what-is-AirTest&quot;&gt;&lt;a href=&quot;#what-is-AirTest&quot; class=&quot;headerlink&quot; title=&quot;what is AirTest&quot;&gt;&lt;/a&gt;what is AirTest&lt;/h3&gt;&lt;p&gt; 李元哥分享的教程里提到：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;AirTest自动化测试框架基于Selenium和python语言，通过调用Chrome浏览器Devtools Protocol协议，将用户操作解析成python脚本。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;我理解主要是通过AirTest库，可以提供以下能力：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;通过Chrome浏览器的Devtools协议，录制用户操作&lt;/p&gt;
-&lt;p&gt; 通过将用户操作转换成符合Airtest库调用链的方法，完成操作记录&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;AirTest库中的调用链方法获取Selenium的WebDriver实例，操纵浏览器&lt;/p&gt;
-&lt;p&gt; 将第一部中的录制脚本通过Sellenium-Airtest转换为Selenium的WebDriver实例可以执行的方法，即可完成UI自动化步骤&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;总体来说AirTest在脚本录制方面比较方便，另外在自动化测试结束后生成的报告有多种模版可以选择。&lt;/p&gt;
-&lt;p&gt;  但最后AirTest依旧是依赖Selenium的核心组件WebDriver去控制浏览器操纵DOM节点实现&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Testing" scheme="http://octopusheep.com/categories/Testing/"/>
-    
-    
-    <category term="AirTest" scheme="http://octopusheep.com/tags/AirTest/"/>
-    
-  </entry>
   
   <entry>
     <title>SpringBoot学习笔记</title>
@@ -118,7 +57,7 @@
     <link href="http://octopusheep.com/2021/06/24/%E8%A7%A3%E5%86%B3windows%E7%8E%AF%E5%A2%83%E4%B8%8BPostman%E8%BD%AC%E8%AF%91curl%E5%91%BD%E4%BB%A4%E6%97%A0%E6%B3%95%E6%89%A7%E8%A1%8C%E7%9A%84issue/"/>
     <id>http://octopusheep.com/2021/06/24/%E8%A7%A3%E5%86%B3windows%E7%8E%AF%E5%A2%83%E4%B8%8BPostman%E8%BD%AC%E8%AF%91curl%E5%91%BD%E4%BB%A4%E6%97%A0%E6%B3%95%E6%89%A7%E8%A1%8C%E7%9A%84issue/</id>
     <published>2021-06-23T20:06:58.000Z</published>
-    <updated>2021-06-23T12:19:23.646Z</updated>
+    <updated>2021-06-23T12:25:23.924Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;问题背景&quot;&gt;&lt;a href=&quot;#问题背景&quot; class=&quot;headerlink&quot; title=&quot;问题背景&quot;&gt;&lt;/a&gt;问题背景&lt;/h2&gt;&lt;p&gt;了解到部分客户环境存在物理机性能较弱或内网环境无法连接外网等问题，导致无法使用postman，需要将postman请求转义为cURL命令，放在终端中执行&lt;/p&gt;
@@ -145,6 +84,67 @@
     
     
     <category term="Postman" scheme="http://octopusheep.com/tags/Postman/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AirTest学习笔记</title>
+    <link href="http://octopusheep.com/2021/06/16/AirTest%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://octopusheep.com/2021/06/16/AirTest%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-06-15T19:55:06.000Z</published>
+    <updated>2021-06-23T12:24:37.810Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;what-is-AirTest&quot;&gt;&lt;a href=&quot;#what-is-AirTest&quot; class=&quot;headerlink&quot; title=&quot;what is AirTest&quot;&gt;&lt;/a&gt;what is AirTest&lt;/h3&gt;&lt;p&gt; 李元哥分享的教程里提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AirTest自动化测试框架基于Selenium和python语言，通过调用Chrome浏览器Devtools Protocol协议，将用户操作解析成python脚本。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我理解主要是通过AirTest库，可以提供以下能力：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;通过Chrome浏览器的Devtools协议，录制用户操作&lt;/p&gt;
+&lt;p&gt; 通过将用户操作转换成符合Airtest库调用链的方法，完成操作记录&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;AirTest库中的调用链方法获取Selenium的WebDriver实例，操纵浏览器&lt;/p&gt;
+&lt;p&gt; 将第一部中的录制脚本通过Sellenium-Airtest转换为Selenium的WebDriver实例可以执行的方法，即可完成UI自动化步骤&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;总体来说AirTest在脚本录制方面比较方便，另外在自动化测试结束后生成的报告有多种模版可以选择。&lt;/p&gt;
+&lt;p&gt;  但最后AirTest依旧是依赖Selenium的核心组件WebDriver去控制浏览器操纵DOM节点实现&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Testing" scheme="http://octopusheep.com/categories/Testing/"/>
+    
+    
+    <category term="AirTest" scheme="http://octopusheep.com/tags/AirTest/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Selenium学习笔记</title>
+    <link href="http://octopusheep.com/2021/06/10/Selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://octopusheep.com/2021/06/10/Selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-06-10T11:07:30.000Z</published>
+    <updated>2021-06-23T12:24:58.911Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;what-is-Selenium&quot;&gt;&lt;a href=&quot;#what-is-Selenium&quot; class=&quot;headerlink&quot; title=&quot;what is Selenium&quot;&gt;&lt;/a&gt;what is Selenium&lt;/h3&gt;&lt;p&gt;引用官方的话&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Selenium is an umbrella project for a range of tools and libraries that enable and support the automation of web browsers.It provides extensions to emulate user interaction with browsers, a distribution server for scaling browser allocation, and the infrastructure for implementations of the W3C WebDriver specification that lets you write interchangeable code for all major web browsers.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;基本就是说：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Selenium是一个包含了各种工具和库的项目，用来实现浏览器的自动化&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;它提供一些插件，用以实现在浏览器中模拟用户操作&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Testing" scheme="http://octopusheep.com/categories/Testing/"/>
+    
+    
+    <category term="Selenium" scheme="http://octopusheep.com/tags/Selenium/"/>
     
   </entry>
   

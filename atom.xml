@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2021-02-22T19:56:03.000Z</updated>
+  <updated>2021-06-23T12:18:32.190Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -15,6 +15,138 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Selenium学习笔记</title>
+    <link href="http://octopusheep.com/2021/06/24/Selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://octopusheep.com/2021/06/24/Selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-06-23T20:07:10.000Z</published>
+    <updated>2021-06-23T12:18:32.190Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;what-is-Selenium&quot;&gt;&lt;a href=&quot;#what-is-Selenium&quot; class=&quot;headerlink&quot; title=&quot;what is Selenium&quot;&gt;&lt;/a&gt;what is Selenium&lt;/h3&gt;&lt;p&gt;引用官方的话&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Selenium is an umbrella project for a range of tools and libraries that enable and support the automation of web browsers.It provides extensions to emulate user interaction with browsers, a distribution server for scaling browser allocation, and the infrastructure for implementations of the W3C WebDriver specification that lets you write interchangeable code for all major web browsers.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;基本就是说：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Selenium是一个包含了各种工具和库的项目，用来实现浏览器的自动化&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;它提供一些插件，用以实现在浏览器中模拟用户操作&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Testing" scheme="http://octopusheep.com/categories/Testing/"/>
+    
+    
+    <category term="Selenium" scheme="http://octopusheep.com/tags/Selenium/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AirTest学习笔记</title>
+    <link href="http://octopusheep.com/2021/06/24/AirTest%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://octopusheep.com/2021/06/24/AirTest%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-06-23T20:07:06.000Z</published>
+    <updated>2021-06-23T12:19:38.146Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;what-is-AirTest&quot;&gt;&lt;a href=&quot;#what-is-AirTest&quot; class=&quot;headerlink&quot; title=&quot;what is AirTest&quot;&gt;&lt;/a&gt;what is AirTest&lt;/h3&gt;&lt;p&gt; 李元哥分享的教程里提到：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AirTest自动化测试框架基于Selenium和python语言，通过调用Chrome浏览器Devtools Protocol协议，将用户操作解析成python脚本。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我理解主要是通过AirTest库，可以提供以下能力：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;通过Chrome浏览器的Devtools协议，录制用户操作&lt;/p&gt;
+&lt;p&gt; 通过将用户操作转换成符合Airtest库调用链的方法，完成操作记录&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;AirTest库中的调用链方法获取Selenium的WebDriver实例，操纵浏览器&lt;/p&gt;
+&lt;p&gt; 将第一部中的录制脚本通过Sellenium-Airtest转换为Selenium的WebDriver实例可以执行的方法，即可完成UI自动化步骤&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;总体来说AirTest在脚本录制方面比较方便，另外在自动化测试结束后生成的报告有多种模版可以选择。&lt;/p&gt;
+&lt;p&gt;  但最后AirTest依旧是依赖Selenium的核心组件WebDriver去控制浏览器操纵DOM节点实现&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Testing" scheme="http://octopusheep.com/categories/Testing/"/>
+    
+    
+    <category term="AirTest" scheme="http://octopusheep.com/tags/AirTest/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot学习笔记</title>
+    <link href="http://octopusheep.com/2021/06/24/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://octopusheep.com/2021/06/24/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-06-23T20:07:03.000Z</published>
+    <updated>2021-06-23T12:21:17.634Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;预置条件&quot;&gt;&lt;a href=&quot;#预置条件&quot; class=&quot;headerlink&quot; title=&quot;预置条件&quot;&gt;&lt;/a&gt;预置条件&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;- JetBrain Intellij IDEA Ultimate版本(20.2)
+
+只有Ultimate版本的IDE才可以创建Spring Initiatizer项目，如果你当前IDE为社区版，需要自行更换&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;创建步骤&quot;&gt;&lt;a href=&quot;#创建步骤&quot; class=&quot;headerlink&quot; title=&quot;创建步骤&quot;&gt;&lt;/a&gt;创建步骤&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. 创建Spring Initiatizer项目（jdk版本选择1.8）
+
+2. 配置项目参数
+
+    - groupid会影响package中的包名
+    - artfactid会影响name和package中的包名
+
+3. 选择项目依赖
+
+    - Web
+        - Spring Web
+    - SQL
+        - MyBatis
+        - MySQL
+
+4. 设置项目名称和存放地址&lt;/code&gt;&lt;/pre&gt;</summary>
+    
+    
+    
+    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
+    
+    
+    <category term="SpringBoot" scheme="http://octopusheep.com/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决windows环境下Postman转译curl命令无法执行的issue</title>
+    <link href="http://octopusheep.com/2021/06/24/%E8%A7%A3%E5%86%B3windows%E7%8E%AF%E5%A2%83%E4%B8%8BPostman%E8%BD%AC%E8%AF%91curl%E5%91%BD%E4%BB%A4%E6%97%A0%E6%B3%95%E6%89%A7%E8%A1%8C%E7%9A%84issue/"/>
+    <id>http://octopusheep.com/2021/06/24/%E8%A7%A3%E5%86%B3windows%E7%8E%AF%E5%A2%83%E4%B8%8BPostman%E8%BD%AC%E8%AF%91curl%E5%91%BD%E4%BB%A4%E6%97%A0%E6%B3%95%E6%89%A7%E8%A1%8C%E7%9A%84issue/</id>
+    <published>2021-06-23T20:06:58.000Z</published>
+    <updated>2021-06-23T12:19:23.646Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;问题背景&quot;&gt;&lt;a href=&quot;#问题背景&quot; class=&quot;headerlink&quot; title=&quot;问题背景&quot;&gt;&lt;/a&gt;问题背景&lt;/h2&gt;&lt;p&gt;了解到部分客户环境存在物理机性能较弱或内网环境无法连接外网等问题，导致无法使用postman，需要将postman请求转义为cURL命令，放在终端中执行&lt;/p&gt;
+&lt;p&gt;由于windows环境存在对于postman导出格式不兼容的问题，特此文档说明&lt;/p&gt;
+&lt;h3 id=&quot;解决方案&quot;&gt;&lt;a href=&quot;#解决方案&quot; class=&quot;headerlink&quot; title=&quot;解决方案&quot;&gt;&lt;/a&gt;解决方案&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;进入postman,使用code snippet将对应请求转义为cURL请求&lt;/p&gt;
+&lt;p&gt; 需要注意如下几个参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Generate multiline snippet [Y]&lt;/p&gt;
+&lt;p&gt;  该参数将cURL命令分割为多行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use long form options [Y]&lt;/p&gt;
+&lt;p&gt;  该参数开启时使用全称参数代替简写，开不开启都可以&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Line continuation character [^]&lt;/p&gt;
+&lt;p&gt;  该参数选择换行连续符号，windows环境选择&lt;code&gt;^&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Quote Type [“]&lt;/p&gt;
+&lt;p&gt;  windows环境下，引用参数部分须使用双引号，参数内双引号需要使用&lt;code&gt;/&lt;/code&gt;转义符&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Testing" scheme="http://octopusheep.com/categories/Testing/"/>
+    
+    
+    <category term="Postman" scheme="http://octopusheep.com/tags/Postman/"/>
+    
+  </entry>
   
   <entry>
     <title>《how does the Internet work》自译</title>
@@ -457,109 +589,6 @@
     <category term="Vultr" scheme="http://octopusheep.com/tags/Vultr/"/>
     
     <category term="VPS" scheme="http://octopusheep.com/tags/VPS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iTerm2终端美化教程</title>
-    <link href="http://octopusheep.com/2020/10/19/iTerm2%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96%E6%95%99%E7%A8%8B/"/>
-    <id>http://octopusheep.com/2020/10/19/iTerm2%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96%E6%95%99%E7%A8%8B/</id>
-    <published>2020-10-19T01:21:22.000Z</published>
-    <updated>2020-10-18T17:28:03.204Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;从&lt;a href=&quot;iterm2.com&quot;&gt;iterm2官网&lt;/a&gt;下载软件后安装&lt;/p&gt;
-&lt;h2 id=&quot;切换zsh为默认shell&quot;&gt;&lt;a href=&quot;#切换zsh为默认shell&quot; class=&quot;headerlink&quot; title=&quot;切换zsh为默认shell&quot;&gt;&lt;/a&gt;切换zsh为默认shell&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;chsh -s &amp;#x2F;bin&amp;#x2F;zsh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;安装-oh-my-zsh&quot;&gt;&lt;a href=&quot;#安装-oh-my-zsh&quot; class=&quot;headerlink&quot; title=&quot;安装 oh-my-zsh&quot;&gt;&lt;/a&gt;安装 oh-my-zsh&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;curl -L https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;robbyrussell&amp;#x2F;oh-my-zsh&amp;#x2F;raw&amp;#x2F;master&amp;#x2F;tools&amp;#x2F;install.sh | sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    
-    <category term="iTerm2" scheme="http://octopusheep.com/tags/iTerm2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Sublime License Verify</title>
-    <link href="http://octopusheep.com/2020/10/19/Sublime%20License%20Verify/"/>
-    <id>http://octopusheep.com/2020/10/19/Sublime%20License%20Verify/</id>
-    <published>2020-10-19T01:04:14.000Z</published>
-    <updated>2020-10-18T17:20:46.654Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;经整理可用于sublime build3211版本license认证的步骤&lt;/p&gt;
-&lt;h2 id=&quot;Modify-host&quot;&gt;&lt;a href=&quot;#Modify-host&quot; class=&quot;headerlink&quot; title=&quot;Modify host&quot;&gt;&lt;/a&gt;Modify host&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo vi &amp;#x2F;etc&amp;#x2F;hosts&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;add following text into hosts:&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;127.0.0.1 sublimetext.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;127.0.0.1 sublimehq.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;127.0.0.1 license.sublimehq.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;127.0.0.1 45.55.255.55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;127.0.0.1 45.55.41.223&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0.0.0.0 license.sublimehq.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0.0.0.0 45.55.255.55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;0.0.0.0 45.55.41.223&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;then save docunment&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    
-    <category term="Sublime" scheme="http://octopusheep.com/tags/Sublime/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LDAP服务部署实践</title>
-    <link href="http://octopusheep.com/2019/11/26/LDAP%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5/"/>
-    <id>http://octopusheep.com/2019/11/26/LDAP%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5/</id>
-    <published>2019-11-26T15:21:28.000Z</published>
-    <updated>2019-11-26T07:22:32.000Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;LDAP服务由ladpadmin和ldapserver两个无状态服务组成&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;新建应用分区&quot;&gt;&lt;a href=&quot;#新建应用分区&quot; class=&quot;headerlink&quot; title=&quot;新建应用分区&quot;&gt;&lt;/a&gt;新建应用分区&lt;/h2&gt;&lt;p&gt;创建LDAP服务专用的应用分区&lt;/p&gt;
-&lt;h2 id=&quot;ladpadmin服务&quot;&gt;&lt;a href=&quot;#ladpadmin服务&quot; class=&quot;headerlink&quot; title=&quot;ladpadmin服务&quot;&gt;&lt;/a&gt;ladpadmin服务&lt;/h2&gt;&lt;h3 id=&quot;容器配置&quot;&gt;&lt;a href=&quot;#容器配置&quot; class=&quot;headerlink&quot; title=&quot;容器配置&quot;&gt;&lt;/a&gt;容器配置&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;镜像名称：osixia/phpldapadmin:latest&lt;/li&gt;
-&lt;li&gt;CPU请求：0.5Core&lt;/li&gt;
-&lt;li&gt;CPU上限：1Core&lt;/li&gt;
-&lt;li&gt;内存请求：1GiB&lt;/li&gt;
-&lt;li&gt;内存上限：2GiB&lt;/li&gt;
-&lt;li&gt;PHPLDAPADMIN_LDAP_HOSTS:ldapserver&lt;/li&gt;
-&lt;li&gt;PHPLDAPADMIN_HTTPS:false</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    
-    <category term="LDAP" scheme="http://octopusheep.com/tags/LDAP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Kafka部署实践</title>
-    <link href="http://octopusheep.com/2019/11/26/kafka%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5/"/>
-    <id>http://octopusheep.com/2019/11/26/kafka%E9%83%A8%E7%BD%B2%E5%AE%9E%E8%B7%B5/</id>
-    <published>2019-11-25T20:56:03.000Z</published>
-    <updated>2019-11-25T12:56:48.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;进入可以部署Kafka的节点&quot;&gt;&lt;a href=&quot;#进入可以部署Kafka的节点&quot; class=&quot;headerlink&quot; title=&quot;进入可以部署Kafka的节点&quot;&gt;&lt;/a&gt;进入可以部署Kafka的节点&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;~ » ssh root@192.168.133.32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;下载JAVA-Kafka的节点内&quot;&gt;&lt;a href=&quot;#下载JAVA-Kafka的节点内&quot; class=&quot;headerlink&quot; title=&quot;下载JAVA(Kafka的节点内)&quot;&gt;&lt;/a&gt;下载JAVA(Kafka的节点内)&lt;/h2&gt;&lt;p&gt;先下载wget&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[root@qa4v133-30 ~]# yum install wget&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;更新软件源：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[root@qa4v133-30 ~]# wget -O &amp;#x2F;etc&amp;#x2F;yum.repos.d&amp;#x2F;CentOS-Base.repo http:&amp;#x2F;&amp;#x2F;mirrors.aliyun.com&amp;#x2F;repo&amp;#x2F;Centos-7.repo&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;再下载JAVA：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[root@qa4v133-30 ~]# yum install java&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
     
   </entry>
   

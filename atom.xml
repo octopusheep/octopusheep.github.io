@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2021-06-23T12:21:17.634Z</updated>
+  <updated>2021-06-24T08:04:43.919Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Unittest测试框架学习笔记</title>
+    <link href="http://octopusheep.com/2021/06/25/Unittest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://octopusheep.com/2021/06/25/Unittest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-06-24T16:01:36.000Z</published>
+    <updated>2021-06-24T08:04:43.919Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;自动化测试的一些基本概念&quot;&gt;&lt;a href=&quot;#自动化测试的一些基本概念&quot; class=&quot;headerlink&quot; title=&quot;自动化测试的一些基本概念&quot;&gt;&lt;/a&gt;自动化测试的一些基本概念&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;库&lt;/p&gt;
+&lt;p&gt; 库的英文单词是 Library，库是由代码集合成的一个产品，可供程序员调用。面向对象的代码组织形成的库叫类库，面向过程的代码组织形成的库叫函数库。WebDriver就属于库的范畴，因为它提供了一组操作 Web 页面的类与方法，所以可以称它为 Web 自动化测试库&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;框架&lt;/p&gt;
+&lt;p&gt; 框架的英文单词是 Framework，框架是为解决一个或一类问题而开发的产品，用户一般只需使用框架提供的类或函数，即可实现全部功能。从这个角度看，Unittest框架主要用于测试用例的组织和执行，以及测试结果的生成。因为它的主要任务就是帮助我们完成测试工作，所以通常称它为测试框架&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;工具&lt;/p&gt;
+&lt;p&gt; 工具的英文单词是 Tools，工具与框架所做的事情类似，只是工具提供了更高层次的封装，屏蔽了底层的代码，提供了单独的操作界面供用户使用。例如，UFT（QTP）、Katalon就属于自动化测试工具&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="Testing" scheme="http://octopusheep.com/categories/Testing/"/>
+    
+    
+    <category term="Unittest" scheme="http://octopusheep.com/tags/Unittest/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot学习笔记</title>
@@ -566,29 +595,6 @@
     <category term="Vultr" scheme="http://octopusheep.com/tags/Vultr/"/>
     
     <category term="Shadowsocks" scheme="http://octopusheep.com/tags/Shadowsocks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>购买vultr服务器指南</title>
-    <link href="http://octopusheep.com/2020/10/19/%E8%B4%AD%E4%B9%B0vultr%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%87%E5%8D%97/"/>
-    <id>http://octopusheep.com/2020/10/19/%E8%B4%AD%E4%B9%B0vultr%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8C%87%E5%8D%97/</id>
-    <published>2020-10-19T01:28:43.000Z</published>
-    <updated>2020-10-18T17:33:02.632Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;注册vultr账号&quot;&gt;&lt;a href=&quot;#注册vultr账号&quot; class=&quot;headerlink&quot; title=&quot;注册vultr账号&quot;&gt;&lt;/a&gt;注册vultr账号&lt;/h2&gt;&lt;p&gt;使用&lt;a href=&quot;https://www.vultr.com/promo/try50/?ref=7770938-4F&quot;&gt;优惠链接&lt;/a&gt;注册vultr账号,或者直接点击&lt;a href=&quot;vultr.com&quot;&gt;官网链接&lt;/a&gt;注册&lt;/p&gt;
-&lt;h2 id=&quot;测试各服务器与本地网络的延迟&quot;&gt;&lt;a href=&quot;#测试各服务器与本地网络的延迟&quot; class=&quot;headerlink&quot; title=&quot;测试各服务器与本地网络的延迟&quot;&gt;&lt;/a&gt;测试各服务器与本地网络的延迟&lt;/h2&gt;&lt;p&gt;下表给出所有vultr服务器的IP地址，使用terminals执行ping指令找出延迟最低的服务器&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ping fra-de-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping par-fr-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping ams-nl-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping lon-gb-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping sgp-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping nj-us-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping hnd-jp-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping il-us-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping ga-us-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping fl-us-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping wa-us-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping tx-us-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping sjo-ca-us-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping lax-ca-us-ping.vultr.com    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ping syd-au-ping.vultr.com&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    
-    <category term="Vultr" scheme="http://octopusheep.com/tags/Vultr/"/>
-    
-    <category term="VPS" scheme="http://octopusheep.com/tags/VPS/"/>
     
   </entry>
   

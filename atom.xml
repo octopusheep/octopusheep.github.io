@@ -50,10 +50,10 @@
     <link href="http://octopusheep.com/2021/06/24/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://octopusheep.com/2021/06/24/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2021-06-23T20:07:03.000Z</published>
-    <updated>2021-06-23T12:21:17.634Z</updated>
+    <updated>2021-06-25T06:38:47.396Z</updated>
     
     
-    <summary type="html">&lt;h3 id=&quot;预置条件&quot;&gt;&lt;a href=&quot;#预置条件&quot; class=&quot;headerlink&quot; title=&quot;预置条件&quot;&gt;&lt;/a&gt;预置条件&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;- JetBrain Intellij IDEA Ultimate版本(20.2)
+    <summary type="html">&lt;h2 id=&quot;预置条件&quot;&gt;&lt;a href=&quot;#预置条件&quot; class=&quot;headerlink&quot; title=&quot;预置条件&quot;&gt;&lt;/a&gt;预置条件&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;- JetBrain Intellij IDEA Ultimate版本(20.2)
 
 只有Ultimate版本的IDE才可以创建Spring Initiatizer项目，如果你当前IDE为社区版，需要自行更换&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;创建步骤&quot;&gt;&lt;a href=&quot;#创建步骤&quot; class=&quot;headerlink&quot; title=&quot;创建步骤&quot;&gt;&lt;/a&gt;创建步骤&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. 创建Spring Initiatizer项目（jdk版本选择1.8）
 

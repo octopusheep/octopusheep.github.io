@@ -6,7 +6,7 @@
   <link href="http://octopusheep.com/atom.xml" rel="self"/>
   
   <link href="http://octopusheep.com/"/>
-  <updated>2021-06-24T08:04:43.919Z</updated>
+  <updated>2021-07-06T15:25:13.668Z</updated>
   <id>http://octopusheep.com/</id>
   
   <author>
@@ -17,11 +17,118 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Trantor前后台与Spi贯通测试流程笔记</title>
+    <link href="http://octopusheep.com/2021/07/07/Trantor%E5%89%8D%E5%90%8E%E5%8F%B0%E4%B8%8ESpi%E8%B4%AF%E9%80%9A%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    <id>http://octopusheep.com/2021/07/07/Trantor%E5%89%8D%E5%90%8E%E5%8F%B0%E4%B8%8ESpi%E8%B4%AF%E9%80%9A%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-07-06T23:13:00.000Z</published>
+    <updated>2021-07-06T15:25:13.668Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;预置开发环境（win-mac）&quot;&gt;&lt;a href=&quot;#预置开发环境（win-mac）&quot; class=&quot;headerlink&quot; title=&quot;预置开发环境（win/mac）&quot;&gt;&lt;/a&gt;预置开发环境（win/mac）&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Git&lt;/li&gt;
+&lt;li&gt;JetBrain Intellij IDEA CE 20.2-21.1版本&lt;/li&gt;
+&lt;li&gt;JetBrain Pycharm&lt;/li&gt;
+&lt;li&gt;JDK 1.8&lt;/li&gt;
+&lt;li&gt;IDEA SG插件&lt;/li&gt;
+&lt;li&gt;Postman&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上述资源需要正确配置，可以根据网上相关教程快速补齐&lt;/p&gt;
+&lt;p&gt;IDEA过往版本可以在&lt;a href=&quot;https://www.jetbrains.com/idea/download/other.html&quot;&gt;IDEA历史版本下载页&lt;/a&gt;中找到&lt;/p&gt;
+&lt;h2 id=&quot;预置资源文件&quot;&gt;&lt;a href=&quot;#预置资源文件&quot; class=&quot;headerlink&quot; title=&quot;预置资源文件&quot;&gt;&lt;/a&gt;预置资源文件&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;无法通过git命令clone拙远哥的qa_auto_patch的py脚本，需要在群文件中下载&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;maven仓库的xml配置文件需要在群文件中下载，文件名为&lt;code&gt;settings_quanxi.xml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;IDE的sg插件需要在群文件中下载，应对不同的IDE版本，需要安装对应的sg插件版本&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;sg插件的环境需要配置如下信息，以全息1为例&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;环境名： 全息1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;域名&amp;#x2F;IP：demo.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;域名&amp;#x2F;IP：demo.aliyun.com&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Testing" scheme="http://octopusheep.com/categories/Testing/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Unittest自动化测试工程使用指南</title>
+    <link href="http://octopusheep.com/2021/07/07/Unittest%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>http://octopusheep.com/2021/07/07/Unittest%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
+    <published>2021-07-06T23:12:55.000Z</published>
+    <updated>2021-07-06T15:28:58.320Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;项目主要依赖&quot;&gt;&lt;a href=&quot;#项目主要依赖&quot; class=&quot;headerlink&quot; title=&quot;项目主要依赖&quot;&gt;&lt;/a&gt;项目主要依赖&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;基于unittest测试框架组织测试用例&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;基于selenium操纵浏览器对象&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;基于poium库简化DOM元素查询&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;基于yagmail库实现测试报告邮件发送&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;尚未实现的功能点-优化点&quot;&gt;&lt;a href=&quot;#尚未实现的功能点-优化点&quot; class=&quot;headerlink&quot; title=&quot;尚未实现的功能点/优化点&quot;&gt;&lt;/a&gt;尚未实现的功能点/优化点&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;测试报告和对应的测试截图需要输出到同一文件夹&lt;/p&gt;
+&lt;p&gt; 建议在test_report中给每个测试报告建立文件夹&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;断言元素存在的方法可以封装成公共模块&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Testing" scheme="http://octopusheep.com/categories/Testing/"/>
+    
+    
+    <category term="Selenium" scheme="http://octopusheep.com/tags/Selenium/"/>
+    
+    <category term="Unittest" scheme="http://octopusheep.com/tags/Unittest/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unittest自动化测试工程分析</title>
+    <link href="http://octopusheep.com/2021/07/07/Unittest%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%88%86%E6%9E%90/"/>
+    <id>http://octopusheep.com/2021/07/07/Unittest%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%88%86%E6%9E%90/</id>
+    <published>2021-07-06T23:12:50.000Z</published>
+    <updated>2021-07-06T15:20:45.227Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在系统地学习了自动化web测试相关知识，详细阅读了虫师的《Selenium3自动化测试实战——基于Python语言》一书及相关工程实践后，我尝试分析了现阶段公司的自动化测试项目，并对工程框架优缺点提出例证，最后我尝试重构了该项目并重写了其中一条测试用例。&lt;/p&gt;
+&lt;h2 id=&quot;原Airtest工程分析&quot;&gt;&lt;a href=&quot;#原Airtest工程分析&quot; class=&quot;headerlink&quot; title=&quot;原Airtest工程分析&quot;&gt;&lt;/a&gt;原Airtest工程分析&lt;/h2&gt;&lt;p&gt;当前工程目录如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;launch目录中放置全局启动参数，在此处设置全局SetUp和TearDown操作&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;msc_case目录下放置自动化测试用例，采用线性测试方式执行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;log目录下存放各用例调用webdriver产生的截图和airtest的日志文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;file_bat目录存放写入了python脚本的windows批处理命令文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;html为airtest生成的前端界面模板&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;├─file_bat&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;├─html&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;├─launch&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;├─log&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;│  └─log_env&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;└─msc_case&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    └─collection&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        └─test_security.air&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Testing" scheme="http://octopusheep.com/categories/Testing/"/>
+    
+    
+    <category term="Selenium" scheme="http://octopusheep.com/tags/Selenium/"/>
+    
+    <category term="Unittest" scheme="http://octopusheep.com/tags/Unittest/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Unittest测试框架学习笔记</title>
     <link href="http://octopusheep.com/2021/06/25/Unittest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://octopusheep.com/2021/06/25/Unittest%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2021-06-24T16:01:36.000Z</published>
-    <updated>2021-06-24T08:04:43.919Z</updated>
+    <updated>2021-06-24T08:04:43.000Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;自动化测试的一些基本概念&quot;&gt;&lt;a href=&quot;#自动化测试的一些基本概念&quot; class=&quot;headerlink&quot; title=&quot;自动化测试的一些基本概念&quot;&gt;&lt;/a&gt;自动化测试的一些基本概念&lt;/h2&gt;&lt;ol&gt;
@@ -50,7 +157,7 @@
     <link href="http://octopusheep.com/2021/06/24/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://octopusheep.com/2021/06/24/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2021-06-23T20:07:03.000Z</published>
-    <updated>2021-06-25T06:38:47.396Z</updated>
+    <updated>2021-06-25T06:38:47.000Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;预置条件&quot;&gt;&lt;a href=&quot;#预置条件&quot; class=&quot;headerlink&quot; title=&quot;预置条件&quot;&gt;&lt;/a&gt;预置条件&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;- JetBrain Intellij IDEA Ultimate版本(20.2)
@@ -508,93 +615,6 @@
     <category term="Scraping" scheme="http://octopusheep.com/tags/Scraping/"/>
     
     <category term="Terminals" scheme="http://octopusheep.com/tags/Terminals/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Terminals自定义带参数的命令</title>
-    <link href="http://octopusheep.com/2020/10/21/Terminals%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E5%91%BD%E4%BB%A4/"/>
-    <id>http://octopusheep.com/2020/10/21/Terminals%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E5%91%BD%E4%BB%A4/</id>
-    <published>2020-10-20T23:37:27.000Z</published>
-    <updated>2020-10-20T16:00:53.005Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;长期以来饱受alias不接受参数的困扰，此次发现可以在.zshrc文件中通过如下方式实现自定义带参数的命令&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;定义函数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;首先进入.zshrc文件&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi .zshrc&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;在.zshrc文件中定义函数&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;function blog()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd &amp;#x2F;Users&amp;#x2F;zhangyuyang&amp;#x2F;Library&amp;#x2F;Mobile\ Documents&amp;#x2F;com~apple~CloudDocs&amp;#x2F;Documents&amp;#x2F;技&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;术博客资料&amp;#x2F;octopusheep.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    
-    <category term="Terminals" scheme="http://octopusheep.com/tags/Terminals/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hunter Project Note</title>
-    <link href="http://octopusheep.com/2020/10/21/Hunter%20Project%20Note/"/>
-    <id>http://octopusheep.com/2020/10/21/Hunter%20Project%20Note/</id>
-    <published>2020-10-20T23:12:04.000Z</published>
-    <updated>2020-10-20T15:58:43.079Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;this is no first time i have the idea that scraping videos website and that is the frist step to do this ,this project made by Python.&lt;/p&gt;
-&lt;p&gt;there have some reprequiste for using it&lt;/p&gt;
-&lt;h2 id=&quot;Prerequisite&quot;&gt;&lt;a href=&quot;#Prerequisite&quot; class=&quot;headerlink&quot; title=&quot;Prerequisite&quot;&gt;&lt;/a&gt;Prerequisite&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Python&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;you can download Python in &lt;a href=&quot;https://www.python.org/downloads/mac-osx/&quot;&gt;Official Website&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;then install it.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Requests&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;which is an elegant and simple HTTP library for Python&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;python3 -m pip install requests&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    
-    <category term="Python" scheme="http://octopusheep.com/tags/Python/"/>
-    
-    <category term="Scraping" scheme="http://octopusheep.com/tags/Scraping/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在vultr服务器上部署shadowsocks</title>
-    <link href="http://octopusheep.com/2020/10/19/%E5%9C%A8vultr%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2shadowsocks/"/>
-    <id>http://octopusheep.com/2020/10/19/%E5%9C%A8vultr%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2shadowsocks/</id>
-    <published>2020-10-19T01:34:14.000Z</published>
-    <updated>2020-10-18T17:46:40.061Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;首先得有一台vultr服务器，或者其他国外运营商的云服务器&lt;/p&gt;
-&lt;h2 id=&quot;SSH登陆云服务器&quot;&gt;&lt;a href=&quot;#SSH登陆云服务器&quot; class=&quot;headerlink&quot; title=&quot;SSH登陆云服务器&quot;&gt;&lt;/a&gt;SSH登陆云服务器&lt;/h2&gt;&lt;p&gt;在Terminals中使用ssh命令登陆服务器&lt;/p&gt;
-&lt;h2 id=&quot;安装依赖包&quot;&gt;&lt;a href=&quot;#安装依赖包&quot; class=&quot;headerlink&quot; title=&quot;安装依赖包&quot;&gt;&lt;/a&gt;安装依赖包&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-get install python-pip python-gevent python-m2crypto&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip install --upgrade setuptools&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;安装shadowsocks&quot;&gt;&lt;a href=&quot;#安装shadowsocks&quot; class=&quot;headerlink&quot; title=&quot;安装shadowsocks&quot;&gt;&lt;/a&gt;安装shadowsocks&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install shadowsocks&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;配置shadowsocks&quot;&gt;&lt;a href=&quot;#配置shadowsocks&quot; class=&quot;headerlink&quot; title=&quot;配置shadowsocks&quot;&gt;&lt;/a&gt;配置shadowsocks&lt;/h2&gt;&lt;p&gt;在/etc目录下新建文件夹&lt;code&gt;shadowsocks&lt;/code&gt;,然后在&lt;code&gt;shadowsocks&lt;/code&gt;文件夹下新建文件&lt;code&gt;config.json&lt;/code&gt;:&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir &amp;#x2F;etc&amp;#x2F;shadowsocks&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;vim &amp;#x2F;etc&amp;#x2F;shadowsocks&amp;#x2F;config.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="Programming" scheme="http://octopusheep.com/categories/Programming/"/>
-    
-    
-    <category term="Vultr" scheme="http://octopusheep.com/tags/Vultr/"/>
-    
-    <category term="Shadowsocks" scheme="http://octopusheep.com/tags/Shadowsocks/"/>
     
   </entry>
   
